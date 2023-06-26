@@ -1,0 +1,1666 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "MainMenu",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Image4",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "Background2.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "spiMenuButton1",
+            "Y": 216,
+            "Width": 240,
+            "Height": 36,
+            "CustomContainerDefinitionName": "SpiMenuButton"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "i2C1",
+            "Y": 167,
+            "Width": 240,
+            "Height": 36,
+            "CustomContainerDefinitionName": "I2C"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "cAN1",
+            "Y": 115,
+            "Width": 240,
+            "Height": 36,
+            "CustomContainerDefinitionName": "CAN"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image5",
+            "X": 60,
+            "Y": 272,
+            "Width": 120,
+            "Height": 48,
+            "RelativeFilename": "protiviti-wss.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image6",
+            "X": -4,
+            "Y": 7,
+            "Width": 238,
+            "Height": 32,
+            "RelativeFilename": "BHVL_tiny.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image7",
+            "X": 7,
+            "Y": 219,
+            "Width": 30,
+            "Height": 30,
+            "RelativeFilename": "icons8-info-30.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image10",
+            "X": 10,
+            "Y": 115,
+            "Width": 30,
+            "Height": 30,
+            "RelativeFilename": "icons8-drop-of-blood-30.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image11",
+            "X": 10,
+            "Y": 170,
+            "Width": 30,
+            "Height": 30,
+            "RelativeFilename": "icons8-insulin-pen-30.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "seperator_1_1",
+            "Y": 260,
+            "Width": 240,
+            "Height": 18,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 20,
+            "StartX": 10,
+            "StartY": 3,
+            "EndX": 230,
+            "EndY": 3,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Title",
+            "X": 41,
+            "Y": 42,
+            "Width": 159,
+            "Height": 29,
+            "TextId": "__SingleUse_ZU6I",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 99,
+              "Green": 198,
+              "Blue": 2
+            },
+            "AutoSize": true,
+            "Clickable": true
+          },
+          {
+            "Type": "Line",
+            "Name": "seperator_1_1_1",
+            "Y": 39,
+            "Width": 240,
+            "Height": 18,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 20,
+            "StartX": 10,
+            "StartY": 3,
+            "EndX": 230,
+            "EndY": 3,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionNone"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "SPIPage",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Image12",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "Background.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 10,
+            "Y": 135,
+            "Width": 146,
+            "Height": 29,
+            "TextId": "__SingleUse_ETWL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_1",
+            "X": 10,
+            "Y": 190,
+            "Width": 131,
+            "Height": 29,
+            "TextId": "__SingleUse_WG3I",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_2",
+            "X": 10,
+            "Y": 83,
+            "Width": 155,
+            "Height": 29,
+            "TextId": "__SingleUse_KD8N",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_3",
+            "X": 10,
+            "Y": 246,
+            "Width": 69,
+            "Height": 29,
+            "TextId": "__SingleUse_X252",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "SNField",
+            "X": 12,
+            "Y": 159,
+            "Width": 88,
+            "Height": 29,
+            "TextId": "__SingleUse_EVT1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "PumpAllowedWildCard",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "SoftwareField",
+            "X": 12,
+            "Y": 215,
+            "Width": 73,
+            "Height": 29,
+            "TextId": "__SingleUse_DSUZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "SerialNumbWildCard",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ModelField",
+            "X": 12,
+            "Y": 106,
+            "Width": 88,
+            "Height": 29,
+            "TextId": "__SingleUse_3GOW",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "ModelWildCard",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "DebugField",
+            "X": 12,
+            "Y": 270,
+            "Width": 120,
+            "Height": 29,
+            "TextId": "__SingleUse_DQ8S",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_65D4",
+              "UseBuffer": true,
+              "BufferSize": 15
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton1",
+            "Width": 240,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "SystemInfoTitle",
+            "X": 7,
+            "Y": 35,
+            "Width": 190,
+            "Height": 29,
+            "TextId": "__SingleUse_IRJ4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "Image2",
+            "X": 206,
+            "Y": 38,
+            "Width": 24,
+            "Height": 24,
+            "RelativeFilename": "info-24.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "FLAG_FIELD",
+            "X": 12,
+            "Y": 291,
+            "Width": 140,
+            "Height": 29,
+            "TextId": "__SingleUse_HD3N",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 99,
+              "Green": 198,
+              "Blue": 2
+            },
+            "Alpha": 0,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "WildCard",
+              "UseBuffer": true,
+              "BufferSize": 40
+            },
+            "Clickable": true
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Can_InsulinPumpStatus",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Image12",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "Background.png"
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 240,
+            "Height": 320,
+            "Color": {
+              "Red": 255
+            },
+            "Alpha": 147,
+            "Fadeable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 11,
+            "Y": 54,
+            "Width": 219,
+            "Height": 127,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 57
+          },
+          {
+            "Type": "TextArea",
+            "Name": "BloodSugarValueField",
+            "X": 71,
+            "Y": 44,
+            "Width": 59,
+            "Height": 85,
+            "TextId": "__SingleUse_QNAS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "BSValueWildCard",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton1",
+            "Width": 240,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus",
+            "X": 23,
+            "Y": 152,
+            "Width": 76,
+            "Height": 29,
+            "TextId": "__SingleUse_2APL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "PumpStatusTextBuffer",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpTitle",
+            "X": 19,
+            "Y": 130,
+            "Width": 127,
+            "Height": 29,
+            "TextId": "__SingleUse_2SZA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Box",
+            "Name": "OverrideBackground",
+            "X": 11,
+            "Y": 193,
+            "Width": 219,
+            "Height": 64,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 57
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ProtectionLabel",
+            "X": 16,
+            "Y": 198,
+            "Width": 111,
+            "Height": 29,
+            "TextId": "__SingleUse_EZHH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ProtectionActiveField",
+            "X": 22,
+            "Y": 223,
+            "Width": 60,
+            "Height": 29,
+            "TextId": "__SingleUse_E6IU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 117,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "pumpProtectWCStatus",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButton1",
+            "X": 11,
+            "Y": 193,
+            "Width": 219,
+            "Height": 64,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ToggleButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 219,
+                "Height": 64,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Image",
+            "Name": "LockedIcon",
+            "X": 193,
+            "Y": 210,
+            "Width": 30,
+            "Height": 30,
+            "RelativeFilename": "locked.png",
+            "Alpha": 195
+          },
+          {
+            "Type": "Image",
+            "Name": "UnlockedIcon",
+            "X": 193,
+            "Y": 210,
+            "Width": 30,
+            "Height": 30,
+            "RelativeFilename": "unlocked.png",
+            "Alpha": 77
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "InsulinToggle",
+            "X": 5,
+            "Y": 92,
+            "Width": 230,
+            "Height": 60,
+            "Pressed": "__designer\\Dark_Buttons_Round_medium.png",
+            "Released": "__designer\\Dark_Buttons_Square_medium.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "unit_top",
+            "X": 185,
+            "Y": 65,
+            "Width": 25,
+            "Height": 25,
+            "TextId": "__SingleUse_2QBS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "unit_bottom",
+            "X": 190,
+            "Y": 91,
+            "Width": 15,
+            "Height": 25,
+            "TextId": "__SingleUse_WVBV",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Line",
+            "Name": "unit_divider",
+            "X": 178,
+            "Y": 87,
+            "Width": 46,
+            "Height": 18,
+            "Color": {
+              "Green": 187,
+              "Blue": 255
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 32,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image3",
+            "X": 23,
+            "Y": 67,
+            "Width": 48,
+            "Height": 48,
+            "RelativeFilename": "icons8-error-48.png",
+            "Alpha": 0
+          },
+          {
+            "Type": "TextArea",
+            "Name": "FLAG_FIELD",
+            "X": 11,
+            "Y": 276,
+            "Width": 140,
+            "Height": 29,
+            "TextId": "__SingleUse_IBAF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 99,
+              "Green": 198,
+              "Blue": 2
+            },
+            "Alpha": 0,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "WildCard",
+              "UseBuffer": true,
+              "BufferSize": 40
+            },
+            "Clickable": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "InsulinToggle"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ToggleButtonClickVirtFunc"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButton1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Can_InsulinPumpOverride"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "I2CPage",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Image12",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "Background.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton1",
+            "Width": 240,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpTitle",
+            "X": 5,
+            "Y": 47,
+            "Width": 195,
+            "Height": 29,
+            "TextId": "__SingleUse_EYAC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus",
+            "X": 12,
+            "Y": 77,
+            "Width": 217,
+            "Height": 26,
+            "TextId": "__SingleUse_T7NF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus_1",
+            "X": 12,
+            "Y": 99,
+            "Width": 217,
+            "Height": 29,
+            "TextId": "__SingleUse_7R3A",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus_2",
+            "X": 12,
+            "Y": 120,
+            "Width": 217,
+            "Height": 29,
+            "TextId": "__SingleUse_IVUZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus_3",
+            "X": 12,
+            "Y": 142,
+            "Width": 217,
+            "Height": 26,
+            "TextId": "__SingleUse_INY6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "Image",
+            "Name": "InfoIcon",
+            "X": 209,
+            "Y": 52,
+            "Width": 24,
+            "Height": 24,
+            "RelativeFilename": "info-24.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpAllowedLabel",
+            "X": 10,
+            "Y": 248,
+            "Width": 167,
+            "Height": 29,
+            "TextId": "PumpLabel",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TempLabel",
+            "X": 10,
+            "Y": 182,
+            "Width": 131,
+            "Height": 29,
+            "TextId": "__SingleUse_X2DD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpAllowedStatus",
+            "X": 16,
+            "Y": 277,
+            "Width": 88,
+            "Height": 29,
+            "TextId": "PumpAllowedField",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "Alpha": 243,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "PumpAllowedWildCard",
+              "UseBuffer": true,
+              "BufferSize": 14
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "TempValue",
+            "X": 12,
+            "Y": 211,
+            "Width": 26,
+            "Height": 29,
+            "TextId": "TempField",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 150,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "TempWildCard",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "FLAG_FIELD",
+            "X": 12,
+            "Y": 211,
+            "Width": 140,
+            "Height": 29,
+            "TextId": "__SingleUse_4BQ5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 99,
+              "Green": 198,
+              "Blue": 2
+            },
+            "Alpha": 0,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "WildCard",
+              "UseBuffer": true,
+              "BufferSize": 20
+            },
+            "Clickable": true
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Can_InsulinPumpOverride",
+        "CanvasBufferSize": 3600,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Image4",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "Background2.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpTitle",
+            "X": 7,
+            "Y": 48,
+            "Width": 111,
+            "Height": 29,
+            "TextId": "__SingleUse_ECFH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus",
+            "X": 12,
+            "Y": 91,
+            "Width": 217,
+            "Height": 26,
+            "TextId": "__SingleUse_GA6S",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus_1",
+            "X": 12,
+            "Y": 110,
+            "Width": 217,
+            "Height": 29,
+            "TextId": "__SingleUse_YNFC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus_1_1",
+            "X": 12,
+            "Y": 131,
+            "Width": 217,
+            "Height": 29,
+            "TextId": "__SingleUse_0E71",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus_2",
+            "X": 12,
+            "Y": 160,
+            "Width": 217,
+            "Height": 26,
+            "TextId": "__SingleUse_28E0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus_1_2",
+            "X": 12,
+            "Y": 179,
+            "Width": 217,
+            "Height": 29,
+            "TextId": "__SingleUse_8TK6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "TextArea",
+            "Name": "PumpStatus_1_2_1",
+            "X": 12,
+            "Y": 201,
+            "Width": 217,
+            "Height": 29,
+            "TextId": "__SingleUse_N18K",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 180
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backToPump1",
+            "Width": 240,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackToPump"
+          },
+          {
+            "Type": "Image",
+            "Name": "InfoIcon",
+            "X": 127,
+            "Y": 51,
+            "Width": 24,
+            "Height": 24,
+            "RelativeFilename": "info-24.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "ToggleButtonInteraction",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ToggleButtonClickVirtFunc"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "SpiMenuButton",
+        "Width": 240,
+        "Height": 36,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 50,
+            "Y": 3,
+            "Width": 177,
+            "Height": 29,
+            "TextId": "__SingleUse_ZPGU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Clickable": true
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "goToSpiButton",
+            "Width": 240,
+            "Height": 32,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 240,
+                "Height": 44,
+                "BorderSize": 10,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "goToSpiButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "SPIPage"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "I2C",
+        "Width": 240,
+        "Height": 36,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 50,
+            "Y": 3,
+            "Width": 117,
+            "Height": 30,
+            "TextId": "__SingleUse_HWXY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Clickable": true
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "goToI2CButton",
+            "Width": 240,
+            "Height": 32,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 240,
+                "Height": 44,
+                "BorderSize": 10,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "goToI2CPageInteraction",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "goToI2CButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "I2CPage"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "CAN",
+        "Width": 240,
+        "Height": 36,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 50,
+            "Y": 3,
+            "Width": 139,
+            "Height": 29,
+            "TextId": "__SingleUse_7GW8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Clickable": true
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "goToCanButton",
+            "Width": 240,
+            "Height": 32,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 240,
+                "Height": 44,
+                "BorderSize": 10,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "goToCanInteraction",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "goToCanButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Can_InsulinPumpStatus"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "BackButton",
+        "Width": 240,
+        "Height": 32,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 24,
+            "Width": 45,
+            "Height": 29,
+            "TextId": "__SingleUse_NVER",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 200,
+            "AutoSize": true,
+            "Clickable": true
+          },
+          {
+            "Type": "Line",
+            "Name": "UpperCar",
+            "Width": 24,
+            "Height": 32,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 15,
+            "StartY": 8,
+            "EndX": 6,
+            "EndY": 16,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "LowerCar",
+            "Width": 24,
+            "Height": 32,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 16,
+            "StartY": 24,
+            "EndX": 6,
+            "EndY": 16,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "goBackButton",
+            "Width": 240,
+            "Height": 32,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 240,
+                "Height": 44,
+                "BorderSize": 10,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "goBackButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "MainMenu"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "BSUnits",
+        "Width": 38,
+        "Height": 54,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "unit_top",
+            "X": 7,
+            "Width": 25,
+            "Height": 25,
+            "TextId": "__SingleUse_HOA2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 10,
+            "Y": 25,
+            "Width": 15,
+            "Height": 25,
+            "TextId": "__SingleUse_HCLG",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Line",
+            "Name": "unit_divider",
+            "Y": 21,
+            "Width": 46,
+            "Height": 18,
+            "Color": {
+              "Green": 187,
+              "Blue": 255
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 32,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "BSUnits_1",
+        "Width": 38,
+        "Height": 54,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "unit_top",
+            "X": 7,
+            "Width": 25,
+            "Height": 25,
+            "TextId": "__SingleUse_GHS2",
+            "TextRotation": "0",
+            "Alpha": 200,
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 10,
+            "Y": 25,
+            "Width": 15,
+            "Height": 25,
+            "TextId": "__SingleUse_S4W2",
+            "TextRotation": "0",
+            "Alpha": 200,
+            "AutoSize": true
+          },
+          {
+            "Type": "Line",
+            "Name": "unit_divider",
+            "Y": 21,
+            "Width": 46,
+            "Height": 18,
+            "Color": {
+              "Green": 187,
+              "Blue": 255
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 32,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "BackToPump",
+        "Width": 240,
+        "Height": 32,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 24,
+            "Width": 45,
+            "Height": 29,
+            "TextId": "__SingleUse_U1M9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 200,
+            "AutoSize": true,
+            "Clickable": true
+          },
+          {
+            "Type": "Line",
+            "Name": "UpperCar",
+            "Width": 24,
+            "Height": 32,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 15,
+            "StartY": 8,
+            "EndX": 6,
+            "EndY": 16,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "LowerCar",
+            "Width": 24,
+            "Height": 32,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 16,
+            "StartY": 24,
+            "EndX": 6,
+            "EndY": 16,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "goBackButton",
+            "Width": 240,
+            "Height": 32,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 240,
+                "Height": 44,
+                "BorderSize": 10,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "goBackButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Can_InsulinPumpStatus"
+            }
+          }
+        ]
+      }
+    ],
+    "Name": "DEFCONtroller",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "MainMenu",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Dark",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32F4",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_E01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": []
+  },
+  "Version": "4.19.1",
+  "CreatedBy": "4.19.1"
+}
