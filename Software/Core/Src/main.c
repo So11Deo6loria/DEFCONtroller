@@ -25,11 +25,13 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
-#include "threads/can/can.h"
-#include "threads/uart/uart.h"
-#include "threads/i2c/i2c.h"
-#include "threads/spi/spi.h"
-#include "threads/jtag/jtag.h"
+//#include "threads/can/can.h"
+//#include "threads/uart/uart.h"
+//#include "threads/i2c/i2c.h"
+//#include "threads/spi/spi.h"
+//#include "threads/jtag/jtag.h"
+#include "threads.h"
+#include "xmodem.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -88,6 +90,7 @@ osThreadId_t i2cTaskHandle;
 osThreadId_t spiTaskHandle;
 osThreadId_t uartTaskHandle;
 osThreadId_t jtagTaskHandle;
+osThreadId_t fotaTaskHandle;
 
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
@@ -101,6 +104,7 @@ osThreadAttr_t i2cThreadAttributes  = defaultTask_attributes;
 osThreadAttr_t uartThreadAttributes = defaultTask_attributes;
 osThreadAttr_t spiThreadAttributes  = defaultTask_attributes;
 osThreadAttr_t jtagThreadAttributes = defaultTask_attributes;
+osThreadAttr_t fotaThreadAttributes = defaultTask_attributes;
 
 /* Definitions for GUI_Task */
 osThreadId_t GUI_TaskHandle;
@@ -298,16 +302,18 @@ int main(void)
   uartThreadAttributes.name = "uartTask";
   spiThreadAttributes.name  = "spiTask";
   jtagThreadAttributes.name = "jtagTask";
+  fotaThreadAttributes.name = "fotaTask";
 
   /* creation of defaultTask */
-  canTaskHandle  = osThreadNew(CanChallangeThread,  NULL, &canThreadAttributes);
-  i2cTaskHandle  = osThreadNew(I2CChallengeThread,  NULL, &i2cThreadAttributes);
-  spiTaskHandle  = osThreadNew(SPIChallengeThread,  NULL, &spiThreadAttributes);
-  uartTaskHandle = osThreadNew(UARTChallengeThread, NULL, &uartThreadAttributes);
-  jtagTaskHandle = osThreadNew(JTAGChallengeThread, NULL, &jtagThreadAttributes);
+//  canTaskHandle  = osThreadNew(CanChallangeThread,  NULL, &canThreadAttributes);
+//  i2cTaskHandle  = osThreadNew(I2CChallengeThread,  NULL, &i2cThreadAttributes);
+//  spiTaskHandle  = osThreadNew(SPIChallengeThread,  NULL, &spiThreadAttributes);
+//  uartTaskHandle = osThreadNew(UARTChallengeThread, NULL, &uartThreadAttributes);
+//  jtagTaskHandle = osThreadNew(JTAGChallengeThread, NULL, &jtagThreadAttributes);
+  fotaTaskHandle = osThreadNew(FOTAChallengeThread, NULL, &fotaThreadAttributes);
 
   /* creation of GUI_Task */
-  GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
+//  GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
