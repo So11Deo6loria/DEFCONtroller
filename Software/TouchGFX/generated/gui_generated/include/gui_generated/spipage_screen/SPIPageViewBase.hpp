@@ -11,7 +11,7 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <gui/containers/BackButton.hpp>
+#include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
 
 class SPIPageViewBase : public touchgfx::View<SPIPagePresenter>
@@ -39,7 +39,7 @@ protected:
     touchgfx::TextAreaWithOneWildcard SoftwareField;
     touchgfx::TextAreaWithOneWildcard ModelField;
     touchgfx::TextAreaWithOneWildcard DebugField;
-    BackButton backButton1;
+    BackButton_toMainScreen backButton1;
     touchgfx::TextArea SystemInfoTitle;
     touchgfx::Image Image2;
     touchgfx::ClickListener< touchgfx::TextAreaWithOneWildcard > FLAG_FIELD;

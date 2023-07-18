@@ -9,6 +9,8 @@
 #include <gui/creditspage_screen/CreditsPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <gui/containers/BackButton_toCarStatusPage.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class CreditsPageViewBase : public touchgfx::View<CreditsPagePresenter>
 {
@@ -27,9 +29,22 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
+    BackButton_toCarStatusPage backButton_toCarStatusPage1;
+    touchgfx::Image DVHID;
+    touchgfx::Image image1;
+    touchgfx::Image image2;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea textArea1_1_1;
+    touchgfx::TextArea textArea1_1_2;
 
 private:
 
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint16_t CANVAS_BUFFER_SIZE = 3600;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 };
 
 #endif // CREDITSPAGEVIEWBASE_HPP

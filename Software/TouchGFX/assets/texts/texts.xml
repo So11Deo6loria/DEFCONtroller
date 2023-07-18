@@ -6,6 +6,18 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_0QPS" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">@ocrouse2020</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZL2W" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">@Nate_Sm1th</Translation>
+      </Text>
+      <Text Id="__SingleUse_0EXK" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">@So11Deo6loria</Translation>
+      </Text>
+      <Text Id="__SingleUse_I348" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">BROUGHT TO YOU BY:</Translation>
+      </Text>
       <Text Id="__SingleUse_GGNV" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Sample :</Translation>
       </Text>
@@ -15,7 +27,7 @@
       <Text Id="__SingleUse_2ZHJ" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Not Initiated</Translation>
       </Text>
-      <Text Id="__SingleUse_X6N2" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_X6N2" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_5ECD" Alignment="Left" TypographyId="Default">
@@ -231,10 +243,10 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="calibri.ttf" Size="30" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="A-Z,a-Z,1-9,.,_," />
-    <Typography Id="Large" Font="calibri.ttf" Size="36" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
-    <Typography Id="Small" Font="calibril.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="ExtraLarge" Font="calibri.ttf" Size="70" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890" />
+    <Typography Id="Default" Font="calibri.ttf" Size="30" Bpp="4" Direction="RTL" FallbackCharacter="?" WildcardCharacters="A-Z,a-Z,1-9,.,_," />
+    <Typography Id="Large" Font="calibri.ttf" Size="23" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+    <Typography Id="Small" Font="calibril.ttf" Size="16" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="ExtraLarge" Font="calibri.ttf" Size="34" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890" />
     <Typography Id="Title" Font="calibril.ttf" Size="48" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="MainPageTitle" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,." />
     <Typography Id="SPIWildcards" Font="calibri.ttf" Size="24" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,._" />

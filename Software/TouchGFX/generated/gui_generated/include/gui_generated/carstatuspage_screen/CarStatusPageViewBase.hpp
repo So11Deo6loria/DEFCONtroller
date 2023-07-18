@@ -9,6 +9,10 @@
 #include <gui/carstatuspage_screen/CarStatusPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <gui/containers/BackButton_toMainScreen.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class CarStatusPageViewBase : public touchgfx::View<CarStatusPagePresenter>
 {
@@ -27,9 +31,38 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
+    touchgfx::Image DVHID;
+    BackButton_toMainScreen backButton_toMainScreen1;
+    touchgfx::Button forwardButton_toCreditsPage;
+    touchgfx::Button forwardButton_toCommandsPage;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea textArea1_2;
+    touchgfx::TextAreaWithOneWildcard textArea1_2_1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREA1_2_1_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar textArea1_2_1Buffer[TEXTAREA1_2_1_SIZE];
 
 private:
 
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<CarStatusPageViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint16_t CANVAS_BUFFER_SIZE = 3600;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 };
 
 #endif // CARSTATUSPAGEVIEWBASE_HPP

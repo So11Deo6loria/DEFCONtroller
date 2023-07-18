@@ -9,6 +9,8 @@
 #include <gui/commandspage_screen/CommandsPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <gui/containers/BackButton_toCarStatusPage.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class CommandsPageViewBase : public touchgfx::View<CommandsPagePresenter>
 {
@@ -27,9 +29,18 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
+    BackButton_toCarStatusPage backButton_toCarStatusPage1;
+    touchgfx::Image DVHID;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea1_1;
 
 private:
 
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint16_t CANVAS_BUFFER_SIZE = 3600;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 };
 
 #endif // COMMANDSPAGEVIEWBASE_HPP

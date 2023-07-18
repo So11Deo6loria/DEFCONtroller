@@ -39,6 +39,17 @@ public:
     // Can_InsulinPumpOverride
     void gotoCan_InsulinPumpOverrideScreenSlideTransitionEast();
 
+    // CarStatusPage
+    void gotoCarStatusPageScreenSlideTransitionEast();
+
+    void gotoCarStatusPageScreenSlideTransitionWest();
+
+    // CommandsPage
+    void gotoCommandsPageScreenSlideTransitionEast();
+
+    // CreditsPage
+    void gotoCreditsPageScreenSlideTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -62,6 +73,17 @@ protected:
 
     // Can_InsulinPumpOverride
     void gotoCan_InsulinPumpOverrideScreenSlideTransitionEastImpl();
+
+    // CarStatusPage
+    void gotoCarStatusPageScreenSlideTransitionEastImpl();
+
+    void gotoCarStatusPageScreenSlideTransitionWestImpl();
+
+    // CommandsPage
+    void gotoCommandsPageScreenSlideTransitionEastImpl();
+
+    // CreditsPage
+    void gotoCreditsPageScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

@@ -10,7 +10,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <gui/containers/BackButton.hpp>
+#include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
@@ -48,7 +48,7 @@ protected:
     touchgfx::FadeAnimator< touchgfx::Box > box2;
     touchgfx::Box box1;
     touchgfx::TextAreaWithOneWildcard BloodSugarValueField;
-    BackButton backButton1;
+    BackButton_toMainScreen backButton1;
     touchgfx::TextAreaWithOneWildcard PumpStatus;
     touchgfx::TextArea PumpTitle;
     touchgfx::Box OverrideBackground;

@@ -4,85 +4,58 @@
 #include <gui_generated/mainmenu_screen/MainMenuViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
-#include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
-
-MainMenuViewBase::MainMenuViewBase()
+MainMenuViewBase::MainMenuViewBase() :
+    buttonCallback(this, &MainMenuViewBase::buttonCallbackHandler)
 {
-
-    touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     Background.setXY(0, 0);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BLACK_BACKGROUND_ID));
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND2_ID));
 
-    spiMenuButton1.setXY(0, 153);
+    DVHID.setXY(96, 0);
+    DVHID.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
 
-    i2C1.setXY(0, 167);
-    i2C1.setVisible(false);
+    image1.setXY(20, 93);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_SEDANRECOLORING_ID));
 
-    cAN1.setXY(0, 103);
+    forwardButton_toStatusPage.setXY(2, 254);
+    forwardButton_toStatusPage.setBitmaps(touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID), touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID));
+    forwardButton_toStatusPage.setAction(buttonCallback);
 
-    Image5.setXY(60, 272);
-    Image5.setBitmap(touchgfx::Bitmap(BITMAP_PROTIVITI_WSS_ID));
+    seatWarmerButton.setXY(130, 184);
+    seatWarmerButton.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_NOTWARM_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_ID));
 
-    Image6.setXY(-4, 7);
-    Image6.setBitmap(touchgfx::Bitmap(BITMAP_BHVL_TINY_ID));
+    button1.setXY(14, 11);
+    button1.setBitmaps(touchgfx::Bitmap(BITMAP_UNLOCKED_ID), touchgfx::Bitmap(BITMAP_LOCKED_ID));
 
-    Image7.setXY(7, 156);
-    Image7.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_INFO_30_ID));
-
-    Image10.setXY(10, 103);
-    Image10.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_DROP_OF_BLOOD_30_ID));
-
-    Image11.setXY(10, 170);
-    Image11.setVisible(false);
-    Image11.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_INSULIN_PEN_30_ID));
-
-    seperator_1_1.setPosition(0, 260, 240, 18);
-    seperator_1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    seperator_1_1.setPainter(seperator_1_1Painter);
-    seperator_1_1.setStart(10, 3);
-    seperator_1_1.setEnd(230, 3);
-    seperator_1_1.setLineWidth(3);
-    seperator_1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
-    seperator_1_1.setAlpha(20);
-
-    Title.setXY(41, 42);
-    Title.setColor(touchgfx::Color::getColorFromRGB(99, 198, 2));
-    Title.setLinespacing(0);
-    Title.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZU6I));
-
-    seperator_1_1_1.setPosition(0, 39, 240, 18);
-    seperator_1_1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    seperator_1_1_1.setPainter(seperator_1_1_1Painter);
-    seperator_1_1_1.setStart(10, 3);
-    seperator_1_1_1.setEnd(230, 3);
-    seperator_1_1_1.setLineWidth(3);
-    seperator_1_1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
-    seperator_1_1_1.setAlpha(20);
+    toggleButton1.setXY(17, 184);
+    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_IGNITIONBUTTONOFF_ID), touchgfx::Bitmap(BITMAP_IGNITIONBUTTONON_ID));
 
     add(__background);
     add(Background);
-    add(spiMenuButton1);
-    add(i2C1);
-    add(cAN1);
-    add(Image5);
-    add(Image6);
-    add(Image7);
-    add(Image10);
-    add(Image11);
-    add(seperator_1_1);
-    add(Title);
-    add(seperator_1_1_1);
+    add(DVHID);
+    add(image1);
+    add(forwardButton_toStatusPage);
+    add(seatWarmerButton);
+    add(button1);
+    add(toggleButton1);
 }
 
 void MainMenuViewBase::setupScreen()
 {
-    spiMenuButton1.initialize();
-    i2C1.initialize();
-    cAN1.initialize();
+
+}
+
+void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &forwardButton_toStatusPage)
+    {
+        //Interaction1
+        //When forwardButton_toStatusPage clicked change screen to CarStatusPage
+        //Go to CarStatusPage with screen transition towards East
+        application().gotoCarStatusPageScreenSlideTransitionEast();
+    }
 }

@@ -9,13 +9,8 @@
 #include <gui/mainmenu_screen/MainMenuPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <gui/containers/SpiMenuButton.hpp>
-#include <gui/containers/I2C.hpp>
-#include <gui/containers/CAN.hpp>
-#include <touchgfx/widgets/canvas/Line.hpp>
-#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/mixins/ClickListener.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
 
 class MainMenuViewBase : public touchgfx::View<MainMenuPresenter>
 {
@@ -34,27 +29,25 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
-    SpiMenuButton spiMenuButton1;
-    I2C i2C1;
-    CAN cAN1;
-    touchgfx::Image Image5;
-    touchgfx::Image Image6;
-    touchgfx::Image Image7;
-    touchgfx::Image Image10;
-    touchgfx::Image Image11;
-    touchgfx::Line seperator_1_1;
-    touchgfx::PainterRGB565 seperator_1_1Painter;
-    touchgfx::ClickListener< touchgfx::TextArea > Title;
-    touchgfx::Line seperator_1_1_1;
-    touchgfx::PainterRGB565 seperator_1_1_1Painter;
+    touchgfx::Image DVHID;
+    touchgfx::Image image1;
+    touchgfx::Button forwardButton_toStatusPage;
+    touchgfx::ToggleButton seatWarmerButton;
+    touchgfx::Button button1;
+    touchgfx::ToggleButton toggleButton1;
 
 private:
 
     /*
-     * Canvas Buffer Size
+     * Callback Declarations
      */
-    static const uint16_t CANVAS_BUFFER_SIZE = 3600;
-    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
+    touchgfx::Callback<MainMenuViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+
 };
 
 #endif // MAINMENUVIEWBASE_HPP

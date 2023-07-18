@@ -37,8 +37,6 @@
     <ClCompile Include="..\..\gui\src\jtagpage_screen\JTAGPagePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\spipage_screen\SPIPagePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\uartpage_screen\UARTPagePresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\BackButton.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButtonBase.cpp"/>
     <ClCompile Include="..\..\gui\src\i2cpage_screen\I2CPageView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\i2cpage_screen\I2CPageViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\spipage_screen\SPIPageView.cpp"/>
@@ -61,6 +59,14 @@
     <ClCompile Include="..\..\gui\src\creditspage_screen\CreditsPagePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\creditspage_screen\CreditsPageView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\creditspage_screen\CreditsPageViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\BackButton_toCarStatusPage.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_toCarStatusPageBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\BackButton_toMainScreen.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_toMainScreenBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\SeatWarmerButton.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SeatWarmerButtonBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\StatusButton.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\StatusButtonBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -225,8 +231,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\I2CBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\i2cpage_screen\I2CPagePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\spipage_screen\SPIPagePresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\BackButton.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButtonBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\i2cpage_screen\I2CPageView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\i2cpage_screen\I2CPageViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\spipage_screen\SPIPageView.hpp"/>
@@ -250,6 +254,14 @@
     <ClInclude Include="..\..\gui\include\gui\creditspage_screen\CreditsPagePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\creditspage_screen\CreditsPageView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\creditspage_screen\CreditsPageViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toCarStatusPage.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_toCarStatusPageBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toMainScreen.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_toMainScreenBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\SeatWarmerButton.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SeatWarmerButtonBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\StatusButton.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\StatusButtonBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

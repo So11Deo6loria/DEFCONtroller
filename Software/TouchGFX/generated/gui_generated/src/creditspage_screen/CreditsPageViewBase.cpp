@@ -4,21 +4,65 @@
 #include <gui_generated/creditspage_screen/CreditsPageViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
+
 
 CreditsPageViewBase::CreditsPageViewBase()
 {
+
+    touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     Background.setXY(0, 0);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BLACK_BACKGROUND_ID));
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND2_ID));
+
+    backButton_toCarStatusPage1.setXY(0, 0);
+
+    DVHID.setXY(96, 0);
+    DVHID.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
+
+    image1.setXY(72, 154);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_IOT_VILLAGE_ID));
+
+    image2.setXY(-6, 262);
+    image2.setBitmap(touchgfx::Bitmap(BITMAP_BHVL_TINY_ID));
+
+    textArea1.setXY(18, 54);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I348));
+
+    textArea1_1.setXY(59, 82);
+    textArea1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1_1.setLinespacing(0);
+    textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0EXK));
+
+    textArea1_1_1.setXY(66, 102);
+    textArea1_1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1_1_1.setLinespacing(0);
+    textArea1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZL2W));
+
+    textArea1_1_2.setXY(64, 122);
+    textArea1_1_2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1_1_2.setLinespacing(0);
+    textArea1_1_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0QPS));
 
     add(__background);
     add(Background);
+    add(backButton_toCarStatusPage1);
+    add(DVHID);
+    add(image1);
+    add(image2);
+    add(textArea1);
+    add(textArea1_1);
+    add(textArea1_1_1);
+    add(textArea1_1_2);
 }
 
 void CreditsPageViewBase::setupScreen()
 {
-
+    backButton_toCarStatusPage1.initialize();
 }

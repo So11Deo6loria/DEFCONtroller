@@ -4,21 +4,45 @@
 #include <gui_generated/commandspage_screen/CommandsPageViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
+
 
 CommandsPageViewBase::CommandsPageViewBase()
 {
+
+    touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     Background.setXY(0, 0);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BLACK_BACKGROUND_ID));
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND2_ID));
+
+    backButton_toCarStatusPage1.setXY(0, 0);
+
+    DVHID.setXY(96, 0);
+    DVHID.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
+
+    textArea1.setXY(7, 54);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_11TN));
+
+    textArea1_1.setXY(7, 160);
+    textArea1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1_1.setLinespacing(0);
+    textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GGNV));
 
     add(__background);
     add(Background);
+    add(backButton_toCarStatusPage1);
+    add(DVHID);
+    add(textArea1);
+    add(textArea1_1);
 }
 
 void CommandsPageViewBase::setupScreen()
 {
-
+    backButton_toCarStatusPage1.initialize();
 }

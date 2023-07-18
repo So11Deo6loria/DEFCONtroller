@@ -9,7 +9,7 @@
 #include <gui/i2cpage_screen/I2CPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <gui/containers/BackButton.hpp>
+#include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
@@ -31,7 +31,7 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Image12;
-    BackButton backButton1;
+    BackButton_toMainScreen backButton1;
     touchgfx::TextArea PumpTitle;
     touchgfx::TextArea PumpStatus;
     touchgfx::TextArea PumpStatus_1;

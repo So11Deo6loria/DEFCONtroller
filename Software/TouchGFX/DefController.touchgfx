@@ -42,7 +42,7 @@
             "Type": "ToggleButton",
             "Name": "seatWarmerButton",
             "X": 130,
-            "Y": 188,
+            "Y": 184,
             "Width": 94,
             "Height": 57,
             "Pressed": "SeatWarmer.png",
@@ -62,7 +62,7 @@
             "Type": "ToggleButton",
             "Name": "toggleButton1",
             "X": 17,
-            "Y": 188,
+            "Y": 184,
             "Width": 94,
             "Height": 57,
             "Pressed": "ignitionButtonOn.png",
@@ -863,8 +863,8 @@
             "Name": "PumpTitle",
             "X": 7,
             "Y": 48,
-            "Width": 111,
-            "Height": 29,
+            "Width": 139,
+            "Height": 37,
             "TextId": "__SingleUse_ECFH",
             "TextRotation": "0",
             "Color": {
@@ -1040,7 +1040,7 @@
             "Type": "Button",
             "Name": "forwardButton_toCommandsPage",
             "X": 1,
-            "Y": 189,
+            "Y": 185,
             "Width": 237,
             "Height": 57,
             "Pressed": "CodeButton.png",
@@ -1050,7 +1050,7 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 4,
-            "Y": 62,
+            "Y": 64,
             "Width": 230,
             "Height": 37,
             "TextId": "__SingleUse_DCAS",
@@ -1096,10 +1096,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea1_2_1",
-            "X": 28,
-            "Y": 136,
-            "Width": 184,
-            "Height": 44,
+            "X": 43,
+            "Y": 139,
+            "Width": 153,
+            "Height": 37,
             "TextId": "__SingleUse_X6N2",
             "TextRotation": "0",
             "Color": {
@@ -1232,8 +1232,8 @@
           {
             "Type": "Image",
             "Name": "image1",
-            "X": 138,
-            "Y": 187,
+            "X": 72,
+            "Y": 154,
             "Width": 96,
             "Height": 96,
             "RelativeFilename": "IOT_Village.png"
@@ -1241,11 +1241,75 @@
           {
             "Type": "Image",
             "Name": "image2",
-            "X": -4,
-            "Y": 283,
+            "X": -6,
+            "Y": 262,
             "Width": 238,
             "Height": 32,
             "RelativeFilename": "BHVL_tiny.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 18,
+            "Y": 54,
+            "Width": 204,
+            "Height": 28,
+            "TextId": "__SingleUse_I348",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 59,
+            "Y": 82,
+            "Width": 109,
+            "Height": 20,
+            "TextId": "__SingleUse_0EXK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1",
+            "X": 66,
+            "Y": 102,
+            "Width": 94,
+            "Height": 20,
+            "TextId": "__SingleUse_ZL2W",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_2",
+            "X": 64,
+            "Y": 122,
+            "Width": 98,
+            "Height": 20,
+            "TextId": "__SingleUse_0QPS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": []

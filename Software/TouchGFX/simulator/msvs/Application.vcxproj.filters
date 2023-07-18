@@ -369,12 +369,6 @@
     <ClCompile Include="..\..\gui\src\uartpage_screen\UARTPagePresenter.cpp">
       <Filter>Source Files\gui\uartpage_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\BackButton.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButtonBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\i2cpage_screen\I2CPageView.cpp">
       <Filter>Source Files\gui\i2cpage_screen</Filter>
     </ClCompile>
@@ -440,6 +434,30 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\creditspage_screen\CreditsPageViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\creditspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\BackButton_toCarStatusPage.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_toCarStatusPageBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\BackButton_toMainScreen.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_toMainScreenBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\SeatWarmerButton.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SeatWarmerButtonBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\StatusButton.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\StatusButtonBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -925,12 +943,6 @@
     <ClInclude Include="..\..\gui\include\gui\spipage_screen\SPIPagePresenter.hpp">
       <Filter>Header Files\gui\spipage_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\BackButton.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButtonBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\i2cpage_screen\I2CPageView.hpp">
       <Filter>Header Files\gui\i2cpage_screen</Filter>
     </ClInclude>
@@ -999,6 +1011,30 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\creditspage_screen\CreditsPageViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\creditspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toCarStatusPage.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_toCarStatusPageBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toMainScreen.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_toMainScreenBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\SeatWarmerButton.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SeatWarmerButtonBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\StatusButton.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\StatusButtonBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
