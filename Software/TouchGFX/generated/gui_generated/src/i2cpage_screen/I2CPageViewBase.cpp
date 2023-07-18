@@ -81,7 +81,7 @@ I2CPageViewBase::I2CPageViewBase()
     TempValue.resizeToCurrentText();
     TempValue.setTypedText(touchgfx::TypedText(T_TEMPFIELD));
 
-    FLAG_FIELD.setXY(12, 211);
+    FLAG_FIELD.setXY(10, 211);
     FLAG_FIELD.setColor(touchgfx::Color::getColorFromRGB(99, 198, 2));
     FLAG_FIELD.setLinespacing(0);
     FLAG_FIELD.setAlpha(0);

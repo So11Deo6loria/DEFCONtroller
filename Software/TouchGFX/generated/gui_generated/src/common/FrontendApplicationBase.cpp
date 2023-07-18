@@ -19,6 +19,12 @@
 #include <gui/i2cpage_screen/I2CPagePresenter.hpp>
 #include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverrideView.hpp>
 #include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverridePresenter.hpp>
+#include <gui/carstatuspage_screen/CarStatusPageView.hpp>
+#include <gui/carstatuspage_screen/CarStatusPagePresenter.hpp>
+#include <gui/commandspage_screen/CommandsPageView.hpp>
+#include <gui/commandspage_screen/CommandsPagePresenter.hpp>
+#include <gui/creditspage_screen/CreditsPageView.hpp>
+#include <gui/creditspage_screen/CreditsPagePresenter.hpp>
 
 using namespace touchgfx;
 

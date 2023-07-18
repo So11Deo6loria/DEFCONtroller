@@ -134,6 +134,7 @@
                   <listOptionValue builtIn="false" value="../../Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
                   <listOptionValue builtIn="false" value="C:/Users/natha/Dev/DEFCONtroller/Software/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
                   <listOptionValue builtIn="false" value="C:/Users/Tony/Documents/DEFCONProj/DEFCONtroller/Software/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
+                  <listOptionValue builtIn="false" value="C:/Users/rouseo2/DEFCONtroller/Software/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
                 </option>
                 <inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.input.351982862" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.input">
                   <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -265,6 +266,7 @@
                   <listOptionValue builtIn="false" value="C:/Users/natha/Dev/DEFCONtroller/Software/DEFCONtroller/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
                   <listOptionValue builtIn="false" value="C:/Users/natha/Dev/DEFCONtroller/Software/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
                   <listOptionValue builtIn="false" value="C:/Users/Tony/Documents/DEFCONProj/DEFCONtroller/Software/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
+                  <listOptionValue builtIn="false" value="C:/Users/rouseo2/DEFCONtroller/Software/Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc"/>
                 </option>
                 <inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.input.1556095232" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.linker.input">
                   <additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

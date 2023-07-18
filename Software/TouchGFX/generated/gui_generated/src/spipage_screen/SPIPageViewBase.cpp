@@ -66,7 +66,7 @@ SPIPageViewBase::SPIPageViewBase()
     ModelField.resizeToCurrentText();
     ModelField.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3GOW));
 
-    DebugField.setXY(12, 270);
+    DebugField.setXY(10, 270);
     DebugField.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     DebugField.setLinespacing(0);
     DebugField.setAlpha(150);

@@ -52,6 +52,15 @@
     <ClCompile Include="..\..\gui\src\can_insulinpumpoverride_screen\Can_InsulinPumpOverridePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\carstatuspage_screen\CarStatusPagePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\carstatuspage_screen\CarStatusPageView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\carstatuspage_screen\CarStatusPageViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\commandspage_screen\CommandsPagePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\commandspage_screen\CommandsPageView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\commandspage_screen\CommandsPageViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\creditspage_screen\CreditsPagePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\creditspage_screen\CreditsPageView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\creditspage_screen\CreditsPageViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -215,9 +224,7 @@
     <ClInclude Include="..\..\gui\include\gui\containers\I2C.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\I2CBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\i2cpage_screen\I2CPagePresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\jtagpage_screen\JTAGPagePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\spipage_screen\SPIPagePresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\uartpage_screen\UARTPagePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\BackButton.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButtonBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\i2cpage_screen\I2CPageView.hpp"/>
@@ -234,6 +241,15 @@
     <ClInclude Include="..\..\gui\include\gui\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\can_insulinpumpstatus_1_screen\Can_InsulinPumpStatus_1Presenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\carstatuspage_screen\CarStatusPagePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\carstatuspage_screen\CarStatusPageView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\carstatuspage_screen\CarStatusPageViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\commandspage_screen\CommandsPagePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\commandspage_screen\CommandsPageView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\commandspage_screen\CommandsPageViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\creditspage_screen\CreditsPagePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\creditspage_screen\CreditsPageView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\creditspage_screen\CreditsPageViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

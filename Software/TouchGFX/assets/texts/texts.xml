@@ -6,6 +6,30 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_GGNV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Sample :</Translation>
+      </Text>
+      <Text Id="__SingleUse_11TN" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">UART :</Translation>
+      </Text>
+      <Text Id="__SingleUse_2ZHJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Not Initiated</Translation>
+      </Text>
+      <Text Id="__SingleUse_X6N2" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_5ECD" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Self Destruction:</Translation>
+      </Text>
+      <Text Id="__SingleUse_LB3X" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB" />
+      </Text>
+      <Text Id="__SingleUse_DCAS" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Odometer:   89109</Translation>
+      </Text>
+      <Text Id="__SingleUse_GWKF" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Back</Translation>
+      </Text>
       <Text Id="WildCard" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">BHV_FLAG_EX</Translation>
       </Text>
@@ -20,9 +44,6 @@
       </Text>
       <Text Id="__SingleUse_NVER" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Back</Translation>
-      </Text>
-      <Text Id="__SingleUse_ZU6I" Alignment="Left" TypographyId="SPIWildcards">
-        <Translation Language="GB">DEVICE TESTING</Translation>
       </Text>
       <Text Id="pumpProtectWCStatus" Alignment="Left" TypographyId="SPIWildcards">
         <Translation Language="GB">Active</Translation>
@@ -210,7 +231,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="calibri.ttf" Size="24" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="A-Z,a-Z,1-9,.,_," />
+    <Typography Id="Default" Font="calibri.ttf" Size="30" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="A-Z,a-Z,1-9,.,_," />
     <Typography Id="Large" Font="calibri.ttf" Size="36" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
     <Typography Id="Small" Font="calibril.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="ExtraLarge" Font="calibri.ttf" Size="70" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890" />

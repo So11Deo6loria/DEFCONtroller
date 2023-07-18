@@ -16,14 +16,15 @@ MainMenuViewBase::MainMenuViewBase()
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    Image4.setXY(0, 0);
-    Image4.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND2_ID));
+    Background.setXY(0, 0);
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BLACK_BACKGROUND_ID));
 
-    spiMenuButton1.setXY(0, 216);
+    spiMenuButton1.setXY(0, 153);
 
     i2C1.setXY(0, 167);
+    i2C1.setVisible(false);
 
-    cAN1.setXY(0, 115);
+    cAN1.setXY(0, 103);
 
     Image5.setXY(60, 272);
     Image5.setBitmap(touchgfx::Bitmap(BITMAP_PROTIVITI_WSS_ID));
@@ -31,13 +32,14 @@ MainMenuViewBase::MainMenuViewBase()
     Image6.setXY(-4, 7);
     Image6.setBitmap(touchgfx::Bitmap(BITMAP_BHVL_TINY_ID));
 
-    Image7.setXY(7, 219);
+    Image7.setXY(7, 156);
     Image7.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_INFO_30_ID));
 
-    Image10.setXY(10, 115);
+    Image10.setXY(10, 103);
     Image10.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_DROP_OF_BLOOD_30_ID));
 
     Image11.setXY(10, 170);
+    Image11.setVisible(false);
     Image11.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_INSULIN_PEN_30_ID));
 
     seperator_1_1.setPosition(0, 260, 240, 18);
@@ -64,7 +66,7 @@ MainMenuViewBase::MainMenuViewBase()
     seperator_1_1_1.setAlpha(20);
 
     add(__background);
-    add(Image4);
+    add(Background);
     add(spiMenuButton1);
     add(i2C1);
     add(cAN1);

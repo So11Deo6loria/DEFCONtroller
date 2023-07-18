@@ -24,6 +24,12 @@
 #include <gui/i2cpage_screen/I2CPagePresenter.hpp>
 #include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverrideView.hpp>
 #include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverridePresenter.hpp>
+#include <gui/carstatuspage_screen/CarStatusPageView.hpp>
+#include <gui/carstatuspage_screen/CarStatusPagePresenter.hpp>
+#include <gui/commandspage_screen/CommandsPageView.hpp>
+#include <gui/commandspage_screen/CommandsPagePresenter.hpp>
+#include <gui/creditspage_screen/CreditsPageView.hpp>
+#include <gui/creditspage_screen/CreditsPagePresenter.hpp>
 
 
 /**
@@ -51,7 +57,10 @@ public:
             touchgfx::meta::TypeList< Can_InsulinPumpStatusView,
             touchgfx::meta::TypeList< I2CPageView,
             touchgfx::meta::TypeList< Can_InsulinPumpOverrideView,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< CarStatusPageView,
+            touchgfx::meta::TypeList< CommandsPageView,
+            touchgfx::meta::TypeList< CreditsPageView,
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -68,7 +77,10 @@ public:
             touchgfx::meta::TypeList< Can_InsulinPumpStatusPresenter,
             touchgfx::meta::TypeList< I2CPagePresenter,
             touchgfx::meta::TypeList< Can_InsulinPumpOverridePresenter,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< CarStatusPagePresenter,
+            touchgfx::meta::TypeList< CommandsPagePresenter,
+            touchgfx::meta::TypeList< CreditsPagePresenter,
+            touchgfx::meta::Nil > > > > > > >
             > GeneratedPresenterTypes;
 
     /**

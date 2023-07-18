@@ -211,9 +211,6 @@
     <Filter Include="Source Files\gui\uartpage_screen">
       <UniqueIdentifier>1760DE81-E319-7FEC-18F8-9A75E5EB4607</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\jtagpage_screen">
-      <UniqueIdentifier>F1B21941-36DB-09C6-181D-5A4E4829D1EF</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\gui\jtagpage_screen">
       <UniqueIdentifier>BAA7C4D8-A6B6-2813-6842-AAA8467DED9E</UniqueIdentifier>
     </Filter>
@@ -228,9 +225,6 @@
     </Filter>
     <Filter Include="Source Files\gui\spipage_screen">
       <UniqueIdentifier>77E7085D-1B9D-4870-DFE2-18864D15376B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\uartpage_screen">
-      <UniqueIdentifier>0071CDB3-2146-E419-CA9A-4128A5ABCDF3</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\i2cpage_screen">
       <UniqueIdentifier>81F47AA5-0A83-CBE9-BF86-F0EAB764D521</UniqueIdentifier>
@@ -258,6 +252,42 @@
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\can_insulinpumpoverride_screen">
       <UniqueIdentifier>835605B3-C4FC-8540-4DB2-B5CB83703E9C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\creditspage_screen">
+      <UniqueIdentifier>BFFD5A49-689F-A751-6997-488A70FBF506</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\creditspage_screen">
+      <UniqueIdentifier>51ECFF2B-FA5C-9B12-0CA0-0DD76FF21FA0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\commandspage_screen">
+      <UniqueIdentifier>5FE58DAF-0A3E-0D03-79EF-77EB4138FDE1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\commandspage_screen">
+      <UniqueIdentifier>58032B7A-53C4-40D6-15B4-7E480BAE4093</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\carstatuspage_screen">
+      <UniqueIdentifier>9B9DB525-5AAA-96A3-D690-ED0F970079F7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\carstatuspage_screen">
+      <UniqueIdentifier>2636ECAB-655A-05B8-6273-62A29029CAEA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\creditspage_screen">
+      <UniqueIdentifier>0F05D879-9410-EADA-31D8-CFBDFF6A9388</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\creditspage_screen">
+      <UniqueIdentifier>4C6227FB-CCCE-F3C4-C8FD-9DBEEB067890</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\commandspage_screen">
+      <UniqueIdentifier>0F2597C5-9215-6305-E656-11E3BF719210</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\commandspage_screen">
+      <UniqueIdentifier>34852281-9B17-1202-D3E0-890CBD1378B5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\carstatuspage_screen">
+      <UniqueIdentifier>83DD4AFA-AC14-329A-A8AB-4F59E7A50949</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\carstatuspage_screen">
+      <UniqueIdentifier>8459CF5B-AE48-86D2-92B8-5000F2D747F0</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -383,6 +413,33 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\can_insulinpumpoverride_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\carstatuspage_screen\CarStatusPagePresenter.cpp">
+      <Filter>Source Files\gui\carstatuspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\carstatuspage_screen\CarStatusPageView.cpp">
+      <Filter>Source Files\gui\carstatuspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\carstatuspage_screen\CarStatusPageViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\carstatuspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\commandspage_screen\CommandsPagePresenter.cpp">
+      <Filter>Source Files\gui\commandspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\commandspage_screen\CommandsPageView.cpp">
+      <Filter>Source Files\gui\commandspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\commandspage_screen\CommandsPageViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\commandspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\creditspage_screen\CreditsPagePresenter.cpp">
+      <Filter>Source Files\gui\creditspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\creditspage_screen\CreditsPageView.cpp">
+      <Filter>Source Files\gui\creditspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\creditspage_screen\CreditsPageViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\creditspage_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -865,14 +922,8 @@
     <ClInclude Include="..\..\gui\include\gui\i2cpage_screen\I2CPagePresenter.hpp">
       <Filter>Header Files\gui\i2cpage_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\jtagpage_screen\JTAGPagePresenter.hpp">
-      <Filter>Header Files\gui\jtagpage_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\spipage_screen\SPIPagePresenter.hpp">
       <Filter>Header Files\gui\spipage_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\uartpage_screen\UARTPagePresenter.hpp">
-      <Filter>Header Files\gui\uartpage_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\BackButton.hpp">
       <Filter>Header Files\gui\containers</Filter>
@@ -921,6 +972,33 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\can_insulinpumpstatus_1_screen\Can_InsulinPumpStatus_1Presenter.hpp">
       <Filter>Header Files\gui\can_insulinpumpstatus_1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\carstatuspage_screen\CarStatusPagePresenter.hpp">
+      <Filter>Header Files\gui\carstatuspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\carstatuspage_screen\CarStatusPageView.hpp">
+      <Filter>Header Files\gui\carstatuspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\carstatuspage_screen\CarStatusPageViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\carstatuspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\commandspage_screen\CommandsPagePresenter.hpp">
+      <Filter>Header Files\gui\commandspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\commandspage_screen\CommandsPageView.hpp">
+      <Filter>Header Files\gui\commandspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\commandspage_screen\CommandsPageViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\commandspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\creditspage_screen\CreditsPagePresenter.hpp">
+      <Filter>Header Files\gui\creditspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\creditspage_screen\CreditsPageView.hpp">
+      <Filter>Header Files\gui\creditspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\creditspage_screen\CreditsPageViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\creditspage_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -33,7 +33,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image Image4;
+    touchgfx::Image Background;
     SpiMenuButton spiMenuButton1;
     I2C i2C1;
     CAN cAN1;
