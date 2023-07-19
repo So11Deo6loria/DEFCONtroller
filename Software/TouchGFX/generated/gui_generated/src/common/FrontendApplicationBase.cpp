@@ -19,8 +19,8 @@
 #include <gui/i2cpage_screen/I2CPagePresenter.hpp>
 #include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverrideView.hpp>
 #include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverridePresenter.hpp>
-#include <gui/carstatuspage_screen/CarStatusPageView.hpp>
-#include <gui/carstatuspage_screen/CarStatusPagePresenter.hpp>
+#include <gui/statuspage_screen/StatusPageView.hpp>
+#include <gui/statuspage_screen/StatusPagePresenter.hpp>
 #include <gui/commandspage_screen/CommandsPageView.hpp>
 #include <gui/commandspage_screen/CommandsPagePresenter.hpp>
 #include <gui/creditspage_screen/CreditsPageView.hpp>
@@ -130,28 +130,28 @@ void FrontendApplicationBase::gotoCan_InsulinPumpOverrideScreenSlideTransitionEa
     touchgfx::makeTransition<Can_InsulinPumpOverrideView, Can_InsulinPumpOverridePresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// CarStatusPage
+// StatusPage
 
-void FrontendApplicationBase::gotoCarStatusPageScreenSlideTransitionEast()
+void FrontendApplicationBase::gotoStatusPageScreenSlideTransitionEast()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCarStatusPageScreenSlideTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoStatusPageScreenSlideTransitionEastImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoCarStatusPageScreenSlideTransitionEastImpl()
+void FrontendApplicationBase::gotoStatusPageScreenSlideTransitionEastImpl()
 {
-    touchgfx::makeTransition<CarStatusPageView, CarStatusPagePresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<StatusPageView, StatusPagePresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-void FrontendApplicationBase::gotoCarStatusPageScreenSlideTransitionWest()
+void FrontendApplicationBase::gotoStatusPageScreenSlideTransitionWest()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCarStatusPageScreenSlideTransitionWestImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoStatusPageScreenSlideTransitionWestImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoCarStatusPageScreenSlideTransitionWestImpl()
+void FrontendApplicationBase::gotoStatusPageScreenSlideTransitionWestImpl()
 {
-    touchgfx::makeTransition<CarStatusPageView, CarStatusPagePresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<StatusPageView, StatusPagePresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // CommandsPage

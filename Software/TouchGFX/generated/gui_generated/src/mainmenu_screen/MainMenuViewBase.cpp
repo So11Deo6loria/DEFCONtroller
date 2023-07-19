@@ -4,44 +4,66 @@
 #include <gui_generated/mainmenu_screen/MainMenuViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
+#include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
+
 
 MainMenuViewBase::MainMenuViewBase() :
     buttonCallback(this, &MainMenuViewBase::buttonCallbackHandler)
 {
 
+    touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
+
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     Background.setXY(0, 0);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND2_ID));
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    DVHID.setXY(96, 0);
-    DVHID.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
+    DVHID_Image.setXY(96, -3);
+    DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
 
-    image1.setXY(20, 93);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_SEDANRECOLORING_ID));
+    Sedan_Image.setXY(20, 71);
+    Sedan_Image.setBitmap(touchgfx::Bitmap(BITMAP_SEDANRECOLORING_ID));
 
-    forwardButton_toStatusPage.setXY(2, 254);
-    forwardButton_toStatusPage.setBitmaps(touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID), touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID));
-    forwardButton_toStatusPage.setAction(buttonCallback);
+    Status_Button.setXY(2, 249);
+    Status_Button.setBitmaps(touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID), touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID));
+    Status_Button.setAction(buttonCallback);
 
-    seatWarmerButton.setXY(130, 184);
-    seatWarmerButton.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_NOTWARM_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_ID));
+    SeatWarmer_Button.setXY(130, 174);
+    SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_NOTWARM_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_ID));
 
-    button1.setXY(14, 11);
-    button1.setBitmaps(touchgfx::Bitmap(BITMAP_UNLOCKED_ID), touchgfx::Bitmap(BITMAP_LOCKED_ID));
+    Lock_Button.setXY(14, 7);
+    Lock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_UNLOCKED_ID), touchgfx::Bitmap(BITMAP_LOCKED_ID));
 
-    toggleButton1.setXY(17, 184);
-    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_IGNITIONBUTTONOFF_ID), touchgfx::Bitmap(BITMAP_IGNITIONBUTTONON_ID));
+    Ignition_Button.setXY(17, 174);
+    Ignition_Button.setBitmaps(touchgfx::Bitmap(BITMAP_IGNITIONBUTTONOFF_ID), touchgfx::Bitmap(BITMAP_IGNITIONBUTTONON_ID));
+
+    Road_Line.setPosition(0, 138, 240, 36);
+    Road_LinePainter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Road_Line.setPainter(Road_LinePainter);
+    Road_Line.setStart(10, 10);
+    Road_Line.setEnd(230, 10);
+    Road_Line.setLineWidth(10);
+    Road_Line.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+
+    SeatWarmersDisable_Line.setPosition(130, 174, 94, 57);
+    SeatWarmersDisable_LinePainter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 17));
+    SeatWarmersDisable_Line.setPainter(SeatWarmersDisable_LinePainter);
+    SeatWarmersDisable_Line.setStart(5, 5);
+    SeatWarmersDisable_Line.setEnd(88, 50);
+    SeatWarmersDisable_Line.setLineWidth(10);
+    SeatWarmersDisable_Line.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
     add(__background);
     add(Background);
-    add(DVHID);
-    add(image1);
-    add(forwardButton_toStatusPage);
-    add(seatWarmerButton);
-    add(button1);
-    add(toggleButton1);
+    add(DVHID_Image);
+    add(Sedan_Image);
+    add(Status_Button);
+    add(SeatWarmer_Button);
+    add(Lock_Button);
+    add(Ignition_Button);
+    add(Road_Line);
+    add(SeatWarmersDisable_Line);
 }
 
 void MainMenuViewBase::setupScreen()
@@ -51,11 +73,11 @@ void MainMenuViewBase::setupScreen()
 
 void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &forwardButton_toStatusPage)
+    if (&src == &Status_Button)
     {
         //Interaction1
-        //When forwardButton_toStatusPage clicked change screen to CarStatusPage
-        //Go to CarStatusPage with screen transition towards East
-        application().gotoCarStatusPageScreenSlideTransitionEast();
+        //When Status_Button clicked change screen to StatusPage
+        //Go to StatusPage with screen transition towards East
+        application().gotoStatusPageScreenSlideTransitionEast();
     }
 }

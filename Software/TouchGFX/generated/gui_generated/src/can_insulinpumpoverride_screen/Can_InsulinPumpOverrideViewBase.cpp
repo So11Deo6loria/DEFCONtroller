@@ -62,7 +62,7 @@ Can_InsulinPumpOverrideViewBase::Can_InsulinPumpOverrideViewBase()
 
     backToPump1.setXY(0, 0);
 
-    InfoIcon.setXY(127, 51);
+    InfoIcon.setXY(205, 16);
     InfoIcon.setBitmap(touchgfx::Bitmap(BITMAP_INFO_24_ID));
 
     add(__background);

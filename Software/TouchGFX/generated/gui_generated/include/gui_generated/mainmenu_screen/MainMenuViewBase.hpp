@@ -11,6 +11,8 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/canvas/Line.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 
 class MainMenuViewBase : public touchgfx::View<MainMenuPresenter>
 {
@@ -29,12 +31,16 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
-    touchgfx::Image DVHID;
-    touchgfx::Image image1;
-    touchgfx::Button forwardButton_toStatusPage;
-    touchgfx::ToggleButton seatWarmerButton;
-    touchgfx::Button button1;
-    touchgfx::ToggleButton toggleButton1;
+    touchgfx::Image DVHID_Image;
+    touchgfx::Image Sedan_Image;
+    touchgfx::Button Status_Button;
+    touchgfx::ToggleButton SeatWarmer_Button;
+    touchgfx::Button Lock_Button;
+    touchgfx::ToggleButton Ignition_Button;
+    touchgfx::Line Road_Line;
+    touchgfx::PainterRGB565 Road_LinePainter;
+    touchgfx::Line SeatWarmersDisable_Line;
+    touchgfx::PainterRGB565 SeatWarmersDisable_LinePainter;
 
 private:
 
@@ -48,6 +54,11 @@ private:
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint16_t CANVAS_BUFFER_SIZE = 3600;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 };
 
 #endif // MAINMENUVIEWBASE_HPP

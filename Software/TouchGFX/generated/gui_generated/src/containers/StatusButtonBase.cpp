@@ -26,9 +26,9 @@ void StatusButtonBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
     if (&src == &ForwardButton_toStatusPage)
     {
         //Interaction1
-        //When ForwardButton_toStatusPage clicked change screen to CarStatusPage
-        //Go to CarStatusPage with screen transition towards East
-        application().gotoCarStatusPageScreenSlideTransitionEast();
+        //When ForwardButton_toStatusPage clicked change screen to StatusPage
+        //Go to StatusPage with screen transition towards East
+        application().gotoStatusPageScreenSlideTransitionEast();
     }
 }
 

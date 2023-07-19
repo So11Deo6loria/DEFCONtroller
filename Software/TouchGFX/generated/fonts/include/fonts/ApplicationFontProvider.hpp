@@ -27,7 +27,7 @@ struct TypographyFontIndex
 {
     static const touchgfx::FontId DEFAULT = 0;       // calibri_30_4bpp
     static const touchgfx::FontId LARGE = 1;         // calibri_23_4bpp
-    static const touchgfx::FontId SMALL = 2;         // calibril_16_4bpp
+    static const touchgfx::FontId SMALL = 2;         // calibri_16_4bpp
     static const touchgfx::FontId EXTRALARGE = 3;    // calibri_34_4bpp
     static const touchgfx::FontId TITLE = 4;         // calibril_48_4bpp
     static const touchgfx::FontId MAINPAGETITLE = 5; // calibri_20_4bpp

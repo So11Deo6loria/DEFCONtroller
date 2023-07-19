@@ -9,7 +9,7 @@
 #include <gui/commandspage_screen/CommandsPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <gui/containers/BackButton_toCarStatusPage.hpp>
+#include <gui/containers/BackButton_toStatusPage.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 
 class CommandsPageViewBase : public touchgfx::View<CommandsPagePresenter>
@@ -29,9 +29,9 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
-    BackButton_toCarStatusPage backButton_toCarStatusPage1;
-    touchgfx::Image DVHID;
-    touchgfx::TextArea textArea1;
+    BackButton_toStatusPage backButton_toCarStatusPage1;
+    touchgfx::Image DVHID_Image;
+    touchgfx::TextArea UART_Text;
     touchgfx::TextArea textArea1_1;
 
 private:

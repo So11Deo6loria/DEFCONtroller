@@ -3,36 +3,38 @@
     "Screens": [
       {
         "Name": "MainMenu",
+        "CanvasBufferSize": 3600,
         "Components": [
           {
             "Type": "Image",
             "Name": "Background",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "Background2.png"
+            "RelativeFilename": "Background_CLKGRD.png"
           },
           {
             "Type": "Image",
-            "Name": "DVHID",
+            "Name": "DVHID_Image",
             "X": 96,
+            "Y": -3,
             "Width": 144,
             "Height": 54,
             "RelativeFilename": "DVHID.png"
           },
           {
             "Type": "Image",
-            "Name": "image1",
+            "Name": "Sedan_Image",
             "X": 20,
-            "Y": 93,
+            "Y": 71,
             "Width": 200,
             "Height": 67,
             "RelativeFilename": "SedanRecoloring.png"
           },
           {
             "Type": "Button",
-            "Name": "forwardButton_toStatusPage",
+            "Name": "Status_Button",
             "X": 2,
-            "Y": 254,
+            "Y": 249,
             "Width": 237,
             "Height": 57,
             "Pressed": "StatusButton.png",
@@ -40,9 +42,9 @@
           },
           {
             "Type": "ToggleButton",
-            "Name": "seatWarmerButton",
+            "Name": "SeatWarmer_Button",
             "X": 130,
-            "Y": 184,
+            "Y": 174,
             "Width": 94,
             "Height": 57,
             "Pressed": "SeatWarmer.png",
@@ -50,9 +52,9 @@
           },
           {
             "Type": "Button",
-            "Name": "button1",
+            "Name": "Lock_Button",
             "X": 14,
-            "Y": 11,
+            "Y": 7,
             "Width": 50,
             "Height": 60,
             "Pressed": "locked.png",
@@ -60,13 +62,49 @@
           },
           {
             "Type": "ToggleButton",
-            "Name": "toggleButton1",
+            "Name": "Ignition_Button",
             "X": 17,
-            "Y": 184,
+            "Y": 174,
             "Width": 94,
             "Height": 57,
             "Pressed": "ignitionButtonOn.png",
             "Released": "ignitionButtonOff.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "Road_Line",
+            "Y": 138,
+            "Width": 240,
+            "Height": 36,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 10,
+            "StartY": 10,
+            "EndX": 230,
+            "EndY": 10,
+            "LineWidth": 10,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "SeatWarmersDisable_Line",
+            "X": 130,
+            "Y": 174,
+            "Width": 94,
+            "Height": 57,
+            "Color": {
+              "Red": 255,
+              "Blue": 17
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 88,
+            "EndY": 50,
+            "LineWidth": 10,
+            "LineEndingStyle": "Round"
           }
         ],
         "Interactions": [
@@ -74,13 +112,22 @@
             "InteractionName": "Interaction1",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "forwardButton_toStatusPage"
+              "TriggerComponent": "Status_Button"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "CarStatusPage"
+              "ActionComponent": "StatusPage"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionNone"
             }
           }
         ]
@@ -347,8 +394,8 @@
             "Name": "BloodSugarValueField",
             "X": 71,
             "Y": 44,
-            "Width": 59,
-            "Height": 85,
+            "Width": 29,
+            "Height": 42,
             "TextId": "__SingleUse_QNAS",
             "TextRotation": "0",
             "Color": {
@@ -663,8 +710,8 @@
             "Name": "PumpTitle",
             "X": 5,
             "Y": 47,
-            "Width": 195,
-            "Height": 29,
+            "Width": 243,
+            "Height": 37,
             "TextId": "__SingleUse_EYAC",
             "TextRotation": "0",
             "Color": {
@@ -752,8 +799,8 @@
             "Name": "PumpAllowedLabel",
             "X": 10,
             "Y": 248,
-            "Width": 167,
-            "Height": 29,
+            "Width": 209,
+            "Height": 37,
             "TextId": "PumpLabel",
             "TextRotation": "0",
             "Color": {
@@ -768,8 +815,8 @@
             "Name": "TempLabel",
             "X": 10,
             "Y": 182,
-            "Width": 131,
-            "Height": 29,
+            "Width": 164,
+            "Height": 37,
             "TextId": "__SingleUse_X2DD",
             "TextRotation": "0",
             "Color": {
@@ -784,8 +831,8 @@
             "Name": "PumpAllowedStatus",
             "X": 16,
             "Y": 277,
-            "Width": 88,
-            "Height": 29,
+            "Width": 110,
+            "Height": 37,
             "TextId": "PumpAllowedField",
             "TextRotation": "0",
             "Color": {
@@ -980,8 +1027,8 @@
           {
             "Type": "Image",
             "Name": "InfoIcon",
-            "X": 127,
-            "Y": 51,
+            "X": 205,
+            "Y": 16,
             "Width": 24,
             "Height": 24,
             "RelativeFilename": "info-24.png"
@@ -1001,7 +1048,7 @@
         ]
       },
       {
-        "Name": "CarStatusPage",
+        "Name": "StatusPage",
         "CanvasBufferSize": 3600,
         "Components": [
           {
@@ -1009,28 +1056,29 @@
             "Name": "Background",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "Background2.png"
+            "RelativeFilename": "Background_CLKGRD.png"
           },
           {
             "Type": "Image",
-            "Name": "DVHID",
-            "X": 96,
-            "Width": 144,
-            "Height": 54,
+            "Name": "DVHID_Image",
+            "X": 91,
+            "Width": 150,
+            "Height": 50,
             "RelativeFilename": "DVHID.png"
           },
           {
             "Type": "CustomContainerInstance",
             "Name": "backButton_toMainScreen1",
+            "X": 1,
             "Width": 240,
             "Height": 32,
             "CustomContainerDefinitionName": "BackButton_toMainScreen"
           },
           {
             "Type": "Button",
-            "Name": "forwardButton_toCreditsPage",
+            "Name": "CreditsPage_Button",
             "X": 2,
-            "Y": 254,
+            "Y": 249,
             "Width": 237,
             "Height": 57,
             "Pressed": "CreditsButton_Pressed.png",
@@ -1038,9 +1086,9 @@
           },
           {
             "Type": "Button",
-            "Name": "forwardButton_toCommandsPage",
+            "Name": "CodePage_Button",
             "X": 1,
-            "Y": 185,
+            "Y": 174,
             "Width": 237,
             "Height": 57,
             "Pressed": "CodeButton.png",
@@ -1048,9 +1096,9 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 4,
-            "Y": 64,
+            "Name": "Odometer_Text",
+            "X": 2,
+            "Y": 54,
             "Width": 230,
             "Height": 37,
             "TextId": "__SingleUse_DCAS",
@@ -1079,9 +1127,9 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1_2",
-            "X": 5,
-            "Y": 102,
+            "Name": "SelfDestruction_Text",
+            "X": 4,
+            "Y": 93,
             "Width": 202,
             "Height": 37,
             "TextId": "__SingleUse_5ECD",
@@ -1095,9 +1143,9 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1_2_1",
+            "Name": "SelfDestructCountd_Text",
             "X": 43,
-            "Y": 139,
+            "Y": 130,
             "Width": 153,
             "Height": 37,
             "TextId": "__SingleUse_X6N2",
@@ -1108,7 +1156,7 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_2ZHJ",
+              "TextId": "SELFDESTRUCT_WC",
               "UseBuffer": true,
               "BufferSize": 10
             }
@@ -1119,7 +1167,7 @@
             "InteractionName": "Interaction1",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "forwardButton_toCommandsPage"
+              "TriggerComponent": "CodePage_Button"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -1151,26 +1199,27 @@
             "Name": "Background",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "Background2.png"
+            "RelativeFilename": "Background_CLKGRD.png"
           },
           {
             "Type": "CustomContainerInstance",
             "Name": "backButton_toCarStatusPage1",
             "Width": 240,
             "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toCarStatusPage"
+            "CustomContainerDefinitionName": "BackButton_toStatusPage"
           },
           {
             "Type": "Image",
-            "Name": "DVHID",
+            "Name": "DVHID_Image",
             "X": 96,
+            "Y": -3,
             "Width": 144,
             "Height": 54,
             "RelativeFilename": "DVHID.png"
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1",
+            "Name": "UART_Text",
             "X": 7,
             "Y": 54,
             "Width": 81,
@@ -1212,44 +1261,45 @@
             "Name": "Background",
             "Width": 240,
             "Height": 320,
-            "RelativeFilename": "Background2.png"
+            "RelativeFilename": "Background_CLKGRD.png"
           },
           {
             "Type": "CustomContainerInstance",
             "Name": "backButton_toCarStatusPage1",
             "Width": 240,
             "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toCarStatusPage"
+            "CustomContainerDefinitionName": "BackButton_toStatusPage"
           },
           {
             "Type": "Image",
-            "Name": "DVHID",
+            "Name": "DVHID_Image",
             "X": 96,
+            "Y": -3,
             "Width": 144,
             "Height": 54,
             "RelativeFilename": "DVHID.png"
           },
           {
             "Type": "Image",
-            "Name": "image1",
+            "Name": "IOTVILLAGE_Image",
             "X": 72,
-            "Y": 154,
+            "Y": 157,
             "Width": 96,
             "Height": 96,
             "RelativeFilename": "IOT_Village.png"
           },
           {
             "Type": "Image",
-            "Name": "image2",
-            "X": -6,
-            "Y": 262,
+            "Name": "BIOHACKINGVILLAGE_Image",
+            "X": -5,
+            "Y": 267,
             "Width": 238,
             "Height": 32,
             "RelativeFilename": "BHVL_tiny.png"
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1",
+            "Name": "BroughtToYouBy_Text",
             "X": 18,
             "Y": 54,
             "Width": 204,
@@ -1265,10 +1315,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1_1",
+            "Name": "Name1_Text",
             "X": 59,
-            "Y": 82,
-            "Width": 109,
+            "Y": 88,
+            "Width": 110,
             "Height": 20,
             "TextId": "__SingleUse_0EXK",
             "TextRotation": "0",
@@ -1281,10 +1331,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1_1_1",
+            "Name": "Name2_Text",
             "X": 66,
-            "Y": 102,
-            "Width": 94,
+            "Y": 108,
+            "Width": 95,
             "Height": 20,
             "TextId": "__SingleUse_ZL2W",
             "TextRotation": "0",
@@ -1297,9 +1347,9 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1_1_2",
+            "Name": "Name3_Text",
             "X": 64,
-            "Y": 122,
+            "Y": 128,
             "Width": 98,
             "Height": 20,
             "TextId": "__SingleUse_0QPS",
@@ -1326,8 +1376,8 @@
             "Name": "textArea1",
             "X": 50,
             "Y": 3,
-            "Width": 178,
-            "Height": 29,
+            "Width": 222,
+            "Height": 37,
             "TextId": "__SingleUse_ZPGU",
             "TextRotation": "0",
             "Color": {
@@ -1474,8 +1524,8 @@
             "Name": "textArea1",
             "X": 50,
             "Y": 3,
-            "Width": 139,
-            "Height": 29,
+            "Width": 174,
+            "Height": 37,
             "TextId": "__SingleUse_7GW8",
             "TextRotation": "0",
             "Color": {
@@ -1547,8 +1597,8 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 24,
-            "Width": 46,
-            "Height": 29,
+            "Width": 57,
+            "Height": 37,
             "TextId": "__SingleUse_NVER",
             "TextRotation": "0",
             "Color": {
@@ -1859,7 +1909,7 @@
         ]
       },
       {
-        "Name": "BackButton_toCarStatusPage",
+        "Name": "BackButton_toStatusPage",
         "Width": 240,
         "Height": 32,
         "Components": [
@@ -1867,8 +1917,8 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 24,
-            "Width": 46,
-            "Height": 29,
+            "Width": 57,
+            "Height": 37,
             "TextId": "__SingleUse_GWKF",
             "TextRotation": "0",
             "Color": {
@@ -1961,7 +2011,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
-              "ActionComponent": "CarStatusPage"
+              "ActionComponent": "StatusPage"
             }
           }
         ]
@@ -1993,7 +2043,7 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "East",
-              "ActionComponent": "CarStatusPage"
+              "ActionComponent": "StatusPage"
             }
           }
         ]

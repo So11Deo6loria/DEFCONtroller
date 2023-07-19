@@ -17,49 +17,49 @@ CreditsPageViewBase::CreditsPageViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     Background.setXY(0, 0);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND2_ID));
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
     backButton_toCarStatusPage1.setXY(0, 0);
 
-    DVHID.setXY(96, 0);
-    DVHID.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
+    DVHID_Image.setXY(96, -3);
+    DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
 
-    image1.setXY(72, 154);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_IOT_VILLAGE_ID));
+    IOTVILLAGE_Image.setXY(72, 157);
+    IOTVILLAGE_Image.setBitmap(touchgfx::Bitmap(BITMAP_IOT_VILLAGE_ID));
 
-    image2.setXY(-6, 262);
-    image2.setBitmap(touchgfx::Bitmap(BITMAP_BHVL_TINY_ID));
+    BIOHACKINGVILLAGE_Image.setXY(-5, 267);
+    BIOHACKINGVILLAGE_Image.setBitmap(touchgfx::Bitmap(BITMAP_BHVL_TINY_ID));
 
-    textArea1.setXY(18, 54);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I348));
+    BroughtToYouBy_Text.setXY(18, 54);
+    BroughtToYouBy_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    BroughtToYouBy_Text.setLinespacing(0);
+    BroughtToYouBy_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I348));
 
-    textArea1_1.setXY(59, 82);
-    textArea1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1_1.setLinespacing(0);
-    textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0EXK));
+    Name1_Text.setXY(59, 88);
+    Name1_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Name1_Text.setLinespacing(0);
+    Name1_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0EXK));
 
-    textArea1_1_1.setXY(66, 102);
-    textArea1_1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1_1_1.setLinespacing(0);
-    textArea1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZL2W));
+    Name2_Text.setXY(66, 108);
+    Name2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Name2_Text.setLinespacing(0);
+    Name2_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZL2W));
 
-    textArea1_1_2.setXY(64, 122);
-    textArea1_1_2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1_1_2.setLinespacing(0);
-    textArea1_1_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0QPS));
+    Name3_Text.setXY(64, 128);
+    Name3_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Name3_Text.setLinespacing(0);
+    Name3_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0QPS));
 
     add(__background);
     add(Background);
     add(backButton_toCarStatusPage1);
-    add(DVHID);
-    add(image1);
-    add(image2);
-    add(textArea1);
-    add(textArea1_1);
-    add(textArea1_1_1);
-    add(textArea1_1_2);
+    add(DVHID_Image);
+    add(IOTVILLAGE_Image);
+    add(BIOHACKINGVILLAGE_Image);
+    add(BroughtToYouBy_Text);
+    add(Name1_Text);
+    add(Name2_Text);
+    add(Name3_Text);
 }
 
 void CreditsPageViewBase::setupScreen()

@@ -1,17 +1,17 @@
-#ifndef CARSTATUSPAGEPRESENTER_HPP
-#define CARSTATUSPAGEPRESENTER_HPP
+#ifndef STATUSPAGEPRESENTER_HPP
+#define STATUSPAGEPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class CarStatusPageView;
+class StatusPageView;
 
-class CarStatusPagePresenter : public touchgfx::Presenter, public ModelListener
+class StatusPagePresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    CarStatusPagePresenter(CarStatusPageView& v);
+    StatusPagePresenter(StatusPageView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~CarStatusPagePresenter() {};
+    virtual ~StatusPagePresenter() {};
 
 private:
-    CarStatusPagePresenter();
+    StatusPagePresenter();
 
-    CarStatusPageView& view;
+    StatusPageView& view;
 };
 
-#endif // CARSTATUSPAGEPRESENTER_HPP
+#endif // STATUSPAGEPRESENTER_HPP

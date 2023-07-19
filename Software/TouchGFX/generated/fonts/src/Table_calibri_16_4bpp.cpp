@@ -3,42 +3,42 @@
 #include <fonts/GeneratedFont.hpp>
 
 FONT_TABLE_LOCATION_FLASH_PRAGMA
-KEEP extern const touchgfx::GlyphNode glyphs_calibril_16_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE = {
-    {     0, 0x0030,   8,  11,  11,   0,   8,   0,   0, 0x00 },
-    {    44, 0x0031,   7,  11,  11,   1,   8,   0,   0, 0x00 },
-    {    88, 0x0032,   7,  11,  11,   1,   8,   0,   0, 0x00 },
-    {   132, 0x0036,   8,  11,  11,   0,   8,   0,   0, 0x00 },
-    {   176, 0x003F,   6,  12,  12,   1,   7,   0,   0, 0x00 },
-    {   212, 0x0040,  12,  13,  11,   1,  14,   0,   0, 0x00 },
-    {   290, 0x0044,   8,  11,  11,   1,  10,   0,   0, 0x00 },
-    {   334, 0x004E,   8,  11,  11,   1,  10,   0,   0, 0x00 },
-    {   378, 0x0053,   7,  11,  11,   0,   7,   0,   0, 0x00 },
-    {   422, 0x005F,   8,   1, 254,   0,   8,   0,   0, 0x60 },
-    {   426, 0x0061,   7,   8,   8,   0,   8,   0,   0, 0x00 },
-    {   458, 0x0063,   7,   8,   8,   0,   7,   0,   0, 0x00 },
-    {   490, 0x0065,   8,   8,   8,   0,   8,   0,   0, 0x00 },
-    {   522, 0x0068,   7,  12,  12,   1,   8,   0,   0, 0x00 },
-    {   570, 0x0069,   2,  11,  11,   1,   4,   0,   0, 0x00 },
-    {   581, 0x006C,   2,  12,  12,   1,   4,   0,   0, 0x00 },
-    {   593, 0x006D,  11,   8,   8,   1,  13,   0,   0, 0x00 },
-    {   641, 0x006F,   8,   8,   8,   0,   8,   0,   0, 0x00 },
-    {   673, 0x0072,   5,   8,   8,   1,   6,   0,   0, 0x00 },
-    {   697, 0x0073,   6,   8,   8,   0,   6,   0,   0, 0x00 },
-    {   721, 0x0074,   5,  10,  10,   0,   5,   0,   0, 0x00 },
-    {   751, 0x0075,   6,   8,   8,   1,   8,   0,   0, 0x00 }
+KEEP extern const touchgfx::GlyphNode glyphs_calibri_16_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE = {
+    {     0, 0x0030,   6,  10,  10,   1,   8,   0,   0, 0x00 },
+    {    30, 0x0031,   5,  10,  10,   2,   8,   0,   0, 0x00 },
+    {    60, 0x0032,   6,  10,  10,   1,   8,   0,   0, 0x00 },
+    {    90, 0x0036,   6,  10,  10,   1,   8,   0,   0, 0x00 },
+    {   120, 0x003F,   5,  11,  11,   1,   7,   0,   0, 0x00 },
+    {   153, 0x0040,  12,  12,  10,   1,  14,   0,   0, 0x00 },
+    {   225, 0x0044,   8,   9,  10,   1,  10,   0,   0, 0x00 },
+    {   261, 0x004E,   8,  10,  10,   1,  10,   0,   0, 0x00 },
+    {   301, 0x0053,   5,  10,  10,   1,   7,   0,   0, 0x00 },
+    {   331, 0x005F,   7,   1, 254,   0,   8,   0,   0, 0x60 },
+    {   335, 0x0061,   6,   7,   7,   1,   8,   0,   0, 0x00 },
+    {   356, 0x0063,   5,   7,   7,   1,   7,   0,   0, 0x00 },
+    {   377, 0x0065,   6,   7,   7,   1,   8,   0,   0, 0x00 },
+    {   398, 0x0068,   6,  11,  11,   1,   8,   0,   0, 0x00 },
+    {   431, 0x0069,   1,   9,   9,   1,   4,   0,   0, 0x00 },
+    {   440, 0x006C,   1,  11,  11,   1,   4,   0,   0, 0x00 },
+    {   451, 0x006D,   9,   7,   7,   1,  12,   0,   0, 0x00 },
+    {   486, 0x006F,   6,   7,   7,   1,   8,   0,   0, 0x00 },
+    {   507, 0x0072,   4,   7,   7,   1,   5,   0,   0, 0x00 },
+    {   521, 0x0073,   5,   7,   7,   1,   7,   0,   0, 0x00 },
+    {   542, 0x0074,   4,   9,   9,   0,   5,   0,   0, 0x00 },
+    {   560, 0x0075,   6,   7,   7,   1,   8,   0,   0, 0x00 }
 };
 
-// calibril_16_4bpp
+// calibri_16_4bpp
 FONT_TABLE_LOCATION_FLASH_PRAGMA
-KEEP extern const touchgfx::GlyphNode glyphs_calibril_16_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE;
+KEEP extern const touchgfx::GlyphNode glyphs_calibri_16_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE;
 FONT_GLYPH_LOCATION_FLASH_PRAGMA
-KEEP extern const uint8_t unicodes_calibril_16_4bpp_0[] FONT_GLYPH_LOCATION_FLASH_ATTRIBUTE;
+KEEP extern const uint8_t unicodes_calibri_16_4bpp_0[] FONT_GLYPH_LOCATION_FLASH_ATTRIBUTE;
 FONT_SEARCHTABLE_LOCATION_FLASH_PRAGMA
-KEEP extern const uint8_t* const unicodes_calibril_16_4bpp[] FONT_SEARCHTABLE_LOCATION_FLASH_ATTRIBUTE = {
-    unicodes_calibril_16_4bpp_0
+KEEP extern const uint8_t* const unicodes_calibri_16_4bpp[] FONT_SEARCHTABLE_LOCATION_FLASH_ATTRIBUTE = {
+    unicodes_calibri_16_4bpp_0
 };
 FONT_KERNING_LOCATION_FLASH_PRAGMA
-KEEP extern const touchgfx::KerningNode kerning_calibril_16_4bpp[] FONT_KERNING_LOCATION_FLASH_ATTRIBUTE;
+KEEP extern const touchgfx::KerningNode kerning_calibri_16_4bpp[] FONT_KERNING_LOCATION_FLASH_ATTRIBUTE;
 static const touchgfx::Unicode::UnicodeChar contextualForms4Long[][5] = {
     //                        key,    isol,   key2
     { /*0627 0644 0644 0647*/ 0x02ED, 0xFDF2, 0x0644, 0x0000, 0x0000 }, // ARABIC LIGATURE ALLAH
@@ -178,9 +178,9 @@ static const touchgfx::Unicode::UnicodeChar contextualForms06XX[][5] = {
     { /*06D3*/ 0x06D3, 0xFBB0, 0xFBB1, 0x0000, 0x0000 }  // ARABIC LETTER YEH BARREE WITH HAMZA ABOVE
 };
 
-extern const touchgfx::FontContextualFormsTable calibril_contextualFormsTable;
+extern const touchgfx::FontContextualFormsTable calibri_contextualFormsTable;
 
-const touchgfx::FontContextualFormsTable calibril_contextualFormsTable =
+const touchgfx::FontContextualFormsTable calibri_contextualFormsTable =
 {
     contextualForms4Long,
     contextualForms3Long,
@@ -195,10 +195,10 @@ const touchgfx::FontContextualFormsTable calibril_contextualFormsTable =
     sizeof(contextualForms06XX)/sizeof(contextualForms06XX[0])
 };
 
-touchgfx::GeneratedFont& getFont_calibril_16_4bpp();
+touchgfx::GeneratedFont& getFont_calibri_16_4bpp();
 
-touchgfx::GeneratedFont& getFont_calibril_16_4bpp()
+touchgfx::GeneratedFont& getFont_calibri_16_4bpp()
 {
-    static touchgfx::GeneratedFont calibril_16_4bpp(glyphs_calibril_16_4bpp, 22, 16, 3, 4, 1, 0, 0, unicodes_calibril_16_4bpp, kerning_calibril_16_4bpp, 63, 0, 0, &calibril_contextualFormsTable);
-    return calibril_16_4bpp;
+    static touchgfx::GeneratedFont calibri_16_4bpp(glyphs_calibri_16_4bpp, 22, 16, 3, 4, 1, 0, 0, unicodes_calibri_16_4bpp, kerning_calibri_16_4bpp, 63, 0, 0, &calibri_contextualFormsTable);
+    return calibri_16_4bpp;
 }

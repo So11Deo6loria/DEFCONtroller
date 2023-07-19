@@ -9,7 +9,7 @@
 #include <gui/creditspage_screen/CreditsPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <gui/containers/BackButton_toCarStatusPage.hpp>
+#include <gui/containers/BackButton_toStatusPage.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 
 class CreditsPageViewBase : public touchgfx::View<CreditsPagePresenter>
@@ -29,14 +29,14 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
-    BackButton_toCarStatusPage backButton_toCarStatusPage1;
-    touchgfx::Image DVHID;
-    touchgfx::Image image1;
-    touchgfx::Image image2;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea1_1;
-    touchgfx::TextArea textArea1_1_1;
-    touchgfx::TextArea textArea1_1_2;
+    BackButton_toStatusPage backButton_toCarStatusPage1;
+    touchgfx::Image DVHID_Image;
+    touchgfx::Image IOTVILLAGE_Image;
+    touchgfx::Image BIOHACKINGVILLAGE_Image;
+    touchgfx::TextArea BroughtToYouBy_Text;
+    touchgfx::TextArea Name1_Text;
+    touchgfx::TextArea Name2_Text;
+    touchgfx::TextArea Name3_Text;
 
 private:
 

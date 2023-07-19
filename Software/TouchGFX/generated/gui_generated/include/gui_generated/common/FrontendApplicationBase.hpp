@@ -39,10 +39,10 @@ public:
     // Can_InsulinPumpOverride
     void gotoCan_InsulinPumpOverrideScreenSlideTransitionEast();
 
-    // CarStatusPage
-    void gotoCarStatusPageScreenSlideTransitionEast();
+    // StatusPage
+    void gotoStatusPageScreenSlideTransitionEast();
 
-    void gotoCarStatusPageScreenSlideTransitionWest();
+    void gotoStatusPageScreenSlideTransitionWest();
 
     // CommandsPage
     void gotoCommandsPageScreenSlideTransitionEast();
@@ -74,10 +74,10 @@ protected:
     // Can_InsulinPumpOverride
     void gotoCan_InsulinPumpOverrideScreenSlideTransitionEastImpl();
 
-    // CarStatusPage
-    void gotoCarStatusPageScreenSlideTransitionEastImpl();
+    // StatusPage
+    void gotoStatusPageScreenSlideTransitionEastImpl();
 
-    void gotoCarStatusPageScreenSlideTransitionWestImpl();
+    void gotoStatusPageScreenSlideTransitionWestImpl();
 
     // CommandsPage
     void gotoCommandsPageScreenSlideTransitionEastImpl();

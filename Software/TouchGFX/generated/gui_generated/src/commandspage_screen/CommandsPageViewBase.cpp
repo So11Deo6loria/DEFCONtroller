@@ -17,17 +17,17 @@ CommandsPageViewBase::CommandsPageViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     Background.setXY(0, 0);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND2_ID));
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
     backButton_toCarStatusPage1.setXY(0, 0);
 
-    DVHID.setXY(96, 0);
-    DVHID.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
+    DVHID_Image.setXY(96, -3);
+    DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
 
-    textArea1.setXY(7, 54);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_11TN));
+    UART_Text.setXY(7, 54);
+    UART_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    UART_Text.setLinespacing(0);
+    UART_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_11TN));
 
     textArea1_1.setXY(7, 160);
     textArea1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -37,8 +37,8 @@ CommandsPageViewBase::CommandsPageViewBase()
     add(__background);
     add(Background);
     add(backButton_toCarStatusPage1);
-    add(DVHID);
-    add(textArea1);
+    add(DVHID_Image);
+    add(UART_Text);
     add(textArea1_1);
 }
 

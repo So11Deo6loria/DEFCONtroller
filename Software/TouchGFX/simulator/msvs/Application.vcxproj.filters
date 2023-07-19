@@ -265,12 +265,6 @@
     <Filter Include="Source Files\gui\commandspage_screen">
       <UniqueIdentifier>58032B7A-53C4-40D6-15B4-7E480BAE4093</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\carstatuspage_screen">
-      <UniqueIdentifier>9B9DB525-5AAA-96A3-D690-ED0F970079F7</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\carstatuspage_screen">
-      <UniqueIdentifier>2636ECAB-655A-05B8-6273-62A29029CAEA</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\generated\gui_generated\creditspage_screen">
       <UniqueIdentifier>0F05D879-9410-EADA-31D8-CFBDFF6A9388</UniqueIdentifier>
     </Filter>
@@ -283,11 +277,17 @@
     <Filter Include="Source Files\generated\gui_generated\commandspage_screen">
       <UniqueIdentifier>34852281-9B17-1202-D3E0-890CBD1378B5</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\carstatuspage_screen">
-      <UniqueIdentifier>83DD4AFA-AC14-329A-A8AB-4F59E7A50949</UniqueIdentifier>
+    <Filter Include="Header Files\gui\statuspage_screen">
+      <UniqueIdentifier>46861035-7083-D233-42FE-DAA6F0C52D36</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\carstatuspage_screen">
-      <UniqueIdentifier>8459CF5B-AE48-86D2-92B8-5000F2D747F0</UniqueIdentifier>
+    <Filter Include="Source Files\gui\statuspage_screen">
+      <UniqueIdentifier>8BCB546A-A74E-45B5-34BD-642ED6DF7A6C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\statuspage_screen">
+      <UniqueIdentifier>E2DF69FD-7A03-8D86-9D10-10FE59F07EA9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\statuspage_screen">
+      <UniqueIdentifier>CA2B5139-7F7E-D492-B46C-66FCEE09044C</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -408,15 +408,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\can_insulinpumpoverride_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\carstatuspage_screen\CarStatusPagePresenter.cpp">
-      <Filter>Source Files\gui\carstatuspage_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\carstatuspage_screen\CarStatusPageView.cpp">
-      <Filter>Source Files\gui\carstatuspage_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\carstatuspage_screen\CarStatusPageViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\carstatuspage_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\commandspage_screen\CommandsPagePresenter.cpp">
       <Filter>Source Files\gui\commandspage_screen</Filter>
     </ClCompile>
@@ -435,12 +426,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\creditspage_screen\CreditsPageViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\creditspage_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\BackButton_toCarStatusPage.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_toCarStatusPageBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\BackButton_toMainScreen.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
@@ -458,6 +443,21 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\StatusButtonBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\BackButton_toStatusPage.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_toStatusPageBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\statuspage_screen\StatusPagePresenter.cpp">
+      <Filter>Source Files\gui\statuspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\statuspage_screen\StatusPageView.cpp">
+      <Filter>Source Files\gui\statuspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\statuspage_screen\StatusPageViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\statuspage_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -985,15 +985,6 @@
     <ClInclude Include="..\..\gui\include\gui\can_insulinpumpstatus_1_screen\Can_InsulinPumpStatus_1Presenter.hpp">
       <Filter>Header Files\gui\can_insulinpumpstatus_1_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\carstatuspage_screen\CarStatusPagePresenter.hpp">
-      <Filter>Header Files\gui\carstatuspage_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\carstatuspage_screen\CarStatusPageView.hpp">
-      <Filter>Header Files\gui\carstatuspage_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\carstatuspage_screen\CarStatusPageViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\carstatuspage_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\commandspage_screen\CommandsPagePresenter.hpp">
       <Filter>Header Files\gui\commandspage_screen</Filter>
     </ClInclude>
@@ -1012,12 +1003,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\creditspage_screen\CreditsPageViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\creditspage_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toCarStatusPage.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_toCarStatusPageBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toMainScreen.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
@@ -1035,6 +1020,21 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\StatusButtonBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toStatusPage.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_toStatusPageBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\statuspage_screen\StatusPagePresenter.hpp">
+      <Filter>Header Files\gui\statuspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\statuspage_screen\StatusPageView.hpp">
+      <Filter>Header Files\gui\statuspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\statuspage_screen\StatusPageViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\statuspage_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
