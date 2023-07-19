@@ -1,6 +1,7 @@
-build/MINGW32_NT-6.2/gui/src/containers/CAN.o: gui/src/containers/CAN.cpp \
- gui/include/gui/containers/CAN.hpp \
- generated/gui_generated/include/gui_generated/containers/CANBase.hpp \
+build/MINGW32_NT-6.2/gui/src/containers/BackButton_toStatusPage.o: \
+ gui/src/containers/BackButton_toStatusPage.cpp \
+ gui/include/gui/containers/BackButton_toStatusPage.hpp \
+ generated/gui_generated/include/gui_generated/containers/BackButton_toStatusPageBase.hpp \
  gui/include/gui/common/FrontendApplication.hpp \
  generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
@@ -41,6 +42,20 @@ build/MINGW32_NT-6.2/gui/src/containers/CAN.o: gui/src/containers/CAN.cpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Rasterizer.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Outline.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Cell.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Renderer.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/RenderingBuffer.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Scanline.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp \
@@ -63,9 +78,9 @@ build/MINGW32_NT-6.2/gui/src/containers/CAN.o: gui/src/containers/CAN.cpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp
 
-gui/include/gui/containers/CAN.hpp:
+gui/include/gui/containers/BackButton_toStatusPage.hpp:
 
-generated/gui_generated/include/gui_generated/containers/CANBase.hpp:
+generated/gui_generated/include/gui_generated/containers/BackButton_toStatusPageBase.hpp:
 
 gui/include/gui/common/FrontendApplication.hpp:
 
@@ -146,6 +161,34 @@ gui/include/gui/model/Model.hpp:
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Rasterizer.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Outline.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Cell.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Renderer.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/RenderingBuffer.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Scanline.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp:
 

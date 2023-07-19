@@ -20,13 +20,14 @@ StatusPageViewBase::StatusPageViewBase() :
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    DVHID_Image.setXY(91, 0);
+    DVHID_Image.setXY(90, 0);
     DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
 
-    backButton_toMainScreen1.setXY(1, 0);
+    backButton_toMainScreen1.setXY(0, 0);
 
     CreditsPage_Button.setXY(2, 249);
     CreditsPage_Button.setBitmaps(touchgfx::Bitmap(BITMAP_CREDITSBUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_CREDITSBUTTON_PRESSED_ID));
+    CreditsPage_Button.setAction(buttonCallback);
 
     CodePage_Button.setXY(1, 174);
     CodePage_Button.setBitmaps(touchgfx::Bitmap(BITMAP_CODEBUTTON_ID), touchgfx::Bitmap(BITMAP_CODEBUTTON_ID));
@@ -53,7 +54,7 @@ StatusPageViewBase::StatusPageViewBase() :
     Unicode::snprintf(SelfDestructCountd_TextBuffer, SELFDESTRUCTCOUNTD_TEXT_SIZE, "%s", touchgfx::TypedText(T_SELFDESTRUCT_WC).getText());
     SelfDestructCountd_Text.setWildcard(SelfDestructCountd_TextBuffer);
     SelfDestructCountd_Text.resizeToCurrentText();
-    SelfDestructCountd_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_X6N2));
+    SelfDestructCountd_Text.setTypedText(touchgfx::TypedText(T_SELFDESTRUCTCOUNTD_TEXT));
 
     add(__background);
     add(Background);
@@ -74,7 +75,14 @@ void StatusPageViewBase::setupScreen()
 
 void StatusPageViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &CodePage_Button)
+    if (&src == &CreditsPage_Button)
+    {
+        //Interaction2
+        //When CreditsPage_Button clicked change screen to CreditsPage
+        //Go to CreditsPage with screen transition towards East
+        application().gotoCreditsPageScreenSlideTransitionEast();
+    }
+    else if (&src == &CodePage_Button)
     {
         //Interaction1
         //When CodePage_Button clicked change screen to CommandsPage

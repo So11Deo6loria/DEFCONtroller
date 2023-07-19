@@ -35,12 +35,12 @@ protected:
     touchgfx::Image Sedan_Image;
     touchgfx::Button Status_Button;
     touchgfx::ToggleButton SeatWarmer_Button;
-    touchgfx::Button Lock_Button;
     touchgfx::ToggleButton Ignition_Button;
     touchgfx::Line Road_Line;
     touchgfx::PainterRGB565 Road_LinePainter;
     touchgfx::Line SeatWarmersDisable_Line;
     touchgfx::PainterRGB565 SeatWarmersDisable_LinePainter;
+    touchgfx::ToggleButton Lock_Button;
 
 private:
 

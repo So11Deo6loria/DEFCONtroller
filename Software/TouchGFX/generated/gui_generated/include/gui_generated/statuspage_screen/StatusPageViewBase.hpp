@@ -43,7 +43,7 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t SELFDESTRUCTCOUNTD_TEXT_SIZE = 10;
+    static const uint16_t SELFDESTRUCTCOUNTD_TEXT_SIZE = 20;
     touchgfx::Unicode::UnicodeChar SelfDestructCountd_TextBuffer[SELFDESTRUCTCOUNTD_TEXT_SIZE];
 
 private:

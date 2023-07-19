@@ -24,31 +24,46 @@ CreditsPageViewBase::CreditsPageViewBase()
     DVHID_Image.setXY(96, -3);
     DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
 
-    IOTVILLAGE_Image.setXY(72, 157);
+    IOTVILLAGE_Image.setXY(141, 116);
     IOTVILLAGE_Image.setBitmap(touchgfx::Bitmap(BITMAP_IOT_VILLAGE_ID));
 
-    BIOHACKINGVILLAGE_Image.setXY(-5, 267);
+    BIOHACKINGVILLAGE_Image.setXY(-5, 274);
     BIOHACKINGVILLAGE_Image.setBitmap(touchgfx::Bitmap(BITMAP_BHVL_TINY_ID));
 
-    BroughtToYouBy_Text.setXY(18, 54);
+    BroughtToYouBy_Text.setXY(18, 73);
     BroughtToYouBy_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     BroughtToYouBy_Text.setLinespacing(0);
     BroughtToYouBy_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I348));
 
-    Name1_Text.setXY(59, 88);
+    Name1_Text.setXY(4, 144);
     Name1_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name1_Text.setLinespacing(0);
-    Name1_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0EXK));
+    Name1_Text.setTypedText(touchgfx::TypedText(T_NAME1_TEXT));
 
-    Name2_Text.setXY(66, 108);
+    Name2_Text.setXY(4, 168);
     Name2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name2_Text.setLinespacing(0);
-    Name2_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZL2W));
+    Name2_Text.setTypedText(touchgfx::TypedText(T_NAME2_TEXT));
 
-    Name3_Text.setXY(64, 128);
+    Name3_Text.setXY(4, 192);
     Name3_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name3_Text.setLinespacing(0);
-    Name3_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0QPS));
+    Name3_Text.setTypedText(touchgfx::TypedText(T_NAME3_TEXT));
+
+    GitHubs_Text.setXY(4, 116);
+    GitHubs_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    GitHubs_Text.setLinespacing(0);
+    GitHubs_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_70PO));
+
+    GitHubLink1_Text.setXY(3, 219);
+    GitHubLink1_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    GitHubLink1_Text.setLinespacing(0);
+    GitHubLink1_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_F578));
+
+    GitHubLink2_Text.setXY(3, 239);
+    GitHubLink2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    GitHubLink2_Text.setLinespacing(0);
+    GitHubLink2_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7XSH));
 
     add(__background);
     add(Background);
@@ -60,6 +75,9 @@ CreditsPageViewBase::CreditsPageViewBase()
     add(Name1_Text);
     add(Name2_Text);
     add(Name3_Text);
+    add(GitHubs_Text);
+    add(GitHubLink1_Text);
+    add(GitHubLink2_Text);
 }
 
 void CreditsPageViewBase::setupScreen()

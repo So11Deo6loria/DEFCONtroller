@@ -19,7 +19,7 @@ MainMenuViewBase::MainMenuViewBase() :
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    DVHID_Image.setXY(96, -3);
+    DVHID_Image.setXY(90, 0);
     DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
 
     Sedan_Image.setXY(20, 71);
@@ -31,9 +31,6 @@ MainMenuViewBase::MainMenuViewBase() :
 
     SeatWarmer_Button.setXY(130, 174);
     SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_NOTWARM_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_ID));
-
-    Lock_Button.setXY(14, 7);
-    Lock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_UNLOCKED_ID), touchgfx::Bitmap(BITMAP_LOCKED_ID));
 
     Ignition_Button.setXY(17, 174);
     Ignition_Button.setBitmaps(touchgfx::Bitmap(BITMAP_IGNITIONBUTTONOFF_ID), touchgfx::Bitmap(BITMAP_IGNITIONBUTTONON_ID));
@@ -54,16 +51,19 @@ MainMenuViewBase::MainMenuViewBase() :
     SeatWarmersDisable_Line.setLineWidth(10);
     SeatWarmersDisable_Line.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
+    Lock_Button.setXY(14, 11);
+    Lock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_UNLOCKED_ID), touchgfx::Bitmap(BITMAP_LOCKED_ID));
+
     add(__background);
     add(Background);
     add(DVHID_Image);
     add(Sedan_Image);
     add(Status_Button);
     add(SeatWarmer_Button);
-    add(Lock_Button);
     add(Ignition_Button);
     add(Road_Line);
     add(SeatWarmersDisable_Line);
+    add(Lock_Button);
 }
 
 void MainMenuViewBase::setupScreen()

@@ -27,13 +27,13 @@ struct TypographyFontIndex
 {
     static const touchgfx::FontId DEFAULT = 0;       // calibri_30_4bpp
     static const touchgfx::FontId LARGE = 1;         // calibri_23_4bpp
-    static const touchgfx::FontId SMALL = 2;         // calibri_16_4bpp
+    static const touchgfx::FontId SMALL = 2;         // calibri_20_4bpp
     static const touchgfx::FontId EXTRALARGE = 3;    // calibri_34_4bpp
     static const touchgfx::FontId TITLE = 4;         // calibril_48_4bpp
-    static const touchgfx::FontId MAINPAGETITLE = 5; // calibri_20_4bpp
-    static const touchgfx::FontId SPIWILDCARDS = 6;  // calibri_24_4bpp
-    static const touchgfx::FontId TYPOGRAPHY_00 = 7; // ARIALNB_TTF_20_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 8;
+    static const touchgfx::FontId MAINPAGETITLE = 2; // calibri_20_4bpp
+    static const touchgfx::FontId SPIWILDCARDS = 5;  // calibri_24_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_00 = 6; // ARIALNB_TTF_20_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 7;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

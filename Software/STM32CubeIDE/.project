@@ -315,26 +315,6 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Can_InsulinPumpOverridePresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/can_insulinpumpoverride_screen/Can_InsulinPumpOverridePresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Can_InsulinPumpOverrideView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/can_insulinpumpoverride_screen/Can_InsulinPumpOverrideView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Can_InsulinPumpStatusPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/can_insulinpumpstatus_screen/Can_InsulinPumpStatusPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Can_InsulinPumpStatusView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/can_insulinpumpstatus_screen/Can_InsulinPumpStatusView.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/CommandsPagePresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/commandspage_screen/CommandsPagePresenter.cpp</locationURI>
@@ -350,16 +330,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/BSUnits.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/BSUnits.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/BSUnits_1.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/BSUnits_1.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/BackButton_toMainScreen.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/BackButton_toMainScreen.cpp</locationURI>
@@ -370,29 +340,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/BackButton_toStatusPage.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/BackToPump.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/BackToPump.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/CAN.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/CAN.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/I2C.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/I2C.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/SeatWarmerButton.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SeatWarmerButton.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/SpiMenuButton.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SpiMenuButton.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/StatusButton.cpp</name>
@@ -410,21 +360,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/creditspage_screen/CreditsPageView.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/I2CPagePresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/i2cpage_screen/I2CPagePresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/I2CPageView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/i2cpage_screen/I2CPageView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/JTAGPagePresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/jtagpage_screen/JTAGPagePresenter.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/MainMenuPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/mainmenu_screen/MainMenuPresenter.cpp</locationURI>
@@ -440,16 +375,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/SPIPagePresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/spipage_screen/SPIPagePresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/SPIPageView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/spipage_screen/SPIPageView.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/StatusPagePresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/statuspage_screen/StatusPagePresenter.cpp</locationURI>
@@ -458,11 +383,6 @@
 			<name>Application/User/gui/StatusPageView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/statuspage_screen/StatusPageView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/UARTPagePresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/uartpage_screen/UARTPagePresenter.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/ApplicationFontProvider.cpp</name>
@@ -483,11 +403,6 @@
 			<name>Application/User/generated/Font_ARIALNB_TTF_20_4bpp_0.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_ARIALNB_TTF_20_4bpp_0.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Font_calibri_16_4bpp_0.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_calibri_16_4bpp_0.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Font_calibri_20_4bpp_0.cpp</name>
@@ -530,11 +445,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_ARIALNB_TTF_20_4bpp.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Kerning_calibri_16_4bpp.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_calibri_16_4bpp.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/Kerning_calibri_20_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_calibri_20_4bpp.cpp</locationURI>
@@ -568,11 +478,6 @@
 			<name>Application/User/generated/Table_ARIALNB_TTF_20_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_ARIALNB_TTF_20_4bpp.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Table_calibri_16_4bpp.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_calibri_16_4bpp.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Table_calibri_20_4bpp.cpp</name>
@@ -610,16 +515,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Can_InsulinPumpOverrideViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/can_insulinpumpoverride_screen/Can_InsulinPumpOverrideViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/Can_InsulinPumpStatusViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/can_insulinpumpstatus_screen/Can_InsulinPumpStatusViewBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/CommandsPageViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/commandspage_screen/CommandsPageViewBase.cpp</locationURI>
@@ -628,16 +523,6 @@
 			<name>Application/User/generated/FrontendApplicationBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/BSUnitsBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/BSUnitsBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/BSUnits_1Base.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/BSUnits_1Base.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/BackButton_toMainScreenBase.cpp</name>
@@ -650,29 +535,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/BackButton_toStatusPageBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/BackToPumpBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/BackToPumpBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/CANBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/CANBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/I2CBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/I2CBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/SeatWarmerButtonBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SeatWarmerButtonBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/SpiMenuButtonBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SpiMenuButtonBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/StatusButtonBase.cpp</name>
@@ -685,19 +550,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/creditspage_screen/CreditsPageViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/I2CPageViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/i2cpage_screen/I2CPageViewBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/MainMenuViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/mainmenu_screen/MainMenuViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/SPIPageViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/spipage_screen/SPIPageViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/StatusPageViewBase.cpp</name>
@@ -708,21 +563,6 @@
 			<name>Application/User/generated/BitmapDatabase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/BitmapDatabase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_Dark_Buttons_Round_medium.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Buttons_Round_medium.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_Dark_Buttons_Square_medium.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Buttons_Square_medium.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_BHVL.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_BHVL.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_BHVL_tiny.cpp</name>
@@ -750,39 +590,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_CodeButton.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_CommandsButton.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_CommandsButton.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_CreditsButton.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_CreditsButton.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_CreditsButton_Pressed.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_CreditsButton_Pressed.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_DEFCON.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_DEFCON.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_DVHID.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_DVHID.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_Gradient_background.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Gradient_background.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_Gradient_background_black.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Gradient_background_black.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_IOT_Village.cpp</name>
@@ -798,11 +613,6 @@
 			<name>Application/User/generated/image_SeatWarmer_NotWarm.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_SeatWarmer_NotWarm.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_Sedan.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Sedan.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_SedanRecoloring.cpp</name>
@@ -825,21 +635,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_StatusButton_Pressed.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_black_background.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_black_background.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_icons8-drop-of-blood-30.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_icons8-drop-of-blood-30.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_icons8-drop-of-blood-50.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_icons8-drop-of-blood-50.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_icons8-error-48.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_icons8-error-48.cpp</locationURI>
@@ -848,21 +643,6 @@
 			<name>Application/User/generated/image_icons8-info-30.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_icons8-info-30.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_icons8-insulin-pen-30.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_icons8-insulin-pen-30.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_icons8-insulin-pen-50.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_icons8-insulin-pen-50.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_icons8-lock-30.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_icons8-lock-30.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_ignitionButtonOff.cpp</name>

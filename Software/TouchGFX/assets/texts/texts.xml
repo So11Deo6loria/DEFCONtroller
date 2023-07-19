@@ -6,13 +6,22 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_0QPS" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_7XSH" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">So11Deo6loria/projectShield</Translation>
+      </Text>
+      <Text Id="__SingleUse_F578" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">https://github.com/</Translation>
+      </Text>
+      <Text Id="__SingleUse_70PO" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">GitHubs:</Translation>
+      </Text>
+      <Text Id="Name3_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@ocrouse2020</Translation>
       </Text>
-      <Text Id="__SingleUse_ZL2W" Alignment="Left" TypographyId="Small">
+      <Text Id="Name2_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@Nate_Sm1th</Translation>
       </Text>
-      <Text Id="__SingleUse_0EXK" Alignment="Left" TypographyId="Small">
+      <Text Id="Name1_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@So11Deo6loria</Translation>
       </Text>
       <Text Id="__SingleUse_I348" Alignment="Left" TypographyId="Large">
@@ -27,7 +36,7 @@
       <Text Id="SELFDESTRUCT_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Not Initiated</Translation>
       </Text>
-      <Text Id="__SingleUse_X6N2" Alignment="Left" TypographyId="Default">
+      <Text Id="SelfDestructCountd_Text" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_5ECD" Alignment="Left" TypographyId="Default">
@@ -45,15 +54,6 @@
       <Text Id="WildCard" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">BHV_FLAG_EX</Translation>
       </Text>
-      <Text Id="__SingleUse_4BQ5" Alignment="Left" TypographyId="SPIWildcards">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_IBAF" Alignment="Left" TypographyId="SPIWildcards">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_HD3N" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
       <Text Id="__SingleUse_NVER" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Back</Translation>
       </Text>
@@ -63,77 +63,20 @@
       <Text Id="TempWildCard" Alignment="Left" TypographyId="MainPageTitle">
         <Translation Language="GB">--</Translation>
       </Text>
-      <Text Id="__SingleUse_IRJ4" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">System Information</Translation>
-      </Text>
       <Text Id="TempField" Alignment="Left" TypographyId="SPIWildcards">
         <Translation Language="GB">&lt;&gt;F</Translation>
       </Text>
       <Text Id="PumpAllowedField" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_X2DD" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Temperature:</Translation>
-      </Text>
       <Text Id="PumpLabel" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Pump Operation:</Translation>
-      </Text>
-      <Text Id="__SingleUse_INY6" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">between 40F - 110F.</Translation>
-      </Text>
-      <Text Id="__SingleUse_IVUZ" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">the fluid temperature is </Translation>
-      </Text>
-      <Text Id="__SingleUse_7R3A" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">allowed to operate when</Translation>
-      </Text>
-      <Text Id="__SingleUse_T7NF" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">The insulin pump is only</Translation>
-      </Text>
-      <Text Id="__SingleUse_EYAC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Insulin Temperature</Translation>
       </Text>
       <Text Id="PumpStatusTextBuffer" Alignment="Left" TypographyId="MainPageTitle">
         <Translation Language="GB">Inactive</Translation>
       </Text>
       <Text Id="PumpStatusWC" Alignment="Left" TypographyId="MainPageTitle">
         <Translation Language="GB">Ac</Translation>
-      </Text>
-      <Text Id="__SingleUse_WVBV" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">dl</Translation>
-      </Text>
-      <Text Id="__SingleUse_2QBS" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">mg</Translation>
-      </Text>
-      <Text Id="__SingleUse_U1M9" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Back</Translation>
-      </Text>
-      <Text Id="__SingleUse_N18K" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">mode.</Translation>
-      </Text>
-      <Text Id="__SingleUse_8TK6" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">the device is in debug</Translation>
-      </Text>
-      <Text Id="__SingleUse_28E0" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">Can only be disabled when</Translation>
-      </Text>
-      <Text Id="__SingleUse_0E71" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">to maintain blood sugar. </Translation>
-      </Text>
-      <Text Id="__SingleUse_YNFC" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">trigger the insulin pump</Translation>
-      </Text>
-      <Text Id="__SingleUse_GA6S" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">Protections automically </Translation>
-      </Text>
-      <Text Id="__SingleUse_ECFH" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Protections</Translation>
-      </Text>
-      <Text Id="__SingleUse_E6IU" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_EZHH" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Protections</Translation>
       </Text>
       <Text Id="__SingleUse_WHEO" Alignment="Left" TypographyId="MainPageTitle">
         <Translation Language="GB">dl</Translation>
@@ -143,12 +86,6 @@
       </Text>
       <Text Id="__SingleUse_I7RK" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Home</Translation>
-      </Text>
-      <Text Id="__SingleUse_S4W2" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">dl</Translation>
-      </Text>
-      <Text Id="__SingleUse_GHS2" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">mg</Translation>
       </Text>
       <Text Id="__SingleUse_CSD1" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">dl</Translation>
@@ -168,62 +105,14 @@
       <Text Id="__SingleUse_0J63" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Home</Translation>
       </Text>
-      <Text Id="__SingleUse_HCLG" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">dl</Translation>
-      </Text>
-      <Text Id="__SingleUse_HOA2" Alignment="Left" TypographyId="MainPageTitle">
-        <Translation Language="GB">mg</Translation>
-      </Text>
-      <Text Id="__SingleUse_2APL" Alignment="Left" TypographyId="SPIWildcards">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_2SZA" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Insulin Pump</Translation>
-      </Text>
-      <Text Id="__SingleUse_7GW8" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Blood Glucose</Translation>
-      </Text>
-      <Text Id="__SingleUse_HWXY" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Insulin Stats</Translation>
-      </Text>
-      <Text Id="__SingleUse_65D4" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Not Enabled</Translation>
-      </Text>
-      <Text Id="__SingleUse_DQ8S" Alignment="Left" TypographyId="SPIWildcards">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_3GOW" Alignment="Left" TypographyId="SPIWildcards">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_DSUZ" Alignment="Left" TypographyId="SPIWildcards">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_EVT1" Alignment="Left" TypographyId="SPIWildcards">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_ZPGU" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Pump Information</Translation>
-      </Text>
       <Text Id="ModelWildCard" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Checking</Translation>
       </Text>
       <Text Id="SerialNumbWildCard" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">1.0.233</Translation>
       </Text>
-      <Text Id="__SingleUse_X252" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Debug:</Translation>
-      </Text>
-      <Text Id="__SingleUse_KD8N" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Model Number:</Translation>
-      </Text>
-      <Text Id="__SingleUse_WG3I" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Software Ver:</Translation>
-      </Text>
       <Text Id="PumpAllowedWildCard" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Checking</Translation>
-      </Text>
-      <Text Id="__SingleUse_ETWL" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Serial Number:</Translation>
       </Text>
       <Text Id="ListItemTextField" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">List Item</Translation>
@@ -237,15 +126,12 @@
       <Text Id="BSValueWildCard" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">- -</Translation>
       </Text>
-      <Text Id="__SingleUse_QNAS" Alignment="Center" TypographyId="ExtraLarge">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
     </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="calibri.ttf" Size="30" Bpp="4" Direction="RTL" FallbackCharacter="?" WildcardCharacters="A-Z,a-Z,1-9,.,_," />
     <Typography Id="Large" Font="calibri.ttf" Size="23" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
-    <Typography Id="Small" Font="calibri.ttf" Size="16" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="ExtraLarge" Font="calibri.ttf" Size="34" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890" />
     <Typography Id="Title" Font="calibril.ttf" Size="48" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="MainPageTitle" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,." />

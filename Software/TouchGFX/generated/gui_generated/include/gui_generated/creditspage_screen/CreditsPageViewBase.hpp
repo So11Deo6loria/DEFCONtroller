@@ -37,6 +37,9 @@ protected:
     touchgfx::TextArea Name1_Text;
     touchgfx::TextArea Name2_Text;
     touchgfx::TextArea Name3_Text;
+    touchgfx::TextArea GitHubs_Text;
+    touchgfx::TextArea GitHubLink1_Text;
+    touchgfx::TextArea GitHubLink2_Text;
 
 private:
 

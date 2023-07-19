@@ -25,20 +25,6 @@ public:
 
     void gotoMainMenuScreenSlideTransitionWest();
 
-    // SPIPage
-    void gotoSPIPageScreenSlideTransitionEast();
-
-    // Can_InsulinPumpStatus
-    void gotoCan_InsulinPumpStatusScreenSlideTransitionEast();
-
-    void gotoCan_InsulinPumpStatusScreenSlideTransitionWest();
-
-    // I2CPage
-    void gotoI2CPageScreenSlideTransitionEast();
-
-    // Can_InsulinPumpOverride
-    void gotoCan_InsulinPumpOverrideScreenSlideTransitionEast();
-
     // StatusPage
     void gotoStatusPageScreenSlideTransitionEast();
 
@@ -59,20 +45,6 @@ protected:
     void gotoMainMenuScreenNoTransitionImpl();
 
     void gotoMainMenuScreenSlideTransitionWestImpl();
-
-    // SPIPage
-    void gotoSPIPageScreenSlideTransitionEastImpl();
-
-    // Can_InsulinPumpStatus
-    void gotoCan_InsulinPumpStatusScreenSlideTransitionEastImpl();
-
-    void gotoCan_InsulinPumpStatusScreenSlideTransitionWestImpl();
-
-    // I2CPage
-    void gotoI2CPageScreenSlideTransitionEastImpl();
-
-    // Can_InsulinPumpOverride
-    void gotoCan_InsulinPumpOverrideScreenSlideTransitionEastImpl();
 
     // StatusPage
     void gotoStatusPageScreenSlideTransitionEastImpl();

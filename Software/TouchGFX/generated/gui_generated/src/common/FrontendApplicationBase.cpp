@@ -11,14 +11,6 @@
 #include <platform/driver/lcd/LCD16bpp.hpp>
 #include <gui/mainmenu_screen/MainMenuView.hpp>
 #include <gui/mainmenu_screen/MainMenuPresenter.hpp>
-#include <gui/spipage_screen/SPIPageView.hpp>
-#include <gui/spipage_screen/SPIPagePresenter.hpp>
-#include <gui/can_insulinpumpstatus_screen/Can_InsulinPumpStatusView.hpp>
-#include <gui/can_insulinpumpstatus_screen/Can_InsulinPumpStatusPresenter.hpp>
-#include <gui/i2cpage_screen/I2CPageView.hpp>
-#include <gui/i2cpage_screen/I2CPagePresenter.hpp>
-#include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverrideView.hpp>
-#include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverridePresenter.hpp>
 #include <gui/statuspage_screen/StatusPageView.hpp>
 #include <gui/statuspage_screen/StatusPagePresenter.hpp>
 #include <gui/commandspage_screen/CommandsPageView.hpp>
@@ -65,69 +57,6 @@ void FrontendApplicationBase::gotoMainMenuScreenSlideTransitionWest()
 void FrontendApplicationBase::gotoMainMenuScreenSlideTransitionWestImpl()
 {
     touchgfx::makeTransition<MainMenuView, MainMenuPresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// SPIPage
-
-void FrontendApplicationBase::gotoSPIPageScreenSlideTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSPIPageScreenSlideTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoSPIPageScreenSlideTransitionEastImpl()
-{
-    touchgfx::makeTransition<SPIPageView, SPIPagePresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// Can_InsulinPumpStatus
-
-void FrontendApplicationBase::gotoCan_InsulinPumpStatusScreenSlideTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCan_InsulinPumpStatusScreenSlideTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoCan_InsulinPumpStatusScreenSlideTransitionEastImpl()
-{
-    touchgfx::makeTransition<Can_InsulinPumpStatusView, Can_InsulinPumpStatusPresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-void FrontendApplicationBase::gotoCan_InsulinPumpStatusScreenSlideTransitionWest()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCan_InsulinPumpStatusScreenSlideTransitionWestImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoCan_InsulinPumpStatusScreenSlideTransitionWestImpl()
-{
-    touchgfx::makeTransition<Can_InsulinPumpStatusView, Can_InsulinPumpStatusPresenter, touchgfx::SlideTransition<WEST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// I2CPage
-
-void FrontendApplicationBase::gotoI2CPageScreenSlideTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoI2CPageScreenSlideTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoI2CPageScreenSlideTransitionEastImpl()
-{
-    touchgfx::makeTransition<I2CPageView, I2CPagePresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// Can_InsulinPumpOverride
-
-void FrontendApplicationBase::gotoCan_InsulinPumpOverrideScreenSlideTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCan_InsulinPumpOverrideScreenSlideTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoCan_InsulinPumpOverrideScreenSlideTransitionEastImpl()
-{
-    touchgfx::makeTransition<Can_InsulinPumpOverrideView, Can_InsulinPumpOverridePresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // StatusPage
