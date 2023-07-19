@@ -340,11 +340,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/BackButton_toStatusPage.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/SeatWarmerButton.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SeatWarmerButton.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/StatusButton.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/StatusButton.cpp</locationURI>
@@ -535,11 +530,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/BackButton_toStatusPageBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/SeatWarmerButtonBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SeatWarmerButtonBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/StatusButtonBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/StatusButtonBase.cpp</locationURI>
@@ -610,14 +600,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_IOT_Village.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_SeatWarmer.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_SeatWarmer.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_SeatWarmer_NotWarm.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_SeatWarmer_NotWarm.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_SeatWarmer_Warm.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_SeatWarmer_Warm.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_SedanRecoloring.cpp</name>

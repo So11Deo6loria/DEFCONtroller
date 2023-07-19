@@ -6,7 +6,7 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_ZH7Y" Alignment="Left" TypographyId="Small">
+      <Text Id="RadioStation_WildCard" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Off</Translation>
       </Text>
       <Text Id="__SingleUse_0XMK" Alignment="Left" TypographyId="Small">

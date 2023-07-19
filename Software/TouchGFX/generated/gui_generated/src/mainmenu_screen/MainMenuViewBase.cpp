@@ -31,53 +31,37 @@ MainMenuViewBase::MainMenuViewBase() :
     Status_Button.setAction(buttonCallback);
 
     SeatWarmer_Button.setXY(129, 186);
-    SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_NOTWARM_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_ID));
+    SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_NOTWARM_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_WARM_ID));
 
     Ignition_Button.setXY(15, 186);
     Ignition_Button.setBitmaps(touchgfx::Bitmap(BITMAP_IGNITIONBUTTONOFF_ID), touchgfx::Bitmap(BITMAP_IGNITIONBUTTONON_ID));
 
-    Road_Line.setPosition(2, 138, 240, 36);
-    Road_LinePainter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Road_Line.setPosition(1, 138, 240, 37);
+    Road_LinePainter.setColor(touchgfx::Color::getColorFromRGB(191, 191, 191));
     Road_Line.setPainter(Road_LinePainter);
-    Road_Line.setStart(19, 17);
-    Road_Line.setEnd(218, 17);
+    Road_Line.setStart(17, 17);
+    Road_Line.setEnd(221, 17);
     Road_Line.setLineWidth(33);
     Road_Line.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    SeatWarmersDisable_Line.setPosition(130, 187, 94, 57);
+    SeatWarmersDisable_Line.setPosition(129, 186, 94, 57);
     SeatWarmersDisable_LinePainter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 17));
     SeatWarmersDisable_Line.setPainter(SeatWarmersDisable_LinePainter);
-    SeatWarmersDisable_Line.setStart(5, 5);
+    SeatWarmersDisable_Line.setStart(6, 6);
     SeatWarmersDisable_Line.setEnd(88, 50);
     SeatWarmersDisable_Line.setLineWidth(10);
     SeatWarmersDisable_Line.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    Lock_Button.setXY(4, 4);
+    Lock_Button.setXY(5, 5);
     Lock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_UNLOCKED_ID), touchgfx::Bitmap(BITMAP_LOCKED_ID));
 
-    circle1.setPosition(-18, 115, 82, 80);
-    circle1.setCenter(40, 40);
-    circle1.setRadius(15);
-    circle1.setLineWidth(0);
-    circle1.setArc(0, 360);
-    circle1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    circle1.setPainter(circle1Painter);
+    box1.setPosition(44, 145, 152, 22);
+    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
 
-    circle1_1.setPosition(179, 115, 82, 80);
-    circle1_1.setCenter(40, 40);
-    circle1_1.setRadius(15);
-    circle1_1.setLineWidth(0);
-    circle1_1.setArc(0, 360);
-    circle1_1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    circle1_1.setPainter(circle1_1Painter);
-
-    box1.setPosition(45, 145, 152, 22);
-    box1.setColor(touchgfx::Color::getColorFromRGB(219, 200, 164));
-
-    textArea1.setXY(45, 144);
+    textArea1.setXY(44, 144);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1.setLinespacing(0);
-    textArea1.setWildcard(touchgfx::TypedText(T___SINGLEUSE_ZH7Y).getText());
+    textArea1.setWildcard(touchgfx::TypedText(T_RADIOSTATION_WILDCARD).getText());
     textArea1.resizeToCurrentText();
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0XMK));
 
@@ -90,6 +74,24 @@ MainMenuViewBase::MainMenuViewBase() :
     Brake_Image.setXY(85, 90);
     Brake_Image.setBitmap(touchgfx::Bitmap(BITMAP_BRAKELIGHT_ID));
 
+    shape1.setPosition(199, 147, 42, 30);
+    shape1.setOrigin(0.000f, 0.000f);
+    shape1.setScale(1.000f, 1.000f);
+    shape1.setAngle(0.000f);
+    shape1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    shape1.setPainter(shape1Painter);
+    const touchgfx::AbstractShape::ShapePoint<float> shape1Points[3] = { { 15.000f, 0.000f }, { 30.000f, 20.000f }, { 0.000f, 20.000f } };
+    shape1.setShape(shape1Points);
+
+    shape1_1.setPosition(10, 145, 42, 30);
+    shape1_1.setOrigin(0.000f, 0.000f);
+    shape1_1.setScale(1.000f, 1.000f);
+    shape1_1.setAngle(0.000f);
+    shape1_1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    shape1_1.setPainter(shape1_1Painter);
+    const touchgfx::AbstractShape::ShapePoint<float> shape1_1Points[3] = { { 15.000f, 20.000f }, { 30.000f, 0.000f }, { 0.000f, 0.000f } };
+    shape1_1.setShape(shape1_1Points);
+
     add(__background);
     add(Background);
     add(DVHID_Image);
@@ -100,13 +102,13 @@ MainMenuViewBase::MainMenuViewBase() :
     add(Road_Line);
     add(SeatWarmersDisable_Line);
     add(Lock_Button);
-    add(circle1);
-    add(circle1_1);
     add(box1);
     add(textArea1);
     add(Headlights_Image);
     add(CheckEngine_Image);
     add(Brake_Image);
+    add(shape1);
+    add(shape1_1);
 }
 
 void MainMenuViewBase::setupScreen()

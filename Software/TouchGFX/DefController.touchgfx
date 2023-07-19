@@ -46,7 +46,7 @@
             "Y": 186,
             "Width": 94,
             "Height": 57,
-            "Pressed": "SeatWarmer.png",
+            "Pressed": "SeatWarmer_Warm.png",
             "Released": "SeatWarmer_NotWarm.png"
           },
           {
@@ -62,18 +62,18 @@
           {
             "Type": "Line",
             "Name": "Road_Line",
-            "X": 2,
+            "X": 1,
             "Y": 138,
             "Width": 240,
-            "Height": 36,
+            "Height": 37,
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 191,
+              "Green": 191,
+              "Blue": 191
             },
-            "StartX": 19,
+            "StartX": 17,
             "StartY": 17,
-            "EndX": 218,
+            "EndX": 221,
             "EndY": 17,
             "LineWidth": 33,
             "LineEndingStyle": "Round"
@@ -81,16 +81,16 @@
           {
             "Type": "Line",
             "Name": "SeatWarmersDisable_Line",
-            "X": 130,
-            "Y": 187,
+            "X": 129,
+            "Y": 186,
             "Width": 94,
             "Height": 57,
             "Color": {
               "Red": 255,
               "Blue": 17
             },
-            "StartX": 5,
-            "StartY": 5,
+            "StartX": 6,
+            "StartY": 6,
             "EndX": 88,
             "EndY": 50,
             "LineWidth": 10,
@@ -99,56 +99,30 @@
           {
             "Type": "ToggleButton",
             "Name": "Lock_Button",
-            "X": 4,
-            "Y": 4,
+            "X": 5,
+            "Y": 5,
             "Width": 50,
             "Height": 60,
             "Pressed": "locked.png",
             "Released": "unlocked.png"
           },
           {
-            "Type": "Circle",
-            "Name": "circle1",
-            "X": -18,
-            "Y": 115,
-            "Width": 82,
-            "Height": 80,
-            "CenterX": 40,
-            "CenterY": 40,
-            "Radius": 15,
-            "EndAngle": 360,
-            "CapPrecision": "Butt"
-          },
-          {
-            "Type": "Circle",
-            "Name": "circle1_1",
-            "X": 179,
-            "Y": 115,
-            "Width": 82,
-            "Height": 80,
-            "CenterX": 40,
-            "CenterY": 40,
-            "Radius": 15,
-            "EndAngle": 360,
-            "CapPrecision": "Butt"
-          },
-          {
             "Type": "Box",
             "Name": "box1",
-            "X": 45,
+            "X": 44,
             "Y": 145,
             "Width": 152,
             "Height": 22,
             "Color": {
-              "Red": 219,
-              "Green": 200,
-              "Blue": 164
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
             }
           },
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 45,
+            "X": 44,
             "Y": 144,
             "Width": 143,
             "Height": 24,
@@ -156,7 +130,7 @@
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_ZH7Y"
+              "TextId": "RadioStation_WildCard"
             }
           },
           {
@@ -185,6 +159,48 @@
             "Width": 25,
             "Height": 25,
             "RelativeFilename": "BrakeLight.png"
+          },
+          {
+            "Type": "Shape",
+            "Name": "shape1",
+            "X": 199,
+            "Y": 147,
+            "Width": 42,
+            "Height": 30,
+            "Points": [
+              {
+                "X": 15.0
+              },
+              {
+                "X": 30.0,
+                "Y": 20.0
+              },
+              {
+                "Y": 20.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0
+          },
+          {
+            "Type": "Shape",
+            "Name": "shape1_1",
+            "X": 10,
+            "Y": 145,
+            "Width": 42,
+            "Height": 30,
+            "Points": [
+              {
+                "X": 15.0,
+                "Y": 20.0
+              },
+              {
+                "X": 30.0
+              },
+              {}
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0
           }
         ],
         "Interactions": [
@@ -826,43 +842,6 @@
             }
           }
         ]
-      },
-      {
-        "Name": "SeatWarmerButton",
-        "X": 35,
-        "Y": 97,
-        "Width": 97,
-        "Height": 63,
-        "Components": [
-          {
-            "Type": "ToggleButton",
-            "Name": "SeatWarmerButton",
-            "X": 1,
-            "Y": 3,
-            "Width": 94,
-            "Height": 57,
-            "Pressed": "SeatWarmer.png",
-            "Released": "SeatWarmer_NotWarm.png"
-          },
-          {
-            "Type": "Line",
-            "Name": "SeatWarmer_DisableLine",
-            "X": 1,
-            "Y": 3,
-            "Width": 94,
-            "Height": 57,
-            "Color": {
-              "Red": 255
-            },
-            "StartX": 5,
-            "StartY": 5,
-            "EndX": 95,
-            "EndY": 57,
-            "LineWidth": 10,
-            "LineEndingStyle": "Round"
-          }
-        ],
-        "Interactions": []
       }
     ],
     "Name": "DEFCONtroller",
