@@ -9,44 +9,47 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    310, // T___SingleUse_ZH7Y
+    85, // T___SingleUse_0XMK
+    310, // T_Radio_Text
     0, // T___SingleUse_7XSH
     28, // T___SingleUse_F578
-    227, // T___SingleUse_70PO
-    148, // T_Name3_Text
-    161, // T_Name2_Text
-    119, // T_Name1_Text
+    244, // T___SingleUse_70PO
+    165, // T_Name3_Text
+    178, // T_Name2_Text
+    136, // T_Name1_Text
     48, // T___SingleUse_I348
-    245, // T___SingleUse_GGNV
-    269, // T___SingleUse_11TN
-    134, // T_SELFDESTRUCT_WC
-    296, // T_SelfDestructCountd_Text
-    85, // T___SingleUse_5ECD
+    262, // T___SingleUse_GGNV
+    286, // T___SingleUse_11TN
+    151, // T_SELFDESTRUCT_WC
+    100, // T_SelfDestructCountd_Text
+    102, // T___SingleUse_5ECD
     27, // T___SingleUse_LB3X
     67, // T___SingleUse_DCAS
-    276, // T___SingleUse_GWKF
-    173, // T_WildCard
-    276, // T___SingleUse_NVER
-    262, // T_pumpProtectWCStatus
-    293, // T_TempWildCard
-    290, // T_TempField
-    296, // T_PumpAllowedField
-    103, // T_PumpLabel
-    236, // T_PumpStatusTextBuffer
-    298, // T_PumpStatusWC
-    301, // T___SingleUse_WHEO
-    304, // T___SingleUse_6AGJ
-    281, // T___SingleUse_I7RK
-    301, // T___SingleUse_CSD1
-    304, // T___SingleUse_YLA7
-    281, // T___SingleUse_V6B8
-    301, // T___SingleUse_L9ER
-    304, // T___SingleUse_QIGY
-    281, // T___SingleUse_0J63
-    218, // T_ModelWildCard
-    254, // T_SerialNumbWildCard
-    218, // T_PumpAllowedWildCard
-    208, // T_ListItemTextField
-    185, // T_ListItemText
-    197, // T_BSValues
-    286 // T_BSValueWildCard
+    293, // T___SingleUse_GWKF
+    190, // T_WildCard
+    293, // T___SingleUse_NVER
+    279, // T_pumpProtectWCStatus
+    314, // T_TempWildCard
+    307, // T_TempField
+    100, // T_PumpAllowedField
+    120, // T_PumpLabel
+    253, // T_PumpStatusTextBuffer
+    317, // T_PumpStatusWC
+    320, // T___SingleUse_WHEO
+    323, // T___SingleUse_6AGJ
+    298, // T___SingleUse_I7RK
+    320, // T___SingleUse_CSD1
+    323, // T___SingleUse_YLA7
+    298, // T___SingleUse_V6B8
+    320, // T___SingleUse_L9ER
+    323, // T___SingleUse_QIGY
+    298, // T___SingleUse_0J63
+    235, // T_ModelWildCard
+    271, // T_SerialNumbWildCard
+    235, // T_PumpAllowedWildCard
+    225, // T_ListItemTextField
+    202, // T_ListItemText
+    214, // T_BSValues
+    303 // T_BSValueWildCard
 };

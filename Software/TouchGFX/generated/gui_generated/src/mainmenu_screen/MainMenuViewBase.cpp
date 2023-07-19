@@ -4,6 +4,7 @@
 #include <gui_generated/mainmenu_screen/MainMenuViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
@@ -22,28 +23,28 @@ MainMenuViewBase::MainMenuViewBase() :
     DVHID_Image.setXY(90, 0);
     DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
 
-    Sedan_Image.setXY(20, 71);
+    Sedan_Image.setXY(20, 62);
     Sedan_Image.setBitmap(touchgfx::Bitmap(BITMAP_SEDANRECOLORING_ID));
 
-    Status_Button.setXY(2, 249);
+    Status_Button.setXY(2, 252);
     Status_Button.setBitmaps(touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID), touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID));
     Status_Button.setAction(buttonCallback);
 
-    SeatWarmer_Button.setXY(130, 174);
+    SeatWarmer_Button.setXY(129, 186);
     SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_NOTWARM_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_ID));
 
-    Ignition_Button.setXY(17, 174);
+    Ignition_Button.setXY(15, 186);
     Ignition_Button.setBitmaps(touchgfx::Bitmap(BITMAP_IGNITIONBUTTONOFF_ID), touchgfx::Bitmap(BITMAP_IGNITIONBUTTONON_ID));
 
-    Road_Line.setPosition(0, 138, 240, 36);
+    Road_Line.setPosition(2, 138, 240, 36);
     Road_LinePainter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Road_Line.setPainter(Road_LinePainter);
-    Road_Line.setStart(10, 10);
-    Road_Line.setEnd(230, 10);
-    Road_Line.setLineWidth(10);
+    Road_Line.setStart(19, 17);
+    Road_Line.setEnd(218, 17);
+    Road_Line.setLineWidth(33);
     Road_Line.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    SeatWarmersDisable_Line.setPosition(130, 174, 94, 57);
+    SeatWarmersDisable_Line.setPosition(130, 187, 94, 57);
     SeatWarmersDisable_LinePainter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 17));
     SeatWarmersDisable_Line.setPainter(SeatWarmersDisable_LinePainter);
     SeatWarmersDisable_Line.setStart(5, 5);
@@ -51,8 +52,43 @@ MainMenuViewBase::MainMenuViewBase() :
     SeatWarmersDisable_Line.setLineWidth(10);
     SeatWarmersDisable_Line.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    Lock_Button.setXY(14, 11);
+    Lock_Button.setXY(4, 4);
     Lock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_UNLOCKED_ID), touchgfx::Bitmap(BITMAP_LOCKED_ID));
+
+    circle1.setPosition(-18, 115, 82, 80);
+    circle1.setCenter(40, 40);
+    circle1.setRadius(15);
+    circle1.setLineWidth(0);
+    circle1.setArc(0, 360);
+    circle1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    circle1.setPainter(circle1Painter);
+
+    circle1_1.setPosition(179, 115, 82, 80);
+    circle1_1.setCenter(40, 40);
+    circle1_1.setRadius(15);
+    circle1_1.setLineWidth(0);
+    circle1_1.setArc(0, 360);
+    circle1_1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    circle1_1.setPainter(circle1_1Painter);
+
+    box1.setPosition(45, 145, 152, 22);
+    box1.setColor(touchgfx::Color::getColorFromRGB(219, 200, 164));
+
+    textArea1.setXY(45, 144);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setWildcard(touchgfx::TypedText(T___SINGLEUSE_ZH7Y).getText());
+    textArea1.resizeToCurrentText();
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0XMK));
+
+    Headlights_Image.setXY(145, 90);
+    Headlights_Image.setBitmap(touchgfx::Bitmap(BITMAP_HEADLIGHT_ID));
+
+    CheckEngine_Image.setXY(115, 90);
+    CheckEngine_Image.setBitmap(touchgfx::Bitmap(BITMAP_CHECKENGINELIGHT_ID));
+
+    Brake_Image.setXY(85, 90);
+    Brake_Image.setBitmap(touchgfx::Bitmap(BITMAP_BRAKELIGHT_ID));
 
     add(__background);
     add(Background);
@@ -64,6 +100,13 @@ MainMenuViewBase::MainMenuViewBase() :
     add(Road_Line);
     add(SeatWarmersDisable_Line);
     add(Lock_Button);
+    add(circle1);
+    add(circle1_1);
+    add(box1);
+    add(textArea1);
+    add(Headlights_Image);
+    add(CheckEngine_Image);
+    add(Brake_Image);
 }
 
 void MainMenuViewBase::setupScreen()

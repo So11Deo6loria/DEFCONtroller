@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_ZH7Y" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Off</Translation>
+      </Text>
+      <Text Id="__SingleUse_0XMK" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Radio Station: &lt;&gt;</Translation>
+      </Text>
+      <Text Id="Radio_Text" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Off</Translation>
+      </Text>
       <Text Id="__SingleUse_7XSH" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">So11Deo6loria/projectShield</Translation>
       </Text>

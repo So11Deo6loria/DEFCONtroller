@@ -570,19 +570,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_BHVL_tiny.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_Background.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_Background2.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background2.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_Background_CLKGRD.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background_CLKGRD.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_BrakeLight.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_BrakeLight.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_CheckEngineLight.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_CheckEngineLight.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_CodeButton.cpp</name>
@@ -598,6 +598,11 @@
 			<name>Application/User/generated/image_DVHID.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_DVHID.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Headlight.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Headlight.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_IOT_Village.cpp</name>
@@ -618,11 +623,6 @@
 			<name>Application/User/generated/image_SedanRecoloring.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_SedanRecoloring.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_SettingsButton.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_SettingsButton.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_StatusButton.cpp</name>

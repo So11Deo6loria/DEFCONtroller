@@ -24,7 +24,7 @@
             "Type": "Image",
             "Name": "Sedan_Image",
             "X": 20,
-            "Y": 71,
+            "Y": 62,
             "Width": 200,
             "Height": 67,
             "RelativeFilename": "SedanRecoloring.png"
@@ -33,7 +33,7 @@
             "Type": "Button",
             "Name": "Status_Button",
             "X": 2,
-            "Y": 249,
+            "Y": 252,
             "Width": 237,
             "Height": 57,
             "Pressed": "StatusButton.png",
@@ -42,8 +42,8 @@
           {
             "Type": "ToggleButton",
             "Name": "SeatWarmer_Button",
-            "X": 130,
-            "Y": 174,
+            "X": 129,
+            "Y": 186,
             "Width": 94,
             "Height": 57,
             "Pressed": "SeatWarmer.png",
@@ -52,8 +52,8 @@
           {
             "Type": "ToggleButton",
             "Name": "Ignition_Button",
-            "X": 17,
-            "Y": 174,
+            "X": 15,
+            "Y": 186,
             "Width": 94,
             "Height": 57,
             "Pressed": "ignitionButtonOn.png",
@@ -62,6 +62,7 @@
           {
             "Type": "Line",
             "Name": "Road_Line",
+            "X": 2,
             "Y": 138,
             "Width": 240,
             "Height": 36,
@@ -70,18 +71,18 @@
               "Green": 255,
               "Blue": 255
             },
-            "StartX": 10,
-            "StartY": 10,
-            "EndX": 230,
-            "EndY": 10,
-            "LineWidth": 10,
+            "StartX": 19,
+            "StartY": 17,
+            "EndX": 218,
+            "EndY": 17,
+            "LineWidth": 33,
             "LineEndingStyle": "Round"
           },
           {
             "Type": "Line",
             "Name": "SeatWarmersDisable_Line",
             "X": 130,
-            "Y": 174,
+            "Y": 187,
             "Width": 94,
             "Height": 57,
             "Color": {
@@ -98,12 +99,92 @@
           {
             "Type": "ToggleButton",
             "Name": "Lock_Button",
-            "X": 14,
-            "Y": 11,
+            "X": 4,
+            "Y": 4,
             "Width": 50,
             "Height": 60,
             "Pressed": "locked.png",
             "Released": "unlocked.png"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle1",
+            "X": -18,
+            "Y": 115,
+            "Width": 82,
+            "Height": 80,
+            "CenterX": 40,
+            "CenterY": 40,
+            "Radius": 15,
+            "EndAngle": 360,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle1_1",
+            "X": 179,
+            "Y": 115,
+            "Width": 82,
+            "Height": 80,
+            "CenterX": 40,
+            "CenterY": 40,
+            "Radius": 15,
+            "EndAngle": 360,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 45,
+            "Y": 145,
+            "Width": 152,
+            "Height": 22,
+            "Color": {
+              "Red": 219,
+              "Green": 200,
+              "Blue": 164
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 45,
+            "Y": 144,
+            "Width": 143,
+            "Height": 24,
+            "TextId": "__SingleUse_0XMK",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_ZH7Y"
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "Headlights_Image",
+            "X": 145,
+            "Y": 90,
+            "Width": 25,
+            "Height": 25,
+            "RelativeFilename": "Headlight.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "CheckEngine_Image",
+            "X": 115,
+            "Y": 90,
+            "Width": 25,
+            "Height": 25,
+            "RelativeFilename": "CheckEngineLight.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Brake_Image",
+            "X": 85,
+            "Y": 90,
+            "Width": 25,
+            "Height": 25,
+            "RelativeFilename": "BrakeLight.png"
           }
         ],
         "Interactions": [
@@ -161,7 +242,7 @@
             "Type": "Button",
             "Name": "CreditsPage_Button",
             "X": 2,
-            "Y": 249,
+            "Y": 252,
             "Width": 237,
             "Height": 57,
             "Pressed": "CreditsButton_Pressed.png",
@@ -171,7 +252,7 @@
             "Type": "Button",
             "Name": "CodePage_Button",
             "X": 1,
-            "Y": 174,
+            "Y": 186,
             "Width": 237,
             "Height": 57,
             "Pressed": "CodeButton.png",

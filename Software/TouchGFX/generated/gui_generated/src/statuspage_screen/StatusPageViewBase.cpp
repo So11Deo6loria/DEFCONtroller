@@ -25,11 +25,11 @@ StatusPageViewBase::StatusPageViewBase() :
 
     backButton_toMainScreen1.setXY(0, 0);
 
-    CreditsPage_Button.setXY(2, 249);
+    CreditsPage_Button.setXY(2, 252);
     CreditsPage_Button.setBitmaps(touchgfx::Bitmap(BITMAP_CREDITSBUTTON_PRESSED_ID), touchgfx::Bitmap(BITMAP_CREDITSBUTTON_PRESSED_ID));
     CreditsPage_Button.setAction(buttonCallback);
 
-    CodePage_Button.setXY(1, 174);
+    CodePage_Button.setXY(1, 186);
     CodePage_Button.setBitmaps(touchgfx::Bitmap(BITMAP_CODEBUTTON_ID), touchgfx::Bitmap(BITMAP_CODEBUTTON_ID));
     CodePage_Button.setAction(buttonCallback);
 

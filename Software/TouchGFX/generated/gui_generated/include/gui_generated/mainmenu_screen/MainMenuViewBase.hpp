@@ -13,6 +13,8 @@
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/canvas/Circle.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class MainMenuViewBase : public touchgfx::View<MainMenuPresenter>
 {
@@ -41,6 +43,15 @@ protected:
     touchgfx::Line SeatWarmersDisable_Line;
     touchgfx::PainterRGB565 SeatWarmersDisable_LinePainter;
     touchgfx::ToggleButton Lock_Button;
+    touchgfx::Circle circle1;
+    touchgfx::PainterRGB565 circle1Painter;
+    touchgfx::Circle circle1_1;
+    touchgfx::PainterRGB565 circle1_1Painter;
+    touchgfx::Box box1;
+    touchgfx::TextAreaWithOneWildcard textArea1;
+    touchgfx::Image Headlights_Image;
+    touchgfx::Image CheckEngine_Image;
+    touchgfx::Image Brake_Image;
 
 private:
 
