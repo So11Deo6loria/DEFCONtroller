@@ -13,27 +13,9 @@
             "RelativeFilename": "Background_CLKGRD.png"
           },
           {
-            "Type": "Image",
-            "Name": "DVHID_Image",
-            "X": 90,
-            "Width": 150,
-            "Height": 50,
-            "RelativeFilename": "DVHID.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "Sedan_Image",
-            "X": 20,
-            "Y": 62,
-            "Width": 200,
-            "Height": 67,
-            "RelativeFilename": "SedanRecoloring.png"
-          },
-          {
             "Type": "Button",
             "Name": "Status_Button",
-            "X": 2,
-            "Y": 252,
+            "Y": 170,
             "Width": 237,
             "Height": 57,
             "Pressed": "StatusButton.png",
@@ -42,8 +24,8 @@
           {
             "Type": "ToggleButton",
             "Name": "SeatWarmer_Button",
-            "X": 129,
-            "Y": 186,
+            "X": 131,
+            "Y": 103,
             "Width": 94,
             "Height": 57,
             "Pressed": "SeatWarmer_Warm.png",
@@ -52,160 +34,65 @@
           {
             "Type": "ToggleButton",
             "Name": "Ignition_Button",
-            "X": 15,
-            "Y": 186,
+            "X": 18,
+            "Y": 103,
             "Width": 94,
             "Height": 57,
             "Pressed": "ignitionButtonOn.png",
             "Released": "ignitionButtonOff.png"
           },
           {
-            "Type": "Line",
-            "Name": "Road_Line",
-            "X": 1,
-            "Y": 138,
-            "Width": 240,
-            "Height": 37,
-            "Color": {
-              "Red": 191,
-              "Green": 191,
-              "Blue": 191
-            },
-            "StartX": 17,
-            "StartY": 17,
-            "EndX": 221,
-            "EndY": 17,
-            "LineWidth": 33,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "SeatWarmersDisable_Line",
-            "X": 129,
-            "Y": 186,
-            "Width": 94,
-            "Height": 57,
-            "Color": {
-              "Red": 255,
-              "Blue": 17
-            },
-            "StartX": 6,
-            "StartY": 6,
-            "EndX": 88,
-            "EndY": 50,
-            "LineWidth": 10,
-            "LineEndingStyle": "Round"
-          },
-          {
             "Type": "ToggleButton",
             "Name": "Lock_Button",
-            "X": 5,
-            "Y": 5,
+            "X": 18,
+            "Y": 25,
             "Width": 50,
             "Height": 60,
             "Pressed": "locked.png",
             "Released": "unlocked.png"
           },
           {
-            "Type": "Box",
-            "Name": "box1",
-            "X": 44,
-            "Y": 145,
-            "Width": 152,
-            "Height": 22,
+            "Type": "Line",
+            "Name": "line1",
+            "X": 4,
+            "Y": 241,
+            "Width": 265,
+            "Height": 50,
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
-            }
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 225,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
           },
           {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 44,
-            "Y": 144,
-            "Width": 143,
-            "Height": 24,
-            "TextId": "__SingleUse_0XMK",
-            "TextRotation": "0",
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "RadioStation_WildCard"
-            }
+            "Type": "Button",
+            "Name": "Commands_Button",
+            "X": 90,
+            "Width": 150,
+            "Height": 50,
+            "Pressed": "DVHID.png",
+            "Released": "DVHID.png"
           },
           {
-            "Type": "Image",
-            "Name": "Headlights_Image",
-            "X": 145,
-            "Y": 90,
-            "Width": 25,
-            "Height": 25,
-            "RelativeFilename": "Headlight.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "CheckEngine_Image",
-            "X": 115,
-            "Y": 90,
-            "Width": 25,
-            "Height": 25,
-            "RelativeFilename": "CheckEngineLight.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "Brake_Image",
-            "X": 85,
-            "Y": 90,
-            "Width": 25,
-            "Height": 25,
-            "RelativeFilename": "BrakeLight.png"
-          },
-          {
-            "Type": "Shape",
-            "Name": "shape1",
-            "X": 199,
-            "Y": 147,
-            "Width": 42,
-            "Height": 30,
-            "Points": [
-              {
-                "X": 15.0
-              },
-              {
-                "X": 30.0,
-                "Y": 20.0
-              },
-              {
-                "Y": 20.0
-              }
-            ],
-            "XScale": 1.0,
-            "YScale": 1.0
-          },
-          {
-            "Type": "Shape",
-            "Name": "shape1_1",
-            "X": 10,
-            "Y": 145,
-            "Width": 42,
-            "Height": 30,
-            "Points": [
-              {
-                "X": 15.0,
-                "Y": 20.0
-              },
-              {
-                "X": 30.0
-              },
-              {}
-            ],
-            "XScale": 1.0,
-            "YScale": 1.0
+            "Type": "Button",
+            "Name": "Credits_Button",
+            "X": 20,
+            "Y": 248,
+            "Width": 200,
+            "Height": 80,
+            "Pressed": "protiviti-s.png",
+            "Released": "protiviti-s.png"
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "toStatus",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "Status_Button"
@@ -218,12 +105,16 @@
             }
           },
           {
-            "InteractionName": "Interaction2",
+            "InteractionName": "toCredits",
             "Trigger": {
-              "Type": "TriggerNone"
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Credits_Button"
             },
             "Action": {
-              "Type": "ActionNone"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "CreditsPage"
             }
           }
         ]
@@ -240,14 +131,6 @@
             "RelativeFilename": "Background_CLKGRD.png"
           },
           {
-            "Type": "Image",
-            "Name": "DVHID_Image",
-            "X": 90,
-            "Width": 150,
-            "Height": 50,
-            "RelativeFilename": "DVHID.png"
-          },
-          {
             "Type": "CustomContainerInstance",
             "Name": "backButton_toMainScreen1",
             "Width": 240,
@@ -255,32 +138,12 @@
             "CustomContainerDefinitionName": "BackButton_toMainScreen"
           },
           {
-            "Type": "Button",
-            "Name": "CreditsPage_Button",
-            "X": 2,
-            "Y": 252,
-            "Width": 237,
-            "Height": 57,
-            "Pressed": "CreditsButton_Pressed.png",
-            "Released": "CreditsButton_Pressed.png"
-          },
-          {
-            "Type": "Button",
-            "Name": "CodePage_Button",
-            "X": 1,
-            "Y": 186,
-            "Width": 237,
-            "Height": 57,
-            "Pressed": "CodeButton.png",
-            "Released": "CodeButton.png"
-          },
-          {
             "Type": "TextArea",
             "Name": "Odometer_Text",
-            "X": 2,
-            "Y": 54,
-            "Width": 230,
-            "Height": 37,
+            "X": 3,
+            "Y": 58,
+            "Width": 191,
+            "Height": 31,
             "TextId": "__SingleUse_DCAS",
             "TextRotation": "0",
             "Color": {
@@ -295,7 +158,7 @@
             "Name": "textArea1_1",
             "X": 4,
             "Y": 83,
-            "Height": 37,
+            "Height": 31,
             "TextId": "__SingleUse_LB3X",
             "TextRotation": "0",
             "Color": {
@@ -308,10 +171,10 @@
           {
             "Type": "TextArea",
             "Name": "SelfDestruction_Text",
-            "X": 4,
-            "Y": 93,
-            "Width": 202,
-            "Height": 37,
+            "X": 17,
+            "Y": 231,
+            "Width": 168,
+            "Height": 31,
             "TextId": "__SingleUse_5ECD",
             "TextRotation": "0",
             "Color": {
@@ -324,10 +187,10 @@
           {
             "Type": "TextArea",
             "Name": "SelfDestructCountd_Text",
-            "X": 43,
-            "Y": 130,
-            "Width": 153,
-            "Height": 37,
+            "X": 44,
+            "Y": 268,
+            "Width": 128,
+            "Height": 31,
             "TextId": "SelfDestructCountd_Text",
             "TextRotation": "0",
             "Color": {
@@ -340,6 +203,82 @@
               "UseBuffer": true,
               "BufferSize": 20
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Odometer_Text_1",
+            "X": 3,
+            "Y": 169,
+            "Width": 49,
+            "Height": 31,
+            "TextId": "__SingleUse_JXJ0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Odometer_Text_2",
+            "X": 3,
+            "Y": 132,
+            "Width": 104,
+            "Height": 31,
+            "TextId": "__SingleUse_XD9O",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Odometer_Text_3",
+            "X": 3,
+            "Y": 95,
+            "Width": 120,
+            "Height": 31,
+            "TextId": "__SingleUse_TNW9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 4,
+            "Y": 216,
+            "Width": 265,
+            "Height": 50,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 225,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Button",
+            "Name": "Commands_Button",
+            "X": 90,
+            "Width": 150,
+            "Height": 50,
+            "Pressed": "DVHID.png",
+            "Released": "DVHID.png"
           }
         ],
         "Interactions": [
@@ -347,7 +286,7 @@
             "InteractionName": "Interaction1",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "CodePage_Button"
+              "TriggerComponent": "Commands_Button"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -359,8 +298,7 @@
           {
             "InteractionName": "Interaction2",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "CreditsPage_Button"
+              "Type": "TriggerClicked"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -390,21 +328,12 @@
             "CustomContainerDefinitionName": "BackButton_toStatusPage"
           },
           {
-            "Type": "Image",
-            "Name": "DVHID_Image",
-            "X": 96,
-            "Y": -3,
-            "Width": 144,
-            "Height": 54,
-            "RelativeFilename": "DVHID.png"
-          },
-          {
             "Type": "TextArea",
-            "Name": "UART_Text",
+            "Name": "ManufacturerInterface",
             "X": 7,
             "Y": 54,
-            "Width": 81,
-            "Height": 37,
+            "Width": 189,
+            "Height": 24,
             "TextId": "__SingleUse_11TN",
             "TextRotation": "0",
             "Color": {
@@ -415,13 +344,22 @@
             "AutoSize": true
           },
           {
+            "Type": "Button",
+            "Name": "Commands_Button",
+            "X": 90,
+            "Width": 150,
+            "Height": 50,
+            "Pressed": "DVHID.png",
+            "Released": "DVHID.png"
+          },
+          {
             "Type": "TextArea",
-            "Name": "textArea1_1",
+            "Name": "ManufacturerInterface_1",
             "X": 7,
-            "Y": 160,
-            "Width": 104,
-            "Height": 37,
-            "TextId": "__SingleUse_GGNV",
+            "Y": 113,
+            "Width": 34,
+            "Height": 24,
+            "TextId": "__SingleUse_IEKS",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -450,15 +388,6 @@
             "Width": 240,
             "Height": 32,
             "CustomContainerDefinitionName": "BackButton_toStatusPage"
-          },
-          {
-            "Type": "Image",
-            "Name": "DVHID_Image",
-            "X": 96,
-            "Y": -3,
-            "Width": 144,
-            "Height": 54,
-            "RelativeFilename": "DVHID.png"
           },
           {
             "Type": "Image",
@@ -589,6 +518,15 @@
               "Blue": 255
             },
             "AutoSize": true
+          },
+          {
+            "Type": "Button",
+            "Name": "Commands_Button",
+            "X": 90,
+            "Width": 150,
+            "Height": 50,
+            "Pressed": "DVHID.png",
+            "Released": "DVHID.png"
           }
         ],
         "Interactions": []

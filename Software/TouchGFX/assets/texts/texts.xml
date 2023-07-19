@@ -6,11 +6,20 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_IEKS" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">uart</Translation>
+      </Text>
+      <Text Id="__SingleUse_TNW9" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Tripometer:</Translation>
+      </Text>
+      <Text Id="__SingleUse_XD9O" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Extra Crap</Translation>
+      </Text>
+      <Text Id="__SingleUse_JXJ0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">VIN: </Translation>
+      </Text>
       <Text Id="RadioStation_WildCard" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Off</Translation>
-      </Text>
-      <Text Id="__SingleUse_0XMK" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Radio Station: &lt;&gt;</Translation>
       </Text>
       <Text Id="Radio_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Off</Translation>
@@ -36,11 +45,8 @@
       <Text Id="__SingleUse_I348" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">BROUGHT TO YOU BY:</Translation>
       </Text>
-      <Text Id="__SingleUse_GGNV" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Sample :</Translation>
-      </Text>
-      <Text Id="__SingleUse_11TN" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">UART :</Translation>
+      <Text Id="__SingleUse_11TN" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Manufacturer Interface</Translation>
       </Text>
       <Text Id="SELFDESTRUCT_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Not Initiated</Translation>
@@ -138,7 +144,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="calibri.ttf" Size="30" Bpp="4" Direction="RTL" FallbackCharacter="?" WildcardCharacters="A-Z,a-Z,1-9,.,_," />
+    <Typography Id="Default" Font="calibri.ttf" Size="25" Bpp="4" Direction="RTL" FallbackCharacter="?" WildcardCharacters="A-Z,a-Z,1-9,.,_," />
     <Typography Id="Large" Font="calibri.ttf" Size="23" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
     <Typography Id="Small" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="ExtraLarge" Font="calibri.ttf" Size="34" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890" />
