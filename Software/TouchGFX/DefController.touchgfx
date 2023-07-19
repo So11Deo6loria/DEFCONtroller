@@ -15,7 +15,7 @@
           {
             "Type": "Button",
             "Name": "Status_Button",
-            "Y": 170,
+            "Y": 169,
             "Width": 237,
             "Height": 57,
             "Pressed": "StatusButton.png",
@@ -25,7 +25,7 @@
             "Type": "ToggleButton",
             "Name": "SeatWarmer_Button",
             "X": 131,
-            "Y": 103,
+            "Y": 94,
             "Width": 94,
             "Height": 57,
             "Pressed": "SeatWarmer_Warm.png",
@@ -35,7 +35,7 @@
             "Type": "ToggleButton",
             "Name": "Ignition_Button",
             "X": 18,
-            "Y": 103,
+            "Y": 94,
             "Width": 94,
             "Height": 57,
             "Pressed": "ignitionButtonOn.png",
@@ -45,7 +45,7 @@
             "Type": "ToggleButton",
             "Name": "Lock_Button",
             "X": 18,
-            "Y": 25,
+            "Y": 12,
             "Width": 50,
             "Height": 60,
             "Pressed": "locked.png",
@@ -55,7 +55,7 @@
             "Type": "Line",
             "Name": "line1",
             "X": 4,
-            "Y": 241,
+            "Y": 238,
             "Width": 265,
             "Height": 50,
             "Color": {
@@ -142,7 +142,7 @@
             "Name": "Odometer_Text",
             "X": 3,
             "Y": 58,
-            "Width": 191,
+            "Width": 231,
             "Height": 31,
             "TextId": "__SingleUse_DCAS",
             "TextRotation": "0",
@@ -151,7 +151,10 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "OdometerVal"
+            }
           },
           {
             "Type": "TextArea",
@@ -171,7 +174,7 @@
           {
             "Type": "TextArea",
             "Name": "SelfDestruction_Text",
-            "X": 17,
+            "X": 4,
             "Y": 231,
             "Width": 168,
             "Height": 31,
@@ -187,8 +190,8 @@
           {
             "Type": "TextArea",
             "Name": "SelfDestructCountd_Text",
-            "X": 44,
-            "Y": 268,
+            "X": 54,
+            "Y": 269,
             "Width": 128,
             "Height": 31,
             "TextId": "SelfDestructCountd_Text",
@@ -207,8 +210,8 @@
           {
             "Type": "TextArea",
             "Name": "Odometer_Text_1",
-            "X": 3,
-            "Y": 169,
+            "X": 4,
+            "Y": 170,
             "Width": 49,
             "Height": 31,
             "TextId": "__SingleUse_JXJ0",
@@ -224,8 +227,8 @@
             "Type": "TextArea",
             "Name": "Odometer_Text_2",
             "X": 3,
-            "Y": 132,
-            "Width": 104,
+            "Y": 133,
+            "Width": 231,
             "Height": 31,
             "TextId": "__SingleUse_XD9O",
             "TextRotation": "0",
@@ -234,14 +237,17 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "OilLifeVal"
+            }
           },
           {
             "Type": "TextArea",
             "Name": "Odometer_Text_3",
             "X": 3,
             "Y": 95,
-            "Width": 120,
+            "Width": 230,
             "Height": 31,
             "TextId": "__SingleUse_TNW9",
             "TextRotation": "0",
@@ -250,7 +256,10 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "MilesToEmptyVal"
+            }
           },
           {
             "Type": "Line",
@@ -258,7 +267,7 @@
             "X": 4,
             "Y": 216,
             "Width": 265,
-            "Height": 50,
+            "Height": 15,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -321,13 +330,6 @@
             "RelativeFilename": "Background_CLKGRD.png"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "backButton_toCarStatusPage1",
-            "Width": 240,
-            "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toStatusPage"
-          },
-          {
             "Type": "TextArea",
             "Name": "ManufacturerInterface",
             "X": 7,
@@ -356,10 +358,52 @@
             "Type": "TextArea",
             "Name": "ManufacturerInterface_1",
             "X": 7,
-            "Y": 113,
-            "Width": 34,
+            "Y": 95,
+            "Width": 138,
             "Height": 24,
             "TextId": "__SingleUse_IEKS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton_toMainScreen1",
+            "Width": 240,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton_toMainScreen"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 3,
+            "Y": 80,
+            "Width": 265,
+            "Height": 15,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 225,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "ManufacturerInterface_1_1",
+            "X": 7,
+            "Y": 119,
+            "Width": 163,
+            "Height": 24,
+            "TextId": "__SingleUse_R9AK",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -383,17 +427,10 @@
             "RelativeFilename": "Background_CLKGRD.png"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "backButton_toCarStatusPage1",
-            "Width": 240,
-            "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toStatusPage"
-          },
-          {
             "Type": "Image",
             "Name": "IOTVILLAGE_Image",
-            "X": 141,
-            "Y": 116,
+            "X": 142,
+            "Y": 142,
             "Width": 96,
             "Height": 96,
             "RelativeFilename": "IOT_Village.png"
@@ -401,8 +438,8 @@
           {
             "Type": "Image",
             "Name": "BIOHACKINGVILLAGE_Image",
-            "X": -5,
-            "Y": 274,
+            "X": -7,
+            "Y": 106,
             "Width": 238,
             "Height": 32,
             "RelativeFilename": "BHVL_tiny.png"
@@ -410,8 +447,8 @@
           {
             "Type": "TextArea",
             "Name": "BroughtToYouBy_Text",
-            "X": 18,
-            "Y": 73,
+            "X": 4,
+            "Y": 56,
             "Width": 204,
             "Height": 28,
             "TextId": "__SingleUse_I348",
@@ -426,8 +463,8 @@
           {
             "Type": "TextArea",
             "Name": "Name1_Text",
-            "X": 4,
-            "Y": 144,
+            "X": 2,
+            "Y": 166,
             "Width": 137,
             "Height": 24,
             "TextId": "Name1_Text",
@@ -442,8 +479,8 @@
           {
             "Type": "TextArea",
             "Name": "Name2_Text",
-            "X": 4,
-            "Y": 168,
+            "X": 2,
+            "Y": 190,
             "Width": 119,
             "Height": 24,
             "TextId": "Name2_Text",
@@ -458,8 +495,8 @@
           {
             "Type": "TextArea",
             "Name": "Name3_Text",
-            "X": 4,
-            "Y": 192,
+            "X": 2,
+            "Y": 214,
             "Width": 123,
             "Height": 24,
             "TextId": "Name3_Text",
@@ -474,8 +511,8 @@
           {
             "Type": "TextArea",
             "Name": "GitHubs_Text",
-            "X": 4,
-            "Y": 116,
+            "X": 2,
+            "Y": 138,
             "Width": 81,
             "Height": 28,
             "TextId": "__SingleUse_70PO",
@@ -491,7 +528,7 @@
             "Type": "TextArea",
             "Name": "GitHubLink1_Text",
             "X": 3,
-            "Y": 219,
+            "Y": 267,
             "Width": 162,
             "Height": 24,
             "TextId": "__SingleUse_F578",
@@ -507,7 +544,7 @@
             "Type": "TextArea",
             "Name": "GitHubLink2_Text",
             "X": 3,
-            "Y": 239,
+            "Y": 287,
             "Width": 234,
             "Height": 24,
             "TextId": "__SingleUse_7XSH",
@@ -527,6 +564,50 @@
             "Height": 50,
             "Pressed": "DVHID.png",
             "Released": "DVHID.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton_toMainScreen1",
+            "Width": 240,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton_toMainScreen"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 4,
+            "Y": 249,
+            "Width": 265,
+            "Height": 50,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 225,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1_1",
+            "Y": 88,
+            "Width": 269,
+            "Height": 18,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 225,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
           }
         ],
         "Interactions": []

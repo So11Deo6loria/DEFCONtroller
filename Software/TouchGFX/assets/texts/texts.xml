@@ -6,14 +6,26 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="OilLifeVal" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">42</Translation>
+      </Text>
+      <Text Id="MilesToEmptyVal" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB"> 31</Translation>
+      </Text>
+      <Text Id="OdometerVal" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">89109</Translation>
+      </Text>
+      <Text Id="__SingleUse_R9AK" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">(help) -&gt; Help Menu</Translation>
+      </Text>
       <Text Id="__SingleUse_IEKS" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">uart</Translation>
+        <Translation Language="GB">Uart Commands:</Translation>
       </Text>
       <Text Id="__SingleUse_TNW9" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Tripometer:</Translation>
+        <Translation Language="GB">Miles to Empty:       &lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_XD9O" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Extra Crap</Translation>
+        <Translation Language="GB">Oil Life (%):                &lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_JXJ0" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">VIN: </Translation>
@@ -61,7 +73,7 @@
         <Translation Language="GB" />
       </Text>
       <Text Id="__SingleUse_DCAS" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Odometer:   89109</Translation>
+        <Translation Language="GB">Odometer:          &lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_GWKF" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Back</Translation>
