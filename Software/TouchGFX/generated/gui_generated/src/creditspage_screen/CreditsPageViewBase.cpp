@@ -8,7 +8,8 @@
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
-CreditsPageViewBase::CreditsPageViewBase()
+CreditsPageViewBase::CreditsPageViewBase() :
+    buttonCallback(this, &CreditsPageViewBase::buttonCallbackHandler)
 {
 
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
@@ -19,56 +20,71 @@ CreditsPageViewBase::CreditsPageViewBase()
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    backButton_toCarStatusPage1.setXY(0, 0);
-
-    DVHID_Image.setXY(96, -3);
-    DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
-
-    IOTVILLAGE_Image.setXY(141, 116);
+    IOTVILLAGE_Image.setXY(142, 142);
     IOTVILLAGE_Image.setBitmap(touchgfx::Bitmap(BITMAP_IOT_VILLAGE_ID));
 
-    BIOHACKINGVILLAGE_Image.setXY(-5, 274);
+    BIOHACKINGVILLAGE_Image.setXY(-7, 106);
     BIOHACKINGVILLAGE_Image.setBitmap(touchgfx::Bitmap(BITMAP_BHVL_TINY_ID));
 
-    BroughtToYouBy_Text.setXY(18, 73);
+    BroughtToYouBy_Text.setXY(4, 56);
     BroughtToYouBy_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     BroughtToYouBy_Text.setLinespacing(0);
     BroughtToYouBy_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I348));
 
-    Name1_Text.setXY(4, 144);
+    Name1_Text.setXY(2, 166);
     Name1_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name1_Text.setLinespacing(0);
     Name1_Text.setTypedText(touchgfx::TypedText(T_NAME1_TEXT));
 
-    Name2_Text.setXY(4, 168);
+    Name2_Text.setXY(2, 190);
     Name2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name2_Text.setLinespacing(0);
     Name2_Text.setTypedText(touchgfx::TypedText(T_NAME2_TEXT));
 
-    Name3_Text.setXY(4, 192);
+    Name3_Text.setXY(2, 214);
     Name3_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name3_Text.setLinespacing(0);
     Name3_Text.setTypedText(touchgfx::TypedText(T_NAME3_TEXT));
 
-    GitHubs_Text.setXY(4, 116);
+    GitHubs_Text.setXY(2, 138);
     GitHubs_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     GitHubs_Text.setLinespacing(0);
     GitHubs_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_70PO));
 
-    GitHubLink1_Text.setXY(3, 219);
+    GitHubLink1_Text.setXY(3, 267);
     GitHubLink1_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     GitHubLink1_Text.setLinespacing(0);
     GitHubLink1_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_F578));
 
-    GitHubLink2_Text.setXY(3, 239);
+    GitHubLink2_Text.setXY(3, 287);
     GitHubLink2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     GitHubLink2_Text.setLinespacing(0);
     GitHubLink2_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7XSH));
 
+    Commands_Button.setXY(90, 0);
+    Commands_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DVHID_ID), touchgfx::Bitmap(BITMAP_DVHID_ID));
+    Commands_Button.setAction(buttonCallback);
+
+    backButton_toMainScreen1.setXY(0, 0);
+
+    line1.setPosition(4, 249, 265, 50);
+    line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1.setPainter(line1Painter);
+    line1.setStart(5, 5);
+    line1.setEnd(225, 5);
+    line1.setLineWidth(3);
+    line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+
+    line1_1.setPosition(0, 88, 269, 18);
+    line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1_1.setPainter(line1_1Painter);
+    line1_1.setStart(5, 5);
+    line1_1.setEnd(225, 5);
+    line1_1.setLineWidth(3);
+    line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+
     add(__background);
     add(Background);
-    add(backButton_toCarStatusPage1);
-    add(DVHID_Image);
     add(IOTVILLAGE_Image);
     add(BIOHACKINGVILLAGE_Image);
     add(BroughtToYouBy_Text);
@@ -78,9 +94,24 @@ CreditsPageViewBase::CreditsPageViewBase()
     add(GitHubs_Text);
     add(GitHubLink1_Text);
     add(GitHubLink2_Text);
+    add(Commands_Button);
+    add(backButton_toMainScreen1);
+    add(line1);
+    add(line1_1);
 }
 
 void CreditsPageViewBase::setupScreen()
 {
-    backButton_toCarStatusPage1.initialize();
+    backButton_toMainScreen1.initialize();
+}
+
+void CreditsPageViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &Commands_Button)
+    {
+        //toCommands
+        //When Commands_Button clicked change screen to CommandsPage
+        //Go to CommandsPage with screen transition towards East
+        application().gotoCommandsPageScreenSlideTransitionEast();
+    }
 }

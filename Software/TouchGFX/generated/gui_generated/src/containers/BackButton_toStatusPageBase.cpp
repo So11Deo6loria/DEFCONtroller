@@ -8,7 +8,7 @@
 BackButton_toStatusPageBase::BackButton_toStatusPageBase() :
     flexButtonCallback(this, &BackButton_toStatusPageBase::flexButtonCallbackHandler)
 {
-    setWidth(240);
+    setWidth(81);
     setHeight(32);
     textArea1.setXY(24, 0);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -35,7 +35,7 @@ BackButton_toStatusPageBase::BackButton_toStatusPageBase() :
     goBackButton.setBoxWithBorderPosition(0, 0, 240, 44);
     goBackButton.setBorderSize(10);
     goBackButton.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    goBackButton.setPosition(0, 0, 240, 32);
+    goBackButton.setPosition(0, 0, 72, 31);
     goBackButton.setAlpha(0);
     goBackButton.setAction(flexButtonCallback);
 

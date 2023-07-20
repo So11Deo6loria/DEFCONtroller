@@ -312,12 +312,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_toMainScreenBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\StatusButton.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\StatusButtonBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\BackButton_toStatusPage.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
@@ -830,12 +824,6 @@
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_toMainScreenBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\StatusButton.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\StatusButtonBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toStatusPage.hpp">

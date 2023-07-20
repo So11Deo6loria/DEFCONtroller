@@ -10,7 +10,7 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     switch (typography)
     {
     case Typography::DEFAULT:
-        // calibri_30_4bpp
+        // calibri_25_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
     case Typography::LARGE:
         // calibri_23_4bpp

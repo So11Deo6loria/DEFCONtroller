@@ -9,8 +9,11 @@
 #include <gui/commandspage_screen/CommandsPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <gui/containers/BackButton_toStatusPage.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <gui/containers/BackButton_toMainScreen.hpp>
+#include <touchgfx/widgets/canvas/Line.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 
 class CommandsPageViewBase : public touchgfx::View<CommandsPagePresenter>
 {
@@ -29,10 +32,15 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
-    BackButton_toStatusPage backButton_toCarStatusPage1;
-    touchgfx::Image DVHID_Image;
-    touchgfx::TextArea UART_Text;
-    touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea ManufacturerInterface;
+    touchgfx::Button Commands_Button;
+    touchgfx::TextArea ManufacturerInterface_1;
+    BackButton_toMainScreen backButton_toMainScreen1;
+    touchgfx::Line line1;
+    touchgfx::PainterRGB565 line1Painter;
+    touchgfx::TextArea Line1_Text;
+    touchgfx::TextArea Line2_Text;
+    touchgfx::TextArea Line3_Text;
 
 private:
 

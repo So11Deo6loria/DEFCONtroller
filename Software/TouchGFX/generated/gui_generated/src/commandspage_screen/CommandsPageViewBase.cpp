@@ -19,30 +19,57 @@ CommandsPageViewBase::CommandsPageViewBase()
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    backButton_toCarStatusPage1.setXY(0, 0);
+    ManufacturerInterface.setXY(7, 54);
+    ManufacturerInterface.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    ManufacturerInterface.setLinespacing(0);
+    ManufacturerInterface.setTypedText(touchgfx::TypedText(T___SINGLEUSE_11TN));
 
-    DVHID_Image.setXY(96, -3);
-    DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
+    Commands_Button.setXY(90, 0);
+    Commands_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DVHID_ID), touchgfx::Bitmap(BITMAP_DVHID_ID));
 
-    UART_Text.setXY(7, 54);
-    UART_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    UART_Text.setLinespacing(0);
-    UART_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_11TN));
+    ManufacturerInterface_1.setXY(7, 95);
+    ManufacturerInterface_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    ManufacturerInterface_1.setLinespacing(0);
+    ManufacturerInterface_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IEKS));
 
-    textArea1_1.setXY(7, 160);
-    textArea1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1_1.setLinespacing(0);
-    textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GGNV));
+    backButton_toMainScreen1.setXY(0, 0);
+
+    line1.setPosition(3, 80, 265, 15);
+    line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1.setPainter(line1Painter);
+    line1.setStart(5, 5);
+    line1.setEnd(225, 5);
+    line1.setLineWidth(3);
+    line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+
+    Line1_Text.setXY(7, 119);
+    Line1_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Line1_Text.setLinespacing(0);
+    Line1_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_R9AK));
+
+    Line2_Text.setXY(7, 143);
+    Line2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Line2_Text.setLinespacing(0);
+    Line2_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HAW7));
+
+    Line3_Text.setXY(7, 167);
+    Line3_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Line3_Text.setLinespacing(0);
+    Line3_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZGOK));
 
     add(__background);
     add(Background);
-    add(backButton_toCarStatusPage1);
-    add(DVHID_Image);
-    add(UART_Text);
-    add(textArea1_1);
+    add(ManufacturerInterface);
+    add(Commands_Button);
+    add(ManufacturerInterface_1);
+    add(backButton_toMainScreen1);
+    add(line1);
+    add(Line1_Text);
+    add(Line2_Text);
+    add(Line3_Text);
 }
 
 void CommandsPageViewBase::setupScreen()
 {
-    backButton_toCarStatusPage1.initialize();
+    backButton_toMainScreen1.initialize();
 }

@@ -6,10 +6,76 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">(config) -&gt; Device Config</Translation>
+      </Text>
+      <Text Id="__SingleUse_HAW7" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">(info) -&gt; Device Info</Translation>
+      </Text>
+      <Text Id="SelfDest_Val" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_AYUI" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Back</Translation>
+      </Text>
+      <Text Id="MilesToEmpty_Val" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">31</Translation>
+      </Text>
+      <Text Id="MTE_Val" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4DV2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Firmware Version:</Translation>
+      </Text>
+      <Text Id="__SingleUse_1O1A" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Oil Life %:</Translation>
+      </Text>
+      <Text Id="__SingleUse_X3RZ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Odometer:</Translation>
+      </Text>
+      <Text Id="__SingleUse_RAGM" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Miles to Empty:</Translation>
+      </Text>
+      <Text Id="FirmwareVer_Val" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0.3</Translation>
+      </Text>
+      <Text Id="FirmVer_Val" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="VIN" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">G02D3FC0N2023</Translation>
+      </Text>
+      <Text Id="VIN_Val" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="Odo_Text" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Odometer:</Translation>
+      </Text>
+      <Text Id="OilLife_Val" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">42</Translation>
+      </Text>
+      <Text Id="OL_Val" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="Odometer_Val" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">89109</Translation>
+      </Text>
+      <Text Id="Odo_Val" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CNYY" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="FirmwareVersion" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0.3</Translation>
+      </Text>
+      <Text Id="FMVer_Text" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Firmware Version:</Translation>
+      </Text>
       <Text Id="OilLifeVal" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">42</Translation>
       </Text>
-      <Text Id="MilesToEmptyVal" Alignment="Left" TypographyId="Small">
+      <Text Id="MilesToEmpty_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB"> 31</Translation>
       </Text>
       <Text Id="OdometerVal" Alignment="Left" TypographyId="Small">
@@ -21,11 +87,11 @@
       <Text Id="__SingleUse_IEKS" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Uart Commands:</Translation>
       </Text>
-      <Text Id="__SingleUse_TNW9" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Miles to Empty:       &lt;&gt;</Translation>
+      <Text Id="MTE_Text" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Miles to Empty:</Translation>
       </Text>
-      <Text Id="__SingleUse_XD9O" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Oil Life (%):                &lt;&gt;</Translation>
+      <Text Id="OilLife_Text" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Oil Life (%):</Translation>
       </Text>
       <Text Id="__SingleUse_JXJ0" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">VIN: </Translation>
@@ -72,8 +138,8 @@
       <Text Id="__SingleUse_LB3X" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
       </Text>
-      <Text Id="__SingleUse_DCAS" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Odometer:          &lt;&gt;</Translation>
+      <Text Id="Odometer_Text" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Odometer:</Translation>
       </Text>
       <Text Id="__SingleUse_GWKF" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Back</Translation>

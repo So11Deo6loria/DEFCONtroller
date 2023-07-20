@@ -13,8 +13,6 @@
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/widgets/canvas/Shape.hpp>
 
 class MainMenuViewBase : public touchgfx::View<MainMenuPresenter>
 {
@@ -33,25 +31,14 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
-    touchgfx::Image DVHID_Image;
-    touchgfx::Image Sedan_Image;
     touchgfx::Button Status_Button;
     touchgfx::ToggleButton SeatWarmer_Button;
-    touchgfx::ToggleButton Ignition_Button;
-    touchgfx::Line Road_Line;
-    touchgfx::PainterRGB565 Road_LinePainter;
-    touchgfx::Line SeatWarmersDisable_Line;
-    touchgfx::PainterRGB565 SeatWarmersDisable_LinePainter;
-    touchgfx::ToggleButton Lock_Button;
-    touchgfx::Box box1;
-    touchgfx::TextAreaWithOneWildcard textArea1;
-    touchgfx::Image Headlights_Image;
-    touchgfx::Image CheckEngine_Image;
-    touchgfx::Image Brake_Image;
-    touchgfx::Shape<3> shape1;
-    touchgfx::PainterRGB565 shape1Painter;
-    touchgfx::Shape<3> shape1_1;
-    touchgfx::PainterRGB565 shape1_1Painter;
+    touchgfx::ToggleButton AutoIgnition_Button;
+    touchgfx::Line line1;
+    touchgfx::PainterRGB565 line1Painter;
+    touchgfx::Button Commands_Button;
+    touchgfx::Button Credits_Button;
+    touchgfx::ToggleButton DoorLock_Button;
 
 private:
 

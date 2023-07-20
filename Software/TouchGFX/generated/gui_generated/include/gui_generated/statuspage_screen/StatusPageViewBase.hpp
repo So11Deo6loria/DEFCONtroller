@@ -10,9 +10,11 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <gui/containers/BackButton_toMainScreen.hpp>
-#include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/canvas/Line.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/Button.hpp>
 
 class StatusPageViewBase : public touchgfx::View<StatusPagePresenter>
 {
@@ -31,20 +33,30 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
-    touchgfx::Image DVHID_Image;
     BackButton_toMainScreen backButton_toMainScreen1;
-    touchgfx::Button CreditsPage_Button;
-    touchgfx::Button CodePage_Button;
     touchgfx::TextArea Odometer_Text;
     touchgfx::TextArea textArea1_1;
     touchgfx::TextArea SelfDestruction_Text;
-    touchgfx::TextAreaWithOneWildcard SelfDestructCountd_Text;
+    touchgfx::TextAreaWithOneWildcard SelfDestCount_Val;
+    touchgfx::TextArea VIN_Text;
+    touchgfx::TextArea OilLife_Text;
+    touchgfx::TextArea MilesToEmpty_Text;
+    touchgfx::Line line1;
+    touchgfx::PainterRGB565 line1Painter;
+    touchgfx::Button Commands_Button;
+    touchgfx::TextArea FirmwareVer_Text;
+    touchgfx::TextAreaWithOneWildcard Odometer_Val;
+    touchgfx::TextAreaWithOneWildcard Odometer_Text_1_2_1;
+    touchgfx::TextAreaWithOneWildcard OilLife_Val;
+    touchgfx::TextAreaWithOneWildcard VIN_Val;
+    touchgfx::TextAreaWithOneWildcard FirmwareVer_Val;
+    touchgfx::TextAreaWithOneWildcard MilesToEmpty_Val;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t SELFDESTRUCTCOUNTD_TEXT_SIZE = 20;
-    touchgfx::Unicode::UnicodeChar SelfDestructCountd_TextBuffer[SELFDESTRUCTCOUNTD_TEXT_SIZE];
+    static const uint16_t SELFDESTCOUNT_VAL_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar SelfDestCount_ValBuffer[SELFDESTCOUNT_VAL_SIZE];
 
 private:
 

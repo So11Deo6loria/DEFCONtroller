@@ -4,7 +4,6 @@
 #include <gui_generated/mainmenu_screen/MainMenuViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
@@ -20,95 +19,44 @@ MainMenuViewBase::MainMenuViewBase() :
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    DVHID_Image.setXY(90, 0);
-    DVHID_Image.setBitmap(touchgfx::Bitmap(BITMAP_DVHID_ID));
-
-    Sedan_Image.setXY(20, 62);
-    Sedan_Image.setBitmap(touchgfx::Bitmap(BITMAP_SEDANRECOLORING_ID));
-
-    Status_Button.setXY(2, 252);
-    Status_Button.setBitmaps(touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID), touchgfx::Bitmap(BITMAP_STATUSBUTTON_ID));
+    Status_Button.setXY(135, 59);
+    Status_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SETTINGS_ENGAGED_ID), touchgfx::Bitmap(BITMAP_SETTINGS_DISENGAGED_ID));
     Status_Button.setAction(buttonCallback);
 
-    SeatWarmer_Button.setXY(129, 186);
-    SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_NOTWARM_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_WARM_ID));
+    SeatWarmer_Button.setXY(135, 153);
+    SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_ENGAGED_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_DISENGAGED_ID));
 
-    Ignition_Button.setXY(15, 186);
-    Ignition_Button.setBitmaps(touchgfx::Bitmap(BITMAP_IGNITIONBUTTONOFF_ID), touchgfx::Bitmap(BITMAP_IGNITIONBUTTONON_ID));
+    AutoIgnition_Button.setXY(25, 153);
+    AutoIgnition_Button.setBitmaps(touchgfx::Bitmap(BITMAP_AUTOSTARTSTOP_ENGAGED_ID), touchgfx::Bitmap(BITMAP_AUTOSTARTSTOP_DISENGAGED_ID));
 
-    Road_Line.setPosition(1, 138, 240, 37);
-    Road_LinePainter.setColor(touchgfx::Color::getColorFromRGB(191, 191, 191));
-    Road_Line.setPainter(Road_LinePainter);
-    Road_Line.setStart(17, 17);
-    Road_Line.setEnd(221, 17);
-    Road_Line.setLineWidth(33);
-    Road_Line.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    line1.setPosition(4, 242, 265, 15);
+    line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1.setPainter(line1Painter);
+    line1.setStart(5, 5);
+    line1.setEnd(225, 5);
+    line1.setLineWidth(3);
+    line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    SeatWarmersDisable_Line.setPosition(129, 186, 94, 57);
-    SeatWarmersDisable_LinePainter.setColor(touchgfx::Color::getColorFromRGB(255, 0, 17));
-    SeatWarmersDisable_Line.setPainter(SeatWarmersDisable_LinePainter);
-    SeatWarmersDisable_Line.setStart(6, 6);
-    SeatWarmersDisable_Line.setEnd(88, 50);
-    SeatWarmersDisable_Line.setLineWidth(10);
-    SeatWarmersDisable_Line.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+    Commands_Button.setXY(90, 0);
+    Commands_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DVHID_ID), touchgfx::Bitmap(BITMAP_DVHID_ID));
+    Commands_Button.setAction(buttonCallback);
 
-    Lock_Button.setXY(5, 5);
-    Lock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_UNLOCKED_ID), touchgfx::Bitmap(BITMAP_LOCKED_ID));
+    Credits_Button.setXY(20, 248);
+    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+    Credits_Button.setAction(buttonCallback);
 
-    box1.setPosition(44, 145, 152, 22);
-    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-
-    textArea1.setXY(44, 144);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setWildcard(touchgfx::TypedText(T_RADIOSTATION_WILDCARD).getText());
-    textArea1.resizeToCurrentText();
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0XMK));
-
-    Headlights_Image.setXY(145, 90);
-    Headlights_Image.setBitmap(touchgfx::Bitmap(BITMAP_HEADLIGHT_ID));
-
-    CheckEngine_Image.setXY(115, 90);
-    CheckEngine_Image.setBitmap(touchgfx::Bitmap(BITMAP_CHECKENGINELIGHT_ID));
-
-    Brake_Image.setXY(85, 90);
-    Brake_Image.setBitmap(touchgfx::Bitmap(BITMAP_BRAKELIGHT_ID));
-
-    shape1.setPosition(199, 147, 42, 30);
-    shape1.setOrigin(0.000f, 0.000f);
-    shape1.setScale(1.000f, 1.000f);
-    shape1.setAngle(0.000f);
-    shape1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    shape1.setPainter(shape1Painter);
-    const touchgfx::AbstractShape::ShapePoint<float> shape1Points[3] = { { 15.000f, 0.000f }, { 30.000f, 20.000f }, { 0.000f, 20.000f } };
-    shape1.setShape(shape1Points);
-
-    shape1_1.setPosition(10, 145, 42, 30);
-    shape1_1.setOrigin(0.000f, 0.000f);
-    shape1_1.setScale(1.000f, 1.000f);
-    shape1_1.setAngle(0.000f);
-    shape1_1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    shape1_1.setPainter(shape1_1Painter);
-    const touchgfx::AbstractShape::ShapePoint<float> shape1_1Points[3] = { { 15.000f, 20.000f }, { 30.000f, 0.000f }, { 0.000f, 0.000f } };
-    shape1_1.setShape(shape1_1Points);
+    DoorLock_Button.setXY(25, 59);
+    DoorLock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DOORLOCK_ENGAGED_ID), touchgfx::Bitmap(BITMAP_DOORLOCK_DISENGAGED_ID));
 
     add(__background);
     add(Background);
-    add(DVHID_Image);
-    add(Sedan_Image);
     add(Status_Button);
     add(SeatWarmer_Button);
-    add(Ignition_Button);
-    add(Road_Line);
-    add(SeatWarmersDisable_Line);
-    add(Lock_Button);
-    add(box1);
-    add(textArea1);
-    add(Headlights_Image);
-    add(CheckEngine_Image);
-    add(Brake_Image);
-    add(shape1);
-    add(shape1_1);
+    add(AutoIgnition_Button);
+    add(line1);
+    add(Commands_Button);
+    add(Credits_Button);
+    add(DoorLock_Button);
 }
 
 void MainMenuViewBase::setupScreen()
@@ -120,9 +68,23 @@ void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
 {
     if (&src == &Status_Button)
     {
-        //Interaction1
+        //toStatus
         //When Status_Button clicked change screen to StatusPage
         //Go to StatusPage with screen transition towards East
         application().gotoStatusPageScreenSlideTransitionEast();
+    }
+    else if (&src == &Commands_Button)
+    {
+        //toCommands
+        //When Commands_Button clicked change screen to CommandsPage
+        //Go to CommandsPage with screen transition towards East
+        application().gotoCommandsPageScreenSlideTransitionEast();
+    }
+    else if (&src == &Credits_Button)
+    {
+        //toCredits
+        //When Credits_Button clicked change screen to CreditsPage
+        //Go to CreditsPage with screen transition towards East
+        application().gotoCreditsPageScreenSlideTransitionEast();
     }
 }
