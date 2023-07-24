@@ -49,7 +49,7 @@ void  MainMenuView::__UpdateDynamicData(void)
 	{
 	    Unicode::snprintf(DebugFieldBuffer, DEBUGFIELD_SIZE, "Enabled");
 	    FLAG_FIELD.setAlpha(255);
-	    Unicode::snprintf(FLAG_FIELDBuffer, FLAG_FIELD_SIZE, (const char *)xUARTFlag); // TODO: Replace flag field buffer JTAG
+	    Unicode::snprintf(FLAG_FIELDBuffer, FLAG_FIELD_SIZE, (const char *)xUARTFlag); // TODO: Replace flag field buffer UART
 	    FLAG_FIELD.setWildcard(FLAG_FIELDBuffer);
 			FLAG_FIELD.resizeToCurrentText();
 	    FLAG_FIELD.invalidate();
@@ -64,7 +64,7 @@ void  MainMenuView::__UpdateDynamicData(void)
     FLAG_FIELD.invalidate();
 	}
 
-	DebugField.setWildcard(DebugFieldBuffer); // update debug field buffers
+	DebugField.setWildcard(DebugFieldBuffer); // update debug field buffers TODO: update all buffers as they are all different
 	DebugField.resizeToCurrentText();
 	DebugField.invalidate();
 }
