@@ -1,15 +1,8 @@
 #include <gui/mainmenu_screen/MainMenuView.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
-
-extern __IO uint8_t debugFlagTouchGFX;
-extern __I char xUARTFlag[32];
-extern __I char xSPIFlag[32];
-extern __I char xJTAGFlag[32];
-extern __I char xI2CFlag[32];
 
 MainMenuView::MainMenuView()
 {
-	__UpdateDynamicData();
+
 }
 
 void MainMenuView::setupScreen()
@@ -21,6 +14,7 @@ void MainMenuView::tearDownScreen()
 {
     MainMenuViewBase::tearDownScreen();
 }
+<<<<<<< HEAD
 
 #ifdef DEVBOARDBUILD
 
@@ -70,3 +64,5 @@ void  MainMenuView::__UpdateDynamicData(void)
 }
 
 #endif
+=======
+>>>>>>> parent of 68647ac (testing)
