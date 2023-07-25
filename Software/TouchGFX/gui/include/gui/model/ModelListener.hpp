@@ -20,7 +20,9 @@ public:
     }
 
 #ifdef DEVBOARDBUILD
-
+    virtual void UpdateBSValue(uint16_t value);
+    virtual void UpdateSpiDebugValue(uint16_t value);
+    virtual void UpdateTempValue(void);
 #endif
 
 protected:

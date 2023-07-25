@@ -31,8 +31,10 @@ public:
     // Customer Event Handlers
     virtual void UpdateBSValue( uint16_t value );
 
+#ifdef DEVBOARDBUILD
     virtual void UpdateSpiDebugValue(uint16_t value);
     virtual void UpdateTempValue(void);
+#endif
 
 private:
     MainMenuPresenter();

@@ -25,9 +25,11 @@ MainMenuViewBase::MainMenuViewBase() :
 
     SeatWarmer_Button.setXY(135, 153);
     SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_ENGAGED_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_DISENGAGED_ID));
+    SeatWarmer_Button.setAction(buttonCallback);
 
     AutoIgnition_Button.setXY(25, 153);
     AutoIgnition_Button.setBitmaps(touchgfx::Bitmap(BITMAP_AUTOSTARTSTOP_ENGAGED_ID), touchgfx::Bitmap(BITMAP_AUTOSTARTSTOP_DISENGAGED_ID));
+    AutoIgnition_Button.setAction(buttonCallback);
 
     line1.setPosition(4, 242, 265, 15);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -47,6 +49,7 @@ MainMenuViewBase::MainMenuViewBase() :
 
     DoorLock_Button.setXY(25, 59);
     DoorLock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DOORLOCK_ENGAGED_ID), touchgfx::Bitmap(BITMAP_DOORLOCK_DISENGAGED_ID));
+    DoorLock_Button.setAction(buttonCallback);
 
     add(__background);
     add(Background);
@@ -73,6 +76,20 @@ void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //Go to StatusPage with screen transition towards East
         application().gotoStatusPageScreenSlideTransitionEast();
     }
+    else if (&src == &SeatWarmer_Button)
+    {
+        //SeatWarmer_Toggle
+        //When SeatWarmer_Button clicked execute C++ code
+        //Execute C++ code
+        bool SeatWarmer_Status = !SeatWarmer_Status;
+    }
+    else if (&src == &AutoIgnition_Button)
+    {
+        //AutoIgition_Toggle
+        //When AutoIgnition_Button clicked execute C++ code
+        //Execute C++ code
+        bool AutoIgnition_Status = !AutoIgnition_Status;
+    }
     else if (&src == &Commands_Button)
     {
         //toCommands
@@ -86,5 +103,12 @@ void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When Credits_Button clicked change screen to CreditsPage
         //Go to CreditsPage with screen transition towards East
         application().gotoCreditsPageScreenSlideTransitionEast();
+    }
+    else if (&src == &DoorLock_Button)
+    {
+        //DoorLock_Toggle
+        //When DoorLock_Button clicked execute C++ code
+        //Execute C++ code
+        bool DoorLock_Status = !DoorLock_Status;
     }
 }

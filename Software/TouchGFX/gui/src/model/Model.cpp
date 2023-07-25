@@ -19,22 +19,22 @@ Model::Model() : modelListener(0)
 void Model::tick()
 {
 #ifdef DEVBOARDBUILD
-//	if ( CanTask_BSUpdated )
-//	{
-//		modelListener->UpdateBSValue( CanTask_BSValue );
-//		CanTask_BSUpdated = 0;
-//	}
-//
-//	if (debugUpdatedTouchGFX)
-//	{
-//		modelListener->UpdateSpiDebugValue(debugFlagTouchGFX);
-//		debugUpdatedTouchGFX =0;
-//	}
-//
-//	if (i2c_isValueUpdated)
-//	{
-//		modelListener->UpdateTempValue();
-//		i2c_isValueUpdated=0;
-//	}
+	if ( CanTask_BSUpdated )
+	{
+		modelListener->UpdateBSValue( CanTask_BSValue );
+		CanTask_BSUpdated = 0;
+	}
+
+	if (debugUpdatedTouchGFX)
+	{
+		modelListener->UpdateSpiDebugValue(debugFlagTouchGFX);
+		debugUpdatedTouchGFX =0;
+	}
+
+	if (i2c_isValueUpdated)
+	{
+		modelListener->UpdateTempValue();
+		i2c_isValueUpdated=0;
+	}
 #endif
 }

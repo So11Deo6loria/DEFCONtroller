@@ -130,6 +130,39 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "CommandsPage"
             }
+          },
+          {
+            "InteractionName": "DoorLock_Toggle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "DoorLock_Button"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "bool DoorLock_Status = !DoorLock_Status;"
+            }
+          },
+          {
+            "InteractionName": "AutoIgition_Toggle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "AutoIgnition_Button"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "bool AutoIgnition_Status = !AutoIgnition_Status;"
+            }
+          },
+          {
+            "InteractionName": "SeatWarmer_Toggle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "SeatWarmer_Button"
+            },
+            "Action": {
+              "Type": "ActionExecuteCode",
+              "Code": "bool SeatWarmer_Status = !SeatWarmer_Status;"
+            }
           }
         ]
       },
