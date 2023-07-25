@@ -11,6 +11,7 @@ public:
     virtual ~MainMenuView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void MainMenuView::__UpdateDynamicData(void)
 protected:
 };
 

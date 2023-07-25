@@ -2,7 +2,7 @@
 
 MainMenuView::MainMenuView()
 {
-
+	__UpdateDynamicData();
 }
 
 void MainMenuView::setupScreen()
@@ -14,14 +14,8 @@ void MainMenuView::tearDownScreen()
 {
     MainMenuViewBase::tearDownScreen();
 }
-<<<<<<< HEAD
 
 #ifdef DEVBOARDBUILD
-
-void MainMenuView::UpdateSpiDebugValue(uint16_t value)
-{
-	__UpdateDynamicData();
-}
 
 void  MainMenuView::__UpdateDynamicData(void)
 {
@@ -64,5 +58,3 @@ void  MainMenuView::__UpdateDynamicData(void)
 }
 
 #endif
-=======
->>>>>>> parent of 68647ac (testing)
