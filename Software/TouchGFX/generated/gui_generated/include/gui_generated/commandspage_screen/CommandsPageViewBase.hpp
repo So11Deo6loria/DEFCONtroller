@@ -14,6 +14,7 @@
 #include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class CommandsPageViewBase : public touchgfx::View<CommandsPagePresenter>
 {
@@ -41,6 +42,16 @@ protected:
     touchgfx::TextArea Line1_Text;
     touchgfx::TextArea Line2_Text;
     touchgfx::TextArea Line3_Text;
+    touchgfx::TextAreaWithOneWildcard FLAG;
+    touchgfx::TextArea Line1_Text_1;
+    touchgfx::TextArea Line1_Text_2;
+    touchgfx::TextArea Line3_Text_1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t FLAG_SIZE = 40;
+    touchgfx::Unicode::UnicodeChar FLAGBuffer[FLAG_SIZE];
 
 private:
 

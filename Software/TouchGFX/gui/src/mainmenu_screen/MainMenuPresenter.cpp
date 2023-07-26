@@ -17,16 +17,36 @@ void MainMenuPresenter::deactivate()
 
 }
 
-void MainMenuPresenter::UpdateBSValue( uint16_t value )
+#ifdef DEVBOARDBUILD
+
+void MainMenuPresenter::UpdateSpiDebugValue(uint16_t)
 {
-  // Do nothing
+	//Do Nothing
 }
 
-void MainMenuPresenter::UpdateSpiDebugValue( uint16_t value )
+void MainMenuPresenter::UpdateBSValue(uint16_t)
 {
-  // Do nothing
-	view.UpdateSpiDebugValue(value);
+	//Do Nothing
 }
-void MainMenuPresenter::UpdateTempValue( void )
+
+void MainMenuPresenter::UpdateTempValue(void)
 {
+	//Do Nothing
 }
+
+void MainMenuPresenter::UpdateDoorLock_Status(void)
+{
+	//Do Nothing
+}
+
+void MainMenuPresenter::UpdateAutoIgnition_Status(void)
+{
+	//Do Nothing
+}
+
+void MainMenuPresenter::UpdateSeatWarmer_Status(void)
+{
+	//Do Nothing
+}
+
+#endif

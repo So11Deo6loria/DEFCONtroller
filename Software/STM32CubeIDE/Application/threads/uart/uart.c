@@ -7,7 +7,18 @@
 
 #include "uart.h"
 #include "stm32f4xx_hal_uart.h"
+#include <stdbool.h>
 
+bool DoorLock_Toggle;
+bool AutoIgnition_Toggle;
+bool SeatWarmer_Toggle;
+
+uint8_t DoorLock_ToggleState;
+uint8_t DoorLock_Toggle;
+uint8_t SeatWarmer_ToggleState;
+uint8_t SeatWarmer_Toggle;
+uint8_t AutoIgnition_ToggleState;
+uint8_t AutoIgnition_Toggle;
 
 UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart1;
@@ -166,6 +177,7 @@ void UARTChallengeThread( void * argument )
 				HAL_UART_Transmit( &huart1, (uint8_t*)__configDebugOnPrompt, sizeof(__configDebugOnPrompt)-1, 100 );
 				debugFlagTouchGFX = 5;
 				debugUpdatedTouchGFX = 1;
+
 			}
 			else if( (0 == strncmp( "config debug off",  __rxBuffer, 17 ) ) )
 			{
@@ -173,10 +185,17 @@ void UARTChallengeThread( void * argument )
 				debugFlagTouchGFX = 0;
 				debugUpdatedTouchGFX = 1;
 			}
+			else if ( (0 == strncmp( "config seatwarmer", __rxBuffer, 21)) && (debugFlagTouchGFX == 1)){
+				SeatWarmer_Toggle = 1;
+			}
+			else if ( (0 == strncmp( "config autoignition", __rxBuffer, 23)) && (debugFlagTouchGFX == 1)){
+				AutoIgnition_Toggle = 1;
+			}
 			else
 			{
 				HAL_UART_Transmit( &huart1, (uint8_t*)__configErrorPrompt, sizeof(__configErrorPrompt)-1, 100 );
 			}
+
 		}
 		else
 		{
@@ -189,4 +208,49 @@ void UARTChallengeThread( void * argument )
 		osDelay(500);
 	}
 	  /* USER CODE END 5 */
+}
+
+// Called By TouchGFX when a button is pressed.
+void SeatWarmerButtonPressed (uint8_t ToggleState)
+{
+	if (ToggleState)
+	{
+		SeatWarmer_ToggleState = 1;
+		SeatWarmer_Toggle = 1;
+	}
+	else
+	{
+		SeatWarmer_ToggleState = 0;
+		SeatWarmer_Toggle= 1;
+	}
+}
+
+// Called By TouchGFX when a button is pressed.
+void DoorLockButtonPressed (uint8_t ToggleState)
+{
+	if (ToggleState)
+	{
+		DoorLock_ToggleState = 1;
+		DoorLock_Toggle = 1;
+	}
+	else
+	{
+		DoorLock_ToggleState = 0;
+		DoorLock_Toggle= 1;
+	}
+}
+
+// Called By TouchGFX when a button is pressed.
+void AutoIgnitionButtonPressed (uint8_t ToggleState)
+{
+	if (ToggleState)
+	{
+		AutoIgnition_ToggleState = 1;
+		AutoIgnition_Toggle = 1;
+	}
+	else
+	{
+		AutoIgnition_ToggleState = 0;
+		AutoIgnition_Toggle= 1;
+	}
 }

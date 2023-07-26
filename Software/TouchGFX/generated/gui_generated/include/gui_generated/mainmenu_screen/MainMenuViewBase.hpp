@@ -21,6 +21,24 @@ public:
     virtual ~MainMenuViewBase() {}
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void DoorLockButtonPressed()
+    {
+        // Override and implement this function in MainMenu
+    }
+
+    virtual void AutoIgnitionButtonPressed()
+    {
+        // Override and implement this function in MainMenu
+    }
+
+    virtual void SearWarmerButtonPressed()
+    {
+        // Override and implement this function in MainMenu
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

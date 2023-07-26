@@ -6,18 +6,12 @@
 
 class MainMenuView : public MainMenuViewBase
 {
-private:
-	virtual void __UpdateDynamicData();
 
 public:
     MainMenuView();
     virtual ~MainMenuView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-
-#ifdef DEVBOARDBUILD
-    virtual void UpdateSpiDebugValue(uint16_t value);
-#endif
 
 protected:
 };

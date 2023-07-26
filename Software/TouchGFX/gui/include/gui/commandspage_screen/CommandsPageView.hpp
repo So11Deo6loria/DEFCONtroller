@@ -6,6 +6,9 @@
 
 class CommandsPageView : public CommandsPageViewBase
 {
+private:
+	virtual void __UpdateDynamicData();
+
 public:
     CommandsPageView();
     virtual ~CommandsPageView() {}

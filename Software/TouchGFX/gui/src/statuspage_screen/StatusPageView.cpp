@@ -14,3 +14,4 @@ void StatusPageView::tearDownScreen()
 {
     StatusPageViewBase::tearDownScreen();
 }
+

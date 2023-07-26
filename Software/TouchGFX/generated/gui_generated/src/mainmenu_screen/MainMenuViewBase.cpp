@@ -79,16 +79,16 @@ void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
     else if (&src == &SeatWarmer_Button)
     {
         //SeatWarmer_Toggle
-        //When SeatWarmer_Button clicked execute C++ code
-        //Execute C++ code
-        bool SeatWarmer_Status = !SeatWarmer_Status;
+        //When SeatWarmer_Button clicked call virtual function
+        //Call SearWarmerButtonPressed
+        SearWarmerButtonPressed();
     }
     else if (&src == &AutoIgnition_Button)
     {
         //AutoIgition_Toggle
-        //When AutoIgnition_Button clicked execute C++ code
-        //Execute C++ code
-        bool AutoIgnition_Status = !AutoIgnition_Status;
+        //When AutoIgnition_Button clicked call virtual function
+        //Call AutoIgnitionButtonPressed
+        AutoIgnitionButtonPressed();
     }
     else if (&src == &Commands_Button)
     {
@@ -107,8 +107,8 @@ void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
     else if (&src == &DoorLock_Button)
     {
         //DoorLock_Toggle
-        //When DoorLock_Button clicked execute C++ code
-        //Execute C++ code
-        bool DoorLock_Status = !DoorLock_Status;
+        //When DoorLock_Button clicked call virtual function
+        //Call DoorLockButtonPressed
+        DoorLockButtonPressed();
     }
 }

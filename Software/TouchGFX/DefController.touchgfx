@@ -138,8 +138,8 @@
               "TriggerComponent": "DoorLock_Button"
             },
             "Action": {
-              "Type": "ActionExecuteCode",
-              "Code": "bool DoorLock_Status = !DoorLock_Status;"
+              "Type": "ActionCustom",
+              "FunctionName": "DoorLockButtonPressed"
             }
           },
           {
@@ -149,8 +149,8 @@
               "TriggerComponent": "AutoIgnition_Button"
             },
             "Action": {
-              "Type": "ActionExecuteCode",
-              "Code": "bool AutoIgnition_Status = !AutoIgnition_Status;"
+              "Type": "ActionCustom",
+              "FunctionName": "AutoIgnitionButtonPressed"
             }
           },
           {
@@ -160,8 +160,8 @@
               "TriggerComponent": "SeatWarmer_Button"
             },
             "Action": {
-              "Type": "ActionExecuteCode",
-              "Code": "bool SeatWarmer_Status = !SeatWarmer_Status;"
+              "Type": "ActionCustom",
+              "FunctionName": "SearWarmerButtonPressed"
             }
           }
         ]
@@ -602,6 +602,72 @@
             "Width": 197,
             "Height": 24,
             "TextId": "__SingleUse_ZGOK",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "FLAG",
+            "X": 120,
+            "Y": 280,
+            "Height": 24,
+            "TextId": "FLAG_FIELD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "FLAG_FIELD_WILDCARD",
+              "UseBuffer": true,
+              "BufferSize": 40
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Line1_Text_1",
+            "X": 7,
+            "Y": 215,
+            "Width": 190,
+            "Height": 24,
+            "TextId": "__SingleUse_ANTM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Line1_Text_2",
+            "X": 7,
+            "Y": 239,
+            "Width": 191,
+            "Height": 24,
+            "TextId": "__SingleUse_2BLY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Line3_Text_1",
+            "X": 7,
+            "Y": 191,
+            "Width": 194,
+            "Height": 24,
+            "TextId": "__SingleUse_SNDL",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
