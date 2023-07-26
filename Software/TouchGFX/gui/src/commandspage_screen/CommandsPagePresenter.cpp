@@ -38,16 +38,19 @@ void CommandsPagePresenter::UpdateTempValue(void)
 void CommandsPagePresenter::UpdateDoorLock_Status(void)
 {
 	//Do Nothing
+	view.UpdateDoorLock_Status();
 }
 
 void CommandsPagePresenter::UpdateAutoIgnition_Status(void)
 {
 	//Do Nothing
+	view.UdateAutoIgnition_Status()
 }
 
 void CommandsPagePresenter::UpdateSeatWarmer_Status(void)
 {
 	//Do Nothing
+	view.UpdateSeatWarmer_Status()
 }
 
 #endif
