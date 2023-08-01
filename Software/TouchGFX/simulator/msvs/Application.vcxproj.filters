@@ -175,15 +175,6 @@
     <Filter Include="Header Files\gui\can_insulinpumpstatus_screen">
       <UniqueIdentifier>17719E24-ECE8-7F3D-DCA0-9956ADC29357</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\can_insulinpumpstatus_screen">
-      <UniqueIdentifier>6330D764-3BA2-8918-3835-ECDAA61D4F71</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\can_insulinpumpstatus_screen">
-      <UniqueIdentifier>06AEB251-1CAA-239C-D15C-003BB93E0E39</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\can_insulinpumpstatus_screen">
-      <UniqueIdentifier>533D571D-FBF7-CC16-9497-7D34F06953E1</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\containers">
       <UniqueIdentifier>B6CA3BD8-D0FC-84EC-1AE2-607D2A2E5BC0</UniqueIdentifier>
     </Filter>
@@ -208,41 +199,11 @@
     <Filter Include="Source Files\generated\gui_generated\mainmenu_screen">
       <UniqueIdentifier>B7072042-CFD3-CC21-4A3B-5CC208C4F3EA</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\uartpage_screen">
-      <UniqueIdentifier>1760DE81-E319-7FEC-18F8-9A75E5EB4607</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\jtagpage_screen">
-      <UniqueIdentifier>F1B21941-36DB-09C6-181D-5A4E4829D1EF</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\jtagpage_screen">
-      <UniqueIdentifier>BAA7C4D8-A6B6-2813-6842-AAA8467DED9E</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\spipage_screen">
       <UniqueIdentifier>60D440BA-C7AE-65E2-F04D-A000B4803E95</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\i2cpage_screen">
       <UniqueIdentifier>EB563231-0D0E-8597-2F29-AC4BF1984A9B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\i2cpage_screen">
-      <UniqueIdentifier>D1388334-48CB-BDD9-2389-12C7C1E8CC13</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\spipage_screen">
-      <UniqueIdentifier>77E7085D-1B9D-4870-DFE2-18864D15376B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\uartpage_screen">
-      <UniqueIdentifier>0071CDB3-2146-E419-CA9A-4128A5ABCDF3</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\i2cpage_screen">
-      <UniqueIdentifier>81F47AA5-0A83-CBE9-BF86-F0EAB764D521</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\i2cpage_screen">
-      <UniqueIdentifier>6051B575-A326-7BED-2F4E-37E2C0145704</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\spipage_screen">
-      <UniqueIdentifier>649B4146-3064-F480-EE36-F67014867F72</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\spipage_screen">
-      <UniqueIdentifier>B9255926-BC2B-072B-F87C-7CE52FB49590</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\can_insulinpumpstatus_1_screen">
       <UniqueIdentifier>33DF215E-507A-2F6B-F91E-215CBA0182FE</UniqueIdentifier>
@@ -250,14 +211,41 @@
     <Filter Include="Header Files\gui\can_insulinpumpoverride_screen">
       <UniqueIdentifier>C0F05C19-412E-54A0-A11D-9B75FF217226</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\can_insulinpumpoverride_screen">
-      <UniqueIdentifier>08997156-F263-F54A-C2E2-B99CC1364289</UniqueIdentifier>
+    <Filter Include="Header Files\gui\creditspage_screen">
+      <UniqueIdentifier>BFFD5A49-689F-A751-6997-488A70FBF506</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\can_insulinpumpoverride_screen">
-      <UniqueIdentifier>84FEF956-1980-2C00-2090-2318BFF72FD8</UniqueIdentifier>
+    <Filter Include="Source Files\gui\creditspage_screen">
+      <UniqueIdentifier>51ECFF2B-FA5C-9B12-0CA0-0DD76FF21FA0</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\can_insulinpumpoverride_screen">
-      <UniqueIdentifier>835605B3-C4FC-8540-4DB2-B5CB83703E9C</UniqueIdentifier>
+    <Filter Include="Header Files\gui\commandspage_screen">
+      <UniqueIdentifier>5FE58DAF-0A3E-0D03-79EF-77EB4138FDE1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\commandspage_screen">
+      <UniqueIdentifier>58032B7A-53C4-40D6-15B4-7E480BAE4093</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\creditspage_screen">
+      <UniqueIdentifier>0F05D879-9410-EADA-31D8-CFBDFF6A9388</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\creditspage_screen">
+      <UniqueIdentifier>4C6227FB-CCCE-F3C4-C8FD-9DBEEB067890</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\commandspage_screen">
+      <UniqueIdentifier>0F2597C5-9215-6305-E656-11E3BF719210</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\commandspage_screen">
+      <UniqueIdentifier>34852281-9B17-1202-D3E0-890CBD1378B5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\statuspage_screen">
+      <UniqueIdentifier>46861035-7083-D233-42FE-DAA6F0C52D36</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\statuspage_screen">
+      <UniqueIdentifier>8BCB546A-A74E-45B5-34BD-642ED6DF7A6C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\statuspage_screen">
+      <UniqueIdentifier>E2DF69FD-7A03-8D86-9D10-10FE59F07EA9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\statuspage_screen">
+      <UniqueIdentifier>CA2B5139-7F7E-D492-B46C-66FCEE09044C</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -291,21 +279,6 @@
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\can_insulinpumpstatus_screen\Can_InsulinPumpStatusPresenter.cpp">
-      <Filter>Source Files\gui\can_insulinpumpstatus_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\can_insulinpumpstatus_screen\Can_InsulinPumpStatusView.cpp">
-      <Filter>Source Files\gui\can_insulinpumpstatus_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\can_insulinpumpstatus_screen\Can_InsulinPumpStatusViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\can_insulinpumpstatus_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\SpiMenuButton.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\SpiMenuButtonBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\mainmenu_screen\MainMenuPresenter.cpp">
       <Filter>Source Files\gui\mainmenu_screen</Filter>
     </ClCompile>
@@ -315,74 +288,44 @@
     <ClCompile Include="..\..\generated\gui_generated\src\mainmenu_screen\MainMenuViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\mainmenu_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\CAN.cpp">
+    <ClCompile Include="..\..\gui\src\commandspage_screen\CommandsPagePresenter.cpp">
+      <Filter>Source Files\gui\commandspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\commandspage_screen\CommandsPageView.cpp">
+      <Filter>Source Files\gui\commandspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\commandspage_screen\CommandsPageViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\commandspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\creditspage_screen\CreditsPagePresenter.cpp">
+      <Filter>Source Files\gui\creditspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\creditspage_screen\CreditsPageView.cpp">
+      <Filter>Source Files\gui\creditspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\creditspage_screen\CreditsPageViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\creditspage_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\BackButton_toMainScreen.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\CANBase.cpp">
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_toMainScreenBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\I2C.cpp">
+    <ClCompile Include="..\..\gui\src\containers\BackButton_toStatusPage.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\I2CBase.cpp">
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_toStatusPageBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\i2cpage_screen\I2CPagePresenter.cpp">
-      <Filter>Source Files\gui\i2cpage_screen</Filter>
+    <ClCompile Include="..\..\gui\src\statuspage_screen\StatusPagePresenter.cpp">
+      <Filter>Source Files\gui\statuspage_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\jtagpage_screen\JTAGPagePresenter.cpp">
-      <Filter>Source Files\gui\jtagpage_screen</Filter>
+    <ClCompile Include="..\..\gui\src\statuspage_screen\StatusPageView.cpp">
+      <Filter>Source Files\gui\statuspage_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\spipage_screen\SPIPagePresenter.cpp">
-      <Filter>Source Files\gui\spipage_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\uartpage_screen\UARTPagePresenter.cpp">
-      <Filter>Source Files\gui\uartpage_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\BackButton.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButtonBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\i2cpage_screen\I2CPageView.cpp">
-      <Filter>Source Files\gui\i2cpage_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\i2cpage_screen\I2CPageViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\i2cpage_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\spipage_screen\SPIPageView.cpp">
-      <Filter>Source Files\gui\spipage_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\spipage_screen\SPIPageViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\spipage_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\BackToPump.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackToPumpBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\BSUnits.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\BSUnits_1.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BSUnits_1Base.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BSUnitsBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\can_insulinpumpoverride_screen\Can_InsulinPumpOverridePresenter.cpp">
-      <Filter>Source Files\gui\can_insulinpumpoverride_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideView.cpp">
-      <Filter>Source Files\gui\can_insulinpumpoverride_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\can_insulinpumpoverride_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\statuspage_screen\StatusPageViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\statuspage_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -832,15 +775,6 @@
     <ClInclude Include="..\..\gui\include\gui\can_insulinpumpstatus_screen\Can_InsulinPumpStatusView.hpp">
       <Filter>Header Files\gui\can_insulinpumpstatus_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\can_insulinpumpstatus_screen\Can_InsulinPumpStatusViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\can_insulinpumpstatus_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\SpiMenuButton.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SpiMenuButtonBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\mainmenu_screen\MainMenuPresenter.hpp">
       <Filter>Header Files\gui\mainmenu_screen</Filter>
     </ClInclude>
@@ -850,77 +784,62 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\mainmenu_screen\MainMenuViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\mainmenu_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\CAN.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\CANBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\I2C.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\I2CBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\i2cpage_screen\I2CPagePresenter.hpp">
       <Filter>Header Files\gui\i2cpage_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\jtagpage_screen\JTAGPagePresenter.hpp">
-      <Filter>Header Files\gui\jtagpage_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\spipage_screen\SPIPagePresenter.hpp">
       <Filter>Header Files\gui\spipage_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\uartpage_screen\UARTPagePresenter.hpp">
-      <Filter>Header Files\gui\uartpage_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\BackButton.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButtonBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\i2cpage_screen\I2CPageView.hpp">
       <Filter>Header Files\gui\i2cpage_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\i2cpage_screen\I2CPageViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\i2cpage_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\spipage_screen\SPIPageView.hpp">
       <Filter>Header Files\gui\spipage_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\spipage_screen\SPIPageViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\spipage_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\BackToPump.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackToPumpBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\BSUnits.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\BSUnits_1.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BSUnits_1Base.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BSUnitsBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\can_insulinpumpoverride_screen\Can_InsulinPumpOverridePresenter.hpp">
       <Filter>Header Files\gui\can_insulinpumpoverride_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideView.hpp">
-      <Filter>Header Files\gui\can_insulinpumpoverride_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\can_insulinpumpoverride_screen\Can_InsulinPumpOverrideViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\can_insulinpumpoverride_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\can_insulinpumpstatus_1_screen\Can_InsulinPumpStatus_1Presenter.hpp">
       <Filter>Header Files\gui\can_insulinpumpstatus_1_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\commandspage_screen\CommandsPagePresenter.hpp">
+      <Filter>Header Files\gui\commandspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\commandspage_screen\CommandsPageView.hpp">
+      <Filter>Header Files\gui\commandspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\commandspage_screen\CommandsPageViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\commandspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\creditspage_screen\CreditsPagePresenter.hpp">
+      <Filter>Header Files\gui\creditspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\creditspage_screen\CreditsPageView.hpp">
+      <Filter>Header Files\gui\creditspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\creditspage_screen\CreditsPageViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\creditspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toMainScreen.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_toMainScreenBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_toStatusPage.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_toStatusPageBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\statuspage_screen\StatusPagePresenter.hpp">
+      <Filter>Header Files\gui\statuspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\statuspage_screen\StatusPageView.hpp">
+      <Filter>Header Files\gui\statuspage_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\statuspage_screen\StatusPageViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\statuspage_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

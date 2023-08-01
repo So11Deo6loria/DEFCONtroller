@@ -25,19 +25,16 @@ public:
 
     void gotoMainMenuScreenSlideTransitionWest();
 
-    // SPIPage
-    void gotoSPIPageScreenSlideTransitionEast();
+    // StatusPage
+    void gotoStatusPageScreenSlideTransitionEast();
 
-    // Can_InsulinPumpStatus
-    void gotoCan_InsulinPumpStatusScreenSlideTransitionEast();
+    void gotoStatusPageScreenSlideTransitionWest();
 
-    void gotoCan_InsulinPumpStatusScreenSlideTransitionWest();
+    // CommandsPage
+    void gotoCommandsPageScreenSlideTransitionEast();
 
-    // I2CPage
-    void gotoI2CPageScreenSlideTransitionEast();
-
-    // Can_InsulinPumpOverride
-    void gotoCan_InsulinPumpOverrideScreenSlideTransitionEast();
+    // CreditsPage
+    void gotoCreditsPageScreenSlideTransitionEast();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -49,19 +46,16 @@ protected:
 
     void gotoMainMenuScreenSlideTransitionWestImpl();
 
-    // SPIPage
-    void gotoSPIPageScreenSlideTransitionEastImpl();
+    // StatusPage
+    void gotoStatusPageScreenSlideTransitionEastImpl();
 
-    // Can_InsulinPumpStatus
-    void gotoCan_InsulinPumpStatusScreenSlideTransitionEastImpl();
+    void gotoStatusPageScreenSlideTransitionWestImpl();
 
-    void gotoCan_InsulinPumpStatusScreenSlideTransitionWestImpl();
+    // CommandsPage
+    void gotoCommandsPageScreenSlideTransitionEastImpl();
 
-    // I2CPage
-    void gotoI2CPageScreenSlideTransitionEastImpl();
-
-    // Can_InsulinPumpOverride
-    void gotoCan_InsulinPumpOverrideScreenSlideTransitionEastImpl();
+    // CreditsPage
+    void gotoCreditsPageScreenSlideTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

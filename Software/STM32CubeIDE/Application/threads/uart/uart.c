@@ -8,7 +8,18 @@
 #include "string.h"
 #include "uart.h"
 #include "stm32f4xx_hal_uart.h"
+#include <stdbool.h>
 
+bool DoorLock_Toggle;
+bool AutoIgnition_Toggle;
+bool SeatWarmer_Toggle;
+
+uint8_t DoorLock_ToggleState;
+uint8_t DoorLock_Toggle;
+uint8_t SeatWarmer_ToggleState;
+uint8_t SeatWarmer_Toggle;
+uint8_t AutoIgnition_ToggleState;
+uint8_t AutoIgnition_Toggle;
 
 UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart1;
@@ -256,5 +267,50 @@ void UARTChallengeThread( void * argument )
 		rxBufferIndex = 0;
 		memset( __rxBuffer, 0, sizeof(__rxBuffer));
 		osDelay(500);
+	}
+}
+
+// Called By TouchGFX when a button is pressed.
+void SeatWarmerButtonPressed (uint8_t ToggleState)
+{
+	if (ToggleState)
+	{
+		SeatWarmer_ToggleState = 1;
+		SeatWarmer_Toggle = 1;
+	}
+	else
+	{
+		SeatWarmer_ToggleState = 0;
+		SeatWarmer_Toggle= 1;
+	}
+}
+
+// Called By TouchGFX when a button is pressed.
+void DoorLockButtonPressed (uint8_t ToggleState)
+{
+	if (ToggleState)
+	{
+		DoorLock_ToggleState = 1;
+		DoorLock_Toggle = 1;
+	}
+	else
+	{
+		DoorLock_ToggleState = 0;
+		DoorLock_Toggle= 1;
+	}
+}
+
+// Called By TouchGFX when a button is pressed.
+void AutoIgnitionButtonPressed (uint8_t ToggleState)
+{
+	if (ToggleState)
+	{
+		AutoIgnition_ToggleState = 1;
+		AutoIgnition_Toggle = 1;
+	}
+	else
+	{
+		AutoIgnition_ToggleState = 0;
+		AutoIgnition_Toggle= 1;
 	}
 }

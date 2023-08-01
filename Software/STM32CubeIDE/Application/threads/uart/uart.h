@@ -13,3 +13,7 @@
 #include "stm32f4xx_hal_uart.h"
 
 void UARTChallengeThread( void * argument );
+
+void SeatWarmerButtonPressed (uint8_t State);
+void DoorLockButtonPressed (uint8_t State);
+void AutoIgnitionButtonPressed (uint8_t State);

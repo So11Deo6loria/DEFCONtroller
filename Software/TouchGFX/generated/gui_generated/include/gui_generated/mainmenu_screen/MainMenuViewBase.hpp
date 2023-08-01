@@ -9,13 +9,10 @@
 #include <gui/mainmenu_screen/MainMenuPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <gui/containers/SpiMenuButton.hpp>
-#include <gui/containers/I2C.hpp>
-#include <gui/containers/CAN.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/mixins/ClickListener.hpp>
 
 class MainMenuViewBase : public touchgfx::View<MainMenuPresenter>
 {
@@ -23,6 +20,24 @@ public:
     MainMenuViewBase();
     virtual ~MainMenuViewBase() {}
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void DoorLockButtonPressed()
+    {
+        // Override and implement this function in MainMenu
+    }
+
+    virtual void AutoIgnitionButtonPressed()
+    {
+        // Override and implement this function in MainMenu
+    }
+
+    virtual void SearWarmerButtonPressed()
+    {
+        // Override and implement this function in MainMenu
+    }
 
 protected:
     FrontendApplication& application() {
@@ -33,22 +48,27 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image Image4;
-    SpiMenuButton spiMenuButton1;
-    I2C i2C1;
-    CAN cAN1;
-    touchgfx::Image Image5;
-    touchgfx::Image Image6;
-    touchgfx::Image Image7;
-    touchgfx::Image Image10;
-    touchgfx::Image Image11;
-    touchgfx::Line seperator_1_1;
-    touchgfx::PainterRGB565 seperator_1_1Painter;
-    touchgfx::ClickListener< touchgfx::TextArea > Title;
-    touchgfx::Line seperator_1_1_1;
-    touchgfx::PainterRGB565 seperator_1_1_1Painter;
+    touchgfx::Image Background;
+    touchgfx::Button Status_Button;
+    touchgfx::ToggleButton SeatWarmer_Button;
+    touchgfx::ToggleButton AutoIgnition_Button;
+    touchgfx::Line line1;
+    touchgfx::PainterRGB565 line1Painter;
+    touchgfx::Button Commands_Button;
+    touchgfx::Button Credits_Button;
+    touchgfx::ToggleButton DoorLock_Button;
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<MainMenuViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
     /*
      * Canvas Buffer Size

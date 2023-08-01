@@ -4,11 +4,11 @@
 #include <gui_generated/mainmenu_screen/MainMenuViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
-MainMenuViewBase::MainMenuViewBase()
+MainMenuViewBase::MainMenuViewBase() :
+    buttonCallback(this, &MainMenuViewBase::buttonCallbackHandler)
 {
 
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
@@ -16,71 +16,99 @@ MainMenuViewBase::MainMenuViewBase()
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    Image4.setXY(0, 0);
-    Image4.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND2_ID));
+    Background.setXY(0, 0);
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    spiMenuButton1.setXY(0, 216);
+    Status_Button.setXY(135, 59);
+    Status_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SETTINGS_ENGAGED_ID), touchgfx::Bitmap(BITMAP_SETTINGS_DISENGAGED_ID));
+    Status_Button.setAction(buttonCallback);
 
-    i2C1.setXY(0, 167);
+    SeatWarmer_Button.setXY(135, 153);
+    SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_ENGAGED_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_DISENGAGED_ID));
+    SeatWarmer_Button.setAction(buttonCallback);
 
-    cAN1.setXY(0, 115);
+    AutoIgnition_Button.setXY(25, 153);
+    AutoIgnition_Button.setBitmaps(touchgfx::Bitmap(BITMAP_AUTOSTARTSTOP_ENGAGED_ID), touchgfx::Bitmap(BITMAP_AUTOSTARTSTOP_DISENGAGED_ID));
+    AutoIgnition_Button.setAction(buttonCallback);
 
-    Image5.setXY(60, 272);
-    Image5.setBitmap(touchgfx::Bitmap(BITMAP_PROTIVITI_WSS_ID));
+    line1.setPosition(4, 242, 265, 15);
+    line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1.setPainter(line1Painter);
+    line1.setStart(5, 5);
+    line1.setEnd(225, 5);
+    line1.setLineWidth(3);
+    line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    Image6.setXY(-4, 7);
-    Image6.setBitmap(touchgfx::Bitmap(BITMAP_BHVL_TINY_ID));
+    Commands_Button.setXY(90, 0);
+    Commands_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DVHID_ID), touchgfx::Bitmap(BITMAP_DVHID_ID));
+    Commands_Button.setAction(buttonCallback);
 
-    Image7.setXY(7, 219);
-    Image7.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_INFO_30_ID));
+    Credits_Button.setXY(20, 248);
+    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+    Credits_Button.setAction(buttonCallback);
 
-    Image10.setXY(10, 115);
-    Image10.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_DROP_OF_BLOOD_30_ID));
-
-    Image11.setXY(10, 170);
-    Image11.setBitmap(touchgfx::Bitmap(BITMAP_ICONS8_INSULIN_PEN_30_ID));
-
-    seperator_1_1.setPosition(0, 260, 240, 18);
-    seperator_1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    seperator_1_1.setPainter(seperator_1_1Painter);
-    seperator_1_1.setStart(10, 3);
-    seperator_1_1.setEnd(230, 3);
-    seperator_1_1.setLineWidth(3);
-    seperator_1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
-    seperator_1_1.setAlpha(20);
-
-    Title.setXY(41, 42);
-    Title.setColor(touchgfx::Color::getColorFromRGB(99, 198, 2));
-    Title.setLinespacing(0);
-    Title.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZU6I));
-
-    seperator_1_1_1.setPosition(0, 39, 240, 18);
-    seperator_1_1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    seperator_1_1_1.setPainter(seperator_1_1_1Painter);
-    seperator_1_1_1.setStart(10, 3);
-    seperator_1_1_1.setEnd(230, 3);
-    seperator_1_1_1.setLineWidth(3);
-    seperator_1_1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
-    seperator_1_1_1.setAlpha(20);
+    DoorLock_Button.setXY(25, 59);
+    DoorLock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DOORLOCK_ENGAGED_ID), touchgfx::Bitmap(BITMAP_DOORLOCK_DISENGAGED_ID));
+    DoorLock_Button.setAction(buttonCallback);
 
     add(__background);
-    add(Image4);
-    add(spiMenuButton1);
-    add(i2C1);
-    add(cAN1);
-    add(Image5);
-    add(Image6);
-    add(Image7);
-    add(Image10);
-    add(Image11);
-    add(seperator_1_1);
-    add(Title);
-    add(seperator_1_1_1);
+    add(Background);
+    add(Status_Button);
+    add(SeatWarmer_Button);
+    add(AutoIgnition_Button);
+    add(line1);
+    add(Commands_Button);
+    add(Credits_Button);
+    add(DoorLock_Button);
 }
 
 void MainMenuViewBase::setupScreen()
 {
-    spiMenuButton1.initialize();
-    i2C1.initialize();
-    cAN1.initialize();
+
+}
+
+void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &Status_Button)
+    {
+        //toStatus
+        //When Status_Button clicked change screen to StatusPage
+        //Go to StatusPage with screen transition towards East
+        application().gotoStatusPageScreenSlideTransitionEast();
+    }
+    else if (&src == &SeatWarmer_Button)
+    {
+        //SeatWarmer_Toggle
+        //When SeatWarmer_Button clicked call virtual function
+        //Call SearWarmerButtonPressed
+        SearWarmerButtonPressed();
+    }
+    else if (&src == &AutoIgnition_Button)
+    {
+        //AutoIgition_Toggle
+        //When AutoIgnition_Button clicked call virtual function
+        //Call AutoIgnitionButtonPressed
+        AutoIgnitionButtonPressed();
+    }
+    else if (&src == &Commands_Button)
+    {
+        //toCommands
+        //When Commands_Button clicked change screen to CommandsPage
+        //Go to CommandsPage with screen transition towards East
+        application().gotoCommandsPageScreenSlideTransitionEast();
+    }
+    else if (&src == &Credits_Button)
+    {
+        //toCredits
+        //When Credits_Button clicked change screen to CreditsPage
+        //Go to CreditsPage with screen transition towards East
+        application().gotoCreditsPageScreenSlideTransitionEast();
+    }
+    else if (&src == &DoorLock_Button)
+    {
+        //DoorLock_Toggle
+        //When DoorLock_Button clicked call virtual function
+        //Call DoorLockButtonPressed
+        DoorLockButtonPressed();
+    }
 }

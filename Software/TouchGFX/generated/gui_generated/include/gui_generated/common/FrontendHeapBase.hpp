@@ -16,14 +16,12 @@
 
 #include <gui/mainmenu_screen/MainMenuView.hpp>
 #include <gui/mainmenu_screen/MainMenuPresenter.hpp>
-#include <gui/spipage_screen/SPIPageView.hpp>
-#include <gui/spipage_screen/SPIPagePresenter.hpp>
-#include <gui/can_insulinpumpstatus_screen/Can_InsulinPumpStatusView.hpp>
-#include <gui/can_insulinpumpstatus_screen/Can_InsulinPumpStatusPresenter.hpp>
-#include <gui/i2cpage_screen/I2CPageView.hpp>
-#include <gui/i2cpage_screen/I2CPagePresenter.hpp>
-#include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverrideView.hpp>
-#include <gui/can_insulinpumpoverride_screen/Can_InsulinPumpOverridePresenter.hpp>
+#include <gui/statuspage_screen/StatusPageView.hpp>
+#include <gui/statuspage_screen/StatusPagePresenter.hpp>
+#include <gui/commandspage_screen/CommandsPageView.hpp>
+#include <gui/commandspage_screen/CommandsPagePresenter.hpp>
+#include <gui/creditspage_screen/CreditsPageView.hpp>
+#include <gui/creditspage_screen/CreditsPagePresenter.hpp>
 
 
 /**
@@ -47,11 +45,10 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< MainMenuView,
-            touchgfx::meta::TypeList< SPIPageView,
-            touchgfx::meta::TypeList< Can_InsulinPumpStatusView,
-            touchgfx::meta::TypeList< I2CPageView,
-            touchgfx::meta::TypeList< Can_InsulinPumpOverrideView,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< StatusPageView,
+            touchgfx::meta::TypeList< CommandsPageView,
+            touchgfx::meta::TypeList< CreditsPageView,
+            touchgfx::meta::Nil > > >
             > GeneratedViewTypes;
 
     /**
@@ -64,11 +61,10 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef touchgfx::meta::TypeList< MainMenuPresenter,
-            touchgfx::meta::TypeList< SPIPagePresenter,
-            touchgfx::meta::TypeList< Can_InsulinPumpStatusPresenter,
-            touchgfx::meta::TypeList< I2CPagePresenter,
-            touchgfx::meta::TypeList< Can_InsulinPumpOverridePresenter,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< StatusPagePresenter,
+            touchgfx::meta::TypeList< CommandsPagePresenter,
+            touchgfx::meta::TypeList< CreditsPagePresenter,
+            touchgfx::meta::Nil > > >
             > GeneratedPresenterTypes;
 
     /**

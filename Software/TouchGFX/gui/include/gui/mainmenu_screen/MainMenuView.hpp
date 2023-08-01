@@ -6,11 +6,13 @@
 
 class MainMenuView : public MainMenuViewBase
 {
+
 public:
     MainMenuView();
     virtual ~MainMenuView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
 protected:
 };
 
