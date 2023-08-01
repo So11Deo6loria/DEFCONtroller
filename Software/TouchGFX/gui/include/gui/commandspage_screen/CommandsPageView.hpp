@@ -14,6 +14,9 @@ public:
     virtual ~CommandsPageView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void UpdateDoorLock_Status();
+    virtual void UdateAutoIgnition_Status();
+    virtual void UpdateSeatWarmer_Status();
 protected:
 };
 

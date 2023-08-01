@@ -24,10 +24,19 @@ void CommandsPageView::tearDownScreen()
     CommandsPageViewBase::tearDownScreen();
 }
 
-#ifdef DEVBOARDBUILD
+void CommandsPageView::UpdateDoorLock_Status()
+{
+//    CommandsPageViewBase::UpdateDoorLock_Status();
+}
 
-void CommandsPageView::UpdateSeatWarmer_Status(void){
+void CommandsPageView::UdateAutoIgnition_Status()
+{
+//    CommandsPageViewBase::UdateAutoIgnition_Status();
+}
 
+void CommandsPageView::UpdateSeatWarmer_Status(void)
+{
+//	CommandsPageViewBase::UpdateSeatWarmer_Status();
 }
 
 void  CommandsPageView::__UpdateDynamicData(void)
@@ -63,5 +72,3 @@ void  CommandsPageView::__UpdateDynamicData(void)
 	}
 
 }
-
-#endif

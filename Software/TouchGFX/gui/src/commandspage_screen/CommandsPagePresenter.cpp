@@ -32,7 +32,7 @@ void CommandsPagePresenter::UpdateBSValue(uint16_t)
 
 void CommandsPagePresenter::UpdateTempValue(void)
 {
-	//Do Nothing
+    //Do Nothing
 }
 
 void CommandsPagePresenter::UpdateDoorLock_Status(void)
@@ -44,13 +44,13 @@ void CommandsPagePresenter::UpdateDoorLock_Status(void)
 void CommandsPagePresenter::UpdateAutoIgnition_Status(void)
 {
 	//Do Nothing
-	view.UdateAutoIgnition_Status()
+	view.UdateAutoIgnition_Status();
 }
 
 void CommandsPagePresenter::UpdateSeatWarmer_Status(void)
 {
 	//Do Nothing
-	view.UpdateSeatWarmer_Status()
+	view.UpdateSeatWarmer_Status();
 }
 
 #endif

@@ -12,7 +12,10 @@ public:
     virtual ~MainMenuView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-
+    void SearWarmerButtonPressed();
+    void DoorLockButtonPressed();
+    void AutoIgnitionButtonPressed();
+    virtual void UpdateSeatWarmerButton();
 protected:
 };
 

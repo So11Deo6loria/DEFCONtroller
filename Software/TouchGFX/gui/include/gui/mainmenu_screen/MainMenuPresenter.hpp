@@ -35,11 +35,8 @@ public:
     virtual void UpdateDoorLock_Status(void);
     virtual void UpdateAutoIgnition_Status(void);
     virtual void UpdateSeatWarmer_Status(void);
-
-#ifdef DEVBOARDBUILD
     virtual void UpdateSpiDebugValue(uint16_t value);
     virtual void UpdateTempValue(void);
-#endif
 
 private:
     MainMenuPresenter();

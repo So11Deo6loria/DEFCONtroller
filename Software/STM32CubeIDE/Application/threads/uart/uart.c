@@ -10,9 +10,9 @@
 #include "stm32f4xx_hal_uart.h"
 #include <stdbool.h>
 
-bool DoorLock_Toggle;
-bool AutoIgnition_Toggle;
-bool SeatWarmer_Toggle;
+//bool DoorLock_Toggle;
+//bool AutoIgnition_Toggle;
+//bool SeatWarmer_Toggle;
 
 uint8_t DoorLock_ToggleState;
 uint8_t DoorLock_Toggle;
@@ -161,17 +161,18 @@ static void __handleSeatWarmerCommands(void)
 	if( 0 == strncmp( (char*)__seatWarmerHelpCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerHelpCommand) ) ||  0 == strncmp( (char*)__seatWarmerCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerCommand)+1 ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerHelpPrompt, sizeof(__seatWarmerHelpPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
 	}
 	else if( 0 == strncmp( (char*)__seatWarmerOnCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerOnCommand) ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerOnPrompt, sizeof(__seatWarmerOnPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
+		SeatWarmer_ToggleState = 1;
+		SeatWarmer_Toggle = 1;
 	}
 	else if( 0 == strncmp( (char*)__seatWarmerOffCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerOffCommand) ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerOffPrompt, sizeof(__seatWarmerOffPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
+		SeatWarmer_ToggleState = 0;
+		SeatWarmer_Toggle = 1;
 	}
 	else
 	{
@@ -271,7 +272,7 @@ void UARTChallengeThread( void * argument )
 }
 
 // Called By TouchGFX when a button is pressed.
-void SeatWarmerButtonPressed (uint8_t ToggleState)
+void cFun_SeatWarmerButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
 	{
@@ -286,7 +287,7 @@ void SeatWarmerButtonPressed (uint8_t ToggleState)
 }
 
 // Called By TouchGFX when a button is pressed.
-void DoorLockButtonPressed (uint8_t ToggleState)
+void cFun_DoorLockButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
 	{
@@ -301,7 +302,7 @@ void DoorLockButtonPressed (uint8_t ToggleState)
 }
 
 // Called By TouchGFX when a button is pressed.
-void AutoIgnitionButtonPressed (uint8_t ToggleState)
+void cFun_AutoIgnitionButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
 	{
