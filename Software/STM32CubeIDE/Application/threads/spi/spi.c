@@ -20,6 +20,8 @@ uint8_t SPIExternalFlashUpdated = 0;
 
 
 // Local Items.
+static uint8_t __selfDestructDisabledString[256] = "ODOMETER=89109;MILES_TO_EMPTY=31;OIL_LIFE=42;VIN=G02D3FC0N2023;FIRMWARE_VERSION=0.3;SELF_DESTRUCT=DISABLED";
+static uint8_t __selfDestructEnabledString[256] = "ODOMETER=89109;MILES_TO_EMPTY=31;OIL_LIFE=42;VIN=G02D3FC0N2023;FIRMWARE_VERSION=0.3;SELF_DESTRUCT=ENABLED";
 static uint8_t __debugDisabledString[256] = "MODEL=G312432B;SERIAL=23BD-29AF;VERSION=0.1.2;LOGS=ENCRYPTED;DEBUG=0;BLUETOOTH=MDM1234;PIN=5678";
 static uint8_t __debugEnabledString[256]  = "MODEL=G312432B;SERIAL=23BD-29AF;VERSION=0.1.2;LOGS=ENCRYPTED;DEBUG=1;BLUETOOTH=MDM1234;PIN=5678";
 static uint8_t __emptyPage[256];
@@ -27,6 +29,19 @@ static uint8_t __emptyPage[256];
 #define STM25P80_ID 0x202014
 #define DUMMY_BYTE 0xA5
 #define STM25P80_PAGESIZE 256
+
+#define SST_CMD_WRITE_ENABLE 	   	0x06
+#define SST_CMD_WRITE_DISABLE   	0x04
+#define SST_CMD_READ_STATUS_REG 	0x05
+#define SST_CMD_WRITE_STATUS_REG 	0x01
+#define SST_CMD_READ_DATA       	0x03
+#define SST_CMD_FAST_READ_DATA    	0x0B
+#define SST_CMD_AAI_WORD_PROGRAM	0xAD
+#define SST_CMD_SECTOR_ERASE    	0xD8
+#define SST_CMD_CHIP_ERASE      	0xC7
+#define SST_CMD_READ_DEVICE_ID  	0x9F
+#define SST_DEVICE_ID 				0xBF258E
+
 
 /* Instructions */
 #define READ_DATA_BYTES 0x03
@@ -39,6 +54,8 @@ static uint8_t __emptyPage[256];
 extern SPI_HandleTypeDef hspi4;
 static eDebugMode_t __debugMode = DEBUG_UNSET;
 static eSPIState_t 	__spiState 	= SPI_READID;
+static eWriteEnableMode_t __writeEnableMode = SPI_WRITE_DISABLE;
+
 
 /* Data Buffers */
 static uint16_t __txDataIndex = 0;
@@ -60,7 +77,7 @@ HAL_SPI_StateTypeDef halSpiState;
 static void MX_SPI4_Init (void)
 {
     /** SPI4 GPIO Configuration
-    PC3     ------> CS
+    PE4     ------> CS
     PE2     ------> SPI4_SCK
     PE5     ------> SPI4_MISO
     PE6     ------> SPI4_MOSI
@@ -69,14 +86,14 @@ static void MX_SPI4_Init (void)
 
 	/* CS Configuration */
 	/*Configure GPIO pin Output Level */
-	HAL_GPIO_WritePin (GPIOC, GPIO_PIN_3, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin (GPIOE, GPIO_PIN_4, GPIO_PIN_RESET);
 
-	/*Configure GPIO CS pin: PC3 */
-	GPIO_InitStruct.Pin = GPIO_PIN_3;
+	/*Configure GPIO CS pin: PE4 */
+	GPIO_InitStruct.Pin = GPIO_PIN_4;
 	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-	HAL_GPIO_Init (GPIOC, &GPIO_InitStruct);
+	HAL_GPIO_Init (GPIOE, &GPIO_InitStruct);
 
 	/* SPI4 parameter configuration*/
 	hspi4.Instance = SPI4;
@@ -97,6 +114,16 @@ static void MX_SPI4_Init (void)
 	}
 }
 
+static void __setCS(void)
+{
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, GPIO_PIN_SET);
+}
+
+static void __resetCS(void)
+{
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, GPIO_PIN_RESET);
+}
+
 static void __spiRead (uint16_t Length)
 {
 //	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET); 	// Drive CS Low
@@ -106,7 +133,7 @@ static void __spiRead (uint16_t Length)
 
 static void __spiWrite (uint16_t Length)
 {
-	HAL_GPIO_WritePin (GPIOC, GPIO_PIN_3, GPIO_PIN_RESET); 	// Drive CS Low
+	__resetCS(); 	// Drive CS Low
 	HAL_SPI_Transmit (&hspi4, &__txData[0], Length, 100);	// Blocking Write Call
 
 	__spiRead (10);
@@ -115,39 +142,16 @@ static void __spiWrite (uint16_t Length)
 
 static void __spiTransactionIT (uint16_t Length)
 {
-	HAL_GPIO_WritePin (GPIOC, GPIO_PIN_3, GPIO_PIN_RESET); 	// Drive CS Low
+	__resetCS(); 	// Drive CS Low
 	HAL_SPI_TransmitReceive_IT (&hspi4, __txData, __rxData, Length);
 }
 
 static void __spiTransaction (uint16_t Length)
 {
-	HAL_GPIO_WritePin (GPIOC, GPIO_PIN_3, GPIO_PIN_RESET); 	// Drive CS Low
+	__resetCS(); 	// Drive CS Low
 	HAL_SPI_TransmitReceive (&hspi4, __txData, __rxData, Length, 100);
-	HAL_GPIO_WritePin (GPIOC, GPIO_PIN_3, GPIO_PIN_SET); 	// Drive CS High
+	__setCS(); 	// Drive CS High
 
-}
-
-static uint8_t __waitForReady (void)
-{
-	HAL_SPI_StateTypeDef halState;
-	while (HAL_SPI_STATE_READY != (halState = HAL_SPI_GetState (&hspi4)))
-	{
-		osDelay (1);
-	}
-
-	return 1;
-}
-
-static void __spiWriteRead( uint16_t txLength, uint16_t rxLength )
-{
-	/* Trying to make sure CS stays low */
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_RESET); 	// Drive CS Low
-
-	__spiWrite( txLength );
-	__waitForReady();
-	__spiRead( rxLength );
-
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET); 	// Drive CS High
 }
 
 static void __resetBuffers(void)
@@ -158,6 +162,41 @@ static void __resetBuffers(void)
 	memset(__rxData, 0, sizeof(__rxData) );
 }
 
+static uint8_t __readStatusRegister(void)
+{
+	__resetBuffers();
+	__txData[__txDataIndex++] = SST_CMD_READ_STATUS_REG;
+	__spiTransaction(2); // 1 Byte Command
+	return __rxData[1]; // 1 Byte Reponse
+}
+
+static uint8_t __waitForReady (void)
+{
+	HAL_SPI_StateTypeDef halState;
+	while (HAL_SPI_STATE_READY != (halState = HAL_SPI_GetState (&hspi4)))
+	{
+		osDelay(1);
+	}
+
+	while(__readStatusRegister() & (1 << 0) != 0 )
+	{
+		osDelay(10);
+	}
+
+	return 1;
+}
+
+static void __spiWriteRead( uint16_t txLength, uint16_t rxLength )
+{
+	/* Trying to make sure CS stays low */
+	__resetCS(); 	// Drive CS Low
+
+	__spiWrite( txLength );
+	__waitForReady();
+	__spiRead( rxLength );
+
+	__setCS(); 	// Drive CS High
+}
 
 
 static uint8_t __readID(void)
@@ -168,7 +207,7 @@ static uint8_t __readID(void)
 	__spiTransaction(4); // 1 Byte Command + 3 Byte Response
 
 	readID = (__rxData[1] << 16) | (__rxData[2] << 8) | __rxData[3];
-	if( readID == STM25P80_ID )
+	if( readID == SST_DEVICE_ID )
 	{
 		return 1;
 	}
@@ -199,6 +238,41 @@ static void __writePage(uint8_t * writeBuffer)
 	__txData[__txDataIndex++] = 0x00;
 	memcpy(&__txData[__txDataIndex], writeBuffer, length);
 	__spiTransaction(__txDataIndex+length); // Confirm this value
+}
+
+static void __writeData(uint32_t address, const uint8_t* data, uint32_t length)
+{
+	/* Write Enable */
+	__resetBuffers();
+	__txData[__txDataIndex++] = SST_CMD_WRITE_ENABLE;
+	__spiTransaction(1); // 1 Byte Command
+
+	/* Make Sure You Don't Write Too Quickly. May not need this HAL might do it for you. */
+	__waitForReady();
+
+	/* Write First Entry With Address */
+	__resetBuffers();
+	__txData[__txDataIndex++] = SST_CMD_AAI_WORD_PROGRAM;
+	__txData[__txDataIndex++] = 0x00;
+	__txData[__txDataIndex++] = 0x00;
+	__txData[__txDataIndex++] = 0x00;
+	memcpy(&__txData[__txDataIndex++], &data[0], 2);
+	__spiTransaction(6);
+
+	for( uint32_t i=2; i<length; i+=2 )
+	{
+		/* Wait for transaction to complete */
+	    __waitForReady();
+	    __resetBuffers();
+	    __txData[__txDataIndex++] = SST_CMD_AAI_WORD_PROGRAM;
+	    memcpy(&__txData[__txDataIndex++], &data[i], 2);
+	    __spiTransaction(3);
+	}
+
+	/* Write Enable */
+	__resetBuffers();
+	__txData[__txDataIndex++] = SST_CMD_WRITE_DISABLE; // Need to make sure that the part is in the software mode for this.
+	__spiTransaction(1); // 1 Byte Command
 }
 
 static void __setDebugMode (eDebugMode_t debugMode)
@@ -238,7 +312,7 @@ static void __processPage(void)
 	{
 		// Should only be when empty or that weird 0xFE thing.
 
-		__writePage( (uint8_t*)&__debugDisabledString );
+		__writePage( (uint8_t*)&__selfDestructDisabledString );
 	}
 	else
 	{
@@ -252,9 +326,9 @@ static void __processPage(void)
 			else if( __configString[i] == ';' )
 			{
 				parseState = KEY;
-				if( 0 == strncmp( &__key[0], "DEBUG", strlen("DEBUG") ) )
+				if( 0 == strncmp( &__key[0], "SELF_DESTRUCT", strlen("SELF_DESTRUCT") ) )
 				{
-					if( 0 == strncmp( &__value[0], "1", strlen("1") ) )
+					if( 0 == strncmp( &__value[0], "ENABLED", strlen("ENABLED") ) )
 					{
 						__setDebugMode(DEBUG_ENABLED);
 					}
@@ -300,14 +374,14 @@ static void __eraseSector(void)
 {
 	/* Write Enable */
 	__resetBuffers();
-	__txData[__txDataIndex++] = WRITE_ENABLE;
+	__txData[__txDataIndex++] = SST_CMD_WRITE_ENABLE;
 	__spiTransaction(1); // 1 Byte Command
 
 	/* Make Sure You Don't Write Too Quickly. May not need this HAL might do it for you. */
 	__waitForReady();
 
 	__resetBuffers();
-	__txData[__txDataIndex++] = SECTOR_ERASE;
+	__txData[__txDataIndex++] = SST_CMD_SECTOR_ERASE;
 	__txData[__txDataIndex++] = 0x00; // Start at Address 0x00
 	__txData[__txDataIndex++] = 0x00; // Start at Address 0x00
 	__txData[__txDataIndex++] = 0x00; // Start at Address 0x00
@@ -315,10 +389,38 @@ static void __eraseSector(void)
 	__spiTransaction(4);
 }
 
+static void __writeEnable(eWriteEnableMode_t writeEnable)
+{
+	__resetBuffers();
+	if( writeEnable == SPI_WRITE_DISABLE )
+	{
+		__txData[__txDataIndex++] = SST_CMD_WRITE_DISABLE;
+	}
+	else if( writeEnable == SPI_WRITE_ENABLE )
+	{
+
+	}
+
+	__spiTransaction(1); // 1 Byte Command
+}
+
+static void __chipErase(void)
+{
+	__waitForReady();
+	__writeEnable(SPI_WRITE_ENABLE);
+
+	/* Full Chip Erase */
+	__resetBuffers();
+	__txData[__txDataIndex++] = SST_CMD_CHIP_ERASE;
+	__spiTransaction(1); // 1 Byte Command
+
+	__writeEnable(SPI_WRITE_DISABLE);
+}
+
 static void __processData( void )
 {
 	uint32_t readID = 0;
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, GPIO_PIN_SET);
 	switch( __spiState )
 	{
 		case SPI_READID:
@@ -345,45 +447,70 @@ static void __processData( void )
 	}
 }
 
+static void __writeStatusRegister(void)
+{
+	__waitForReady();
+	__writeEnable(SPI_WRITE_ENABLE);
+
+	__resetBuffers();
+	__txData[__txDataIndex++] = SST_CMD_WRITE_STATUS_REG;
+	__txData[__txDataIndex++] = 0; // Clear the BP0-3 bits
+	__spiTransaction(__txDataIndex);
+
+	__writeEnable(SPI_WRITE_DISABLE);
+}
+
 static void __prepareFlash(uint8_t * writeBuffer)
 {
-	__eraseSector();
-	osDelay(2000);
+
+	__writeStatusRegister();
+	__readStatusRegister();
+//	__eraseSector();
+	__chipErase();
+//	osDelay(2000);
 	__waitForReady();
-	__writePage( writeBuffer );	// Testing purposes only
+
+	__readStatusRegister();
+
+	/* Caleb Testing */
+	__readPage();
+	__waitForReady();
+
+	__writeData( 0x00000000, __selfDestructDisabledString, strlen((char*)__selfDestructDisabledString));
+//	__writePage( writeBuffer );	// Testing purposes only
 }
 
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef * hspi)
 {
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET); 	// Drive CS High
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, GPIO_PIN_SET); 	// Drive CS High
 	while(1);
 }
 
 void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef * hspi)
 {
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3, GPIO_PIN_SET); 	// Drive CS High
+	HAL_GPIO_WritePin(GPIOE, GPIO_PIN_4, GPIO_PIN_SET); 	// Drive CS High
 	__processData();
 }
 
 void SPIChallengeThread( void * argument )
 {
-	uint8_t test = 0;
+	uint8_t test = 1;
 	__setDebugMode(1);
 	MX_SPI4_Init();
-	//__setDebugMode(DEBUG_DISABLED); //matt debuging TODO delete
+
 	memset( __emptyPage, 0xFF, sizeof(__emptyPage) ); // TODO: there has got to be a better way to do this
-	HAL_GPIO_WritePin (GPIOC, GPIO_PIN_3, GPIO_PIN_SET); 	// Drive CS High
+	__setCS(); 	// Drive CS High
 
 	if( 1 == test ) // Write Debug Disabled
 	{
-		__prepareFlash((uint8_t*)&__debugDisabledString);
+		__prepareFlash((uint8_t*)&__selfDestructDisabledString);
 		__waitForReady();
 		osDelay(2000); // Quit being stupid and poll the status register
 
 	}
 	else if( 2 == test ) // Write Debug Enabled
 	{
-		__prepareFlash((uint8_t*)&__debugEnabledString);
+		__prepareFlash((uint8_t*)&__selfDestructEnabledString);
 		__waitForReady();
 		osDelay(2000); // Quit being stupid and poll the status register
 	}
@@ -399,7 +526,7 @@ void SPIChallengeThread( void * argument )
 	for(;;)
 	{
 		__readPage();
-		osDelay(2022);
+		osDelay(2023);
 	}
 }
 

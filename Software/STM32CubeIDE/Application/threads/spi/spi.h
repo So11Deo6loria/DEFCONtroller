@@ -28,6 +28,11 @@ typedef enum {
 } eSPIState_t;
 
 typedef enum {
+	SPI_WRITE_DISABLE,
+	SPI_WRITE_ENABLE
+} eWriteEnableMode_t;
+
+typedef enum {
 	KEY,
 	VALUE
 } eConfigParseState_t;

@@ -105,7 +105,9 @@ void CanChallengeButtonPressed (uint8_t ToggleState)
 /*
  * Local Static Functions
  */
-static void _CanSendMessage(uint32_t ID, uint8_t Length, uint8_t * MessageBuffer) {
+static void _CanSendMessage(uint32_t ID, uint8_t Length, uint8_t * MessageBuffer)
+{
+	HAL_StatusTypeDef status;
 
 	static uint32_t Mailbox;
 	 CAN_TxHeaderTypeDef CanTxHeader = {
@@ -116,7 +118,8 @@ static void _CanSendMessage(uint32_t ID, uint8_t Length, uint8_t * MessageBuffer
 			.DLC = Length,
 			.TransmitGlobalTime = DISABLE };
 
-	HAL_CAN_AddTxMessage(&hcan2, &CanTxHeader, MessageBuffer, &Mailbox);
+	 status = HAL_CAN_AddTxMessage(&hcan2, &CanTxHeader, MessageBuffer, &Mailbox);
+	 vTaskDelay(1);
 }
 
 // TODO: RX if need be.
