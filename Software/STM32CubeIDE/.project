@@ -37,7 +37,7 @@
 		<link>
 			<name>STM32F429I_DISCO.ioc</name>
 			<type>1</type>
-			<location>C:/Users/nate/Dev/DEFCONtroller/Software/STM32F429I_DISCO_REV_E01.ioc</location>
+			<location>/Applications/STM32CubeIDE.app/Contents/MacOS/C::/Users/nate/Dev/DEFCONtroller/Software/STM32F429I_DISCO_REV_E01.ioc</location>
 		</link>
 		<link>
 			<name>Application/User/freertos.c</name>
@@ -215,57 +215,77 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/cmsis_os2.c</name>
+			<name>Application/User/generated/ApplicationFontProvider.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/ApplicationFontProvider.cpp</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/croutine.c</name>
+			<name>Application/User/generated/BSUnitsBase.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/croutine.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/BSUnitsBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/event_groups.c</name>
+			<name>Application/User/generated/BSUnits_1Base.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/BSUnits_1Base.cpp</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/heap_4.c</name>
+			<name>Application/User/generated/BackButtonBase.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/BackButtonBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/list.c</name>
+			<name>Application/User/generated/BackToPumpBase.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/list.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/BackToPumpBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/port.c</name>
+			<name>Application/User/generated/BitmapDatabase.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/BitmapDatabase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/queue.c</name>
+			<name>Application/User/generated/CANBase.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/queue.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/CANBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/stream_buffer.c</name>
+			<name>Application/User/generated/CachedFont.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/CachedFont.cpp</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/tasks.c</name>
+			<name>Application/User/generated/Can_InsulinPumpOverrideViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/tasks.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/can_insulinpumpoverride_screen/Can_InsulinPumpOverrideViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/FreeRTOS/timers.c</name>
+			<name>Application/User/generated/Can_InsulinPumpStatusViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/timers.c</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/can_insulinpumpstatus_screen/Can_InsulinPumpStatusViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Drivers/BSP/Components/ili9341.c</name>
+			<name>Application/User/generated/FontCache.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/FontCache.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Font_ARIALNB_TTF_20_4bpp_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_ARIALNB_TTF_20_4bpp_0.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Font_calibri_20_4bpp_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_calibri_20_4bpp_0.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Font_calibri_24_4bpp_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_calibri_24_4bpp_0.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/Font_calibri_36_4bpp_0.cpp</name>
 			<type>1</type>
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/BSP/Components/ili9341/ili9341.c</locationURI>
 		</link>
