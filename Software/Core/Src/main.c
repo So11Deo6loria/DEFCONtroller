@@ -30,6 +30,9 @@
 #include "threads/i2c/i2c.h"
 #include "threads/spi/spi.h"
 #include "threads/jtag/jtag.h"
+#include "threads/led/led.h"
+//#include "threads.h"
+//#include "xmodem.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -88,6 +91,7 @@ osThreadId_t i2cTaskHandle;
 osThreadId_t spiTaskHandle;
 osThreadId_t uartTaskHandle;
 osThreadId_t jtagTaskHandle;
+osThreadId_t ledTaskHandle;
 
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
@@ -97,10 +101,10 @@ const osThreadAttr_t defaultTask_attributes = {
 
 /* Thread Attributes */
 osThreadAttr_t canThreadAttributes  = defaultTask_attributes;
-osThreadAttr_t i2cThreadAttributes  = defaultTask_attributes;
 osThreadAttr_t uartThreadAttributes = defaultTask_attributes;
 osThreadAttr_t spiThreadAttributes  = defaultTask_attributes;
 osThreadAttr_t jtagThreadAttributes = defaultTask_attributes;
+osThreadAttr_t ledThreadAttributes  = defaultTask_attributes;
 
 /* Definitions for GUI_Task */
 osThreadId_t GUI_TaskHandle;
@@ -119,8 +123,8 @@ static osSemaphoreDef_t i2c_SemaphoreConfig ={ .name = "I2CLock", .cb_mem = 1, .
 char xUARTFlag[32];
 char xSPIFlag[32];
 char xJTAGFlag[32];
-char xI2CFlag[32];
 char xCANFlag[32];
+char xI2CFlag[32];
 
 /* USER CODE END PV */
 
@@ -182,14 +186,13 @@ static void __constructFlags( void )
 	memset( xSPIFlag, 0, 32 );
 	memset( xUARTFlag, 0, 32 );
 
-	xUARTFlag[0] = 'B';
-	xUARTFlag[1] = 'H';
-	xUARTFlag[2] = 'V';
+	xUARTFlag[0] = 'I';
+	xUARTFlag[1] = 'o';
+	xUARTFlag[2] = 'T';
 	xUARTFlag[3] = '_';
 
 	memcpy( xJTAGFlag, xUARTFlag, strlen(xUARTFlag) );
 	memcpy( xSPIFlag, xUARTFlag, strlen(xUARTFlag) );
-	memcpy( xI2CFlag, xUARTFlag, strlen(xUARTFlag) );
 	memcpy( xCANFlag, xUARTFlag, strlen(xUARTFlag) );
 
 	/* Challenge Specific Strings */
@@ -207,10 +210,6 @@ static void __constructFlags( void )
 	xSPIFlag[5] = 'P';
 	xSPIFlag[6] = '1';
 
-	xI2CFlag[4] = '1';
-	xI2CFlag[5] = '2';
-	xI2CFlag[6] = 'C';
-
 	xUARTFlag[8] = '_';
 	xUARTFlag[9] = 'C';
 	xUARTFlag[10] = 'H';
@@ -224,7 +223,6 @@ static void __constructFlags( void )
 
 	memcpy( &xJTAGFlag[strlen(xJTAGFlag)], &xUARTFlag[8], strlen(&xUARTFlag[8]) );
 	memcpy( &xSPIFlag[strlen(xSPIFlag)],   &xUARTFlag[8], strlen(&xUARTFlag[8]) );
-	memcpy( &xI2CFlag[strlen(xI2CFlag)],   &xUARTFlag[8], strlen(&xUARTFlag[8]) );
 }
 
 /**
@@ -294,17 +292,18 @@ int main(void)
 
   /* Set Thread Names - For Debugging */
   canThreadAttributes.name  = "canTask";
-  i2cThreadAttributes.name  = "i2cTask";
   uartThreadAttributes.name = "uartTask";
   spiThreadAttributes.name  = "spiTask";
   jtagThreadAttributes.name = "jtagTask";
+  ledThreadAttributes.name = "ledTask";
 
   /* creation of defaultTask */
   canTaskHandle  = osThreadNew(CanChallangeThread,  NULL, &canThreadAttributes);
-  i2cTaskHandle  = osThreadNew(I2CChallengeThread,  NULL, &i2cThreadAttributes);
+//  i2cTaskHandle  = osThreadNew(I2CChallengeThread,  NULL, &i2cThreadAttributes);
   spiTaskHandle  = osThreadNew(SPIChallengeThread,  NULL, &spiThreadAttributes);
   uartTaskHandle = osThreadNew(UARTChallengeThread, NULL, &uartThreadAttributes);
   jtagTaskHandle = osThreadNew(JTAGChallengeThread, NULL, &jtagThreadAttributes);
+  ledTaskHandle = osThreadNew(LEDChallengeThread, NULL, &ledThreadAttributes);
 
   /* creation of GUI_Task */
   GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);
