@@ -10,22 +10,18 @@
 #include "stm32f4xx_hal_uart.h"
 #include <stdbool.h>
 
-//bool DoorLock_Toggle;
-//bool AutoIgnition_Toggle;
-//bool SeatWarmer_Toggle;
-
-uint8_t DoorLock_ToggleState;
-uint8_t DoorLock_Toggle;
-uint8_t SeatWarmer_ToggleState;
-uint8_t SeatWarmer_Toggle;
-uint8_t AutoIgnition_ToggleState;
-uint8_t AutoIgnition_Toggle;
+uint8_t DoorLockState;
+uint8_t DoorLockUpdated;
+uint8_t SeatWarmerState;
+uint8_t SeatWarmerUpdated;
+uint8_t AutoIgnitionState;
+uint8_t AutoIgnitionUpdated;
 
 UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart1;
 
 extern uint8_t debugFlagTouchGFX;
-extern uint8_t debugUpdatedTouchGFX;
+extern uint8_t debugFlagUpdated;
 
 static uint8_t __prompt [] = "> ";
 static uint8_t __unsupportedEntry[] = "Unsupported Entry";
@@ -130,13 +126,13 @@ static void __handleConfigCommands(void)
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__configDebugOnPrompt, sizeof(__configDebugOnPrompt)-1, 100 );
 		debugFlagTouchGFX = 5;
-		debugUpdatedTouchGFX = 1;
+		debugFlagUpdated = 1;
 	}
 	else if( (0 == strncmp( "config debug off",  __rxBuffer, 17 ) ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__configDebugOffPrompt, sizeof(__configDebugOffPrompt)-1, 100 );
 		debugFlagTouchGFX = 0;
-		debugUpdatedTouchGFX = 1;
+		debugFlagUpdated = 1;
 	}
 	else if( 0 == strncmp( (char*)__configSelfDestructOnCommand, (char*)__rxBuffer, strlen((char*)__configSelfDestructOnCommand) ) )
 	{
@@ -165,14 +161,14 @@ static void __handleSeatWarmerCommands(void)
 	else if( 0 == strncmp( (char*)__seatWarmerOnCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerOnCommand) ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerOnPrompt, sizeof(__seatWarmerOnPrompt)-1, 100 );
-		SeatWarmer_ToggleState = 1;
-		SeatWarmer_Toggle = 1;
+		SeatWarmerState = 1;
+		SeatWarmerUpdated = 1;
 	}
 	else if( 0 == strncmp( (char*)__seatWarmerOffCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerOffCommand) ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerOffPrompt, sizeof(__seatWarmerOffPrompt)-1, 100 );
-		SeatWarmer_ToggleState = 0;
-		SeatWarmer_Toggle = 1;
+		SeatWarmerState = 0;
+		SeatWarmerUpdated = 1;
 	}
 	else
 	{
@@ -216,6 +212,8 @@ void UARTChallengeThread( void * argument )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__prompt, sizeof(__prompt)-1, 100 );
 		waitingForMessage = 1;
+
+
 		while( waitingForMessage )
 		{
 			if( HAL_OK == HAL_UART_Receive( &huart1, &byte, 1, 100 ) )
@@ -272,46 +270,46 @@ void UARTChallengeThread( void * argument )
 }
 
 // Called By TouchGFX when a button is pressed.
-void cFun_SeatWarmerButtonPressed (uint8_t ToggleState)
+void UARTChallengeSeatWarmerButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
 	{
-		SeatWarmer_ToggleState = 1;
-		SeatWarmer_Toggle = 1;
+		SeatWarmerState = 1;
 	}
 	else
 	{
-		SeatWarmer_ToggleState = 0;
-		SeatWarmer_Toggle= 1;
+		SeatWarmerState = 0;
 	}
+
+	SeatWarmerUpdated= 1;
 }
 
 // Called By TouchGFX when a button is pressed.
-void cFun_DoorLockButtonPressed (uint8_t ToggleState)
+void UARTChallengeDoorLockButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
 	{
-		DoorLock_ToggleState = 1;
-		DoorLock_Toggle = 1;
+		DoorLockState = 1;
 	}
 	else
 	{
-		DoorLock_ToggleState = 0;
-		DoorLock_Toggle= 1;
+		DoorLockState = 0;
 	}
+
+	DoorLockUpdated= 1;
 }
 
 // Called By TouchGFX when a button is pressed.
-void cFun_AutoIgnitionButtonPressed (uint8_t ToggleState)
+void UARTChallengeIgnitionButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
 	{
-		AutoIgnition_ToggleState = 1;
-		AutoIgnition_Toggle = 1;
+		AutoIgnitionState = 1;
 	}
 	else
 	{
-		AutoIgnition_ToggleState = 0;
-		AutoIgnition_Toggle= 1;
+		AutoIgnitionState = 0;
 	}
+
+	AutoIgnitionUpdated= 1;
 }

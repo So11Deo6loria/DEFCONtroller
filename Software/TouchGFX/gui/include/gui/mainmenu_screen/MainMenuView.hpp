@@ -12,10 +12,19 @@ public:
     virtual ~MainMenuView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    void SearWarmerButtonPressed();
-    void DoorLockButtonPressed();
-    void AutoIgnitionButtonPressed();
-    virtual void UpdateSeatWarmerButton();
+    //Button Events
+    virtual void SearWarmerButtonPressed();
+    virtual void DoorLockButtonPressed();
+    virtual void AutoIgnitionButtonPressed();
+
+    // Button State Update Handlers
+    virtual void UpdateDoorLockStatus(void);
+    virtual void UpdateAutoIgnitionStatus(void);
+    virtual void UpdateSeatWarmerStatus(void);
+
+    // IDK WTF these are for...
+    virtual void UpdateSpiDebugValue(uint8_t value);
+    virtual void UpdateTempValue(void);
 protected:
 };
 

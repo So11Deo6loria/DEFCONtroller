@@ -17,15 +17,11 @@ void MainMenuPresenter::deactivate()
 
 }
 
-void MainMenuPresenter::UpdateBSValue(uint16_t)
-{
-	//Do Nothing
-}
 
-void MainMenuPresenter::UpdateSpiDebugValue(uint16_t)
-{
-    //Do Nothing
-}
+/*
+ * Event Handlers for TouchGFX Events
+ */
+
 
 void MainMenuPresenter::UpdateTempValue(void)
 {
@@ -34,16 +30,25 @@ void MainMenuPresenter::UpdateTempValue(void)
 
 void MainMenuPresenter::UpdateDoorLock_Status(void)
 {
-	//Do Nothing
-}
-
-void MainMenuPresenter::UpdateAutoIgnition_Status(void)
-{
-	//Do Nothing
+	view.UpdateDoorLockStatus();
 }
 
 void MainMenuPresenter::UpdateSeatWarmer_Status(void)
 {
+	view.UpdateSeatWarmerStatus();
+}
+
+void MainMenuPresenter::UpdateAutoIgnition_Status(void)
+{
+	view.UpdateAutoIgnitionStatus();
+}
+
+void MainMenuPresenter::UpdateBSValue(uint16_t)
+{
 	//Do Nothing
-	view.UpdateSeatWarmerButton();
+}
+
+void MainMenuPresenter::UpdateSpiDebugValue(uint16_t)
+{
+    //Do Nothing
 }

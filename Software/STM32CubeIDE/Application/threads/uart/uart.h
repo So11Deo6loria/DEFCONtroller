@@ -14,6 +14,6 @@
 
 void UARTChallengeThread( void * argument );
 
-void cFun_SeatWarmerButtonPressed (uint8_t State);
-void cFun_DoorLockButtonPressed (uint8_t State);
-void cFun_AutoIgnitionButtonPressed (uint8_t State);
+void UARTChallengeSeatWarmerButtonPressed (uint8_t State);
+void UARTChallengeDoorLockButtonPressed (uint8_t State);
+void UARTChallengeIgnitionButtonPressed (uint8_t State);

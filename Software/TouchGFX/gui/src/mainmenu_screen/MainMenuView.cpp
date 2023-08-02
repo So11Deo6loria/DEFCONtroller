@@ -1,10 +1,17 @@
 #include <gui/mainmenu_screen/MainMenuView.hpp>
 //#include <text/TextKeysAndLanguages.hpp>
 
-extern "C" void cFun_AutoIgnitionButtonPressed (uint8_t State);
-extern "C" void cFun_DoorLockButtonPressed (uint8_t State);
-extern "C" void cFun_SeatWarmerButtonPressed (uint8_t State);
-extern __IO uint8_t SeatWarmer_ToggleState;
+extern "C" void UARTChallengeIgnitionButtonPressed (uint8_t State);
+extern "C" void UARTChallengeDoorLockButtonPressed (uint8_t State);
+extern "C" void UARTChallengeSeatWarmerButtonPressed (uint8_t State);
+
+
+extern __IO uint8_t DoorLockState;
+extern __IO uint8_t DoorLockUpdated;
+extern __IO uint8_t SeatWarmerState;
+extern __IO uint8_t SeatWarmerUpdated;
+extern __IO uint8_t AutoIgnitionState;
+extern __IO uint8_t AutoIgnitionUpdated;
 
 MainMenuView::MainMenuView()
 {
@@ -23,20 +30,69 @@ void MainMenuView::tearDownScreen()
 
 void MainMenuView::SearWarmerButtonPressed()
 {
-	cFun_SeatWarmerButtonPressed(SeatWarmer_Button.getState());
+  UARTChallengeSeatWarmerButtonPressed(SeatWarmer_Button.getState());
 }
 
 void MainMenuView::DoorLockButtonPressed()
 {
-	cFun_DoorLockButtonPressed(DoorLock_Button.getState());
+	UARTChallengeDoorLockButtonPressed(DoorLock_Button.getState());
 }
 
 void MainMenuView::AutoIgnitionButtonPressed()
 {
-	cFun_AutoIgnitionButtonPressed(AutoIgnition_Button.getState());
+	UARTChallengeIgnitionButtonPressed(AutoIgnition_Button.getState());
 }
 
-void MainMenuView::UpdateSeatWarmerButton()
+void MainMenuView::UpdateSeatWarmerStatus()
 {
-//	SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DOORLOCK_DISENGAGED_ID));
+	if(SeatWarmerState)
+	{
+		SeatWarmer_Button.forceState( true );
+	}
+	else
+	{
+		SeatWarmer_Button.forceState( false );
+	}
+
+	SeatWarmer_Button.invalidate();
 }
+
+void MainMenuView::UpdateDoorLockStatus()
+{
+	if(DoorLockState)
+	{
+		DoorLock_Button.forceState( true );
+	}
+	else
+	{
+		DoorLock_Button.forceState( false );
+	}
+
+	DoorLock_Button.invalidate();
+}
+
+void MainMenuView::UpdateAutoIgnitionStatus()
+{
+	if(AutoIgnitionState)
+	{
+		AutoIgnition_Button.forceState( true );
+	}
+	else
+	{
+		AutoIgnition_Button.forceState( false );
+	}
+
+	AutoIgnition_Button.invalidate();
+}
+
+void MainMenuView::UpdateTempValue()
+{
+// Do Nothing
+}
+
+void MainMenuView::UpdateSpiDebugValue( uint8_t Value )
+{
+// Do Nothing
+}
+
+

@@ -14,12 +14,15 @@ extern __IO uint8_t i2c_isValueUpdated;
 //extern __IO bool AutoIgnition_Toggle;
 //extern __IO bool SeatWarmer_Toggle;
 
-extern __IO uint8_t DoorLock_ToggleState;
-extern __IO uint8_t DoorLock_Toggle;
-extern __IO uint8_t SeatWarmer_ToggleState;
-extern __IO uint8_t SeatWarmer_Toggle;
-extern __IO uint8_t AutoIgnition_ToggleState;
-extern __IO uint8_t AutoIgnition_Toggle;
+extern __IO uint8_t DoorLockState;
+extern __IO uint8_t DoorLockUpdated;
+extern __IO uint8_t SeatWarmerState;
+extern __IO uint8_t SeatWarmerUpdated;
+extern __IO uint8_t AutoIgnitionState;
+extern __IO uint8_t AutoIgnitionUpdated;
+
+extern __IO uint8_t debugFlagTouchGFX;
+extern __IO uint8_t debugFlagUpdated;
 
 #endif
 
@@ -37,28 +40,28 @@ void Model::tick()
 		CanTask_BSUpdated = 0;
 	}
 
-	if (debugUpdatedTouchGFX)
+	if (debugFlagUpdated)
 	{
 		modelListener->UpdateSpiDebugValue(debugFlagTouchGFX);
-		debugUpdatedTouchGFX =0;
+		debugFlagUpdated =0;
 	}
 
-	if (DoorLock_Toggle)
+	if (DoorLockUpdated)
 	{
 		modelListener->UpdateDoorLock_Status();
-		DoorLock_Toggle=0;
+		DoorLockUpdated=0;
 	}
 
-	if (AutoIgnition_Toggle)
+	if (AutoIgnitionUpdated)
 	{
 		modelListener->UpdateAutoIgnition_Status();
-		AutoIgnition_Toggle=0;
+		AutoIgnitionUpdated=0;
 	}
 
-	if (SeatWarmer_Toggle)
+	if (SeatWarmerUpdated)
 	{
 		modelListener->UpdateSeatWarmer_Status();
-		SeatWarmer_Toggle=0;
+		SeatWarmerUpdated=0;
 	}
 
 #endif

@@ -38,6 +38,7 @@ public:
     virtual void UpdateSpiDebugValue(uint16_t value);
     virtual void UpdateTempValue(void);
 
+
 private:
     MainMenuPresenter();
 

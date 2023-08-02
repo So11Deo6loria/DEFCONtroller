@@ -15,7 +15,7 @@ char SPISerialNumber[16] = "NOSERIAL";
 char SPISoftwareVersion[16] = "0.0.0";
 
 uint8_t debugFlagTouchGFX = 0; /// 0 = use to communicate with touchgfx
-uint8_t debugUpdatedTouchGFX = 0; /// 0 = false use to communicate with touchgfx
+uint8_t debugFlagUpdated = 0; /// 0 = false use to communicate with touchgfx
 uint8_t SPIExternalFlashUpdated = 0;
 
 
@@ -282,7 +282,7 @@ static void __setDebugMode (eDebugMode_t debugMode)
 		if (__debugMode != debugMode)
 		{
 			__debugMode = debugMode;
-			debugUpdatedTouchGFX = 1;
+			debugFlagUpdated = 1;
 
 			if (debugMode && (0 != strncmp(&__value[0], "1", strlen('1')))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
 			{
@@ -295,7 +295,7 @@ static void __setDebugMode (eDebugMode_t debugMode)
 			}
 
 			// Notify TouchGFX
-			debugUpdatedTouchGFX = 1; //flag set to true
+			debugFlagUpdated = 1; //flag set to true
 		}
 	}
 }
