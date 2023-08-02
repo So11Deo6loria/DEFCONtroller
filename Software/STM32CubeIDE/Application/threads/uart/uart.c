@@ -182,17 +182,18 @@ static void __handleAutoIgnitionCommands(void)
 	if( 0 == strncmp( (char*)__autoIgnitionHelpCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionHelpCommand) ) || 0 == strncmp( (char*)__autoIgnitionCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionCommand)+1 ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionHelpPrompt, sizeof(__autoIgnitionHelpPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
 	}
 	else if( 0 == strncmp( (char*)__autoIgnitionOnCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionOnCommand) ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionEnabledPrompt, sizeof(__autoIgnitionEnabledPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
+		AutoIgnitionState = 1;
+		AutoIgnitionUpdated = 1;
 	}
 	else if( 0 == strncmp( (char*)__autoIgnitionOffCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionOffCommand) ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionDisabledPrompt, sizeof(__autoIgnitionDisabledPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
+		AutoIgnitionState = 0;
+		AutoIgnitionUpdated = 1;
 	}
 	else
 	{
