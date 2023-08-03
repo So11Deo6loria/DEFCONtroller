@@ -207,6 +207,9 @@ void UARTChallengeThread( void * argument )
 	uint16_t rxBufferIndex = 0;
 	MX_USART1_UART_Init();
 	uint8_t waitingForMessage;
+
+	vTaskDelay(1000);
+
 	HAL_UART_Transmit( &huart1, (uint8_t*)__titlePrompt, sizeof(__titlePrompt)-1, 100 );
 
 	for(;;)
