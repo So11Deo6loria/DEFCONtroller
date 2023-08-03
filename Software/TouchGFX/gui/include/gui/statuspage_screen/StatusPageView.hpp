@@ -6,11 +6,14 @@
 
 class StatusPageView : public StatusPageViewBase
 {
+private:
+	virtual void __UpdateDynamicData();
 public:
     StatusPageView();
     virtual ~StatusPageView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void UpdateSpiDebugValue(uint16_t value);
 protected:
 };
 

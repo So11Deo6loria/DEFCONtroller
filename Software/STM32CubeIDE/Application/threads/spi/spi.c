@@ -120,7 +120,7 @@ static void MX_SPI4_Init (void)
 		Error_Handler ();
 	}
 
-    HAL_NVIC_SetPriority(SPI4_IRQn, 14, 14);
+    HAL_NVIC_SetPriority(SPI4_IRQn, 10, 10);
     HAL_NVIC_EnableIRQ(SPI4_IRQn);
 }
 
@@ -231,7 +231,7 @@ static void __readData(void)
 	__txData[__txDataIndex++] = 0x00;
 	__txData[__txDataIndex++] = 0x00;
 
-	__spiTransactionIT(SST_PAGESIZE+4);
+	__spiTransactionIT(128+4);
 }
 //
 //static void __writePage(uint8_t * writeBuffer)
@@ -500,12 +500,13 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef * hspi)
 void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef * hspi)
 {
 	__setCS();
-	while(1);
 }
 
 void HAL_SPI_ErrorCallback(SPI_HandleTypeDef *hspi)
 {
-	while(1);
+//	while(1);
+	__resetBuffers();
+	__spiState = SPI_IDLE;
 }
 
 void SPI4_IRQHandler(void)
@@ -529,7 +530,7 @@ void SPIChallengeThread( void * argument )
 	{
 		__spiReadState = SPI_READPAGE_IDLE;
 		__readPage();
-		if( pdTRUE == xQueueReceive(__spiQueue, &spiStatus, portMAX_DELAY))
+		if( pdTRUE == xQueueReceive(__spiQueue, &spiStatus, 2023))
 		{
 			if( spiStatus == SPI_SUCCESS )
 			{
@@ -541,38 +542,7 @@ void SPIChallengeThread( void * argument )
 
 				}
 			}
+			vTaskDelay(2023);
 		}
-		vTaskDelay(5000);
-	}
-
-	__setCS(); 	// Drive CS High
-
-	if( 1 == test ) // Write Debug Disabled
-	{
-		__prepareFlash((uint8_t*)&__selfDestructDisabledString);
-		__waitForReady();
-		osDelay(2000); // Quit being stupid and poll the status register
-
-	}
-	else if( 2 == test ) // Write Debug Enabled
-	{
-		__prepareFlash((uint8_t*)&__selfDestructEnabledString);
-		__waitForReady();
-		osDelay(2000); // Quit being stupid and poll the status register
-	}
-
-	if( !__readID() )
-	{
-		while( 1 )
-		{
-			osDelay(500); // Error condition. Beware
-		}
-	}
-
-	for(;;)
-	{
-		__readPage();
-		osDelay(2023);
 	}
 }
-

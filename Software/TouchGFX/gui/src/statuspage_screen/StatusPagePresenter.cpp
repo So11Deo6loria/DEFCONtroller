@@ -19,9 +19,10 @@ void StatusPagePresenter::deactivate()
 
 #ifdef DEVBOARDBUILD
 
-void StatusPagePresenter::UpdateSpiDebugValue(uint16_t)
+void StatusPagePresenter::UpdateSpiDebugValue(uint16_t value)
 {
 	//Do Nothing
+	view.UpdateSpiDebugValue(value);
 }
 
 void StatusPagePresenter::UpdateBSValue(uint16_t)

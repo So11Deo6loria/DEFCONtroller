@@ -4,6 +4,7 @@
 extern "C" void UARTChallengeIgnitionButtonPressed (uint8_t State);
 extern "C" void UARTChallengeDoorLockButtonPressed (uint8_t State);
 extern "C" void UARTChallengeSeatWarmerButtonPressed (uint8_t State);
+extern "C" void CanChallengeButtonPressed (uint8_t State);
 
 
 extern __IO uint8_t DoorLockState;
@@ -36,6 +37,7 @@ void MainMenuView::SearWarmerButtonPressed()
 void MainMenuView::DoorLockButtonPressed()
 {
 	UARTChallengeDoorLockButtonPressed(DoorLock_Button.getState());
+	CanChallengeButtonPressed(DoorLock_Button.getState());
 }
 
 void MainMenuView::AutoIgnitionButtonPressed()

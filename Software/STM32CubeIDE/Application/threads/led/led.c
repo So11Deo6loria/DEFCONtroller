@@ -27,23 +27,25 @@ void LED_GPIO_Init(void)
 // Thread function to toggle LEDs
 void LEDChallengeThread(void const *argument)
 {
+	uint16_t pinNumber = GPIO_PIN_13;
 	eLEDAuthMode_t ledAuthMode = AUTHORIZED_MODE;
 	LED_GPIO_Init();
 
+	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, GPIO_PIN_RESET);
+
+	if( ledAuthMode == AUTHORIZED_MODE )
+	{
+		pinNumber = GPIO_PIN_13;
+	}
+	else if( ledAuthMode == UNAUTHORIZED_MODE )
+	{
+		pinNumber = GPIO_PIN_14;
+	}
+
     while (1)
     {
-    	if( ledAuthMode == AUTHORIZED_MODE )
-    	{
-            // Toggle LED1
-            HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
-            HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, GPIO_PIN_RESET);
-    	}
-    	else if( ledAuthMode == UNAUTHORIZED_MODE )
-		{
-    		HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_14);
-    		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
-		}
-
+    	HAL_GPIO_TogglePin(GPIOG, pinNumber);
     	osDelay(250);
     }
 }

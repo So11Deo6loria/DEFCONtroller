@@ -300,7 +300,7 @@ int main(void)
   /* creation of defaultTask */
   canTaskHandle  = osThreadNew(CanChallangeThread,  NULL, &canThreadAttributes);
 //  i2cTaskHandle  = osThreadNew(I2CChallengeThread,  NULL, &i2cThreadAttributes);
-//  spiTaskHandle  = osThreadNew(SPIChallengeThread,  NULL, &spiThreadAttributes);
+  spiTaskHandle  = osThreadNew(SPIChallengeThread,  NULL, &spiThreadAttributes);
   uartTaskHandle = osThreadNew(UARTChallengeThread, NULL, &uartThreadAttributes);
   jtagTaskHandle = osThreadNew(JTAGChallengeThread, NULL, &jtagThreadAttributes);
   ledTaskHandle = osThreadNew(LEDChallengeThread, NULL, &ledThreadAttributes);

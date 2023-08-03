@@ -80,7 +80,7 @@ void CanChallangeThread(void *Blah) {
 			}
 
 			CanTask_BSUpdated = 1;
-			HAL_GPIO_TogglePin(GPIOG, LD3_Pin);
+//			HAL_GPIO_TogglePin(GPIOG, LD3_Pin);
 		}
 	}
 }
