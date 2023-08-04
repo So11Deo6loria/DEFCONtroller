@@ -269,7 +269,7 @@ static void __setDebugMode (eDebugMode_t debugMode)
 			if (debugMode && (0 != strncmp(&__value[0], "1", strlen('1')))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
 			{
 				// Damn You Reverse Engineering!
-				debugFlagTouchGFX = 7;
+				debugFlagTouchGFX = 6;
 			}
 			else
 			{

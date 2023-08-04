@@ -20,11 +20,11 @@ void CommandsPagePresenter::deactivate()
 
 #ifdef DEVBOARDBUILD
 
-void CommandsPagePresenter::UpdateSpiDebugValue(uint16_t)
+void CommandsPagePresenter::UpdateSpiDebugValue(uint16_t value)
 {
-	//Do Nothing
+	view.UpdateSPIDebugValue(value);
 }
-
+//
 void CommandsPagePresenter::UpdateBSValue(uint16_t)
 {
 	//Do Nothing

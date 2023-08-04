@@ -184,7 +184,6 @@ static void __constructFlags( void )
 	memset( xUARTFlag, 0, 32 );
 	memset( xJTAGFlag, 0, 32 );
 	memset( xSPIFlag, 0, 32 );
-	memset( xUARTFlag, 0, 32 );
 
 	xUARTFlag[0] = 'I';
 	xUARTFlag[1] = 'o';

@@ -14,6 +14,7 @@ public:
     virtual ~CommandsPageView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void UpdateSPIDebugValue(uint16_t value);
     virtual void UpdateDoorLock_Status();
     virtual void UdateAutoIgnition_Status();
     virtual void UpdateSeatWarmer_Status();

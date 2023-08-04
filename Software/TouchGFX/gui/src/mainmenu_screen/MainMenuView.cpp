@@ -1,11 +1,10 @@
 #include <gui/mainmenu_screen/MainMenuView.hpp>
-//#include <text/TextKeysAndLanguages.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 extern "C" void UARTChallengeIgnitionButtonPressed (uint8_t State);
 extern "C" void UARTChallengeDoorLockButtonPressed (uint8_t State);
 extern "C" void UARTChallengeSeatWarmerButtonPressed (uint8_t State);
 extern "C" void CanChallengeButtonPressed (uint8_t State);
-
 
 extern __IO uint8_t DoorLockState;
 extern __IO uint8_t DoorLockUpdated;
@@ -86,15 +85,3 @@ void MainMenuView::UpdateAutoIgnitionStatus()
 
 	AutoIgnition_Button.invalidate();
 }
-
-void MainMenuView::UpdateTempValue()
-{
-// Do Nothing
-}
-
-void MainMenuView::UpdateSpiDebugValue( uint8_t Value )
-{
-// Do Nothing
-}
-
-
