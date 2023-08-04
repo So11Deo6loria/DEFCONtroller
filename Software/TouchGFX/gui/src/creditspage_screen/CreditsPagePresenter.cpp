@@ -19,9 +19,9 @@ void CreditsPagePresenter::deactivate()
 
 #ifdef DEVBOARDBUILD
 
-void CreditsPagePresenter::UpdateSpiDebugValue(uint16_t)
+void CreditsPagePresenter::UpdateSpiDebugValue(uint16_t value)
 {
-	//Do Nothing
+	view.UpdateSPIDebugValue(value);
 }
 
 void CreditsPagePresenter::UpdateBSValue(uint16_t)

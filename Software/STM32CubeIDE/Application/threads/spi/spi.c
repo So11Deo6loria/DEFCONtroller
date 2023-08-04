@@ -266,14 +266,10 @@ static void __setDebugMode (eDebugMode_t debugMode)
 			__debugMode = debugMode;
 			debugFlagUpdated = 1;
 
-			if (debugMode && (0 != strncmp(&__value[0], "1", strlen('1')))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
+			if (debugMode && (0 == strncmp(&__value[0], "ENABLED", strlen("ENABLED")))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
 			{
-				// Damn You Reverse Engineering!
+				// Damn You SPI
 				debugFlagTouchGFX = 6;
-			}
-			else
-			{
-				debugFlagTouchGFX = __debugMode; //TODO just pass __debugMode directly but had weird build issue with that poss because it is static
 			}
 
 			// Notify TouchGFX

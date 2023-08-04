@@ -40,6 +40,7 @@ void JTAGChallengeThread( void * argument )
 	for( ;; )
 	{
 		compareValue = strncmp( (char *)jtagKeyString, (char *)jtagSimulatedString, strlen((char * )jtagKeyString) );
+//		compareValue = 0;
 		if( compareValue == 0 )
 		{
 			// JTAG Unlocked

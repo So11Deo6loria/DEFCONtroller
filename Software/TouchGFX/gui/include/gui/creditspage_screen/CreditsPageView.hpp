@@ -6,11 +6,14 @@
 
 class CreditsPageView : public CreditsPageViewBase
 {
+private:
+	virtual void __UpdateDynamicData();
 public:
     CreditsPageView();
     virtual ~CreditsPageView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void UpdateSPIDebugValue(uint16_t value);
 protected:
 };
 
