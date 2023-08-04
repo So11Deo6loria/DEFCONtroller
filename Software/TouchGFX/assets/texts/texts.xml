@@ -6,8 +6,8 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_SNDL" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">(toggle) -&gt; Change State</Translation>
+      <Text Id="__SingleUse_TI6C" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">@patelpratham11</Translation>
       </Text>
       <Text Id="__SingleUse_2BLY" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(autoignition) -&gt; Button</Translation>
@@ -18,7 +18,7 @@
       <Text Id="FLAG_FIELD_WILDCARD" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
       </Text>
-      <Text Id="FLAG_FIELD" Alignment="Center" TypographyId="Small">
+      <Text Id="FLAG_FIELD" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Small">
@@ -117,22 +117,13 @@
       <Text Id="Radio_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Off</Translation>
       </Text>
-      <Text Id="__SingleUse_7XSH" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">So11Deo6loria/projectShield</Translation>
-      </Text>
-      <Text Id="__SingleUse_F578" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">https://github.com/</Translation>
-      </Text>
-      <Text Id="__SingleUse_70PO" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">GitHubs:</Translation>
-      </Text>
-      <Text Id="Name3_Text" Alignment="Left" TypographyId="Small">
+      <Text Id="Name3_Text" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">@ocrouse2020</Translation>
       </Text>
-      <Text Id="Name2_Text" Alignment="Left" TypographyId="Small">
+      <Text Id="Name2_Text" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">@Nate_Sm1th</Translation>
       </Text>
-      <Text Id="Name1_Text" Alignment="Left" TypographyId="Small">
+      <Text Id="Name1_Text" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">@So11Deo6loria</Translation>
       </Text>
       <Text Id="__SingleUse_I348" Alignment="Left" TypographyId="Large">

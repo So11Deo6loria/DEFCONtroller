@@ -37,7 +37,7 @@ StatusPageViewBase::StatusPageViewBase() :
     SelfDestruction_Text.setLinespacing(0);
     SelfDestruction_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5ECD));
 
-    SelfDestCount_Val.setXY(56, 280);
+    SelfDestCount_Val.setXY(3, 280);
     SelfDestCount_Val.setColor(touchgfx::Color::getColorFromRGB(26, 255, 0));
     SelfDestCount_Val.setLinespacing(0);
     Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, "%s", touchgfx::TypedText(T_SELFDESTRUCT_WC).getText());

@@ -13,6 +13,7 @@
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class MainMenuViewBase : public touchgfx::View<MainMenuPresenter>
 {
@@ -57,6 +58,13 @@ protected:
     touchgfx::Button Commands_Button;
     touchgfx::Button Credits_Button;
     touchgfx::ToggleButton DoorLock_Button;
+    touchgfx::TextAreaWithOneWildcard FLAG;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t FLAG_SIZE = 40;
+    touchgfx::Unicode::UnicodeChar FLAGBuffer[FLAG_SIZE];
 
 private:
 

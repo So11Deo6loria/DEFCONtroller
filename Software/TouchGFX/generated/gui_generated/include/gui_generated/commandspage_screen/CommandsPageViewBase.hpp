@@ -45,7 +45,6 @@ protected:
     touchgfx::TextAreaWithOneWildcard FLAG;
     touchgfx::TextArea Line1_Text_1;
     touchgfx::TextArea Line1_Text_2;
-    touchgfx::TextArea Line3_Text_1;
 
     /*
      * Wildcard Buffers
