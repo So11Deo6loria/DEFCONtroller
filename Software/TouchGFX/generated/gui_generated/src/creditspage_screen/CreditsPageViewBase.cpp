@@ -25,17 +25,17 @@ CreditsPageViewBase::CreditsPageViewBase() :
     BroughtToYouBy_Text.setLinespacing(0);
     BroughtToYouBy_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I348));
 
-    Name1_Text.setXY(4, 97);
+    Name1_Text.setXY(11, 97);
     Name1_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name1_Text.setLinespacing(0);
     Name1_Text.setTypedText(touchgfx::TypedText(T_NAME1_TEXT));
 
-    Name2_Text.setXY(4, 129);
+    Name2_Text.setXY(11, 129);
     Name2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name2_Text.setLinespacing(0);
     Name2_Text.setTypedText(touchgfx::TypedText(T_NAME2_TEXT));
 
-    Name3_Text.setXY(4, 160);
+    Name3_Text.setXY(11, 160);
     Name3_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name3_Text.setLinespacing(0);
     Name3_Text.setTypedText(touchgfx::TypedText(T_NAME3_TEXT));
@@ -62,7 +62,7 @@ CreditsPageViewBase::CreditsPageViewBase() :
     FLAG.resizeToCurrentText();
     FLAG.setTypedText(touchgfx::TypedText(T_FLAG_FIELD));
 
-    Name4_Text.setXY(4, 191);
+    Name4_Text.setXY(11, 191);
     Name4_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name4_Text.setLinespacing(0);
     Name4_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TI6C));
