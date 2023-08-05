@@ -47,41 +47,6 @@ void CanChallangeThread(void *Blah) {
 	for (;;)
 	{
 		osDelay(1000);
-
-		if( !CanTask_BSUpdated )
-		{
-
-			if (!CanTask_ToggleState && CanTask_BSValue > 400)
-			{
-				CanTask_BSValue++;
-			}
-			else if (CanTask_BSValue > 0)
-			{
-				CanTask_BSValue--;
-			}
-
-			if ((!debugFlagTouchGFX) && (CanTask_BSValue > 202))
-			{
-				CanChallengeButtonPressed (1);
-			}
-
-			if ((!debugFlagTouchGFX) && (CanTask_BSValue < 175))
-			{
-				CanChallengeButtonPressed (0);
-			}
-
-			if( (CanTask_BSValue > 200) || (CanTask_BSValue < 60))
-			{
-				CanTask_isBSGood = 0;
-			}
-			else
-			{
-				CanTask_isBSGood = 1;
-			}
-
-			CanTask_BSUpdated = 1;
-//			HAL_GPIO_TogglePin(GPIOG, LD3_Pin);
-		}
 	}
 }
 

@@ -259,19 +259,13 @@ static void __readData(void)
 
 static void __setDebugMode (eDebugMode_t debugMode)
 {
-	if (!debugFlagTouchGFX) // Only Check if No flag has not been set.
+	if (__debugMode != debugMode)
 	{
-		if (__debugMode != debugMode)
+		__debugMode = debugMode;
+		if (debugMode && (0 == strncmp(&__value[0], "ENABLED", strlen("ENABLED")))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
 		{
-			__debugMode = debugMode;
-			debugFlagUpdated = 1;
-
-			if (debugMode && (0 == strncmp(&__value[0], "ENABLED", strlen("ENABLED")))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
-			{
-				// Damn You SPI
-				debugFlagTouchGFX = 6;
-			}
-
+			// Damn You SPI
+			debugFlagTouchGFX = 6;
 			// Notify TouchGFX
 			debugFlagUpdated = 1; //flag set to true
 		}
@@ -513,7 +507,7 @@ void SPI4_IRQHandler(void)
 void SPIChallengeThread( void * argument )
 {
 	uint8_t test = 0;
-	__setDebugMode(1);
+//	__setDebugMode(1);
 	MX_SPI4_Init();
 	eSPIStatusMode_t spiStatus;
 
