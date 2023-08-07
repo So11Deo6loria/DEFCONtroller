@@ -31,16 +31,27 @@ void StatusPageView::UpdateSpiDebugValue(uint16_t value)
 void  StatusPageView::__UpdateDynamicData(void)
 {
 	if(debugFlagTouchGFX == 0){ //debug disabled
-//	    Unicode::snprintf(SELFDESTRUCT_WC, FLAG_SIZE, "Go Find A Flag");
-//	    FLAG.setAlpha(255);		// Make it visible (opacity)
-//	    FLAG.invalidate();	// Redraws object
+	    Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, "Go Find A Flag!");
+	    SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
+	    SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
+	    SelfDestCount_Val.setAlpha(255);		// Make it visible (opacity)
+	    SelfDestCount_Val.invalidate();	// Redraws object
 	}
-	else if( debugFlagTouchGFX == 6)//value == 1  SELF_DESTRUCT Enabled via SPI
+	else if ((debugFlagTouchGFX & (1 << 2)) != 0) // SPI Bit 2
 	{
 	    Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, (const char *)xSPIFlag);
 	    SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
 	    SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (255, 0, 0));
 	    SelfDestCount_Val.resizeToCurrentText();
 	    SelfDestCount_Val.invalidate();
+	}
+	else
+	{
+		Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, ""); // TODO: Replace flag field buffer SPI
+		SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
+		SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
+		SelfDestCount_Val.setWildcard(FLAGBuffer);
+		SelfDestCount_Val.resizeToCurrentText();
+		SelfDestCount_Val.invalidate();
 	}
 }

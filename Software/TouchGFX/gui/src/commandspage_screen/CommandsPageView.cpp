@@ -67,4 +67,29 @@ void  CommandsPageView::__UpdateDynamicData(void)
 		FLAG.resizeToCurrentText();
 		FLAG.invalidate();
 	}
+
+	if(debugFlagTouchGFX == 0){ //debug disabled
+	    Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, "Go Find A Flag!");
+	    SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
+	    SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
+	    SelfDestCount_Val.setAlpha(255);		// Make it visible (opacity)
+	    SelfDestCount_Val.invalidate();	// Redraws object
+	}
+	else if ((debugFlagTouchGFX & (1 << 1)) != 0) // UART Bit 1
+	{
+	    Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, (const char *)xSPIFlag);
+	    SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
+	    SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (255, 0, 0));
+	    SelfDestCount_Val.resizeToCurrentText();
+	    SelfDestCount_Val.invalidate();
+	}
+	else
+	{
+		Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, ""); // TODO: Replace flag field buffer SPI
+		SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
+		SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
+		SelfDestCount_Val.setWildcard(FLAGBuffer);
+		SelfDestCount_Val.resizeToCurrentText();
+		SelfDestCount_Val.invalidate();
+	}
 }

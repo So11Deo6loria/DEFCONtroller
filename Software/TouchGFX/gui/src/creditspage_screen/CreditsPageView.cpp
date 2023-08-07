@@ -30,12 +30,12 @@ void CreditsPageView::UpdateSPIDebugValue(uint16_t value)
 void  CreditsPageView::__UpdateDynamicData(void)
 {
 	if(debugFlagTouchGFX == 0){ //debug disabled
-	    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "");
+	    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "Go Find A Flag!");
 	    FLAG.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
 	    FLAG.setAlpha(255);		// Make it visible (opacity)
 	    FLAG.invalidate();	// Redraws object
 	}
-	else if( debugFlagTouchGFX == 7)//value == 1  debug enabled via UART
+	else if ((debugFlagTouchGFX & (1 << 7)) != 0)
 	{
 	    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, (const char *)xJTAGFlag);
 	    FLAG.setWildcard(FLAGBuffer);
