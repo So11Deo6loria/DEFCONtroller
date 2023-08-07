@@ -9,37 +9,37 @@
       <Text Id="UART_FLAG_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
       </Text>
-      <Text Id="UART_FLAG" Alignment="Center" TypographyId="Default">
+      <Text Id="UART_FLAG" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="CAN_FLAG_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
       </Text>
-      <Text Id="CAN_FLAG" Alignment="Center" TypographyId="Default">
+      <Text Id="CAN_FLAG" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_TI6C" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@patelpratham11</Translation>
       </Text>
-      <Text Id="__SingleUse_2BLY" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_2BLY" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">(autoignition) -&gt; Button</Translation>
       </Text>
-      <Text Id="__SingleUse_ANTM" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_ANTM" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">(seatwarmer) -&gt; Button</Translation>
       </Text>
       <Text Id="JTAG_FLAG_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
       </Text>
-      <Text Id="JTAG_FLAG" Alignment="Center" TypographyId="Default">
+      <Text Id="JTAG_FLAG" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">(config) -&gt; Device Config</Translation>
       </Text>
-      <Text Id="__SingleUse_HAW7" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_HAW7" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">(info) -&gt; Device Info</Translation>
       </Text>
-      <Text Id="SelfDest_Val" Alignment="Left" TypographyId="Default">
+      <Text Id="SelfDest_Val" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_AYUI" Alignment="Left" TypographyId="Default">
@@ -108,7 +108,7 @@
       <Text Id="OdometerVal" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">89109</Translation>
       </Text>
-      <Text Id="__SingleUse_R9AK" Alignment="Left" TypographyId="Small">
+      <Text Id="__SingleUse_R9AK" Alignment="Left" TypographyId="Large">
         <Translation Language="GB">(help) -&gt; Help Menu</Translation>
       </Text>
       <Text Id="__SingleUse_IEKS" Alignment="Left" TypographyId="Small">
@@ -242,7 +242,7 @@
   <Typographies>
     <Typography Id="Default" Font="calibri.ttf" Size="25" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="calibri.ttf" Size="23" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
-    <Typography Id="Small" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="calibri.ttf" Size="25" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="ExtraLarge" Font="calibri.ttf" Size="34" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890" />
     <Typography Id="Title" Font="calibril.ttf" Size="48" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="MainPageTitle" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,." />
