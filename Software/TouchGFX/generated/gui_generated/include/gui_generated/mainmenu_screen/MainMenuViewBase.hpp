@@ -60,6 +60,12 @@ protected:
     touchgfx::ToggleButton DoorLock_Button;
     touchgfx::TextAreaWithOneWildcard CAN_FLAG;
 
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t CAN_FLAG_SIZE = 32;
+    touchgfx::Unicode::UnicodeChar CAN_FLAGBuffer[CAN_FLAG_SIZE];
+
 private:
 
     /*

@@ -103,7 +103,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "CAN_FLAG_WC"
+              "TextId": "CAN_FLAG_WC",
+              "UseBuffer": true,
+              "BufferSize": 32
             }
           }
         ],
@@ -265,7 +267,7 @@
             "Wildcard1": {
               "TextId": "SELFDESTRUCT_WC",
               "UseBuffer": true,
-              "BufferSize": 20
+              "BufferSize": 32
             }
           },
           {
@@ -671,7 +673,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "UART_FLAG_WC"
+              "TextId": "UART_FLAG_WC",
+              "UseBuffer": true,
+              "BufferSize": 32
             }
           }
         ],
@@ -817,7 +821,7 @@
             "Wildcard1": {
               "TextId": "JTAG_FLAG_WC",
               "UseBuffer": true,
-              "BufferSize": 40
+              "BufferSize": 32
             }
           }
         ],

@@ -46,6 +46,12 @@ protected:
     touchgfx::TextArea Line1_Text_2;
     touchgfx::TextAreaWithOneWildcard UART_FLAG;
 
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t UART_FLAG_SIZE = 32;
+    touchgfx::Unicode::UnicodeChar UART_FLAGBuffer[UART_FLAG_SIZE];
+
 private:
 
     /*

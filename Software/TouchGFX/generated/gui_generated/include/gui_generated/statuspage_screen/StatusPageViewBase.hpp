@@ -55,7 +55,7 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t SELFDESTCOUNT_VAL_SIZE = 20;
+    static const uint16_t SELFDESTCOUNT_VAL_SIZE = 32;
     touchgfx::Unicode::UnicodeChar SelfDestCount_ValBuffer[SELFDESTCOUNT_VAL_SIZE];
 
 private:

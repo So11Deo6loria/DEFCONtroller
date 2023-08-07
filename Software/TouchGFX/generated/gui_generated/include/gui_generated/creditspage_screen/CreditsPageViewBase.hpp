@@ -47,7 +47,7 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t JTAG_FLAG_SIZE = 40;
+    static const uint16_t JTAG_FLAG_SIZE = 32;
     touchgfx::Unicode::UnicodeChar JTAG_FLAGBuffer[JTAG_FLAG_SIZE];
 
 private:

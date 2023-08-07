@@ -55,7 +55,8 @@ MainMenuViewBase::MainMenuViewBase() :
     CAN_FLAG.setXY(3, 280);
     CAN_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     CAN_FLAG.setLinespacing(0);
-    CAN_FLAG.setWildcard(touchgfx::TypedText(T_CAN_FLAG_WC).getText());
+    Unicode::snprintf(CAN_FLAGBuffer, CAN_FLAG_SIZE, "%s", touchgfx::TypedText(T_CAN_FLAG_WC).getText());
+    CAN_FLAG.setWildcard(CAN_FLAGBuffer);
     CAN_FLAG.resizeToCurrentText();
     CAN_FLAG.setTypedText(touchgfx::TypedText(T_CAN_FLAG));
 

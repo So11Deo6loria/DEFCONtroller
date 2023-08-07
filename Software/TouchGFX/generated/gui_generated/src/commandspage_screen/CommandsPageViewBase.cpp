@@ -70,7 +70,8 @@ CommandsPageViewBase::CommandsPageViewBase()
     UART_FLAG.setXY(3, 280);
     UART_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     UART_FLAG.setLinespacing(0);
-    UART_FLAG.setWildcard(touchgfx::TypedText(T_UART_FLAG_WC).getText());
+    Unicode::snprintf(UART_FLAGBuffer, UART_FLAG_SIZE, "%s", touchgfx::TypedText(T_UART_FLAG_WC).getText());
+    UART_FLAG.setWildcard(UART_FLAGBuffer);
     UART_FLAG.resizeToCurrentText();
     UART_FLAG.setTypedText(touchgfx::TypedText(T_UART_FLAG));
 
