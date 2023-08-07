@@ -8,7 +8,7 @@ class MainMenuView : public MainMenuViewBase
 {
 
 private:
-	void  __UpdateDynamicData(void);
+	virtual void  __UpdateDynamicData(void);
 public:
     MainMenuView();
     virtual ~MainMenuView() {}
@@ -23,10 +23,7 @@ public:
     virtual void UpdateDoorLockStatus(void);
     virtual void UpdateAutoIgnitionStatus(void);
     virtual void UpdateSeatWarmerStatus(void);
-
-    // IDK WTF these are for...
-//    virtual void UpdateTempValue(void);
-//    void UpdateSpiDebugValue(uint16_t value);
+    virtual void UpdateSPIDebugValue(uint16_t value);
 protected:
 };
 

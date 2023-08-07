@@ -181,18 +181,19 @@ uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communic
 
 static void __constructFlags( void )
 {
-	memset( xUARTFlag, 0, 32 );
-	memset( xJTAGFlag, 0, 32 );
-	memset( xSPIFlag, 0, 32 );
+	memset( xUARTFlag, 0, 32 ); // Bit 1
+	memset( xSPIFlag, 0, 32 );	// Bit 2
+	memset( xCANFlag, 0, 32 ); 	// Bit 3
+	memset( xJTAGFlag, 0, 32 );	// Bit 4
 
 	xUARTFlag[0] = 'I';
 	xUARTFlag[1] = 'o';
 	xUARTFlag[2] = 'T';
 	xUARTFlag[3] = '_';
 
-	memcpy( xJTAGFlag, xUARTFlag, strlen(xUARTFlag) );
 	memcpy( xSPIFlag, xUARTFlag, strlen(xUARTFlag) );
 	memcpy( xCANFlag, xUARTFlag, strlen(xUARTFlag) );
+	memcpy( xJTAGFlag, xUARTFlag, strlen(xUARTFlag) );
 
 	/* Challenge Specific Strings */
 	xUARTFlag[4] = 'U';
@@ -200,14 +201,18 @@ static void __constructFlags( void )
 	xUARTFlag[6] = 'R';
 	xUARTFlag[7] = '7';
 
-	xJTAGFlag[4] = 'j';
-	xJTAGFlag[5] = '7';
-	xJTAGFlag[6] = '4';
-	xJTAGFlag[7] = '6';
-
 	xSPIFlag[4] = '5';
 	xSPIFlag[5] = 'P';
 	xSPIFlag[6] = '1';
+
+	xCANFlag[4] = 'C';
+	xCANFlag[5] = '4';
+	xCANFlag[6] = 'N';
+
+	xJTAGFlag[4] = 'J';
+	xJTAGFlag[5] = '7';
+	xJTAGFlag[6] = '4';
+	xJTAGFlag[7] = '6';
 
 	xUARTFlag[8] = '_';
 	xUARTFlag[9] = 'C';
@@ -220,8 +225,9 @@ static void __constructFlags( void )
 	xUARTFlag[16] = '6';
 	xUARTFlag[17] = '3';
 
-	memcpy( &xJTAGFlag[strlen(xJTAGFlag)], &xUARTFlag[8], strlen(&xUARTFlag[8]) );
 	memcpy( &xSPIFlag[strlen(xSPIFlag)],   &xUARTFlag[8], strlen(&xUARTFlag[8]) );
+	memcpy( &xCANFlag[strlen(xCANFlag)],   &xUARTFlag[8], strlen(&xUARTFlag[8]) );
+	memcpy( &xJTAGFlag[strlen(xJTAGFlag)], &xUARTFlag[8], strlen(&xUARTFlag[8]) );
 }
 
 /**

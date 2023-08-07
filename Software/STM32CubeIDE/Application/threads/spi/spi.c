@@ -16,7 +16,7 @@ char SPIModelNumber[16] = "NOMODEL";
 char SPISerialNumber[16] = "NOSERIAL";
 char SPISoftwareVersion[16] = "0.0.0";
 
-uint8_t debugFlagTouchGFX = 0; /// 0 = use to communicate with touchgfx
+uint8_t debugFlagTouchGFX = 0; /// 0 = use to communicate with touchgfx. Setting the initial valu here?
 uint8_t debugFlagUpdated = 0; /// 0 = false use to communicate with touchgfx
 uint8_t SPIExternalFlashUpdated = 0;
 
@@ -265,9 +265,13 @@ static void __setDebugMode (eDebugMode_t debugMode)
 		if (debugMode && (0 == strncmp(&__value[0], "ENABLED", strlen("ENABLED")))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
 		{
 			// Damn You SPI
-			debugFlagTouchGFX = 6;
+			debugFlagTouchGFX |= (1<<2);
 			// Notify TouchGFX
 			debugFlagUpdated = 1; //flag set to true
+		}
+		else
+		{
+			debugFlagTouchGFX &= ~(1<<2);
 		}
 	}
 }

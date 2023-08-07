@@ -24,9 +24,13 @@ static void __toggleJTAGStatus( uint8_t status )
 	{
 		jtagLockStatus = status;
 
-		if( status && !debugFlagTouchGFX )
+		if( status )
 		{
-			debugFlagTouchGFX = 7;
+			debugFlagTouchGFX |= (1<<4);
+		}
+		else
+		{
+			debugFlagTouchGFX &= ~(1<<4);
 		}
 	}
 }

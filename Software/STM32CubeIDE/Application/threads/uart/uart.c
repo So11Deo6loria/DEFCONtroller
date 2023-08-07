@@ -125,13 +125,13 @@ static void __handleConfigCommands(void)
 	else if( (0 == strncmp( "config debug on",  __rxBuffer, 16 ) ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__configDebugOnPrompt, sizeof(__configDebugOnPrompt)-1, 100 );
-		debugFlagTouchGFX = 5;
+		debugFlagTouchGFX |= (1<<1);
 		debugFlagUpdated = 1;
 	}
 	else if( (0 == strncmp( "config debug off",  __rxBuffer, 17 ) ) )
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__configDebugOffPrompt, sizeof(__configDebugOffPrompt)-1, 100 );
-		debugFlagTouchGFX = 0;
+		debugFlagTouchGFX &= ~(1<<1);
 		debugFlagUpdated = 1;
 	}
 	else if( 0 == strncmp( (char*)__configSelfDestructOnCommand, (char*)__rxBuffer, strlen((char*)__configSelfDestructOnCommand) ) )

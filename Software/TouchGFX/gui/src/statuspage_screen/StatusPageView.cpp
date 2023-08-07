@@ -3,10 +3,10 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 extern __IO uint8_t debugFlagTouchGFX;
-extern __I char xUARTFlag[32];
-extern __I char xSPIFlag[32];
-extern __I char xJTAGFlag[32];
-extern __I char xI2CFlag[32];
+extern __IO char xUARTFlag[32];
+extern __IO char xSPIFlag[32];
+extern __IO char xCANFlag[32];
+extern __IO char xJTAGFlag[32];
 
 StatusPageView::StatusPageView()
 {
@@ -31,9 +31,9 @@ void StatusPageView::UpdateSpiDebugValue(uint16_t value)
 void  StatusPageView::__UpdateDynamicData(void)
 {
 	if(debugFlagTouchGFX == 0){ //debug disabled
-	    Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, "Go Find A Flag!");
+	    Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, "Not Initiated");
 	    SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
-	    SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
+	    SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (26, 255, 0));
 	    SelfDestCount_Val.setAlpha(255);		// Make it visible (opacity)
 	    SelfDestCount_Val.invalidate();	// Redraws object
 	}
@@ -47,10 +47,10 @@ void  StatusPageView::__UpdateDynamicData(void)
 	}
 	else
 	{
-		Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, ""); // TODO: Replace flag field buffer SPI
+		Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, "Not Initiated"); // TODO: Replace flag field buffer SPI
 		SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
-		SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
-		SelfDestCount_Val.setWildcard(FLAGBuffer);
+		SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (26, 255, 0));
+		SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
 		SelfDestCount_Val.resizeToCurrentText();
 		SelfDestCount_Val.invalidate();
 	}
