@@ -6,6 +6,18 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="UART_FLAG_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB" />
+      </Text>
+      <Text Id="UART_FLAG" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="CAN_FLAG_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB" />
+      </Text>
+      <Text Id="CAN_FLAG" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_TI6C" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@patelpratham11</Translation>
       </Text>
@@ -15,10 +27,10 @@
       <Text Id="__SingleUse_ANTM" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(seatwarmer) -&gt; Button</Translation>
       </Text>
-      <Text Id="FLAG_FIELD_WILDCARD" Alignment="Left" TypographyId="Default">
+      <Text Id="JTAG_FLAG_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
       </Text>
-      <Text Id="FLAG_FIELD" Alignment="Center" TypographyId="Small">
+      <Text Id="JTAG_FLAG" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Small">
@@ -27,7 +39,7 @@
       <Text Id="__SingleUse_HAW7" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(info) -&gt; Device Info</Translation>
       </Text>
-      <Text Id="SelfDest_Val" Alignment="Left" TypographyId="Small">
+      <Text Id="SelfDest_Val" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_AYUI" Alignment="Left" TypographyId="Default">
@@ -228,7 +240,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="calibri.ttf" Size="25" Bpp="4" Direction="RTL" FallbackCharacter="?" WildcardCharacters="A-Z,a-Z,1-9,.,_," />
+    <Typography Id="Default" Font="calibri.ttf" Size="25" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="calibri.ttf" Size="23" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
     <Typography Id="Small" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="ExtraLarge" Font="calibri.ttf" Size="34" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890" />
