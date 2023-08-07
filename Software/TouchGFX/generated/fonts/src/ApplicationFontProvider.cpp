@@ -16,17 +16,17 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         // calibri_23_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[1]);
     case Typography::SMALL:
-        // calibri_25_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
+        // calibri_20_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
     case Typography::EXTRALARGE:
         // calibri_34_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[3]);
     case Typography::TITLE:
         // calibril_48_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[3]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[4]);
     case Typography::MAINPAGETITLE:
         // calibri_20_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[4]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
     case Typography::SPIWILDCARDS:
         // calibri_24_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);

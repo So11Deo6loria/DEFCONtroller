@@ -713,8 +713,8 @@
             "Name": "Name1_Text",
             "X": 11,
             "Y": 97,
-            "Width": 171,
-            "Height": 31,
+            "Width": 137,
+            "Height": 25,
             "TextId": "Name1_Text",
             "TextRotation": "0",
             "Color": {
@@ -729,8 +729,8 @@
             "Name": "Name2_Text",
             "X": 11,
             "Y": 129,
-            "Width": 149,
-            "Height": 31,
+            "Width": 119,
+            "Height": 25,
             "TextId": "Name2_Text",
             "TextRotation": "0",
             "Color": {
@@ -745,8 +745,8 @@
             "Name": "Name3_Text",
             "X": 11,
             "Y": 160,
-            "Width": 153,
-            "Height": 31,
+            "Width": 123,
+            "Height": 25,
             "TextId": "Name3_Text",
             "TextRotation": "0",
             "Color": {
@@ -795,8 +795,8 @@
             "Name": "Name4_Text",
             "X": 11,
             "Y": 191,
-            "Width": 185,
-            "Height": 31,
+            "Width": 148,
+            "Height": 25,
             "TextId": "__SingleUse_TI6C",
             "TextRotation": "0",
             "Color": {
@@ -811,7 +811,7 @@
             "Name": "JTAG_FLAG",
             "X": 3,
             "Y": 280,
-            "Height": 31,
+            "Height": 25,
             "TextId": "JTAG_FLAG",
             "TextRotation": "0",
             "Color": {
