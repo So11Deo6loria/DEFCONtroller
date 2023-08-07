@@ -35,7 +35,7 @@ static const uint16_t _CanMsgDeviceOFF = 0x0000;
 // Local Functions
 static void _CanInitialize( void );
 static void _CanSendMessage(uint32_t ID, uint8_t Length, uint8_t * MessageBuffer);
-
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 
 
 void CanChallangeThread(void *Blah) {
@@ -85,6 +85,28 @@ static void _CanSendMessage(uint32_t ID, uint8_t Length, uint8_t * MessageBuffer
 
 	 status = HAL_CAN_AddTxMessage(&hcan2, &CanTxHeader, MessageBuffer, &Mailbox);
 	 vTaskDelay(1);
+}
+
+// Handle received CAN messages in this callback function
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
+{
+	CAN_RxHeaderTypeDef CanRxHeader;
+	uint8_t RXBuffer[8];
+
+	if (hcan->Instance == CAN2) {
+		HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxHeader, RXBuffer);
+
+		// Process the received message as needed
+		// Add your logic here to handle received messages
+
+//		HAL_GPIO_TogglePin(GPIOG, LD4_Pin); // Toggle the LED (Example)
+
+		// For debugging purposes, you can check the received data
+		// Example: Print the received data to the console (if available)
+		// printf("Received: %02X %02X %02X %02X %02X %02X %02X %02X\n",
+		//        RXBuffer[0], RXBuffer[1], RXBuffer[2], RXBuffer[3],
+		//        RXBuffer[4], RXBuffer[5], RXBuffer[6], RXBuffer[7]);
+	}
 }
 
 // TODO: RX if need be.
