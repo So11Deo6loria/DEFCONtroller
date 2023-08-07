@@ -42,15 +42,9 @@ protected:
     touchgfx::TextArea Line1_Text;
     touchgfx::TextArea Line2_Text;
     touchgfx::TextArea Line3_Text;
-    touchgfx::TextAreaWithOneWildcard FLAG;
     touchgfx::TextArea Line1_Text_1;
     touchgfx::TextArea Line1_Text_2;
-
-    /*
-     * Wildcard Buffers
-     */
-    static const uint16_t FLAG_SIZE = 40;
-    touchgfx::Unicode::UnicodeChar FLAGBuffer[FLAG_SIZE];
+    touchgfx::TextAreaWithOneWildcard UART_FLAG;
 
 private:
 

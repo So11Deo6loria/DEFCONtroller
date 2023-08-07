@@ -54,18 +54,18 @@ CreditsPageViewBase::CreditsPageViewBase() :
     line1_1.setLineWidth(3);
     line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    FLAG.setXY(3, 280);
-    FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    FLAG.setLinespacing(0);
-    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "%s", touchgfx::TypedText(T_FLAG_FIELD_WILDCARD).getText());
-    FLAG.setWildcard(FLAGBuffer);
-    FLAG.resizeToCurrentText();
-    FLAG.setTypedText(touchgfx::TypedText(T_FLAG_FIELD));
-
     Name4_Text.setXY(11, 191);
     Name4_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name4_Text.setLinespacing(0);
     Name4_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TI6C));
+
+    JTAG_FLAG.setXY(3, 280);
+    JTAG_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    JTAG_FLAG.setLinespacing(0);
+    Unicode::snprintf(JTAG_FLAGBuffer, JTAG_FLAG_SIZE, "%s", touchgfx::TypedText(T_JTAG_FLAG_WC).getText());
+    JTAG_FLAG.setWildcard(JTAG_FLAGBuffer);
+    JTAG_FLAG.resizeToCurrentText();
+    JTAG_FLAG.setTypedText(touchgfx::TypedText(T_JTAG_FLAG));
 
     add(__background);
     add(Background);
@@ -76,8 +76,8 @@ CreditsPageViewBase::CreditsPageViewBase() :
     add(Commands_Button);
     add(backButton_toMainScreen1);
     add(line1_1);
-    add(FLAG);
     add(Name4_Text);
+    add(JTAG_FLAG);
 }
 
 void CreditsPageViewBase::setupScreen()

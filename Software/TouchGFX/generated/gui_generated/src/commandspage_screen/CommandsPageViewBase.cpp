@@ -57,14 +57,6 @@ CommandsPageViewBase::CommandsPageViewBase()
     Line3_Text.setLinespacing(0);
     Line3_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZGOK));
 
-    FLAG.setXY(3, 280);
-    FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    FLAG.setLinespacing(0);
-    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "%s", touchgfx::TypedText(T_FLAG_FIELD_WILDCARD).getText());
-    FLAG.setWildcard(FLAGBuffer);
-    FLAG.resizeToCurrentText();
-    FLAG.setTypedText(touchgfx::TypedText(T_FLAG_FIELD));
-
     Line1_Text_1.setXY(7, 191);
     Line1_Text_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Line1_Text_1.setLinespacing(0);
@@ -74,6 +66,13 @@ CommandsPageViewBase::CommandsPageViewBase()
     Line1_Text_2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Line1_Text_2.setLinespacing(0);
     Line1_Text_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2BLY));
+
+    UART_FLAG.setXY(3, 280);
+    UART_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    UART_FLAG.setLinespacing(0);
+    UART_FLAG.setWildcard(touchgfx::TypedText(T_UART_FLAG_WC).getText());
+    UART_FLAG.resizeToCurrentText();
+    UART_FLAG.setTypedText(touchgfx::TypedText(T_UART_FLAG));
 
     add(__background);
     add(Background);
@@ -85,9 +84,9 @@ CommandsPageViewBase::CommandsPageViewBase()
     add(Line1_Text);
     add(Line2_Text);
     add(Line3_Text);
-    add(FLAG);
     add(Line1_Text_1);
     add(Line1_Text_2);
+    add(UART_FLAG);
 }
 
 void CommandsPageViewBase::setupScreen()

@@ -58,13 +58,7 @@ protected:
     touchgfx::Button Commands_Button;
     touchgfx::Button Credits_Button;
     touchgfx::ToggleButton DoorLock_Button;
-    touchgfx::TextAreaWithOneWildcard FLAG;
-
-    /*
-     * Wildcard Buffers
-     */
-    static const uint16_t FLAG_SIZE = 40;
-    touchgfx::Unicode::UnicodeChar FLAGBuffer[FLAG_SIZE];
+    touchgfx::TextAreaWithOneWildcard CAN_FLAG;
 
 private:
 

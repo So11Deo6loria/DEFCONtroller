@@ -41,14 +41,14 @@ protected:
     BackButton_toMainScreen backButton_toMainScreen1;
     touchgfx::Line line1_1;
     touchgfx::PainterRGB565 line1_1Painter;
-    touchgfx::TextAreaWithOneWildcard FLAG;
     touchgfx::TextArea Name4_Text;
+    touchgfx::TextAreaWithOneWildcard JTAG_FLAG;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t FLAG_SIZE = 40;
-    touchgfx::Unicode::UnicodeChar FLAGBuffer[FLAG_SIZE];
+    static const uint16_t JTAG_FLAG_SIZE = 40;
+    touchgfx::Unicode::UnicodeChar JTAG_FLAGBuffer[JTAG_FLAG_SIZE];
 
 private:
 

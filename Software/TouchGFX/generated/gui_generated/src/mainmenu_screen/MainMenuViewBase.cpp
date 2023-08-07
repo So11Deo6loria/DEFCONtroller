@@ -52,13 +52,12 @@ MainMenuViewBase::MainMenuViewBase() :
     DoorLock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DOORLOCK_ENGAGED_ID), touchgfx::Bitmap(BITMAP_DOORLOCK_DISENGAGED_ID));
     DoorLock_Button.setAction(buttonCallback);
 
-    FLAG.setXY(3, 280);
-    FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
-    FLAG.setLinespacing(0);
-    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "%s", touchgfx::TypedText(T_FLAG_FIELD_WILDCARD).getText());
-    FLAG.setWildcard(FLAGBuffer);
-    FLAG.resizeToCurrentText();
-    FLAG.setTypedText(touchgfx::TypedText(T_FLAG_FIELD));
+    CAN_FLAG.setXY(3, 280);
+    CAN_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    CAN_FLAG.setLinespacing(0);
+    CAN_FLAG.setWildcard(touchgfx::TypedText(T_CAN_FLAG_WC).getText());
+    CAN_FLAG.resizeToCurrentText();
+    CAN_FLAG.setTypedText(touchgfx::TypedText(T_CAN_FLAG));
 
     add(__background);
     add(Background);
@@ -69,7 +68,7 @@ MainMenuViewBase::MainMenuViewBase() :
     add(Commands_Button);
     add(Credits_Button);
     add(DoorLock_Button);
-    add(FLAG);
+    add(CAN_FLAG);
 }
 
 void MainMenuViewBase::setupScreen()
