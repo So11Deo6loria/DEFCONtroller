@@ -30,7 +30,7 @@ void CreditsPageView::UpdateSPIDebugValue(uint16_t value)
 void  CreditsPageView::__UpdateDynamicData(void)
 {
 	if(debugFlagTouchGFX == 0){ //debug disabled
-	    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "Go Find A Flag");
+	    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "");
 	    FLAG.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
 	    FLAG.setAlpha(255);		// Make it visible (opacity)
 	    FLAG.invalidate();	// Redraws object
@@ -45,7 +45,7 @@ void  CreditsPageView::__UpdateDynamicData(void)
 	}
 	else
 	{
-		Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "Go Find A Flag"); // TODO: Replace flag field buffer SPI
+		Unicode::snprintf(FLAGBuffer, FLAG_SIZE, ""); // TODO: Replace flag field buffer SPI
 		FLAG.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
 		FLAG.setWildcard(FLAGBuffer);
 		FLAG.resizeToCurrentText();

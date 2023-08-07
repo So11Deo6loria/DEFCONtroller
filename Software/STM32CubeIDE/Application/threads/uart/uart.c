@@ -44,7 +44,7 @@ static uint8_t __helpPrompt[] = "(help) - Help Menu\r\n"
 								"(info) - Device Info\r\n"
 								"(config) - Device Config\r\n"
 								"(seatwarmer) - Button\r\n"
-								"(autoignition) - Buttonr\n";
+								"(autoignition) - Button\n";
 
 /* Config Prompts */
 static uint8_t __configSelfDestructOnCommand[] = "config selfdestruct enabled";

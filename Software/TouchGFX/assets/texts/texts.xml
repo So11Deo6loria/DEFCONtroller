@@ -6,7 +6,7 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_TI6C" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_TI6C" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@patelpratham11</Translation>
       </Text>
       <Text Id="__SingleUse_2BLY" Alignment="Left" TypographyId="Small">
@@ -18,7 +18,7 @@
       <Text Id="FLAG_FIELD_WILDCARD" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
       </Text>
-      <Text Id="FLAG_FIELD" Alignment="Center" TypographyId="Default">
+      <Text Id="FLAG_FIELD" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Small">
@@ -27,7 +27,7 @@
       <Text Id="__SingleUse_HAW7" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(info) -&gt; Device Info</Translation>
       </Text>
-      <Text Id="SelfDest_Val" Alignment="Left" TypographyId="Default">
+      <Text Id="SelfDest_Val" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_AYUI" Alignment="Left" TypographyId="Default">
@@ -117,13 +117,13 @@
       <Text Id="Radio_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Off</Translation>
       </Text>
-      <Text Id="Name3_Text" Alignment="Left" TypographyId="Default">
+      <Text Id="Name3_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@ocrouse2020</Translation>
       </Text>
-      <Text Id="Name2_Text" Alignment="Left" TypographyId="Default">
+      <Text Id="Name2_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@Nate_Sm1th</Translation>
       </Text>
-      <Text Id="Name1_Text" Alignment="Left" TypographyId="Default">
+      <Text Id="Name1_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@So11Deo6loria</Translation>
       </Text>
       <Text Id="__SingleUse_I348" Alignment="Left" TypographyId="Large">

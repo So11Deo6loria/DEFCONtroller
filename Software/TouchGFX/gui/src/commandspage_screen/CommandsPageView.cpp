@@ -48,7 +48,7 @@ void CommandsPageView::UpdateSPIDebugValue(uint16_t value)
 void  CommandsPageView::__UpdateDynamicData(void)
 {
 	if(debugFlagTouchGFX == 0){ //debug disabled
-	    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "Go Find A Flag");
+	    Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "");
 	    FLAG.setAlpha(255);		// Make it visible (opacity)
 	    FLAG.invalidate();	// Redraws object
 	}
@@ -62,7 +62,7 @@ void  CommandsPageView::__UpdateDynamicData(void)
 	}
 	else
 	{
-		Unicode::snprintf(FLAGBuffer, FLAG_SIZE, "Go Find A Flag"); // TODO: Replace flag field buffer SPI
+		Unicode::snprintf(FLAGBuffer, FLAG_SIZE, ""); // TODO: Replace flag field buffer SPI
 		FLAG.setWildcard(FLAGBuffer);
 		FLAG.resizeToCurrentText();
 		FLAG.invalidate();
