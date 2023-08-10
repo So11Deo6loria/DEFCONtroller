@@ -64,7 +64,7 @@ void  CommandsPageView::__UpdateDynamicData(void)
 	}
 	else
 	{
-		Unicode::snprintf(UART_FLAGBuffer, UART_FLAG_SIZE, ""); // TODO: Replace flag field buffer SPI
+		Unicode::snprintf(UART_FLAGBuffer, UART_FLAG_SIZE, "               "); // TODO: Replace flag field buffer SPI
 		UART_FLAG.setWildcard(UART_FLAGBuffer);
 		UART_FLAG.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
 		UART_FLAG.resizeToCurrentText();

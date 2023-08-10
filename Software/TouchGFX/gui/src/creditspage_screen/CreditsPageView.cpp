@@ -46,7 +46,7 @@ void  CreditsPageView::__UpdateDynamicData(void)
 	}
 	else
 	{
-		Unicode::snprintf(JTAG_FLAGBuffer, JTAG_FLAG_SIZE, ""); // TODO: Replace flag field buffer SPI
+		Unicode::snprintf(JTAG_FLAGBuffer, JTAG_FLAG_SIZE, "               "); // TODO: Replace flag field buffer SPI
 		JTAG_FLAG.setWildcard(JTAG_FLAGBuffer);
 		JTAG_FLAG.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
 		JTAG_FLAG.resizeToCurrentText();

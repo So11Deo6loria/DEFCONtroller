@@ -111,7 +111,7 @@ void  MainMenuView::__UpdateDynamicData(void)
 	}
 	else
 	{
-		Unicode::snprintf(CAN_FLAGBuffer, CAN_FLAG_SIZE, ""); // TODO: Replace flag field buffer SPI
+		Unicode::snprintf(CAN_FLAGBuffer, CAN_FLAG_SIZE, "               "); // TODO: Replace flag field buffer SPI
 		CAN_FLAG.setWildcard(CAN_FLAGBuffer);
 		CAN_FLAG.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
 		CAN_FLAG.resizeToCurrentText();
