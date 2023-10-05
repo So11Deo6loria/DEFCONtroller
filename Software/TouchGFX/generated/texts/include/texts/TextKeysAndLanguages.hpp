@@ -12,6 +12,8 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T_SPI_FLAG_WC,
+    T_SPI_FLAG,
     T___SINGLEUSE_W40V,
     T_ENABLEFLAG2,
     T___SINGLEUSE_LKC5,

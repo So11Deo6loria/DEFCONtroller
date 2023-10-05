@@ -104,6 +104,13 @@ StatusPageViewBase::StatusPageViewBase()
     const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
     titleBackground.setShape(titleBackgroundPoints);
 
+    SPI_FLAG.setXY(4, 207);
+    SPI_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    SPI_FLAG.setLinespacing(0);
+    SPI_FLAG.setWildcard(touchgfx::TypedText(T_SPI_FLAG_WC).getText());
+    SPI_FLAG.resizeToCurrentText();
+    SPI_FLAG.setTypedText(touchgfx::TypedText(T_SPI_FLAG));
+
     add(__background);
     add(Background);
     add(backButton_toMainScreen1);
@@ -121,6 +128,7 @@ StatusPageViewBase::StatusPageViewBase()
     add(line1);
     add(scalableImage1);
     add(titleBackground);
+    add(SPI_FLAG);
 }
 
 void StatusPageViewBase::setupScreen()

@@ -53,6 +53,7 @@ protected:
     touchgfx::ScalableImage scalableImage1;
     touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
     touchgfx::PainterRGB565 titleBackgroundPainter;
+    touchgfx::TextAreaWithOneWildcard SPI_FLAG;
 
 private:
 

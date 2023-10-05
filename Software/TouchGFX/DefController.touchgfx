@@ -534,6 +534,22 @@
             "YScale": 1.0,
             "Alpha": 42,
             "Clickable": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "SPI_FLAG",
+            "X": 4,
+            "Y": 207,
+            "Height": 24,
+            "TextId": "SPI_FLAG",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "SPI_FLAG_WC"
+            }
           }
         ],
         "Interactions": [
