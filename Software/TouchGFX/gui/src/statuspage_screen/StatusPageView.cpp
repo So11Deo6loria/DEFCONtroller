@@ -30,28 +30,20 @@ void StatusPageView::UpdateSpiDebugValue(uint16_t value)
 
 void  StatusPageView::__UpdateDynamicData(void)
 {
-	if(debugFlagTouchGFX == 0){ //debug disabled
-	    Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, "Not Initiated");
-	    SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
-	    SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (26, 255, 0));
-	    SelfDestCount_Val.setAlpha(255);		// Make it visible (opacity)
-	    SelfDestCount_Val.invalidate();	// Redraws object
-	}
-	else if ((debugFlagTouchGFX & (1 << 2)) != 0) // SPI Bit 2
+	if ((debugFlagTouchGFX & (1 << 2)) != 0) // SPI Bit 2
 	{
-	    Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, (const char *)xSPIFlag);
-	    SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
-	    SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (255, 0, 0));
-	    SelfDestCount_Val.resizeToCurrentText();
-	    SelfDestCount_Val.invalidate();
+	    Unicode::snprintf(SPI_FLAGBuffer, SPI_FLAG_SIZE, (const char *)xSPIFlag);
+	    SPI_FLAG.setWildcard(SPI_FLAGBuffer);
+	    SPI_FLAG.setColor (touchgfx::Color::getColorFromRGB (255, 0, 0));
+	    SPI_FLAG.resizeToCurrentText();
+	    SPI_FLAG.invalidate();
 	}
 	else
 	{
-		Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, "Not Initiated"); // TODO: Replace flag field buffer SPI
-		SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
-		SelfDestCount_Val.setColor (touchgfx::Color::getColorFromRGB (26, 255, 0));
-		SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
-		SelfDestCount_Val.resizeToCurrentText();
-		SelfDestCount_Val.invalidate();
+		Unicode::snprintf(SPI_FLAGBuffer, SPI_FLAG_SIZE, "               ");
+		SPI_FLAG.setWildcard(SPI_FLAGBuffer);
+		SPI_FLAG.setColor (touchgfx::Color::getColorFromRGB (255, 255, 255));
+		SPI_FLAG.resizeToCurrentText();
+		SPI_FLAG.invalidate();
 	}
 }
