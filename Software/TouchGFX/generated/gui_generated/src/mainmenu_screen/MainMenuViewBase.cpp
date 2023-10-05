@@ -20,19 +20,7 @@ MainMenuViewBase::MainMenuViewBase() :
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    Status_Button.setXY(135, 59);
-    Status_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SETTINGS_ENGAGED_ID), touchgfx::Bitmap(BITMAP_SETTINGS_DISENGAGED_ID));
-    Status_Button.setAction(buttonCallback);
-
-    SeatWarmer_Button.setXY(135, 153);
-    SeatWarmer_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SEATWARMER_ENGAGED_ID), touchgfx::Bitmap(BITMAP_SEATWARMER_DISENGAGED_ID));
-    SeatWarmer_Button.setAction(buttonCallback);
-
-    AutoIgnition_Button.setXY(25, 153);
-    AutoIgnition_Button.setBitmaps(touchgfx::Bitmap(BITMAP_AUTOSTARTSTOP_ENGAGED_ID), touchgfx::Bitmap(BITMAP_AUTOSTARTSTOP_DISENGAGED_ID));
-    AutoIgnition_Button.setAction(buttonCallback);
-
-    line1.setPosition(4, 242, 265, 15);
+    line1.setPosition(4, 242, 265, 5);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
     line1.setStart(5, 5);
@@ -40,19 +28,11 @@ MainMenuViewBase::MainMenuViewBase() :
     line1.setLineWidth(3);
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    Commands_Button.setXY(90, 0);
-    Commands_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DVHID_ID), touchgfx::Bitmap(BITMAP_DVHID_ID));
-    Commands_Button.setAction(buttonCallback);
-
-    Credits_Button.setXY(20, 248);
+    Credits_Button.setXY(20, 247);
     Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
     Credits_Button.setAction(buttonCallback);
 
-    DoorLock_Button.setXY(25, 59);
-    DoorLock_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DOORLOCK_ENGAGED_ID), touchgfx::Bitmap(BITMAP_DOORLOCK_DISENGAGED_ID));
-    DoorLock_Button.setAction(buttonCallback);
-
-    CAN_FLAG.setXY(3, 280);
+    CAN_FLAG.setXY(3, 213);
     CAN_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     CAN_FLAG.setLinespacing(0);
     Unicode::snprintf(CAN_FLAGBuffer, CAN_FLAG_SIZE, "%s", touchgfx::TypedText(T_CAN_FLAG_WC).getText());
@@ -60,16 +40,63 @@ MainMenuViewBase::MainMenuViewBase() :
     CAN_FLAG.resizeToCurrentText();
     CAN_FLAG.setTypedText(touchgfx::TypedText(T_CAN_FLAG));
 
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON_ID));
+    scalableImage1.setPosition(136, 0, 64, 64);
+    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+
+    textArea1.setXY(46, 12);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(136, 202, 3));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3LG4));
+
+    titleBackground.setPosition(0, 0, 240, 64);
+    titleBackground.setAlpha(42);
+    titleBackground.setOrigin(0.000f, 0.000f);
+    titleBackground.setScale(1.000f, 1.000f);
+    titleBackground.setAngle(0.000f);
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackground.setPainter(titleBackgroundPainter);
+    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
+    titleBackground.setShape(titleBackgroundPoints);
+
+    enableButton.setXY(5, 78);
+    enableButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_PRESSED_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
+    enableButton.setIconXY(20, 14);
+
+    therapyStatusLabel.setXY(59, 86);
+    therapyStatusLabel.setColor(touchgfx::Color::getColorFromRGB(136, 202, 3));
+    therapyStatusLabel.setLinespacing(0);
+    Unicode::snprintf(therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "%s", touchgfx::TypedText(T_ENABLEFLAG2).getText());
+    therapyStatusLabel.setWildcard(therapyStatusLabelBuffer);
+    therapyStatusLabel.resizeToCurrentText();
+    therapyStatusLabel.setTypedText(touchgfx::TypedText(T_ENABLEFLAG));
+
+    settingsButton.setXY(5, 138);
+    settingsButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_PRESSED_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_SETTINGS_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_SETTINGS_32_ID));
+    settingsButton.setIconXY(12, 14);
+
+    settingsLabel.setXY(59, 146);
+    settingsLabel.setColor(touchgfx::Color::getColorFromRGB(222, 221, 221));
+    settingsLabel.setLinespacing(0);
+    settingsLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LKC5));
+
+    manufacturerButton.setXY(4, 2);
+    manufacturerButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_EDGE_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_EDGE_MEDIUM_PRESSED_ID));
+    manufacturerButton.setAlpha(0);
+
     add(__background);
     add(Background);
-    add(Status_Button);
-    add(SeatWarmer_Button);
-    add(AutoIgnition_Button);
     add(line1);
-    add(Commands_Button);
     add(Credits_Button);
-    add(DoorLock_Button);
     add(CAN_FLAG);
+    add(scalableImage1);
+    add(textArea1);
+    add(titleBackground);
+    add(enableButton);
+    add(therapyStatusLabel);
+    add(settingsButton);
+    add(settingsLabel);
+    add(manufacturerButton);
 }
 
 void MainMenuViewBase::setupScreen()
@@ -79,46 +106,16 @@ void MainMenuViewBase::setupScreen()
 
 void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &Status_Button)
-    {
-        //toStatus
-        //When Status_Button clicked change screen to StatusPage
-        //Go to StatusPage with screen transition towards East
-        application().gotoStatusPageScreenSlideTransitionEast();
-    }
-    else if (&src == &SeatWarmer_Button)
-    {
-        //SeatWarmer_Toggle
-        //When SeatWarmer_Button clicked call virtual function
-        //Call SearWarmerButtonPressed
-        SearWarmerButtonPressed();
-    }
-    else if (&src == &AutoIgnition_Button)
-    {
-        //AutoIgition_Toggle
-        //When AutoIgnition_Button clicked call virtual function
-        //Call AutoIgnitionButtonPressed
-        AutoIgnitionButtonPressed();
-    }
-    else if (&src == &Commands_Button)
-    {
-        //toCommands
-        //When Commands_Button clicked change screen to CommandsPage
-        //Go to CommandsPage with screen transition towards East
-        application().gotoCommandsPageScreenSlideTransitionEast();
-    }
-    else if (&src == &Credits_Button)
+    if (&src == &Credits_Button)
     {
         //toCredits
         //When Credits_Button clicked change screen to CreditsPage
         //Go to CreditsPage with screen transition towards East
         application().gotoCreditsPageScreenSlideTransitionEast();
-    }
-    else if (&src == &DoorLock_Button)
-    {
-        //DoorLock_Toggle
-        //When DoorLock_Button clicked call virtual function
-        //Call DoorLockButtonPressed
-        DoorLockButtonPressed();
+
+        //toCommands
+        //When Credits_Button clicked change screen to CommandsPage
+        //Go to CommandsPage with screen transition towards East
+        application().gotoCommandsPageScreenSlideTransitionEast();
     }
 }

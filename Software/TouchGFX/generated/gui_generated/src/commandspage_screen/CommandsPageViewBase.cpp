@@ -16,25 +16,15 @@ CommandsPageViewBase::CommandsPageViewBase()
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    Background.setXY(0, 0);
+    Background.setXY(0, 1);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    ManufacturerInterface.setXY(7, 54);
+    ManufacturerInterface.setXY(7, 68);
     ManufacturerInterface.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     ManufacturerInterface.setLinespacing(0);
     ManufacturerInterface.setTypedText(touchgfx::TypedText(T___SINGLEUSE_11TN));
 
-    Commands_Button.setXY(90, 0);
-    Commands_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DVHID_ID), touchgfx::Bitmap(BITMAP_DVHID_ID));
-
-    ManufacturerInterface_1.setXY(7, 95);
-    ManufacturerInterface_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    ManufacturerInterface_1.setLinespacing(0);
-    ManufacturerInterface_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_IEKS));
-
-    backButton_toMainScreen1.setXY(0, 0);
-
-    line1.setPosition(3, 80, 265, 15);
+    line1.setPosition(3, 94, 265, 15);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
     line1.setStart(5, 5);
@@ -42,32 +32,27 @@ CommandsPageViewBase::CommandsPageViewBase()
     line1.setLineWidth(3);
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    Line1_Text.setXY(7, 119);
+    Line1_Text.setXY(7, 105);
     Line1_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Line1_Text.setLinespacing(0);
     Line1_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_R9AK));
 
-    Line2_Text.setXY(7, 143);
+    Line2_Text.setXY(7, 129);
     Line2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Line2_Text.setLinespacing(0);
     Line2_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HAW7));
 
-    Line3_Text.setXY(7, 167);
+    Line3_Text.setXY(7, 153);
     Line3_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Line3_Text.setLinespacing(0);
     Line3_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZGOK));
 
-    Line1_Text_1.setXY(7, 191);
-    Line1_Text_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Line1_Text_1.setLinespacing(0);
-    Line1_Text_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ANTM));
-
-    Line1_Text_2.setXY(7, 215);
+    Line1_Text_2.setXY(7, 181);
     Line1_Text_2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Line1_Text_2.setLinespacing(0);
     Line1_Text_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2BLY));
 
-    UART_FLAG.setXY(3, 280);
+    UART_FLAG.setXY(3, 214);
     UART_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     UART_FLAG.setLinespacing(0);
     Unicode::snprintf(UART_FLAGBuffer, UART_FLAG_SIZE, "%s", touchgfx::TypedText(T_UART_FLAG_WC).getText());
@@ -75,19 +60,47 @@ CommandsPageViewBase::CommandsPageViewBase()
     UART_FLAG.resizeToCurrentText();
     UART_FLAG.setTypedText(touchgfx::TypedText(T_UART_FLAG));
 
+    Credits_Button.setXY(20, 248);
+    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+
+    line1_1.setPosition(4, 242, 265, 5);
+    line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1_1.setPainter(line1_1Painter);
+    line1_1.setStart(5, 5);
+    line1_1.setEnd(225, 5);
+    line1_1.setLineWidth(3);
+    line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+
+    backButton_toMainScreen1.setXY(4, 16);
+
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON_ID));
+    scalableImage1.setPosition(176, 0, 64, 64);
+    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+
+    titleBackground.setPosition(0, 0, 240, 64);
+    titleBackground.setAlpha(42);
+    titleBackground.setOrigin(0.000f, 0.000f);
+    titleBackground.setScale(1.000f, 1.000f);
+    titleBackground.setAngle(0.000f);
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackground.setPainter(titleBackgroundPainter);
+    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
+    titleBackground.setShape(titleBackgroundPoints);
+
     add(__background);
     add(Background);
     add(ManufacturerInterface);
-    add(Commands_Button);
-    add(ManufacturerInterface_1);
-    add(backButton_toMainScreen1);
     add(line1);
     add(Line1_Text);
     add(Line2_Text);
     add(Line3_Text);
-    add(Line1_Text_1);
     add(Line1_Text_2);
     add(UART_FLAG);
+    add(Credits_Button);
+    add(line1_1);
+    add(backButton_toMainScreen1);
+    add(scalableImage1);
+    add(titleBackground);
 }
 
 void CommandsPageViewBase::setupScreen()

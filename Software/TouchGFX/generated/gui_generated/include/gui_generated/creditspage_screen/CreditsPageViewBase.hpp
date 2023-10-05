@@ -10,11 +10,14 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/Button.hpp>
-#include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <gui/containers/BackButton_toMainScreen.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/widgets/canvas/Shape.hpp>
+#include <touchgfx/mixins/ClickListener.hpp>
 
 class CreditsPageViewBase : public touchgfx::View<CreditsPagePresenter>
 {
@@ -37,12 +40,16 @@ protected:
     touchgfx::TextArea Name1_Text;
     touchgfx::TextArea Name2_Text;
     touchgfx::TextArea Name3_Text;
-    touchgfx::Button Commands_Button;
-    BackButton_toMainScreen backButton_toMainScreen1;
     touchgfx::Line line1_1;
     touchgfx::PainterRGB565 line1_1Painter;
-    touchgfx::TextArea Name4_Text;
     touchgfx::TextAreaWithOneWildcard JTAG_FLAG;
+    touchgfx::Button Credits_Button;
+    touchgfx::Line line1;
+    touchgfx::PainterRGB565 line1Painter;
+    BackButton_toMainScreen backButton_toMainScreen1;
+    touchgfx::ScalableImage scalableImage1;
+    touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
+    touchgfx::PainterRGB565 titleBackgroundPainter;
 
     /*
      * Wildcard Buffers
@@ -51,16 +58,6 @@ protected:
     touchgfx::Unicode::UnicodeChar JTAG_FLAGBuffer[JTAG_FLAG_SIZE];
 
 private:
-
-    /*
-     * Callback Declarations
-     */
-    touchgfx::Callback<CreditsPageViewBase, const touchgfx::AbstractButton&> buttonCallback;
-
-    /*
-     * Callback Handler Declarations
-     */
-    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
     /*
      * Canvas Buffer Size

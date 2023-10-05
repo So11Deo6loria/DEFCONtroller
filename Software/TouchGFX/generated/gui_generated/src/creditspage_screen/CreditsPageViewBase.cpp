@@ -8,8 +8,7 @@
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
-CreditsPageViewBase::CreditsPageViewBase() :
-    buttonCallback(this, &CreditsPageViewBase::buttonCallbackHandler)
+CreditsPageViewBase::CreditsPageViewBase()
 {
 
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
@@ -20,33 +19,27 @@ CreditsPageViewBase::CreditsPageViewBase() :
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    BroughtToYouBy_Text.setXY(4, 56);
+    BroughtToYouBy_Text.setXY(11, 68);
     BroughtToYouBy_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     BroughtToYouBy_Text.setLinespacing(0);
     BroughtToYouBy_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I348));
 
-    Name1_Text.setXY(11, 97);
+    Name1_Text.setXY(11, 111);
     Name1_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name1_Text.setLinespacing(0);
     Name1_Text.setTypedText(touchgfx::TypedText(T_NAME1_TEXT));
 
-    Name2_Text.setXY(11, 129);
+    Name2_Text.setXY(11, 143);
     Name2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name2_Text.setLinespacing(0);
     Name2_Text.setTypedText(touchgfx::TypedText(T_NAME2_TEXT));
 
-    Name3_Text.setXY(11, 160);
+    Name3_Text.setXY(11, 174);
     Name3_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Name3_Text.setLinespacing(0);
     Name3_Text.setTypedText(touchgfx::TypedText(T_NAME3_TEXT));
 
-    Commands_Button.setXY(90, 0);
-    Commands_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DVHID_ID), touchgfx::Bitmap(BITMAP_DVHID_ID));
-    Commands_Button.setAction(buttonCallback);
-
-    backButton_toMainScreen1.setXY(0, 0);
-
-    line1_1.setPosition(0, 88, 269, 18);
+    line1_1.setPosition(0, 93, 269, 18);
     line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1_1.setPainter(line1_1Painter);
     line1_1.setStart(5, 5);
@@ -54,12 +47,7 @@ CreditsPageViewBase::CreditsPageViewBase() :
     line1_1.setLineWidth(3);
     line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    Name4_Text.setXY(11, 191);
-    Name4_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Name4_Text.setLinespacing(0);
-    Name4_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TI6C));
-
-    JTAG_FLAG.setXY(3, 280);
+    JTAG_FLAG.setXY(3, 209);
     JTAG_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     JTAG_FLAG.setLinespacing(0);
     Unicode::snprintf(JTAG_FLAGBuffer, JTAG_FLAG_SIZE, "%s", touchgfx::TypedText(T_JTAG_FLAG_WC).getText());
@@ -67,31 +55,49 @@ CreditsPageViewBase::CreditsPageViewBase() :
     JTAG_FLAG.resizeToCurrentText();
     JTAG_FLAG.setTypedText(touchgfx::TypedText(T_JTAG_FLAG));
 
+    Credits_Button.setXY(20, 248);
+    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+
+    line1.setPosition(4, 242, 265, 5);
+    line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    line1.setPainter(line1Painter);
+    line1.setStart(5, 5);
+    line1.setEnd(225, 5);
+    line1.setLineWidth(3);
+    line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
+
+    backButton_toMainScreen1.setXY(4, 16);
+
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON_ID));
+    scalableImage1.setPosition(176, 0, 64, 64);
+    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+
+    titleBackground.setPosition(0, 0, 240, 64);
+    titleBackground.setAlpha(42);
+    titleBackground.setOrigin(0.000f, 0.000f);
+    titleBackground.setScale(1.000f, 1.000f);
+    titleBackground.setAngle(0.000f);
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackground.setPainter(titleBackgroundPainter);
+    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
+    titleBackground.setShape(titleBackgroundPoints);
+
     add(__background);
     add(Background);
     add(BroughtToYouBy_Text);
     add(Name1_Text);
     add(Name2_Text);
     add(Name3_Text);
-    add(Commands_Button);
-    add(backButton_toMainScreen1);
     add(line1_1);
-    add(Name4_Text);
     add(JTAG_FLAG);
+    add(Credits_Button);
+    add(line1);
+    add(backButton_toMainScreen1);
+    add(scalableImage1);
+    add(titleBackground);
 }
 
 void CreditsPageViewBase::setupScreen()
 {
     backButton_toMainScreen1.initialize();
-}
-
-void CreditsPageViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
-{
-    if (&src == &Commands_Button)
-    {
-        //toCommands
-        //When Commands_Button clicked change screen to CommandsPage
-        //Go to CommandsPage with screen transition towards East
-        application().gotoCommandsPageScreenSlideTransitionEast();
-    }
 }
