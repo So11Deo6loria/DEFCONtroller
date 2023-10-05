@@ -134,7 +134,7 @@
             "Type": "TextArea",
             "Name": "therapyStatusLabel",
             "X": 59,
-            "Y": 86,
+            "Y": 87,
             "Width": 111,
             "Height": 42,
             "TextId": "enableFlag",
@@ -146,7 +146,7 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "enableFlag2",
+              "TextId": "__SingleUse_W40V",
               "UseBuffer": true,
               "BufferSize": 10
             }

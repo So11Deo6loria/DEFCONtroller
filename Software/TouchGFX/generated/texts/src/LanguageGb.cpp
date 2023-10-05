@@ -9,9 +9,10 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    396, // T___SingleUse_W40V
     396, // T_enableFlag2
     377, // T___SingleUse_LKC5
-    396, // T_enableFlag
+    394, // T_enableFlag
     422, // T___SingleUse_3LG4
     25, // T_UART_FLAG_WC
     394, // T_UART_FLAG

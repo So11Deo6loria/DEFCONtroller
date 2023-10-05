@@ -63,10 +63,10 @@ MainMenuViewBase::MainMenuViewBase() :
     enableButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_PRESSED_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     enableButton.setIconXY(20, 14);
 
-    therapyStatusLabel.setXY(59, 86);
+    therapyStatusLabel.setXY(59, 87);
     therapyStatusLabel.setColor(touchgfx::Color::getColorFromRGB(136, 202, 3));
     therapyStatusLabel.setLinespacing(0);
-    Unicode::snprintf(therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "%s", touchgfx::TypedText(T_ENABLEFLAG2).getText());
+    Unicode::snprintf(therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_W40V).getText());
     therapyStatusLabel.setWildcard(therapyStatusLabelBuffer);
     therapyStatusLabel.resizeToCurrentText();
     therapyStatusLabel.setTypedText(touchgfx::TypedText(T_ENABLEFLAG));
