@@ -35,64 +35,6 @@ void MainMenuView::tearDownScreen()
     MainMenuViewBase::tearDownScreen();
 }
 
-void MainMenuView::SearWarmerButtonPressed()
-{
-  UARTChallengeSeatWarmerButtonPressed(SeatWarmer_Button.getState());
-}
-
-void MainMenuView::DoorLockButtonPressed()
-{
-	UARTChallengeDoorLockButtonPressed(DoorLock_Button.getState());
-	CanChallengeButtonPressed(DoorLock_Button.getState());
-}
-
-void MainMenuView::AutoIgnitionButtonPressed()
-{
-	UARTChallengeIgnitionButtonPressed(AutoIgnition_Button.getState());
-}
-
-void MainMenuView::UpdateSeatWarmerStatus()
-{
-	if(SeatWarmerState)
-	{
-		SeatWarmer_Button.forceState( true );
-	}
-	else
-	{
-		SeatWarmer_Button.forceState( false );
-	}
-
-	SeatWarmer_Button.invalidate();
-}
-
-void MainMenuView::UpdateDoorLockStatus()
-{
-	if(DoorLockState)
-	{
-		DoorLock_Button.forceState( true );
-	}
-	else
-	{
-		DoorLock_Button.forceState( false );
-	}
-
-	DoorLock_Button.invalidate();
-}
-
-void MainMenuView::UpdateAutoIgnitionStatus()
-{
-	if(AutoIgnitionState)
-	{
-		AutoIgnition_Button.forceState( true );
-	}
-	else
-	{
-		AutoIgnition_Button.forceState( false );
-	}
-
-	AutoIgnition_Button.invalidate();
-}
-
 void MainMenuView::UpdateSPIDebugValue(uint16_t value)
 {
 	__UpdateDynamicData();
