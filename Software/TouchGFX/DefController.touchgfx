@@ -238,36 +238,6 @@
             }
           },
           {
-            "InteractionName": "DoorLock_Toggle",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "DoorLockButtonPressed"
-            }
-          },
-          {
-            "InteractionName": "AutoIgition_Toggle",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "AutoIgnitionButtonPressed"
-            }
-          },
-          {
-            "InteractionName": "SeatWarmer_Toggle",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "SearWarmerButtonPressed"
-            }
-          },
-          {
             "InteractionName": "Interaction1",
             "Trigger": {
               "Type": "TriggerClicked"
