@@ -107,7 +107,8 @@ StatusPageViewBase::StatusPageViewBase()
     SPI_FLAG.setXY(4, 207);
     SPI_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     SPI_FLAG.setLinespacing(0);
-    SPI_FLAG.setWildcard(touchgfx::TypedText(T_SPI_FLAG_WC).getText());
+    Unicode::snprintf(SPI_FLAGBuffer, SPI_FLAG_SIZE, "%s", touchgfx::TypedText(T_SPI_FLAG_WC).getText());
+    SPI_FLAG.setWildcard(SPI_FLAGBuffer);
     SPI_FLAG.resizeToCurrentText();
     SPI_FLAG.setTypedText(touchgfx::TypedText(T_SPI_FLAG));
 

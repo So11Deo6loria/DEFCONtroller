@@ -548,7 +548,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "SPI_FLAG_WC"
+              "TextId": "SPI_FLAG_WC",
+              "UseBuffer": true,
+              "BufferSize": 32
             }
           }
         ],
