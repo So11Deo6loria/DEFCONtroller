@@ -98,6 +98,7 @@ MainMenuViewBase::MainMenuViewBase() :
 
 void MainMenuViewBase::setupScreen()
 {
+
 }
 
 void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)

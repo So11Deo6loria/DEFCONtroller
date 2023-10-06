@@ -713,12 +713,13 @@
             "CustomContainerDefinitionName": "BackButton_toMainScreen"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "manufactureButtonScreen1",
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
             "X": 176,
             "Width": 64,
             "Height": 64,
-            "CustomContainerDefinitionName": "ManufactureButtonScreen"
+            "Filename": "dvmdIcon64x64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
           }
         ],
         "Interactions": [

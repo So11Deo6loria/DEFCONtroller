@@ -16,7 +16,7 @@
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/canvas/Shape.hpp>
 #include <gui/containers/BackButton_toMainScreen.hpp>
-#include <gui/containers/ManufactureButtonScreen.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
 
 class CommandsPageViewBase : public touchgfx::View<CommandsPagePresenter>
@@ -50,7 +50,7 @@ protected:
     touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
     touchgfx::PainterRGB565 titleBackgroundPainter;
     BackButton_toMainScreen backButton_toMainScreen1;
-    ManufactureButtonScreen manufactureButtonScreen1;
+    touchgfx::ScalableImage scalableImage1;
 
     /*
      * Wildcard Buffers

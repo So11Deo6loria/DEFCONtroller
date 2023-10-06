@@ -85,7 +85,9 @@ CommandsPageViewBase::CommandsPageViewBase() :
 
     backButton_toMainScreen1.setXY(4, 16);
 
-    manufactureButtonScreen1.setXY(176, 0);
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON64X64_ID));
+    scalableImage1.setPosition(176, 0, 64, 64);
+    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
     add(__background);
     add(Background);
@@ -100,13 +102,12 @@ CommandsPageViewBase::CommandsPageViewBase() :
     add(line1_1);
     add(titleBackground);
     add(backButton_toMainScreen1);
-    add(manufactureButtonScreen1);
+    add(scalableImage1);
 }
 
 void CommandsPageViewBase::setupScreen()
 {
     backButton_toMainScreen1.initialize();
-    manufactureButtonScreen1.initialize();
 }
 
 void CommandsPageViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
