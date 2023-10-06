@@ -15,9 +15,7 @@
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/canvas/Shape.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
-#include <touchgfx/mixins/ClickListener.hpp>
 
 class MainMenuViewBase : public touchgfx::View<MainMenuPresenter>
 {
@@ -42,13 +40,10 @@ protected:
     touchgfx::TextAreaWithOneWildcard CAN_FLAG;
     touchgfx::ScalableImage scalableImage1;
     touchgfx::TextArea textArea1;
-    touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
-    touchgfx::PainterRGB565 titleBackgroundPainter;
     touchgfx::ButtonWithIcon enableButton;
     touchgfx::TextAreaWithOneWildcard therapyStatusLabel;
     touchgfx::ButtonWithIcon settingsButton;
     touchgfx::TextArea settingsLabel;
-    touchgfx::Button manufacturerButton;
 
     /*
      * Wildcard Buffers

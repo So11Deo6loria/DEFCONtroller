@@ -85,34 +85,6 @@
             "AutoSize": true
           },
           {
-            "Type": "Shape",
-            "Name": "titleBackground",
-            "Width": 240,
-            "Height": 64,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
-            "Points": [
-              {},
-              {
-                "X": 300.0
-              },
-              {
-                "X": 300.0,
-                "Y": 75.0
-              },
-              {
-                "Y": 75.0
-              }
-            ],
-            "XScale": 1.0,
-            "YScale": 1.0,
-            "Alpha": 42,
-            "Clickable": true
-          },
-          {
             "Type": "ButtonWithIcon",
             "Name": "enableButton",
             "X": 5,
@@ -184,18 +156,6 @@
               "Blue": 221
             },
             "AutoSize": true
-          },
-          {
-            "Type": "Button",
-            "Name": "manufacturerButton",
-            "X": 4,
-            "Y": 2,
-            "Width": 230,
-            "Height": 60,
-            "Pressed": "__designer\\Dark_Buttons_Round_Edge_medium_pressed.png",
-            "Released": "__designer\\Dark_Buttons_Round_Edge_medium.png",
-            "Alpha": 0,
-            "Style": "Style3"
           }
         ],
         "Interactions": [
@@ -478,34 +438,6 @@
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
-            "Type": "Shape",
-            "Name": "titleBackground",
-            "Width": 240,
-            "Height": 64,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
-            "Points": [
-              {},
-              {
-                "X": 300.0
-              },
-              {
-                "X": 300.0,
-                "Y": 75.0
-              },
-              {
-                "Y": 75.0
-              }
-            ],
-            "XScale": 1.0,
-            "YScale": 1.0,
-            "Alpha": 42,
-            "Clickable": true
-          },
-          {
             "Type": "TextArea",
             "Name": "SPI_FLAG",
             "X": 4,
@@ -726,34 +658,6 @@
             "Height": 64,
             "Filename": "dvmdIcon.png",
             "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
-            "Type": "Shape",
-            "Name": "titleBackground",
-            "Width": 240,
-            "Height": 64,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
-            "Points": [
-              {},
-              {
-                "X": 300.0
-              },
-              {
-                "X": 300.0,
-                "Y": 75.0
-              },
-              {
-                "Y": 75.0
-              }
-            ],
-            "XScale": 1.0,
-            "YScale": 1.0,
-            "Alpha": 42,
-            "Clickable": true
           }
         ],
         "Interactions": []
@@ -915,34 +819,6 @@
             "Height": 64,
             "Filename": "dvmdIcon.png",
             "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
-            "Type": "Shape",
-            "Name": "titleBackground",
-            "Width": 240,
-            "Height": 64,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
-            "Points": [
-              {},
-              {
-                "X": 300.0
-              },
-              {
-                "X": 300.0,
-                "Y": 75.0
-              },
-              {
-                "Y": 75.0
-              }
-            ],
-            "XScale": 1.0,
-            "YScale": 1.0,
-            "Alpha": 42,
-            "Clickable": true
           }
         ],
         "Interactions": [

@@ -49,16 +49,6 @@ MainMenuViewBase::MainMenuViewBase() :
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3LG4));
 
-    titleBackground.setPosition(0, 0, 240, 64);
-    titleBackground.setAlpha(42);
-    titleBackground.setOrigin(0.000f, 0.000f);
-    titleBackground.setScale(1.000f, 1.000f);
-    titleBackground.setAngle(0.000f);
-    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
-    titleBackground.setPainter(titleBackgroundPainter);
-    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
-    titleBackground.setShape(titleBackgroundPoints);
-
     enableButton.setXY(5, 78);
     enableButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_PRESSED_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     enableButton.setIconXY(20, 14);
@@ -80,10 +70,6 @@ MainMenuViewBase::MainMenuViewBase() :
     settingsLabel.setLinespacing(0);
     settingsLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LKC5));
 
-    manufacturerButton.setXY(4, 2);
-    manufacturerButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_EDGE_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_EDGE_MEDIUM_PRESSED_ID));
-    manufacturerButton.setAlpha(0);
-
     add(__background);
     add(Background);
     add(line1);
@@ -91,12 +77,10 @@ MainMenuViewBase::MainMenuViewBase() :
     add(CAN_FLAG);
     add(scalableImage1);
     add(textArea1);
-    add(titleBackground);
     add(enableButton);
     add(therapyStatusLabel);
     add(settingsButton);
     add(settingsLabel);
-    add(manufacturerButton);
 }
 
 void MainMenuViewBase::setupScreen()

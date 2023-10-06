@@ -72,16 +72,6 @@ CreditsPageViewBase::CreditsPageViewBase()
     scalableImage1.setPosition(176, 0, 64, 64);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
-    titleBackground.setPosition(0, 0, 240, 64);
-    titleBackground.setAlpha(42);
-    titleBackground.setOrigin(0.000f, 0.000f);
-    titleBackground.setScale(1.000f, 1.000f);
-    titleBackground.setAngle(0.000f);
-    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
-    titleBackground.setPainter(titleBackgroundPainter);
-    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
-    titleBackground.setShape(titleBackgroundPoints);
-
     add(__background);
     add(Background);
     add(BroughtToYouBy_Text);
@@ -94,7 +84,6 @@ CreditsPageViewBase::CreditsPageViewBase()
     add(line1);
     add(backButton_toMainScreen1);
     add(scalableImage1);
-    add(titleBackground);
 }
 
 void CreditsPageViewBase::setupScreen()
