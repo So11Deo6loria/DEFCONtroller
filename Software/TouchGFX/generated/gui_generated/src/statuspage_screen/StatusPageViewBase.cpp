@@ -92,10 +92,6 @@ StatusPageViewBase::StatusPageViewBase() :
     line1.setLineWidth(3);
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON_ID));
-    scalableImage1.setPosition(176, 0, 64, 64);
-    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-
     titleBackground.setPosition(0, 0, 240, 64);
     titleBackground.setAlpha(42);
     titleBackground.setOrigin(0.000f, 0.000f);
@@ -129,7 +125,6 @@ StatusPageViewBase::StatusPageViewBase() :
     add(MilesToEmpty_Val);
     add(Credits_Button);
     add(line1);
-    add(scalableImage1);
     add(titleBackground);
     add(SPI_FLAG);
 }

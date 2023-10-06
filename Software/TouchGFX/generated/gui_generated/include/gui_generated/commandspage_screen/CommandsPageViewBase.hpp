@@ -15,7 +15,6 @@
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <gui/containers/BackButton_toMainScreen.hpp>
-#include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/canvas/Shape.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
 
@@ -48,7 +47,6 @@ protected:
     touchgfx::Line line1_1;
     touchgfx::PainterRGB565 line1_1Painter;
     BackButton_toMainScreen backButton_toMainScreen1;
-    touchgfx::ScalableImage scalableImage1;
     touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
     touchgfx::PainterRGB565 titleBackgroundPainter;
 

@@ -75,10 +75,6 @@ CommandsPageViewBase::CommandsPageViewBase() :
 
     backButton_toMainScreen1.setXY(4, 16);
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON_ID));
-    scalableImage1.setPosition(176, 0, 64, 64);
-    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-
     titleBackground.setPosition(0, 0, 240, 64);
     titleBackground.setAlpha(42);
     titleBackground.setOrigin(0.000f, 0.000f);
@@ -101,7 +97,6 @@ CommandsPageViewBase::CommandsPageViewBase() :
     add(Credits_Button);
     add(line1_1);
     add(backButton_toMainScreen1);
-    add(scalableImage1);
     add(titleBackground);
 }
 
