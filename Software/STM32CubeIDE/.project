@@ -410,16 +410,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background_CLKGRD.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_Dark_Buttons_Round_Edge_medium.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Buttons_Round_Edge_medium.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_Dark_Buttons_Round_Edge_medium_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Buttons_Round_Edge_medium_pressed.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_Dark_Buttons_Round_medium.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Buttons_Round_medium.cpp</locationURI>
@@ -440,9 +430,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Icons_Settings_32.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_dvmdIcon.cpp</name>
+			<name>Application/User/generated/image_dvmdIcon64x64.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_dvmdIcon.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_dvmdIcon64x64.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_icons8-error-48.cpp</name>
