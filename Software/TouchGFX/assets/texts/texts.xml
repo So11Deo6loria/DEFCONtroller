@@ -12,7 +12,7 @@
       <Text Id="SPI_FLAG" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_W40V" Alignment="Left" TypographyId="Default">
+      <Text Id="THERAPY_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Enabled</Translation>
       </Text>
       <Text Id="enableFlag2" Alignment="Left" TypographyId="Default">

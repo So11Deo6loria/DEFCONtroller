@@ -66,7 +66,7 @@ MainMenuViewBase::MainMenuViewBase() :
     therapyStatusLabel.setXY(59, 87);
     therapyStatusLabel.setColor(touchgfx::Color::getColorFromRGB(136, 202, 3));
     therapyStatusLabel.setLinespacing(0);
-    Unicode::snprintf(therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_W40V).getText());
+    Unicode::snprintf(therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "%s", touchgfx::TypedText(T_THERAPY_WC).getText());
     therapyStatusLabel.setWildcard(therapyStatusLabelBuffer);
     therapyStatusLabel.resizeToCurrentText();
     therapyStatusLabel.setTypedText(touchgfx::TypedText(T_ENABLEFLAG));

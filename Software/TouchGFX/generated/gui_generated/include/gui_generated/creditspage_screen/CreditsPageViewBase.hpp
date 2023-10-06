@@ -15,8 +15,8 @@
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/canvas/Shape.hpp>
-#include <gui/containers/ManufactureButtonScreen.hpp>
 #include <gui/containers/BackButton_toMainScreen.hpp>
+#include <gui/containers/ManufactureButtonScreen.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
 
 class CreditsPageViewBase : public touchgfx::View<CreditsPagePresenter>
@@ -48,8 +48,8 @@ protected:
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
     touchgfx::PainterRGB565 titleBackgroundPainter;
-    ManufactureButtonScreen manufactureButtonScreen1;
     BackButton_toMainScreen backButton_toMainScreen1;
+    ManufactureButtonScreen manufactureButtonScreen1;
 
     /*
      * Wildcard Buffers

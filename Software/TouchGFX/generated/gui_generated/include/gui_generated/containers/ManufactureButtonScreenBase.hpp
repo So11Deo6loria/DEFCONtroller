@@ -6,8 +6,8 @@
 
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
 
 class ManufactureButtonScreenBase : public touchgfx::Container
 {
@@ -24,8 +24,8 @@ protected:
     /*
      * Member Declarations
      */
-    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  manufactureButton;
     touchgfx::ScalableImage scalableImage1;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  manufactureButton;
 
 private:
 

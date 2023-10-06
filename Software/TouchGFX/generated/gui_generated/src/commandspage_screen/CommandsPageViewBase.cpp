@@ -73,10 +73,6 @@ CommandsPageViewBase::CommandsPageViewBase() :
     line1_1.setLineWidth(3);
     line1_1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON64X64_ID));
-    scalableImage1.setPosition(176, 0, 64, 64);
-    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-
     titleBackground.setPosition(0, 0, 240, 64);
     titleBackground.setAlpha(42);
     titleBackground.setOrigin(0.000f, 0.000f);
@@ -89,6 +85,8 @@ CommandsPageViewBase::CommandsPageViewBase() :
 
     backButton_toMainScreen1.setXY(4, 16);
 
+    manufactureButtonScreen1.setXY(176, 0);
+
     add(__background);
     add(Background);
     add(ManufacturerInterface);
@@ -100,14 +98,15 @@ CommandsPageViewBase::CommandsPageViewBase() :
     add(UART_FLAG);
     add(Credits_Button);
     add(line1_1);
-    add(scalableImage1);
     add(titleBackground);
     add(backButton_toMainScreen1);
+    add(manufactureButtonScreen1);
 }
 
 void CommandsPageViewBase::setupScreen()
 {
     backButton_toMainScreen1.initialize();
+    manufactureButtonScreen1.initialize();
 }
 
 void CommandsPageViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)

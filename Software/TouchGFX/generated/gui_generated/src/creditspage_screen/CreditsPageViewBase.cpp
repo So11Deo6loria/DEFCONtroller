@@ -76,9 +76,9 @@ CreditsPageViewBase::CreditsPageViewBase()
     const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
     titleBackground.setShape(titleBackgroundPoints);
 
-    manufactureButtonScreen1.setXY(159, 16);
-
     backButton_toMainScreen1.setXY(4, 16);
+
+    manufactureButtonScreen1.setXY(176, 0);
 
     add(__background);
     add(Background);
@@ -91,12 +91,12 @@ CreditsPageViewBase::CreditsPageViewBase()
     add(Credits_Button);
     add(line1);
     add(titleBackground);
-    add(manufactureButtonScreen1);
     add(backButton_toMainScreen1);
+    add(manufactureButtonScreen1);
 }
 
 void CreditsPageViewBase::setupScreen()
 {
-    manufactureButtonScreen1.initialize();
     backButton_toMainScreen1.initialize();
+    manufactureButtonScreen1.initialize();
 }

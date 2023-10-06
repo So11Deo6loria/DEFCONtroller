@@ -146,7 +146,7 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_W40V",
+              "TextId": "THERAPY_WC",
               "UseBuffer": true,
               "BufferSize": 10
             }
@@ -427,15 +427,6 @@
             "LineEndingStyle": "Round"
           },
           {
-            "Type": "ScalableImage",
-            "Name": "scalableImage1",
-            "X": 176,
-            "Width": 64,
-            "Height": 64,
-            "Filename": "dvmdIcon64x64.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
             "Type": "Shape",
             "Name": "titleBackground",
             "Width": 240,
@@ -489,6 +480,14 @@
             "Width": 81,
             "Height": 32,
             "CustomContainerDefinitionName": "BackButton_toMainScreen"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "manufactureButtonScreen1",
+            "X": 176,
+            "Width": 64,
+            "Height": 64,
+            "CustomContainerDefinitionName": "ManufactureButtonScreen"
           }
         ],
         "Interactions": [
@@ -666,15 +665,6 @@
             "LineEndingStyle": "Round"
           },
           {
-            "Type": "ScalableImage",
-            "Name": "scalableImage1",
-            "X": 176,
-            "Width": 64,
-            "Height": 64,
-            "Filename": "dvmdIcon64x64.png",
-            "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
             "Type": "Shape",
             "Name": "titleBackground",
             "Width": 240,
@@ -710,6 +700,14 @@
             "Width": 81,
             "Height": 32,
             "CustomContainerDefinitionName": "BackButton_toMainScreen"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "manufactureButtonScreen1",
+            "X": 176,
+            "Width": 64,
+            "Height": 64,
+            "CustomContainerDefinitionName": "ManufactureButtonScreen"
           }
         ],
         "Interactions": [
@@ -898,21 +896,20 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "manufactureButtonScreen1",
-            "X": 159,
-            "Y": 16,
-            "Width": 81,
-            "Height": 32,
-            "CustomContainerDefinitionName": "ManufactureButtonScreen"
-          },
-          {
-            "Type": "CustomContainerInstance",
             "Name": "backButton_toMainScreen1",
             "X": 4,
             "Y": 16,
             "Width": 81,
             "Height": 32,
             "CustomContainerDefinitionName": "BackButton_toMainScreen"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "manufactureButtonScreen1",
+            "X": 176,
+            "Width": 64,
+            "Height": 64,
+            "CustomContainerDefinitionName": "ManufactureButtonScreen"
           }
         ],
         "Interactions": []
@@ -1137,13 +1134,20 @@
       },
       {
         "Name": "ManufactureButtonScreen",
-        "Width": 81,
-        "Height": 32,
+        "Width": 64,
+        "Height": 64,
         "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "Width": 64,
+            "Height": 64,
+            "Filename": "dvmdIcon64x64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
           {
             "Type": "FlexButton",
             "Name": "manufactureButton",
-            "X": 176,
             "Width": 64,
             "Height": 64,
             "Alpha": 0,
@@ -1175,16 +1179,6 @@
                 }
               }
             ]
-          },
-          {
-            "Type": "ScalableImage",
-            "Name": "scalableImage1",
-            "X": 176,
-            "Width": 64,
-            "Height": 64,
-            "Filename": "dvmdIcon64x64.png",
-            "Alpha": 203,
-            "ScalingAlgorithm": "Nearest-neighbor"
           }
         ],
         "Interactions": [
