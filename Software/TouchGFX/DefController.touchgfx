@@ -6,6 +6,13 @@
         "CanvasBufferSize": 3600,
         "Components": [
           {
+            "Type": "Image",
+            "Name": "Background",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "Background_CLKGRD.png"
+          },
+          {
             "Type": "Line",
             "Name": "line1",
             "X": 4,
@@ -76,6 +83,34 @@
               "Blue": 3
             },
             "AutoSize": true
+          },
+          {
+            "Type": "Shape",
+            "Name": "titleBackground",
+            "Width": 240,
+            "Height": 64,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "Points": [
+              {},
+              {
+                "X": 300.0
+              },
+              {
+                "X": 300.0,
+                "Y": 75.0
+              },
+              {
+                "Y": 75.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0,
+            "Alpha": 42,
+            "Clickable": true
           },
           {
             "Type": "ButtonWithIcon",
@@ -155,7 +190,8 @@
           {
             "InteractionName": "toStatus",
             "Trigger": {
-              "Type": "TriggerClicked"
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settingsButton"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -176,28 +212,6 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "CreditsPage"
             }
-          },
-          {
-            "InteractionName": "toCommands",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "Credits_Button"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "CommandsPage"
-            }
-          },
-          {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionNone"
-            }
           }
         ]
       },
@@ -205,6 +219,13 @@
         "Name": "StatusPage",
         "CanvasBufferSize": 3600,
         "Components": [
+          {
+            "Type": "Image",
+            "Name": "Background",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "Background_CLKGRD.png"
+          },
           {
             "Type": "CustomContainerInstance",
             "Name": "backButton_toMainScreen1",
@@ -424,6 +445,34 @@
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
+            "Type": "Shape",
+            "Name": "titleBackground",
+            "Width": 240,
+            "Height": 64,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "Points": [
+              {},
+              {
+                "X": 300.0
+              },
+              {
+                "X": 300.0,
+                "Y": 75.0
+              },
+              {
+                "Y": 75.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0,
+            "Alpha": 42,
+            "Clickable": true
+          },
+          {
             "Type": "TextArea",
             "Name": "SPI_FLAG",
             "X": 4,
@@ -444,21 +493,10 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "toCreditsFromStatus",
             "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "CommandsPage"
-            }
-          },
-          {
-            "InteractionName": "Interaction2",
-            "Trigger": {
-              "Type": "TriggerClicked"
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Credits_Button"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -473,6 +511,14 @@
         "Name": "CommandsPage",
         "CanvasBufferSize": 3600,
         "Components": [
+          {
+            "Type": "Image",
+            "Name": "Background",
+            "Y": 1,
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "Background_CLKGRD.png"
+          },
           {
             "Type": "TextArea",
             "Name": "ManufacturerInterface",
@@ -636,19 +682,68 @@
             "Height": 64,
             "Filename": "dvmdIcon.png",
             "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Shape",
+            "Name": "titleBackground",
+            "Width": 240,
+            "Height": 64,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "Points": [
+              {},
+              {
+                "X": 300.0
+              },
+              {
+                "X": 300.0,
+                "Y": 75.0
+              },
+              {
+                "Y": 75.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0,
+            "Alpha": 42,
+            "Clickable": true
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "toCreditsFromCommands",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Credits_Button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "CreditsPage"
+            }
+          }
+        ]
       },
       {
         "Name": "CreditsPage",
         "CanvasBufferSize": 3600,
         "Components": [
           {
+            "Type": "Image",
+            "Name": "Background",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "Background_CLKGRD.png"
+          },
+          {
             "Type": "TextArea",
             "Name": "BroughtToYouBy_Text",
             "X": 11,
-            "Y": 67,
+            "Y": 68,
             "Width": 178,
             "Height": 24,
             "TextId": "__SingleUse_I348",
@@ -790,22 +885,37 @@
             "Height": 64,
             "Filename": "dvmdIcon.png",
             "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Shape",
+            "Name": "titleBackground",
+            "Width": 240,
+            "Height": 64,
+            "Color": {
+              "Red": 128,
+              "Green": 128,
+              "Blue": 128
+            },
+            "Points": [
+              {},
+              {
+                "X": 300.0
+              },
+              {
+                "X": 300.0,
+                "Y": 75.0
+              },
+              {
+                "Y": 75.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0,
+            "Alpha": 42,
+            "Clickable": true
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "toCommands",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "CommandsPage"
-            }
-          }
-        ]
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [

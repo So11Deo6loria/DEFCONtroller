@@ -8,6 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/creditspage_screen/CreditsPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
@@ -15,6 +16,8 @@
 #include <touchgfx/widgets/Button.hpp>
 #include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/widgets/canvas/Shape.hpp>
+#include <touchgfx/mixins/ClickListener.hpp>
 
 class CreditsPageViewBase : public touchgfx::View<CreditsPagePresenter>
 {
@@ -32,6 +35,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
+    touchgfx::Image Background;
     touchgfx::TextArea BroughtToYouBy_Text;
     touchgfx::TextArea Name1_Text;
     touchgfx::TextArea Name2_Text;
@@ -44,6 +48,8 @@ protected:
     touchgfx::PainterRGB565 line1Painter;
     BackButton_toMainScreen backButton_toMainScreen1;
     touchgfx::ScalableImage scalableImage1;
+    touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
+    touchgfx::PainterRGB565 titleBackgroundPainter;
 
     /*
      * Wildcard Buffers

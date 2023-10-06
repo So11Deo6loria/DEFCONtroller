@@ -8,6 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/statuspage_screen/StatusPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
@@ -15,6 +16,8 @@
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/widgets/canvas/Shape.hpp>
+#include <touchgfx/mixins/ClickListener.hpp>
 
 class StatusPageViewBase : public touchgfx::View<StatusPagePresenter>
 {
@@ -32,6 +35,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
+    touchgfx::Image Background;
     BackButton_toMainScreen backButton_toMainScreen1;
     touchgfx::TextArea Odometer_Text;
     touchgfx::TextArea textArea1_1;
@@ -47,6 +51,8 @@ protected:
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::ScalableImage scalableImage1;
+    touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
+    touchgfx::PainterRGB565 titleBackgroundPainter;
     touchgfx::TextAreaWithOneWildcard SPI_FLAG;
 
     /*
@@ -56,6 +62,16 @@ protected:
     touchgfx::Unicode::UnicodeChar SPI_FLAGBuffer[SPI_FLAG_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<StatusPageViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
     /*
      * Canvas Buffer Size

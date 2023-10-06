@@ -17,6 +17,9 @@ MainMenuViewBase::MainMenuViewBase() :
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
+    Background.setXY(0, 0);
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
+
     line1.setPosition(4, 242, 265, 5);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
@@ -46,6 +49,16 @@ MainMenuViewBase::MainMenuViewBase() :
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3LG4));
 
+    titleBackground.setPosition(0, 0, 240, 64);
+    titleBackground.setAlpha(42);
+    titleBackground.setOrigin(0.000f, 0.000f);
+    titleBackground.setScale(1.000f, 1.000f);
+    titleBackground.setAngle(0.000f);
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackground.setPainter(titleBackgroundPainter);
+    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
+    titleBackground.setShape(titleBackgroundPoints);
+
     enableButton.setXY(5, 78);
     enableButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_PRESSED_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     enableButton.setIconXY(20, 14);
@@ -61,6 +74,7 @@ MainMenuViewBase::MainMenuViewBase() :
     settingsButton.setXY(5, 138);
     settingsButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_PRESSED_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_SETTINGS_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_SETTINGS_32_ID));
     settingsButton.setIconXY(12, 14);
+    settingsButton.setAction(buttonCallback);
 
     settingsLabel.setXY(59, 146);
     settingsLabel.setColor(touchgfx::Color::getColorFromRGB(222, 221, 221));
@@ -68,11 +82,13 @@ MainMenuViewBase::MainMenuViewBase() :
     settingsLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LKC5));
 
     add(__background);
+    add(Background);
     add(line1);
     add(Credits_Button);
     add(CAN_FLAG);
     add(scalableImage1);
     add(textArea1);
+    add(titleBackground);
     add(enableButton);
     add(therapyStatusLabel);
     add(settingsButton);
@@ -92,10 +108,12 @@ void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When Credits_Button clicked change screen to CreditsPage
         //Go to CreditsPage with screen transition towards East
         application().gotoCreditsPageScreenSlideTransitionEast();
-
-        //toCommands
-        //When Credits_Button clicked change screen to CommandsPage
-        //Go to CommandsPage with screen transition towards East
-        application().gotoCommandsPageScreenSlideTransitionEast();
+    }
+    else if (&src == &settingsButton)
+    {
+        //toStatus
+        //When settingsButton clicked change screen to StatusPage
+        //Go to StatusPage with screen transition towards East
+        application().gotoStatusPageScreenSlideTransitionEast();
     }
 }

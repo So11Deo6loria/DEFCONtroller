@@ -3,18 +3,22 @@
 /*********************************************************************************/
 #include <gui_generated/commandspage_screen/CommandsPageViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
-CommandsPageViewBase::CommandsPageViewBase()
+CommandsPageViewBase::CommandsPageViewBase() :
+    buttonCallback(this, &CommandsPageViewBase::buttonCallbackHandler)
 {
 
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+
+    Background.setXY(0, 1);
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
     ManufacturerInterface.setXY(7, 68);
     ManufacturerInterface.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -59,6 +63,7 @@ CommandsPageViewBase::CommandsPageViewBase()
 
     Credits_Button.setXY(20, 248);
     Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+    Credits_Button.setAction(buttonCallback);
 
     line1_1.setPosition(4, 242, 265, 5);
     line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -74,7 +79,18 @@ CommandsPageViewBase::CommandsPageViewBase()
     scalableImage1.setPosition(176, 0, 64, 64);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
+    titleBackground.setPosition(0, 0, 240, 64);
+    titleBackground.setAlpha(42);
+    titleBackground.setOrigin(0.000f, 0.000f);
+    titleBackground.setScale(1.000f, 1.000f);
+    titleBackground.setAngle(0.000f);
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackground.setPainter(titleBackgroundPainter);
+    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
+    titleBackground.setShape(titleBackgroundPoints);
+
     add(__background);
+    add(Background);
     add(ManufacturerInterface);
     add(line1);
     add(Line1_Text);
@@ -86,9 +102,21 @@ CommandsPageViewBase::CommandsPageViewBase()
     add(line1_1);
     add(backButton_toMainScreen1);
     add(scalableImage1);
+    add(titleBackground);
 }
 
 void CommandsPageViewBase::setupScreen()
 {
     backButton_toMainScreen1.initialize();
+}
+
+void CommandsPageViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &Credits_Button)
+    {
+        //toCreditsFromCommands
+        //When Credits_Button clicked change screen to CreditsPage
+        //Go to CreditsPage with screen transition towards East
+        application().gotoCreditsPageScreenSlideTransitionEast();
+    }
 }

@@ -3,18 +3,22 @@
 /*********************************************************************************/
 #include <gui_generated/statuspage_screen/StatusPageViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
-StatusPageViewBase::StatusPageViewBase()
+StatusPageViewBase::StatusPageViewBase() :
+    buttonCallback(this, &StatusPageViewBase::buttonCallbackHandler)
 {
 
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+
+    Background.setXY(0, 0);
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
     backButton_toMainScreen1.setXY(4, 16);
 
@@ -78,6 +82,7 @@ StatusPageViewBase::StatusPageViewBase()
 
     Credits_Button.setXY(20, 247);
     Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+    Credits_Button.setAction(buttonCallback);
 
     line1.setPosition(4, 242, 265, 5);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -91,6 +96,16 @@ StatusPageViewBase::StatusPageViewBase()
     scalableImage1.setPosition(176, 0, 64, 64);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
+    titleBackground.setPosition(0, 0, 240, 64);
+    titleBackground.setAlpha(42);
+    titleBackground.setOrigin(0.000f, 0.000f);
+    titleBackground.setScale(1.000f, 1.000f);
+    titleBackground.setAngle(0.000f);
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackground.setPainter(titleBackgroundPainter);
+    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
+    titleBackground.setShape(titleBackgroundPoints);
+
     SPI_FLAG.setXY(4, 207);
     SPI_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     SPI_FLAG.setLinespacing(0);
@@ -100,6 +115,7 @@ StatusPageViewBase::StatusPageViewBase()
     SPI_FLAG.setTypedText(touchgfx::TypedText(T_SPI_FLAG));
 
     add(__background);
+    add(Background);
     add(backButton_toMainScreen1);
     add(Odometer_Text);
     add(textArea1_1);
@@ -114,10 +130,22 @@ StatusPageViewBase::StatusPageViewBase()
     add(Credits_Button);
     add(line1);
     add(scalableImage1);
+    add(titleBackground);
     add(SPI_FLAG);
 }
 
 void StatusPageViewBase::setupScreen()
 {
     backButton_toMainScreen1.initialize();
+}
+
+void StatusPageViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &Credits_Button)
+    {
+        //toCreditsFromStatus
+        //When Credits_Button clicked change screen to CreditsPage
+        //Go to CreditsPage with screen transition towards East
+        application().gotoCreditsPageScreenSlideTransitionEast();
+    }
 }

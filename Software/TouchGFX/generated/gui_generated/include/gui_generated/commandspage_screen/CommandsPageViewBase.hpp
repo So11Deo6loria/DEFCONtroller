@@ -8,6 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/commandspage_screen/CommandsPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
@@ -15,6 +16,8 @@
 #include <touchgfx/widgets/Button.hpp>
 #include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/widgets/canvas/Shape.hpp>
+#include <touchgfx/mixins/ClickListener.hpp>
 
 class CommandsPageViewBase : public touchgfx::View<CommandsPagePresenter>
 {
@@ -32,6 +35,7 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
+    touchgfx::Image Background;
     touchgfx::TextArea ManufacturerInterface;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
@@ -45,6 +49,8 @@ protected:
     touchgfx::PainterRGB565 line1_1Painter;
     BackButton_toMainScreen backButton_toMainScreen1;
     touchgfx::ScalableImage scalableImage1;
+    touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
+    touchgfx::PainterRGB565 titleBackgroundPainter;
 
     /*
      * Wildcard Buffers
@@ -53,6 +59,16 @@ protected:
     touchgfx::Unicode::UnicodeChar UART_FLAGBuffer[UART_FLAG_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<CommandsPageViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
     /*
      * Canvas Buffer Size

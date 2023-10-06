@@ -3,8 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/creditspage_screen/CreditsPageViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
@@ -16,7 +16,10 @@ CreditsPageViewBase::CreditsPageViewBase()
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    BroughtToYouBy_Text.setXY(11, 67);
+    Background.setXY(0, 0);
+    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
+
+    BroughtToYouBy_Text.setXY(11, 68);
     BroughtToYouBy_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     BroughtToYouBy_Text.setLinespacing(0);
     BroughtToYouBy_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I348));
@@ -69,7 +72,18 @@ CreditsPageViewBase::CreditsPageViewBase()
     scalableImage1.setPosition(176, 0, 64, 64);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
+    titleBackground.setPosition(0, 0, 240, 64);
+    titleBackground.setAlpha(42);
+    titleBackground.setOrigin(0.000f, 0.000f);
+    titleBackground.setScale(1.000f, 1.000f);
+    titleBackground.setAngle(0.000f);
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackground.setPainter(titleBackgroundPainter);
+    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
+    titleBackground.setShape(titleBackgroundPoints);
+
     add(__background);
+    add(Background);
     add(BroughtToYouBy_Text);
     add(Name1_Text);
     add(Name2_Text);
@@ -80,6 +94,7 @@ CreditsPageViewBase::CreditsPageViewBase()
     add(line1);
     add(backButton_toMainScreen1);
     add(scalableImage1);
+    add(titleBackground);
 }
 
 void CreditsPageViewBase::setupScreen()
