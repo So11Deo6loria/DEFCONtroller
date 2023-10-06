@@ -32,7 +32,18 @@ void MainMenuView::tearDownScreen()
 
 void MainMenuView::ToggleButtonClickVirtFunc( void )
 {
-	CanChallengeButtonPressed(1);
+	// Classic Caleb Hackery to Switch the State
+	if( CanTask_ToggleState )
+	{
+		CanChallengeButtonPressed(0);
+	}
+	else
+	{
+		CanChallengeButtonPressed(1);
+	}
+
+	__UpdateDynamicData();
+
 }
 
 void MainMenuView::UpdateSPIDebugValue(uint16_t value)
@@ -44,17 +55,17 @@ void  MainMenuView::__UpdateDynamicData(void)
 {
 	if( CanTask_ToggleState )
 	{
-		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (255, 0, 0));
+		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (136, 203, 3));
 		therapyStatusLabel.setAlpha (100);
-		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Disabled");
+		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Enabled");
 		therapyStatusLabel.setWildcard (therapyStatusLabelBuffer);
 		therapyStatusLabel.resizeToCurrentText ();
 	}
 	else
 	{
-		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (136, 203, 3));
+		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (255, 0, 0));
 		therapyStatusLabel.setAlpha (100);
-		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Enabled");
+		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Disabled");
 		therapyStatusLabel.setWildcard (therapyStatusLabelBuffer);
 		therapyStatusLabel.resizeToCurrentText ();
 	}

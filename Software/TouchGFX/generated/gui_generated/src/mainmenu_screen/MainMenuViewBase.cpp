@@ -123,8 +123,4 @@ void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //Go to StatusPage with screen transition towards East
         application().gotoStatusPageScreenSlideTransitionEast();
     }
-    else if (&src == &enableButton)
-    {
-    	ToggleButtonClickVirtFunc();
-    }
 }

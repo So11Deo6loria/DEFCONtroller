@@ -25,10 +25,6 @@ public:
     MainMenuViewBase();
     virtual ~MainMenuViewBase() {}
     virtual void setupScreen();
-    virtual void ToggleButtonClickVirtFunc()
-    {
-
-    }
 
     /*
      * Virtual Action Handlers
