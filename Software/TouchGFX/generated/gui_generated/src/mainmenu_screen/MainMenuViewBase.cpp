@@ -17,9 +17,6 @@ MainMenuViewBase::MainMenuViewBase() :
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    Background.setXY(0, 0);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
-
     line1.setPosition(4, 242, 265, 5);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
@@ -71,7 +68,6 @@ MainMenuViewBase::MainMenuViewBase() :
     settingsLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LKC5));
 
     add(__background);
-    add(Background);
     add(line1);
     add(Credits_Button);
     add(CAN_FLAG);

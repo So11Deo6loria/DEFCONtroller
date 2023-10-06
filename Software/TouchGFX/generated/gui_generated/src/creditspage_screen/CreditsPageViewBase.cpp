@@ -3,8 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/creditspage_screen/CreditsPageViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <BitmapDatabase.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
@@ -15,9 +15,6 @@ CreditsPageViewBase::CreditsPageViewBase()
 
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-
-    Background.setXY(0, 0);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
     BroughtToYouBy_Text.setXY(11, 67);
     BroughtToYouBy_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -73,7 +70,6 @@ CreditsPageViewBase::CreditsPageViewBase()
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
     add(__background);
-    add(Background);
     add(BroughtToYouBy_Text);
     add(Name1_Text);
     add(Name2_Text);

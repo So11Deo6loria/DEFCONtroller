@@ -8,7 +8,6 @@
 #include <mvp/View.hpp>
 #include <gui/statuspage_screen/StatusPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
@@ -33,7 +32,6 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image Background;
     BackButton_toMainScreen backButton_toMainScreen1;
     touchgfx::TextArea Odometer_Text;
     touchgfx::TextArea textArea1_1;

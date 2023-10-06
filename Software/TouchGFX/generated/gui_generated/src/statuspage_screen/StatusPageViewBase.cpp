@@ -3,8 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/statuspage_screen/StatusPageViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <BitmapDatabase.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
@@ -15,9 +15,6 @@ StatusPageViewBase::StatusPageViewBase()
 
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-
-    Background.setXY(0, 0);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
     backButton_toMainScreen1.setXY(4, 16);
 
@@ -103,7 +100,6 @@ StatusPageViewBase::StatusPageViewBase()
     SPI_FLAG.setTypedText(touchgfx::TypedText(T_SPI_FLAG));
 
     add(__background);
-    add(Background);
     add(backButton_toMainScreen1);
     add(Odometer_Text);
     add(textArea1_1);

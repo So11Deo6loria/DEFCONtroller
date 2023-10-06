@@ -3,8 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/commandspage_screen/CommandsPageViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <BitmapDatabase.hpp>
 #include <touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp>
 
 
@@ -15,9 +15,6 @@ CommandsPageViewBase::CommandsPageViewBase()
 
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-
-    Background.setXY(0, 1);
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
     ManufacturerInterface.setXY(7, 68);
     ManufacturerInterface.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -78,7 +75,6 @@ CommandsPageViewBase::CommandsPageViewBase()
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
     add(__background);
-    add(Background);
     add(ManufacturerInterface);
     add(line1);
     add(Line1_Text);

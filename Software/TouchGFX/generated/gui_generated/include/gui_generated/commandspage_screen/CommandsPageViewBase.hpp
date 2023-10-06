@@ -8,7 +8,6 @@
 #include <mvp/View.hpp>
 #include <gui/commandspage_screen/CommandsPagePresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
@@ -33,7 +32,6 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image Background;
     touchgfx::TextArea ManufacturerInterface;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;

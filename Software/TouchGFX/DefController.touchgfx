@@ -6,13 +6,6 @@
         "CanvasBufferSize": 3600,
         "Components": [
           {
-            "Type": "Image",
-            "Name": "Background",
-            "Width": 240,
-            "Height": 320,
-            "RelativeFilename": "Background_CLKGRD.png"
-          },
-          {
             "Type": "Line",
             "Name": "line1",
             "X": 4,
@@ -212,13 +205,6 @@
         "Name": "StatusPage",
         "CanvasBufferSize": 3600,
         "Components": [
-          {
-            "Type": "Image",
-            "Name": "Background",
-            "Width": 240,
-            "Height": 320,
-            "RelativeFilename": "Background_CLKGRD.png"
-          },
           {
             "Type": "CustomContainerInstance",
             "Name": "backButton_toMainScreen1",
@@ -488,14 +474,6 @@
         "CanvasBufferSize": 3600,
         "Components": [
           {
-            "Type": "Image",
-            "Name": "Background",
-            "Y": 1,
-            "Width": 240,
-            "Height": 320,
-            "RelativeFilename": "Background_CLKGRD.png"
-          },
-          {
             "Type": "TextArea",
             "Name": "ManufacturerInterface",
             "X": 7,
@@ -666,13 +644,6 @@
         "Name": "CreditsPage",
         "CanvasBufferSize": 3600,
         "Components": [
-          {
-            "Type": "Image",
-            "Name": "Background",
-            "Width": 240,
-            "Height": 320,
-            "RelativeFilename": "Background_CLKGRD.png"
-          },
           {
             "Type": "TextArea",
             "Name": "BroughtToYouBy_Text",
