@@ -20,8 +20,6 @@ StatusPageViewBase::StatusPageViewBase() :
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    backButton_toMainScreen1.setXY(4, 16);
-
     Odometer_Text.setXY(4, 78);
     Odometer_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Odometer_Text.setLinespacing(0);
@@ -114,9 +112,10 @@ StatusPageViewBase::StatusPageViewBase() :
     SPI_FLAG.resizeToCurrentText();
     SPI_FLAG.setTypedText(touchgfx::TypedText(T_SPI_FLAG));
 
+    backButton_toMainScreen1.setXY(4, 16);
+
     add(__background);
     add(Background);
-    add(backButton_toMainScreen1);
     add(Odometer_Text);
     add(textArea1_1);
     add(VIN_Text);
@@ -132,6 +131,7 @@ StatusPageViewBase::StatusPageViewBase() :
     add(scalableImage1);
     add(titleBackground);
     add(SPI_FLAG);
+    add(backButton_toMainScreen1);
 }
 
 void StatusPageViewBase::setupScreen()

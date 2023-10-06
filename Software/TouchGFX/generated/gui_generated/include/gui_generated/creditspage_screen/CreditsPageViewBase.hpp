@@ -14,9 +14,9 @@
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/Button.hpp>
-#include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/canvas/Shape.hpp>
+#include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
 
 class CreditsPageViewBase : public touchgfx::View<CreditsPagePresenter>
@@ -46,10 +46,10 @@ protected:
     touchgfx::Button Credits_Button;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
-    BackButton_toMainScreen backButton_toMainScreen1;
     touchgfx::ScalableImage scalableImage1;
     touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
     touchgfx::PainterRGB565 titleBackgroundPainter;
+    BackButton_toMainScreen backButton_toMainScreen1;
 
     /*
      * Wildcard Buffers

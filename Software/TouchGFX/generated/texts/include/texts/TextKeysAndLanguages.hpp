@@ -12,6 +12,7 @@ enum LANGUAGES
 
 enum TEXTS
 {
+    T___SINGLEUSE_HTK7,
     T_SPI_FLAG_WC,
     T_SPI_FLAG,
     T___SINGLEUSE_W40V,

@@ -227,15 +227,6 @@
             "RelativeFilename": "Background_CLKGRD.png"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "backButton_toMainScreen1",
-            "X": 4,
-            "Y": 16,
-            "Width": 81,
-            "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toMainScreen"
-          },
-          {
             "Type": "TextArea",
             "Name": "Odometer_Text",
             "X": 4,
@@ -489,6 +480,15 @@
               "UseBuffer": true,
               "BufferSize": 32
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton_toMainScreen1",
+            "X": 4,
+            "Y": 16,
+            "Width": 81,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton_toMainScreen"
           }
         ],
         "Interactions": [
@@ -666,15 +666,6 @@
             "LineEndingStyle": "Round"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "backButton_toMainScreen1",
-            "X": 4,
-            "Y": 16,
-            "Width": 81,
-            "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toMainScreen"
-          },
-          {
             "Type": "ScalableImage",
             "Name": "scalableImage1",
             "X": 176,
@@ -710,6 +701,15 @@
             "YScale": 1.0,
             "Alpha": 42,
             "Clickable": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton_toMainScreen1",
+            "X": 4,
+            "Y": 16,
+            "Width": 81,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton_toMainScreen"
           }
         ],
         "Interactions": [
@@ -869,15 +869,6 @@
             "LineEndingStyle": "Round"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "backButton_toMainScreen1",
-            "X": 4,
-            "Y": 16,
-            "Width": 81,
-            "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toMainScreen"
-          },
-          {
             "Type": "ScalableImage",
             "Name": "scalableImage1",
             "X": 176,
@@ -913,6 +904,15 @@
             "YScale": 1.0,
             "Alpha": 42,
             "Clickable": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton_toMainScreen1",
+            "X": 4,
+            "Y": 16,
+            "Width": 81,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton_toMainScreen"
           }
         ],
         "Interactions": []
@@ -1131,6 +1131,114 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "StatusPage"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "BackButton_CreditsToMain",
+        "Width": 81,
+        "Height": 32,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 24,
+            "Width": 48,
+            "Height": 31,
+            "TextId": "__SingleUse_HTK7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 200,
+            "AutoSize": true,
+            "Clickable": true
+          },
+          {
+            "Type": "Line",
+            "Name": "UpperCar",
+            "Width": 24,
+            "Height": 32,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 15,
+            "StartY": 8,
+            "EndX": 6,
+            "EndY": 16,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "LowerCar",
+            "Width": 24,
+            "Height": 32,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 16,
+            "StartY": 24,
+            "EndX": 6,
+            "EndY": 16,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "goBackButton",
+            "Width": 72,
+            "Height": 31,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 240,
+                "Height": 44,
+                "BorderSize": 10,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "goBackButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "MainMenu"
             }
           }
         ]
