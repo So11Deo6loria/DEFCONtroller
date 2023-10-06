@@ -98,7 +98,6 @@ MainMenuViewBase::MainMenuViewBase() :
 
 void MainMenuViewBase::setupScreen()
 {
-
 }
 
 void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -123,5 +122,9 @@ void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When settingsButton clicked change screen to StatusPage
         //Go to StatusPage with screen transition towards East
         application().gotoStatusPageScreenSlideTransitionEast();
+    }
+    else if (&src == &enableButton)
+    {
+    	ToggleButtonClickVirtFunc();
     }
 }

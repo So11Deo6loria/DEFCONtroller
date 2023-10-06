@@ -5,6 +5,11 @@
 extern "C" void CanChallengeButtonPressed (uint8_t State);
 
 extern __IO uint8_t debugFlagTouchGFX;
+extern __IO uint8_t CanTask_BSUpdated;
+extern __IO uint16_t CanTask_BSValue;
+extern __IO uint8_t CanTask_isBSGood;
+extern __IO uint8_t debugFlagTouchGFX;
+extern __IO uint8_t CanTask_ToggleState;
 extern __IO char xUARTFlag[32];
 extern __IO char xSPIFlag[32];
 extern __IO char xCANFlag[32];
@@ -25,6 +30,11 @@ void MainMenuView::tearDownScreen()
     MainMenuViewBase::tearDownScreen();
 }
 
+void MainMenuView::ToggleButtonClickVirtFunc( void )
+{
+	CanChallengeButtonPressed(1);
+}
+
 void MainMenuView::UpdateSPIDebugValue(uint16_t value)
 {
 	__UpdateDynamicData();
@@ -32,6 +42,24 @@ void MainMenuView::UpdateSPIDebugValue(uint16_t value)
 
 void  MainMenuView::__UpdateDynamicData(void)
 {
+	if( CanTask_ToggleState )
+	{
+		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (255, 0, 0));
+		therapyStatusLabel.setAlpha (100);
+		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Disabled");
+		therapyStatusLabel.setWildcard (therapyStatusLabelBuffer);
+		therapyStatusLabel.resizeToCurrentText ();
+	}
+	else
+	{
+		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (136, 203, 3));
+		therapyStatusLabel.setAlpha (100);
+		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Enabled");
+		therapyStatusLabel.setWildcard (therapyStatusLabelBuffer);
+		therapyStatusLabel.resizeToCurrentText ();
+	}
+
+
 	// Don't write over Protiviti unless the flag is there.
 	if ((debugFlagTouchGFX & (1 << 3)) != 0) // CAN Bit 1
 	{

@@ -17,6 +17,7 @@ public:
 
     // Button State Update Handlers
     virtual void UpdateSPIDebugValue(uint16_t value);
+    void ToggleButtonClickVirtFunc( void );
 protected:
 };
 
