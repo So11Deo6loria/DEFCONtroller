@@ -135,8 +135,8 @@
             "Name": "therapyStatusLabel",
             "X": 59,
             "Y": 87,
-            "Width": 111,
-            "Height": 42,
+            "Width": 65,
+            "Height": 24,
             "TextId": "enableFlag",
             "TextRotation": "0",
             "Color": {

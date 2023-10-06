@@ -24,7 +24,7 @@
       <Text Id="__SingleUse_LKC5" Alignment="Left" TypographyId="ExtraLarge">
         <Translation Language="GB">Settings</Translation>
       </Text>
-      <Text Id="enableFlag" Alignment="Left" TypographyId="ExtraLarge">
+      <Text Id="enableFlag" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_3LG4" Alignment="Center" TypographyId="ExtraLarge">
