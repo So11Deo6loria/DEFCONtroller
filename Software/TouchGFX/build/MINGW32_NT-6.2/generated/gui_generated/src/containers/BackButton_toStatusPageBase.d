@@ -1,7 +1,6 @@
-build/MINGW32_NT-6.2/gui/src/statuspage_screen/StatusPagePresenter.o: \
- gui/src/statuspage_screen/StatusPagePresenter.cpp \
- gui/include/gui/statuspage_screen/StatusPageView.hpp \
- generated/gui_generated/include/gui_generated/statuspage_screen/StatusPageViewBase.hpp \
+build/MINGW32_NT-6.2/generated/gui_generated/src/containers/BackButton_toStatusPageBase.o: \
+ generated/gui_generated/src/containers/BackButton_toStatusPageBase.cpp \
+ generated/gui_generated/include/gui_generated/containers/BackButton_toStatusPageBase.hpp \
  gui/include/gui/common/FrontendApplication.hpp \
  generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
@@ -38,17 +37,10 @@ build/MINGW32_NT-6.2/gui/src/statuspage_screen/StatusPagePresenter.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp \
  gui/include/gui/model/Model.hpp \
- ../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
- gui/include/gui/statuspage_screen/StatusPagePresenter.hpp \
- gui/include/gui/model/ModelListener.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
- gui/include/gui/containers/BackButton_toMainScreen.hpp \
- generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreenBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp \
@@ -67,8 +59,10 @@ build/MINGW32_NT-6.2/gui/src/statuspage_screen/StatusPagePresenter.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AnimatedImage.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/IconButtonStyle.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ImageButtonStyle.hpp \
@@ -82,15 +76,10 @@ build/MINGW32_NT-6.2/gui/src/statuspage_screen/StatusPagePresenter.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Shape.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractShape.hpp
+ generated/texts/include/texts/TextKeysAndLanguages.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp
 
-gui/include/gui/statuspage_screen/StatusPageView.hpp:
-
-generated/gui_generated/include/gui_generated/statuspage_screen/StatusPageViewBase.hpp:
+generated/gui_generated/include/gui_generated/containers/BackButton_toStatusPageBase.hpp:
 
 gui/include/gui/common/FrontendApplication.hpp:
 
@@ -164,27 +153,13 @@ generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp
 
 gui/include/gui/model/Model.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
-
-gui/include/gui/statuspage_screen/StatusPagePresenter.hpp:
-
-gui/include/gui/model/ModelListener.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
-
-gui/include/gui/containers/BackButton_toMainScreen.hpp:
-
-generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreenBase.hpp:
-
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:
 
@@ -222,9 +197,13 @@ generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreen
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AnimatedImage.hpp:
 
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
+
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/BoxWithBorderButtonStyle.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ClickButtonTrigger.hpp:
 
@@ -252,12 +231,6 @@ generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreen
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
+generated/texts/include/texts/TextKeysAndLanguages.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Shape.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractShape.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:

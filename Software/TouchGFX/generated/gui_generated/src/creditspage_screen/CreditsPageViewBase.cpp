@@ -19,7 +19,7 @@ CreditsPageViewBase::CreditsPageViewBase()
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    BroughtToYouBy_Text.setXY(11, 68);
+    BroughtToYouBy_Text.setXY(11, 67);
     BroughtToYouBy_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     BroughtToYouBy_Text.setLinespacing(0);
     BroughtToYouBy_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I348));

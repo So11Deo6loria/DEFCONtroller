@@ -773,7 +773,7 @@
             "Type": "TextArea",
             "Name": "BroughtToYouBy_Text",
             "X": 11,
-            "Y": 68,
+            "Y": 67,
             "Width": 178,
             "Height": 24,
             "TextId": "__SingleUse_I348",
