@@ -26,6 +26,14 @@ public:
     virtual ~MainMenuViewBase() {}
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void ToggleButtonClickVirtFunc()
+    {
+        // Override and implement this function in MainMenu
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

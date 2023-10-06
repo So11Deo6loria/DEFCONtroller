@@ -212,6 +212,17 @@
               "ScreenTransitionDirection": "East",
               "ActionComponent": "CreditsPage"
             }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "enableButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "ToggleButtonClickVirtFunc"
+            }
           }
         ]
       },

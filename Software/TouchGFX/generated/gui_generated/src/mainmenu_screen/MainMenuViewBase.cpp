@@ -62,6 +62,7 @@ MainMenuViewBase::MainMenuViewBase() :
     enableButton.setXY(5, 78);
     enableButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_ID), touchgfx::Bitmap(BITMAP_DARK_BUTTONS_ROUND_MEDIUM_PRESSED_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID), touchgfx::Bitmap(BITMAP_DARK_ICONS_NEXT_ARROW_32_ID));
     enableButton.setIconXY(20, 14);
+    enableButton.setAction(buttonCallback);
 
     therapyStatusLabel.setXY(59, 87);
     therapyStatusLabel.setColor(touchgfx::Color::getColorFromRGB(136, 202, 3));
@@ -108,6 +109,13 @@ void MainMenuViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //When Credits_Button clicked change screen to CreditsPage
         //Go to CreditsPage with screen transition towards East
         application().gotoCreditsPageScreenSlideTransitionEast();
+    }
+    else if (&src == &enableButton)
+    {
+        //Interaction1
+        //When enableButton clicked call virtual function
+        //Call ToggleButtonClickVirtFunc
+        ToggleButtonClickVirtFunc();
     }
     else if (&src == &settingsButton)
     {
