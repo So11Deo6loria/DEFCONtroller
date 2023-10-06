@@ -66,10 +66,6 @@ CreditsPageViewBase::CreditsPageViewBase()
     line1.setLineWidth(3);
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON64X64_ID));
-    scalableImage1.setPosition(176, 0, 64, 64);
-    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-
     titleBackground.setPosition(0, 0, 240, 64);
     titleBackground.setAlpha(42);
     titleBackground.setOrigin(0.000f, 0.000f);
@@ -79,6 +75,8 @@ CreditsPageViewBase::CreditsPageViewBase()
     titleBackground.setPainter(titleBackgroundPainter);
     const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
     titleBackground.setShape(titleBackgroundPoints);
+
+    manufactureButtonScreen1.setXY(159, 16);
 
     backButton_toMainScreen1.setXY(4, 16);
 
@@ -92,12 +90,13 @@ CreditsPageViewBase::CreditsPageViewBase()
     add(JTAG_FLAG);
     add(Credits_Button);
     add(line1);
-    add(scalableImage1);
     add(titleBackground);
+    add(manufactureButtonScreen1);
     add(backButton_toMainScreen1);
 }
 
 void CreditsPageViewBase::setupScreen()
 {
+    manufactureButtonScreen1.initialize();
     backButton_toMainScreen1.initialize();
 }

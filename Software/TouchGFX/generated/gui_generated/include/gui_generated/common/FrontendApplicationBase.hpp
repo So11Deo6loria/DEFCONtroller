@@ -30,6 +30,9 @@ public:
 
     void gotoStatusPageScreenSlideTransitionWest();
 
+    // CommandsPage
+    void gotoCommandsPageScreenSlideTransitionNorth();
+
     // CreditsPage
     void gotoCreditsPageScreenSlideTransitionEast();
 
@@ -47,6 +50,9 @@ protected:
     void gotoStatusPageScreenSlideTransitionEastImpl();
 
     void gotoStatusPageScreenSlideTransitionWestImpl();
+
+    // CommandsPage
+    void gotoCommandsPageScreenSlideTransitionNorthImpl();
 
     // CreditsPage
     void gotoCreditsPageScreenSlideTransitionEastImpl();

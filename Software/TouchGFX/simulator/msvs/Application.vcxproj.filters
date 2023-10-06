@@ -327,10 +327,10 @@
     <ClCompile Include="..\..\generated\gui_generated\src\statuspage_screen\StatusPageViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\statuspage_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\BackButton_CreditsToMain.cpp">
+    <ClCompile Include="..\..\gui\src\containers\ManufactureButtonScreen.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_CreditsToMainBase.cpp">
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ManufactureButtonScreenBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -847,10 +847,10 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\statuspage_screen\StatusPageViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\statuspage_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_CreditsToMain.hpp">
+    <ClInclude Include="..\..\gui\include\gui\containers\ManufactureButtonScreen.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_CreditsToMainBase.hpp">
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ManufactureButtonScreenBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>

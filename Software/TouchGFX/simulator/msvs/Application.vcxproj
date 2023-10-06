@@ -37,8 +37,8 @@
     <ClCompile Include="..\..\gui\src\statuspage_screen\StatusPagePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\statuspage_screen\StatusPageView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\statuspage_screen\StatusPageViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\BackButton_CreditsToMain.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\BackButton_CreditsToMainBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\ManufactureButtonScreen.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\ManufactureButtonScreenBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -213,8 +213,8 @@
     <ClInclude Include="..\..\gui\include\gui\statuspage_screen\StatusPagePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\statuspage_screen\StatusPageView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\statuspage_screen\StatusPageViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\BackButton_CreditsToMain.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BackButton_CreditsToMainBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\ManufactureButtonScreen.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\ManufactureButtonScreenBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
