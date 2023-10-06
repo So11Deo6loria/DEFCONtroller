@@ -17,9 +17,8 @@ const uint16_t BITMAP_DVMDICON_ID = 7;
 const uint16_t BITMAP_ICONS8_ERROR_48_ID = 8;
 const uint16_t BITMAP_ICONS8_INFO_30_ID = 9;
 const uint16_t BITMAP_INFO_24_ID = 10;
-const uint16_t BITMAP_IOT_VILLAGE_ID = 11;
-const uint16_t BITMAP_PROTIVITI_S_ID = 12;
-const uint16_t BITMAP_PROTIVITI_WSS_ID = 13;
+const uint16_t BITMAP_PROTIVITI_S_ID = 11;
+const uint16_t BITMAP_PROTIVITI_WSS_ID = 12;
 
 namespace BitmapDatabase
 {
