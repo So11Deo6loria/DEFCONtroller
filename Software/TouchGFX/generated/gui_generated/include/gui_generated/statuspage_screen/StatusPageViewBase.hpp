@@ -15,6 +15,7 @@
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/canvas/Shape.hpp>
 #include <touchgfx/mixins/ClickListener.hpp>
 
@@ -49,6 +50,7 @@ protected:
     touchgfx::Button Credits_Button;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
+    touchgfx::ScalableImage scalableImage1;
     touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
     touchgfx::PainterRGB565 titleBackgroundPainter;
     touchgfx::TextAreaWithOneWildcard SPI_FLAG;

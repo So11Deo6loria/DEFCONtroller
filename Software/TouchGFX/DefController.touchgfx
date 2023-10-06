@@ -60,6 +60,15 @@
             }
           },
           {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 136,
+            "Width": 64,
+            "Height": 64,
+            "Filename": "dvmdIcon64x64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 46,
@@ -427,6 +436,15 @@
             "LineEndingStyle": "Round"
           },
           {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 176,
+            "Width": 64,
+            "Height": 64,
+            "Filename": "dvmdIcon64x64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
             "Type": "Shape",
             "Name": "titleBackground",
             "Width": 240,
@@ -657,6 +675,15 @@
             "CustomContainerDefinitionName": "BackButton_toMainScreen"
           },
           {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 176,
+            "Width": 64,
+            "Height": 64,
+            "Filename": "dvmdIcon64x64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
             "Type": "Shape",
             "Name": "titleBackground",
             "Width": 240,
@@ -849,6 +876,15 @@
             "Width": 81,
             "Height": 32,
             "CustomContainerDefinitionName": "BackButton_toMainScreen"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 176,
+            "Width": 64,
+            "Height": 64,
+            "Filename": "dvmdIcon64x64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
             "Type": "Shape",

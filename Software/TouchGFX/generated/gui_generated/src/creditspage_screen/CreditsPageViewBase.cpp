@@ -68,6 +68,10 @@ CreditsPageViewBase::CreditsPageViewBase()
 
     backButton_toMainScreen1.setXY(4, 16);
 
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON64X64_ID));
+    scalableImage1.setPosition(176, 0, 64, 64);
+    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+
     titleBackground.setPosition(0, 0, 240, 64);
     titleBackground.setAlpha(42);
     titleBackground.setOrigin(0.000f, 0.000f);
@@ -89,6 +93,7 @@ CreditsPageViewBase::CreditsPageViewBase()
     add(Credits_Button);
     add(line1);
     add(backButton_toMainScreen1);
+    add(scalableImage1);
     add(titleBackground);
 }
 

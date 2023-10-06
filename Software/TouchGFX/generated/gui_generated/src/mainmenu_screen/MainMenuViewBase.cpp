@@ -40,6 +40,10 @@ MainMenuViewBase::MainMenuViewBase() :
     CAN_FLAG.resizeToCurrentText();
     CAN_FLAG.setTypedText(touchgfx::TypedText(T_CAN_FLAG));
 
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON64X64_ID));
+    scalableImage1.setPosition(136, 0, 64, 64);
+    scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+
     textArea1.setXY(46, 12);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(136, 202, 3));
     textArea1.setLinespacing(0);
@@ -82,6 +86,7 @@ MainMenuViewBase::MainMenuViewBase() :
     add(line1);
     add(Credits_Button);
     add(CAN_FLAG);
+    add(scalableImage1);
     add(textArea1);
     add(titleBackground);
     add(enableButton);
