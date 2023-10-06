@@ -405,21 +405,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_AutoStartStop_Disengaged.cpp</name>
-			<type>1</type>
-			<location>/Users/calebdavis/Documents/CodeStuff/C/DEFCONtroller/Software/TouchGFX/generated/images/src/image_AutoStartStop_Disengaged.cpp</location>
-		</link>
-		<link>
-			<name>Application/User/generated/image_AutoStartStop_Engaged.cpp</name>
-			<type>1</type>
-			<location>/Users/calebdavis/Documents/CodeStuff/C/DEFCONtroller/Software/TouchGFX/generated/images/src/image_AutoStartStop_Engaged.cpp</location>
-		</link>
-		<link>
-			<name>Application/User/generated/image_BHVL_tiny.cpp</name>
-			<type>1</type>
-			<location>/Users/calebdavis/Documents/CodeStuff/C/DEFCONtroller/Software/TouchGFX/generated/images/src/image_BHVL_tiny.cpp</location>
-		</link>
-		<link>
 			<name>Application/User/generated/image_Background_CLKGRD.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background_CLKGRD.cpp</locationURI>
@@ -453,11 +438,6 @@
 			<name>Application/User/generated/image_Dark_Icons_Settings_32.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Icons_Settings_32.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_IOT_Village.cpp</name>
-			<type>1</type>
-			<location>/Users/calebdavis/Documents/CodeStuff/C/DEFCONtroller/Software/TouchGFX/generated/images/src/image_IOT_Village.cpp</location>
 		</link>
 		<link>
 			<name>Application/User/generated/image_dvmdIcon.cpp</name>
