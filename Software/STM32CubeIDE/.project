@@ -350,6 +350,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/mainmenu_screen/MainMenuViewBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/ManufactureButtonScreenBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/ManufactureButtonScreenBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/StatusPageViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/statuspage_screen/StatusPageViewBase.cpp</locationURI>
@@ -503,6 +508,11 @@
 			<name>Application/User/gui/MainMenuView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/mainmenu_screen/MainMenuView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ManufactureButtonScreen.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/ManufactureButtonScreen.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Model.cpp</name>
