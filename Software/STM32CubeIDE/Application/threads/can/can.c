@@ -37,20 +37,8 @@ static void _CanInitialize( void );
 static void _CanSendMessage(uint32_t ID, uint8_t Length, uint8_t * MessageBuffer);
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 
-
-void CanChallangeThread(void *Blah) {
-
-	// Initialize CAN Peripheral
-	_CanInitialize();
-
-	// Loop and Send Place Holder Message
-	for (;;)
-	{
-		osDelay(1000);
-	}
-}
-
 // Called By TouchGFX when a button is pressed.
+// 1 Enabled - 0 Disabled
 void CanChallengeButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
@@ -64,6 +52,20 @@ void CanChallengeButtonPressed (uint8_t ToggleState)
 		CanTask_ToggleState = 0;
 		_CanSendMessage (0xAF, 2, (uint8_t*) &_CanMsgDeviceOFF);
 		CanTask_BSUpdated= 1;
+	}
+}
+
+void CanChallangeThread(void *Blah) {
+
+	// Initialize CAN Peripheral
+	_CanInitialize();
+	CanChallengeButtonPressed( 0 );
+
+
+	// Loop and Send Place Holder Message
+	for (;;)
+	{
+		osDelay(1000);
 	}
 }
 
