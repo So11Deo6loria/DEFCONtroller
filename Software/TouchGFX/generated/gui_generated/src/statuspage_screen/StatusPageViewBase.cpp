@@ -30,53 +30,55 @@ StatusPageViewBase::StatusPageViewBase() :
     textArea1_1.setLinespacing(0);
     textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LB3X));
 
-    VIN_Text.setXY(4, 141);
-    VIN_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    VIN_Text.setLinespacing(0);
-    VIN_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JXJ0));
+    debugModeText.setXY(4, 141);
+    debugModeText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    debugModeText.setLinespacing(0);
+    debugModeText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JXJ0));
 
-    MilesToEmpty_Text.setXY(4, 110);
-    MilesToEmpty_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    MilesToEmpty_Text.setLinespacing(0);
-    MilesToEmpty_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RAGM));
+    activeInsulinText.setXY(4, 110);
+    activeInsulinText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    activeInsulinText.setLinespacing(0);
+    activeInsulinText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RAGM));
 
     FirmwareVer_Text.setXY(4, 176);
     FirmwareVer_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     FirmwareVer_Text.setLinespacing(0);
     FirmwareVer_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4DV2));
 
-    Odometer_Val.setXY(173, 78);
-    Odometer_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Odometer_Val.setLinespacing(0);
-    Odometer_Val.setWildcard(touchgfx::TypedText(T_ODOMETER_VAL).getText());
-    Odometer_Val.resizeToCurrentText();
-    Odometer_Val.setTypedText(touchgfx::TypedText(T_ODO_VAL));
+    bgVal.setXY(129, 78);
+    bgVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    bgVal.setLinespacing(0);
+    Unicode::snprintf(bgValBuffer, BGVAL_SIZE, "%s", touchgfx::TypedText(T_BG_VAL_WC).getText());
+    bgVal.setWildcard(bgValBuffer);
+    bgVal.resizeToCurrentText();
+    bgVal.setTypedText(touchgfx::TypedText(T_BGVAL));
 
-    Odometer_Text_1_2_1.setXY(209, 84);
-    Odometer_Text_1_2_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Odometer_Text_1_2_1.setLinespacing(0);
-    Odometer_Text_1_2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CNYY));
+    bgText.setXY(209, 84);
+    bgText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    bgText.setLinespacing(0);
+    bgText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CNYY));
 
-    VIN_Val.setXY(149, 141);
-    VIN_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    VIN_Val.setLinespacing(0);
-    VIN_Val.setWildcard(touchgfx::TypedText(T_VIN).getText());
-    VIN_Val.resizeToCurrentText();
-    VIN_Val.setTypedText(touchgfx::TypedText(T_VIN_VAL));
+    debugModeVal.setXY(146, 141);
+    debugModeVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    debugModeVal.setLinespacing(0);
+    debugModeVal.setWildcard(touchgfx::TypedText(T_VIN).getText());
+    debugModeVal.resizeToCurrentText();
+    debugModeVal.setTypedText(touchgfx::TypedText(T_VIN_VAL));
 
-    FirmwareVer_Val.setXY(204, 176);
+    FirmwareVer_Val.setXY(202, 176);
     FirmwareVer_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     FirmwareVer_Val.setLinespacing(0);
     FirmwareVer_Val.setWildcard(touchgfx::TypedText(T_FIRMWAREVER_VAL).getText());
     FirmwareVer_Val.resizeToCurrentText();
     FirmwareVer_Val.setTypedText(touchgfx::TypedText(T_FIRMVER_VAL));
 
-    MilesToEmpty_Val.setXY(211, 110);
-    MilesToEmpty_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    MilesToEmpty_Val.setLinespacing(0);
-    MilesToEmpty_Val.setWildcard(touchgfx::TypedText(T_MILESTOEMPTY_VAL).getText());
-    MilesToEmpty_Val.resizeToCurrentText();
-    MilesToEmpty_Val.setTypedText(touchgfx::TypedText(T_MTE_VAL));
+    activeInsulinVal.setXY(185, 110);
+    activeInsulinVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    activeInsulinVal.setLinespacing(0);
+    Unicode::snprintf(activeInsulinValBuffer, ACTIVEINSULINVAL_SIZE, "%s", touchgfx::TypedText(T_ACTIVE_INSULIN_WC).getText());
+    activeInsulinVal.setWildcard(activeInsulinValBuffer);
+    activeInsulinVal.resizeToCurrentText();
+    activeInsulinVal.setTypedText(touchgfx::TypedText(T_ACTIVEINSULINVAL));
 
     Credits_Button.setXY(20, 247);
     Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
@@ -116,14 +118,14 @@ StatusPageViewBase::StatusPageViewBase() :
     add(Background);
     add(Odometer_Text);
     add(textArea1_1);
-    add(VIN_Text);
-    add(MilesToEmpty_Text);
+    add(debugModeText);
+    add(activeInsulinText);
     add(FirmwareVer_Text);
-    add(Odometer_Val);
-    add(Odometer_Text_1_2_1);
-    add(VIN_Val);
+    add(bgVal);
+    add(bgText);
+    add(debugModeVal);
     add(FirmwareVer_Val);
-    add(MilesToEmpty_Val);
+    add(activeInsulinVal);
     add(Credits_Button);
     add(line1);
     add(titleBackground);

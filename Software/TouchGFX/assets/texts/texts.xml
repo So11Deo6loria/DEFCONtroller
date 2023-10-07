@@ -60,17 +60,17 @@
       <Text Id="__SingleUse_AYUI" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Back</Translation>
       </Text>
-      <Text Id="MilesToEmpty_Val" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">31</Translation>
+      <Text Id="ACTIVE_INSULIN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0.3</Translation>
       </Text>
-      <Text Id="MTE_Val" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt;</Translation>
+      <Text Id="activeInsulinVal" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;U</Translation>
       </Text>
       <Text Id="__SingleUse_4DV2" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Firmware Version:</Translation>
       </Text>
       <Text Id="__SingleUse_X3RZ" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Blood Glucose:</Translation>
+        <Translation Language="GB">BG:</Translation>
       </Text>
       <Text Id="__SingleUse_RAGM" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Active Insulin:</Translation>
@@ -96,11 +96,11 @@
       <Text Id="OL_Val" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="Odometer_Val" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">89109</Translation>
+      <Text Id="BG_VAL_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">150</Translation>
       </Text>
-      <Text Id="Odo_Val" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt;</Translation>
+      <Text Id="bgVal" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;mg/dL</Translation>
       </Text>
       <Text Id="__SingleUse_CNYY" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>

@@ -46,7 +46,7 @@
             "Name": "CAN_FLAG",
             "X": 3,
             "Y": 213,
-            "Height": 24,
+            "Height": 25,
             "TextId": "CAN_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -74,7 +74,7 @@
             "X": 46,
             "Y": 12,
             "Width": 90,
-            "Height": 42,
+            "Height": 41,
             "TextId": "__SingleUse_3LG4",
             "TextRotation": "0",
             "Color": {
@@ -136,7 +136,7 @@
             "X": 59,
             "Y": 85,
             "Width": 111,
-            "Height": 42,
+            "Height": 41,
             "TextId": "enableFlag",
             "TextRotation": "0",
             "Color": {
@@ -175,7 +175,7 @@
             "X": 59,
             "Y": 146,
             "Width": 109,
-            "Height": 42,
+            "Height": 41,
             "TextId": "__SingleUse_LKC5",
             "TextRotation": "0",
             "Color": {
@@ -242,7 +242,7 @@
             "Name": "Odometer_Text",
             "X": 4,
             "Y": 78,
-            "Width": 152,
+            "Width": 36,
             "Height": 31,
             "TextId": "__SingleUse_X3RZ",
             "TextRotation": "0",
@@ -270,7 +270,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "VIN_Text",
+            "Name": "debugModeText",
             "X": 4,
             "Y": 141,
             "Width": 138,
@@ -286,7 +286,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "MilesToEmpty_Text",
+            "Name": "activeInsulinText",
             "X": 4,
             "Y": 110,
             "Width": 142,
@@ -318,12 +318,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Odometer_Val",
-            "X": 173,
+            "Name": "bgVal",
+            "X": 129,
             "Y": 78,
-            "Width": 63,
+            "Width": 104,
             "Height": 31,
-            "TextId": "Odo_Val",
+            "TextId": "bgVal",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -332,12 +332,14 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "Odometer_Val"
+              "TextId": "BG_VAL_WC",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
             "Type": "TextArea",
-            "Name": "Odometer_Text_1_2_1",
+            "Name": "bgText",
             "X": 209,
             "Y": 84,
             "Height": 31,
@@ -353,8 +355,8 @@
           },
           {
             "Type": "TextArea",
-            "Name": "VIN_Val",
-            "X": 149,
+            "Name": "debugModeVal",
+            "X": 146,
             "Y": 141,
             "Width": 87,
             "Height": 31,
@@ -373,9 +375,9 @@
           {
             "Type": "TextArea",
             "Name": "FirmwareVer_Val",
-            "X": 204,
+            "X": 202,
             "Y": 176,
-            "Width": 32,
+            "Width": 31,
             "Height": 31,
             "TextId": "FirmVer_Val",
             "TextRotation": "0",
@@ -391,12 +393,12 @@
           },
           {
             "Type": "TextArea",
-            "Name": "MilesToEmpty_Val",
-            "X": 211,
+            "Name": "activeInsulinVal",
+            "X": 185,
             "Y": 110,
-            "Width": 25,
+            "Width": 48,
             "Height": 31,
-            "TextId": "MTE_Val",
+            "TextId": "activeInsulinVal",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -405,7 +407,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "MilesToEmpty_Val"
+              "TextId": "ACTIVE_INSULIN_WC",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
@@ -470,7 +474,7 @@
             "Name": "SPI_FLAG",
             "X": 4,
             "Y": 207,
-            "Height": 24,
+            "Height": 25,
             "TextId": "SPI_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -535,7 +539,7 @@
             "X": 7,
             "Y": 68,
             "Width": 189,
-            "Height": 24,
+            "Height": 25,
             "TextId": "__SingleUse_11TN",
             "TextRotation": "0",
             "Color": {
@@ -633,7 +637,7 @@
             "Name": "UART_FLAG",
             "X": 3,
             "Y": 214,
-            "Height": 24,
+            "Height": 25,
             "TextId": "UART_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -754,8 +758,8 @@
             "Name": "BroughtToYouBy_Text",
             "X": 11,
             "Y": 68,
-            "Width": 178,
-            "Height": 24,
+            "Width": 177,
+            "Height": 25,
             "TextId": "__SingleUse_I348",
             "TextRotation": "0",
             "Color": {
@@ -771,7 +775,7 @@
             "X": 11,
             "Y": 111,
             "Width": 137,
-            "Height": 24,
+            "Height": 25,
             "TextId": "Name1_Text",
             "TextRotation": "0",
             "Color": {
@@ -787,7 +791,7 @@
             "X": 11,
             "Y": 143,
             "Width": 119,
-            "Height": 24,
+            "Height": 25,
             "TextId": "Name2_Text",
             "TextRotation": "0",
             "Color": {
@@ -803,7 +807,7 @@
             "X": 11,
             "Y": 174,
             "Width": 123,
-            "Height": 24,
+            "Height": 25,
             "TextId": "Name3_Text",
             "TextRotation": "0",
             "Color": {
@@ -836,7 +840,7 @@
             "Name": "JTAG_FLAG",
             "X": 3,
             "Y": 209,
-            "Height": 24,
+            "Height": 25,
             "TextId": "JTAG_FLAG",
             "TextRotation": "0",
             "Color": {
