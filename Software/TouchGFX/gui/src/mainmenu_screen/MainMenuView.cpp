@@ -56,7 +56,7 @@ void  MainMenuView::__UpdateDynamicData(void)
 	if( CanTask_ToggleState )
 	{
 		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (136, 203, 3));
-		therapyStatusLabel.setAlpha (100);
+		therapyStatusLabel.setAlpha (255);
 		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Enabled");
 		therapyStatusLabel.setWildcard (therapyStatusLabelBuffer);
 		therapyStatusLabel.resizeToCurrentText ();
@@ -64,7 +64,7 @@ void  MainMenuView::__UpdateDynamicData(void)
 	else
 	{
 		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (255, 0, 0));
-		therapyStatusLabel.setAlpha (100);
+		therapyStatusLabel.setAlpha (255);
 		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Disabled");
 		therapyStatusLabel.setWildcard (therapyStatusLabelBuffer);
 		therapyStatusLabel.resizeToCurrentText ();
