@@ -134,7 +134,7 @@
             "Type": "TextArea",
             "Name": "therapyStatusLabel",
             "X": 59,
-            "Y": 87,
+            "Y": 85,
             "Width": 111,
             "Height": 42,
             "TextId": "enableFlag",

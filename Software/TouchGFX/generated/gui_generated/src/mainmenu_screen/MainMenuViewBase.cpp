@@ -64,7 +64,7 @@ MainMenuViewBase::MainMenuViewBase() :
     enableButton.setIconXY(20, 14);
     enableButton.setAction(buttonCallback);
 
-    therapyStatusLabel.setXY(59, 87);
+    therapyStatusLabel.setXY(59, 85);
     therapyStatusLabel.setColor(touchgfx::Color::getColorFromRGB(136, 202, 3));
     therapyStatusLabel.setLinespacing(0);
     Unicode::snprintf(therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "%s", touchgfx::TypedText(T_THERAPY_WC).getText());
