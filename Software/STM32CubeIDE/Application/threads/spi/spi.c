@@ -22,7 +22,8 @@ uint8_t SPIExternalFlashUpdated = 0;
 
 
 // Local Items.
-static uint8_t __selfDestructDisabledString[256] = "ODOMETER=89109;MILES_TO_EMPTY=31;OIL_LIFE=42;VIN=G02D3FC0N2023;FIRMWARE_VERSION=0.3;SELF_DESTRUCT=DISABLED;";
+static uint8_t __debugModeDisabledString[256] = "BG=150;ACTIVE_INSULIN=3.0;FIRMWARE_VERSION=0.3;DEBUG_MODE=DISABLED;";
+static uint8_t __debugModeEnabledString[256] = "BG=150;ACTIVE_INSULIN=3.0;FIRMWARE_VERSION=0.3;DEBUG_MODE=ENABLED;";
 static uint8_t __selfDestructEnabledString[256] = "ODOMETER=89109;MILES_TO_EMPTY=31;OIL_LIFE=42;VIN=G02D3FC0N2023;FIRMWARE_VERSION=0.3;SELF_DESTRUCT=ENABLED;";
 static uint8_t __debugDisabledString[256] = "MODEL=G312432B;SERIAL=23BD-29AF;VERSION=0.1.2;LOGS=ENCRYPTED;DEBUG=0;BLUETOOTH=MDM1234;PIN=5678";
 static uint8_t __debugEnabledString[256]  = "MODEL=G312432B;SERIAL=23BD-29AF;VERSION=0.1.2;LOGS=ENCRYPTED;DEBUG=1;BLUETOOTH=MDM1234;PIN=5678";
@@ -301,7 +302,7 @@ static uint8_t __processPage(void)
 			else if( __configString[i] == ';' )
 			{
 				parseState = KEY;
-				if( 0 == strncmp( &__key[0], "SELF_DESTRUCT", strlen("SELF_DESTRUCT") ) )
+				if( 0 == strncmp( &__key[0], "DEBUG_MODE", strlen("DEBUG_MODE") ) )
 				{
 					if( 0 == strncmp( &__value[0], "ENABLED", strlen("ENABLED") ) )
 					{
@@ -408,14 +409,14 @@ static eSPIWriteState_t __writePage(void)
         	// First Write
         	if( __writePageIndex == 0 )
         	{
-        		__writeData(&__selfDestructDisabledString[__writePageIndex], 1);
+        		__writeData(&__debugModeDisabledString[__writePageIndex], 1);
         		__writePageIndex += 2;
         	}
         	else
         	{
-        		__writeData(&__selfDestructDisabledString[__writePageIndex], 0);
+        		__writeData(&__debugModeDisabledString[__writePageIndex], 0);
         		__writePageIndex += 2;
-        		if( __writePageIndex == strlen(__selfDestructDisabledString) )
+        		if( __writePageIndex == strlen(__debugModeDisabledString) )
         		{
             		__spiWriteState = SPI_WRITEPAGE_WRITE_DISABLE;
         		}
@@ -516,7 +517,7 @@ void SPIChallengeThread( void * argument )
 	eSPIStatusMode_t spiStatus;
 
 	__spiQueue = xQueueCreate(5, sizeof(eSPIStatusMode_t));
-	memset( __emptyPage, 0xFF, sizeof(__emptyPage) ); // TODO: there has got to be a better way to do this
+	memset( __emptyPage, 0x00, sizeof(__emptyPage) ); // TODO: there has got to be a better way to do this
 
 	__setCS();
 

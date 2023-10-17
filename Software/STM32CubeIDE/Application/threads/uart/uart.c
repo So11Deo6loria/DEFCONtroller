@@ -14,8 +14,8 @@ uint8_t DoorLockState;
 uint8_t DoorLockUpdated;
 uint8_t SeatWarmerState;
 uint8_t SeatWarmerUpdated;
-uint8_t AutoIgnitionState;
-uint8_t AutoIgnitionUpdated;
+uint8_t therapyState;
+uint8_t therapyUpdated;
 
 UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart1;
@@ -31,20 +31,18 @@ static char __rxBuffer[256]; // Shout out to Drew W. for silly requirements on t
 /* Commands */
 // TODO: Create an interface to update these values in the GUI?
 // TODO: Maybe throw this in SPI?
-static uint8_t __titlePrompt[] = "DVHID Manufacturer's Interface\r\n";
+static uint8_t __titlePrompt[] = "DVMD Manufacturer's Interface\r\n";
 
 static uint8_t __infoPrompt[] = "Device Info:\r\n"
-								"Odometer: 89109\r\n"
-								"Miles to Empty: 31\r\n"
-								"Oil Life %: 42\r\n"
-								"VIN: G02D3FC0N2023\r\n"
+								"Blood Glucose (BG): 150mg/dL\r\n"
+								"Active Insulin: 0.3U\r\n"
+								"Debug Mode: Disabled\r\n"
 								"Firmware Version: 0.3\r\n";
 
 static uint8_t __helpPrompt[] = "(help) - Help Menu\r\n"
 								"(info) - Device Info\r\n"
 								"(config) - Device Config\r\n"
-								"(seatwarmer) - Button\r\n"
-								"(autoignition) - Button\n";
+								"(therapy) - Activation\n";
 
 /* Config Prompts */
 static uint8_t __configSelfDestructOnCommand[] = "config selfdestruct enabled";
@@ -68,29 +66,17 @@ static uint8_t __configSelfDestructOffPrompt[] = "Phew that was a close one. Tha
 											     "   '._____.'  /  \r\n"
 											     "     `-----'`    \r\n";
 
-/* Seat Warmer Prompts/Commands */
-static uint8_t __seatWarmerCommand[] = "seatwarmer";
-static uint8_t __seatWarmerOnCommand[] = "seatwarmer on";
-static uint8_t __seatWarmerOffCommand[] = "seatwarmer off";
-static uint8_t __seatWarmerHelpCommand[] = "seatwarmer --help";
-static uint8_t __seatWarmerOnPrompt[] = "Seat Warmer ON\r\n";
-static uint8_t __seatWarmerOffPrompt[] = "Seat Warmer OFF\r\n";
-static uint8_t __seatWarmerErrorPrompt[] = "ERROR - command not recognized. Try \"seatwarmer --help\".\r\n";
-static uint8_t __seatWarmerHelpPrompt[] = 	"USAGE: seatwarmer [option]\r\n"
-										"OPTIONS:\r\n"
-										"\t[on/off] - Enable and disable the seat warmers.\r\n";
-
-/* Auto Start Prompts/Commands */
-static uint8_t __autoIgnitionCommand[] = "autoignition";
-static uint8_t __autoIgnitionOnCommand[] = "autoignition on";
-static uint8_t __autoIgnitionOffCommand[] = "autoignition off";
-static uint8_t __autoIgnitionHelpCommand[] = "autoignition --help";
-static uint8_t __autoIgnitionEnabledPrompt[] 	= "Auto Start ON\r\n";
-static uint8_t __autoIgnitionDisabledPrompt[] 	= "Auto Start OFF\r\n";
-static uint8_t __autoIgnitionErrorPrompt[] 		= "ERROR - command not recognized. Try \"autoignition --help\".\r\n";
-static uint8_t __autoIgnitionHelpPrompt[] 		= "USAGE: autoignition [option]\r\n"
+/* Therapy Prompts/Commands */
+static uint8_t __therapyCommand[] = "therapy";
+static uint8_t __therapyEnabledCommand[] = "therapy enabled";
+static uint8_t __therapyDisabledCommand[] = "therapy disabled";
+static uint8_t __therapyHelpCommand[] = "therapy --help";
+static uint8_t __therapyEnabledPrompt[] 	= "Therapy ENABLED\r\n";
+static uint8_t __therapyDisabledPrompt[] 	= "Therapy DISABLED\r\n";
+static uint8_t __therapyErrorPrompt[] 		= "ERROR - command not recognized. Try \"therapy --help\".\r\n";
+static uint8_t __therapyHelpPrompt[] 		= "USAGE: therapy [option]\r\n"
 												  "OPTIONS:\r\n"
-												  "\t[on/off] - Enable and disable auto start.\r\n";
+												  "\t[enabled/disabled] - Enable and disable therapy.\r\n";
 
 static uint8_t __errorPrompt[] = "ERROR - command not recognized. Try typing \"help\".\r\n";
 
@@ -151,53 +137,28 @@ static void __handleConfigCommands(void)
 	}
 }
 
-static void __handleSeatWarmerCommands(void)
+static void __handleTherapyCommands(void)
 {
 	// The strlen calc below is plus 1 to catch only commands
-	if( 0 == strncmp( (char*)__seatWarmerHelpCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerHelpCommand) ) ||  0 == strncmp( (char*)__seatWarmerCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerCommand)+1 ) )
+	if( 0 == strncmp( (char*)__therapyHelpCommand, (char*)__rxBuffer, strlen((char*)__therapyHelpCommand) ) || 0 == strncmp( (char*)__therapyCommand, (char*)__rxBuffer, strlen((char*)__therapyCommand)+1 ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerHelpPrompt, sizeof(__seatWarmerHelpPrompt)-1, 100 );
+		HAL_UART_Transmit( &huart1, (uint8_t*)__therapyHelpPrompt, sizeof(__therapyHelpPrompt)-1, 100 );
 	}
-	else if( 0 == strncmp( (char*)__seatWarmerOnCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerOnCommand) ) )
+	else if( 0 == strncmp( (char*)__therapyEnabledCommand, (char*)__rxBuffer, strlen((char*)__therapyEnabledCommand) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerOnPrompt, sizeof(__seatWarmerOnPrompt)-1, 100 );
-		SeatWarmerState = 1;
-		SeatWarmerUpdated = 1;
+		HAL_UART_Transmit( &huart1, (uint8_t*)__therapyEnabledPrompt, sizeof(__therapyEnabledPrompt)-1, 100 );
+		therapyState = 1;
+		therapyUpdated = 1;
 	}
-	else if( 0 == strncmp( (char*)__seatWarmerOffCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerOffCommand) ) )
+	else if( 0 == strncmp( (char*)__therapyDisabledCommand, (char*)__rxBuffer, strlen((char*)__therapyDisabledCommand) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerOffPrompt, sizeof(__seatWarmerOffPrompt)-1, 100 );
-		SeatWarmerState = 0;
-		SeatWarmerUpdated = 1;
+		HAL_UART_Transmit( &huart1, (uint8_t*)__therapyDisabledPrompt, sizeof(__therapyDisabledPrompt)-1, 100 );
+		therapyState = 0;
+		therapyUpdated = 1;
 	}
 	else
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerErrorPrompt, sizeof(__seatWarmerErrorPrompt)-1, 100 );
-	}
-}
-
-static void __handleAutoIgnitionCommands(void)
-{
-	// The strlen calc below is plus 1 to catch only commands
-	if( 0 == strncmp( (char*)__autoIgnitionHelpCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionHelpCommand) ) || 0 == strncmp( (char*)__autoIgnitionCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionCommand)+1 ) )
-	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionHelpPrompt, sizeof(__autoIgnitionHelpPrompt)-1, 100 );
-	}
-	else if( 0 == strncmp( (char*)__autoIgnitionOnCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionOnCommand) ) )
-	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionEnabledPrompt, sizeof(__autoIgnitionEnabledPrompt)-1, 100 );
-		AutoIgnitionState = 1;
-		AutoIgnitionUpdated = 1;
-	}
-	else if( 0 == strncmp( (char*)__autoIgnitionOffCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionOffCommand) ) )
-	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionDisabledPrompt, sizeof(__autoIgnitionDisabledPrompt)-1, 100 );
-		AutoIgnitionState = 0;
-		AutoIgnitionUpdated = 1;
-	}
-	else
-	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionErrorPrompt, sizeof(__autoIgnitionErrorPrompt)-1, 100 );
+		HAL_UART_Transmit( &huart1, (uint8_t*)__therapyErrorPrompt, sizeof(__therapyErrorPrompt)-1, 100 );
 	}
 }
 
@@ -253,13 +214,9 @@ void UARTChallengeThread( void * argument )
 		{
 			__handleConfigCommands();
 		}
-		else if( 0 == strncmp( (char*)__autoIgnitionCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionCommand) ) )
+		else if( 0 == strncmp( (char*)__therapyCommand, (char*)__rxBuffer, strlen((char*)__therapyCommand) ) )
 		{
-			__handleAutoIgnitionCommands();
-		}
-		else if( 0 == strncmp( (char*)__seatWarmerCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerCommand) ) )
-		{
-			__handleSeatWarmerCommands();
+			__handleTherapyCommands();
 		}
 		else
 		{
@@ -274,46 +231,16 @@ void UARTChallengeThread( void * argument )
 }
 
 // Called By TouchGFX when a button is pressed.
-void UARTChallengeSeatWarmerButtonPressed (uint8_t ToggleState)
+void UARTChallengeTherapyButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
 	{
-		SeatWarmerState = 1;
+		therapyState = 1;
 	}
 	else
 	{
-		SeatWarmerState = 0;
+		therapyState = 0;
 	}
 
-	SeatWarmerUpdated= 1;
-}
-
-// Called By TouchGFX when a button is pressed.
-void UARTChallengeDoorLockButtonPressed (uint8_t ToggleState)
-{
-	if (ToggleState)
-	{
-		DoorLockState = 1;
-	}
-	else
-	{
-		DoorLockState = 0;
-	}
-
-	DoorLockUpdated= 1;
-}
-
-// Called By TouchGFX when a button is pressed.
-void UARTChallengeIgnitionButtonPressed (uint8_t ToggleState)
-{
-	if (ToggleState)
-	{
-		AutoIgnitionState = 1;
-	}
-	else
-	{
-		AutoIgnitionState = 0;
-	}
-
-	AutoIgnitionUpdated= 1;
+	therapyUpdated= 1;
 }
