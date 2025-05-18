@@ -80,8 +80,8 @@ StatusPageViewBase::StatusPageViewBase() :
     activeInsulinVal.resizeToCurrentText();
     activeInsulinVal.setTypedText(touchgfx::TypedText(T_ACTIVEINSULINVAL));
 
-    Credits_Button.setXY(20, 247);
-    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+    Credits_Button.setXY(20, 269);
+    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID), touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID));
     Credits_Button.setAction(buttonCallback);
 
     line1.setPosition(4, 242, 265, 5);
@@ -97,7 +97,7 @@ StatusPageViewBase::StatusPageViewBase() :
     titleBackground.setOrigin(0.000f, 0.000f);
     titleBackground.setScale(1.000f, 1.000f);
     titleBackground.setAngle(0.000f);
-    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     titleBackground.setPainter(titleBackgroundPainter);
     const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
     titleBackground.setShape(titleBackgroundPoints);

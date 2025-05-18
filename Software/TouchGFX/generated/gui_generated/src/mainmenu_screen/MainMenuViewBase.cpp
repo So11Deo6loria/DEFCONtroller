@@ -28,8 +28,8 @@ MainMenuViewBase::MainMenuViewBase() :
     line1.setLineWidth(3);
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    Credits_Button.setXY(20, 247);
-    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+    Credits_Button.setXY(20, 271);
+    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID), touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID));
     Credits_Button.setAction(buttonCallback);
 
     CAN_FLAG.setXY(3, 213);
@@ -40,21 +40,21 @@ MainMenuViewBase::MainMenuViewBase() :
     CAN_FLAG.resizeToCurrentText();
     CAN_FLAG.setTypedText(touchgfx::TypedText(T_CAN_FLAG));
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON64X64_ID));
-    scalableImage1.setPosition(136, 0, 64, 64);
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_RECON_50X64_ID));
+    scalableImage1.setPosition(163, 7, 64, 50);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
-    textArea1.setXY(46, 12);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(136, 202, 3));
+    textArea1.setXY(37, 12);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(137, 75, 181));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3LG4));
 
-    titleBackground.setPosition(0, 0, 240, 64);
+    titleBackground.setPosition(-1, 0, 240, 64);
     titleBackground.setAlpha(42);
     titleBackground.setOrigin(0.000f, 0.000f);
     titleBackground.setScale(1.000f, 1.000f);
     titleBackground.setAngle(0.000f);
-    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     titleBackground.setPainter(titleBackgroundPainter);
     const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
     titleBackground.setShape(titleBackgroundPoints);

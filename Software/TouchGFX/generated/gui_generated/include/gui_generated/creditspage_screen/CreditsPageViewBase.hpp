@@ -39,7 +39,6 @@ protected:
     touchgfx::TextArea BroughtToYouBy_Text;
     touchgfx::TextArea Name1_Text;
     touchgfx::TextArea Name2_Text;
-    touchgfx::TextArea Name3_Text;
     touchgfx::Line line1_1;
     touchgfx::PainterRGB565 line1_1Painter;
     touchgfx::TextAreaWithOneWildcard JTAG_FLAG;

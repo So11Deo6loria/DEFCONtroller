@@ -10,8 +10,8 @@ ManufactureButtonScreenBase::ManufactureButtonScreenBase() :
 {
     setWidth(64);
     setHeight(64);
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON64X64_ID));
-    scalableImage1.setPosition(0, 0, 64, 64);
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_RECON_50X64_ID));
+    scalableImage1.setPosition(0, 7, 64, 50);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
     manufactureButton.setBoxWithBorderPosition(0, 0, 240, 64);

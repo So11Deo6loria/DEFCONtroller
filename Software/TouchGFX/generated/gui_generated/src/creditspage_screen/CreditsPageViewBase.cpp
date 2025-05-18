@@ -34,11 +34,6 @@ CreditsPageViewBase::CreditsPageViewBase()
     Name2_Text.setLinespacing(0);
     Name2_Text.setTypedText(touchgfx::TypedText(T_NAME2_TEXT));
 
-    Name3_Text.setXY(11, 174);
-    Name3_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Name3_Text.setLinespacing(0);
-    Name3_Text.setTypedText(touchgfx::TypedText(T_NAME3_TEXT));
-
     line1_1.setPosition(0, 93, 269, 18);
     line1_1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1_1.setPainter(line1_1Painter);
@@ -55,8 +50,8 @@ CreditsPageViewBase::CreditsPageViewBase()
     JTAG_FLAG.resizeToCurrentText();
     JTAG_FLAG.setTypedText(touchgfx::TypedText(T_JTAG_FLAG));
 
-    Credits_Button.setXY(20, 248);
-    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+    Credits_Button.setXY(20, 269);
+    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID), touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID));
 
     line1.setPosition(4, 242, 265, 5);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -71,7 +66,7 @@ CreditsPageViewBase::CreditsPageViewBase()
     titleBackground.setOrigin(0.000f, 0.000f);
     titleBackground.setScale(1.000f, 1.000f);
     titleBackground.setAngle(0.000f);
-    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     titleBackground.setPainter(titleBackgroundPainter);
     const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
     titleBackground.setShape(titleBackgroundPoints);
@@ -85,7 +80,6 @@ CreditsPageViewBase::CreditsPageViewBase()
     add(BroughtToYouBy_Text);
     add(Name1_Text);
     add(Name2_Text);
-    add(Name3_Text);
     add(line1_1);
     add(JTAG_FLAG);
     add(Credits_Button);

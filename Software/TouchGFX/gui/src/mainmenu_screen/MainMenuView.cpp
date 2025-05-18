@@ -71,7 +71,7 @@ void  MainMenuView::__UpdateDynamicData(void)
 	}
 
 
-	// Don't write over Protiviti unless the flag is there.
+	// Don't write over logo unless the flag is there.
 	if ((debugFlagTouchGFX & (1 << 3)) != 0) // CAN Bit 1
 	{
 	    Unicode::snprintf(CAN_FLAGBuffer, CAN_FLAG_SIZE, (const char *)xCANFlag);

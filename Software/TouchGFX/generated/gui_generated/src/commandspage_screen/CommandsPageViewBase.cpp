@@ -61,8 +61,8 @@ CommandsPageViewBase::CommandsPageViewBase() :
     UART_FLAG.resizeToCurrentText();
     UART_FLAG.setTypedText(touchgfx::TypedText(T_UART_FLAG));
 
-    Credits_Button.setXY(20, 248);
-    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID), touchgfx::Bitmap(BITMAP_PROTIVITI_S_ID));
+    Credits_Button.setXY(20, 270);
+    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID), touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID));
     Credits_Button.setAction(buttonCallback);
 
     line1_1.setPosition(4, 242, 265, 5);
@@ -78,15 +78,15 @@ CommandsPageViewBase::CommandsPageViewBase() :
     titleBackground.setOrigin(0.000f, 0.000f);
     titleBackground.setScale(1.000f, 1.000f);
     titleBackground.setAngle(0.000f);
-    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(128, 128, 128));
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     titleBackground.setPainter(titleBackgroundPainter);
     const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
     titleBackground.setShape(titleBackgroundPoints);
 
     backButton_toMainScreen1.setXY(4, 16);
 
-    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_DVMDICON64X64_ID));
-    scalableImage1.setPosition(176, 0, 64, 64);
+    scalableImage1.setBitmap(touchgfx::Bitmap(BITMAP_RECON_50X64_ID));
+    scalableImage1.setPosition(176, 7, 64, 50);
     scalableImage1.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
 
     add(__background);

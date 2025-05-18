@@ -25,7 +25,7 @@
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_3LG4" Alignment="Center" TypographyId="ExtraLarge">
-        <Translation Language="GB">DVMD</Translation>
+        <Translation Language="GB">SHIELD</Translation>
       </Text>
       <Text Id="UART_FLAG_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
@@ -39,7 +39,7 @@
       <Text Id="CAN_FLAG" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_2BLY" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_2BLY" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(therapy) -&gt; Activation</Translation>
       </Text>
       <Text Id="JTAG_FLAG_WC" Alignment="Left" TypographyId="Default">
@@ -48,10 +48,10 @@
       <Text Id="JTAG_FLAG" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(config) -&gt; Device Config</Translation>
       </Text>
-      <Text Id="__SingleUse_HAW7" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_HAW7" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(info) -&gt; Device Info</Translation>
       </Text>
       <Text Id="SelfDest_Val" Alignment="Left" TypographyId="Small">
@@ -63,28 +63,28 @@
       <Text Id="ACTIVE_INSULIN_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0.3</Translation>
       </Text>
-      <Text Id="activeInsulinVal" Alignment="Right" TypographyId="Default">
+      <Text Id="activeInsulinVal" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;U</Translation>
       </Text>
-      <Text Id="__SingleUse_4DV2" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_4DV2" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Firmware Version:</Translation>
       </Text>
-      <Text Id="__SingleUse_X3RZ" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_X3RZ" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">BG:</Translation>
       </Text>
-      <Text Id="__SingleUse_RAGM" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_RAGM" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Active Insulin:</Translation>
       </Text>
       <Text Id="FirmwareVer_Val" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0.3</Translation>
       </Text>
-      <Text Id="FirmVer_Val" Alignment="Left" TypographyId="Default">
+      <Text Id="FirmVer_Val" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="VIN" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Disabled</Translation>
       </Text>
-      <Text Id="VIN_Val" Alignment="Right" TypographyId="Default">
+      <Text Id="VIN_Val" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="Odo_Text" Alignment="Left" TypographyId="Default">
@@ -99,7 +99,7 @@
       <Text Id="BG_VAL_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">150</Translation>
       </Text>
-      <Text Id="bgVal" Alignment="Right" TypographyId="Default">
+      <Text Id="bgVal" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;mg/dL</Translation>
       </Text>
       <Text Id="__SingleUse_CNYY" Alignment="Right" TypographyId="Default">
@@ -120,7 +120,7 @@
       <Text Id="OdometerVal" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">89109</Translation>
       </Text>
-      <Text Id="__SingleUse_R9AK" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_R9AK" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(help) -&gt; Help Menu</Translation>
       </Text>
       <Text Id="MTE_Text" Alignment="Left" TypographyId="Default">
@@ -129,7 +129,7 @@
       <Text Id="OilLife_Text" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Oil Life (%):</Translation>
       </Text>
-      <Text Id="__SingleUse_JXJ0" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_JXJ0" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Debug Mode:</Translation>
       </Text>
       <Text Id="RadioStation_WildCard" Alignment="Left" TypographyId="Small">
@@ -142,7 +142,7 @@
         <Translation Language="GB">@ocrouse2020</Translation>
       </Text>
       <Text Id="Name2_Text" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">@Nate_Sm1th</Translation>
+        <Translation Language="GB">@MattDomanicTBD</Translation>
       </Text>
       <Text Id="Name1_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@So11Deo6loria</Translation>

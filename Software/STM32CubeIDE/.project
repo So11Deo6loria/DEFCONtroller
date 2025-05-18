@@ -435,11 +435,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Icons_Settings_32.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_dvmdIcon64x64.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_dvmdIcon64x64.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_icons8-error-48.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_icons8-error-48.cpp</locationURI>
@@ -453,17 +448,27 @@
 			<name>Application/User/generated/image_info-24.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_info-24.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_protiviti-s.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_protiviti-s.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_protiviti-wss.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_protiviti-wss.cpp</locationURI>
-		</link>
+        </link>
+        <link>
+            <name>Application/User/generated/image_recon_50x64.cpp</name>
+            <type>1</type>
+            <locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_recon_50x64.cpp</locationURI>
+        </link>
+        <link>
+            <name>Application/User/generated/image_solasecinlinewhite_25x200.cpp</name>
+            <type>1</type>
+            <locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_solasecinlinewhite_25x200.cpp</locationURI>
+        </link>
+        <link>
+            <name>Application/User/generated/image_solasecwhiteinline.cpp</name>
+            <type>1</type>
+            <locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_solasecwhiteinline.cpp</locationURI>
+        </link>
+        <link>
+            <name>Application/User/generated/image_solasecwhiteinline_200x80.cpp</name>
+            <type>1</type>
+            <locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_solasecwhiteinline_200x80.cpp</locationURI>
+        </link>
 		<link>
 			<name>Application/User/gui/BackButton_toMainScreen.cpp</name>
 			<type>1</type>

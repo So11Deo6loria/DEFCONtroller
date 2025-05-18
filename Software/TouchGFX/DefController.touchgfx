@@ -35,18 +35,18 @@
             "Type": "Button",
             "Name": "Credits_Button",
             "X": 20,
-            "Y": 247,
+            "Y": 271,
             "Width": 200,
-            "Height": 80,
-            "Pressed": "protiviti-s.png",
-            "Released": "protiviti-s.png"
+            "Height": 25,
+            "Pressed": "solasecInlineWhite_25x200.png",
+            "Released": "solasecInlineWhite_25x200.png"
           },
           {
             "Type": "TextArea",
             "Name": "CAN_FLAG",
             "X": 3,
             "Y": 213,
-            "Height": 25,
+            "Height": 24,
             "TextId": "CAN_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -62,38 +62,35 @@
           {
             "Type": "ScalableImage",
             "Name": "scalableImage1",
-            "X": 136,
+            "X": 163,
+            "Y": 7,
             "Width": 64,
-            "Height": 64,
-            "Filename": "dvmdIcon64x64.png",
+            "Height": 50,
+            "Filename": "Recon_50x64.png",
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 46,
+            "X": 37,
             "Y": 12,
-            "Width": 90,
+            "Width": 108,
             "Height": 41,
             "TextId": "__SingleUse_3LG4",
             "TextRotation": "0",
             "Color": {
-              "Red": 136,
-              "Green": 202,
-              "Blue": 3
+              "Red": 137,
+              "Green": 75,
+              "Blue": 181
             },
             "AutoSize": true
           },
           {
             "Type": "Shape",
             "Name": "titleBackground",
+            "X": -1,
             "Width": 240,
             "Height": 64,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
             "Points": [
               {},
               {
@@ -135,7 +132,7 @@
             "Name": "therapyStatusLabel",
             "X": 59,
             "Y": 85,
-            "Width": 111,
+            "Width": 120,
             "Height": 41,
             "TextId": "enableFlag",
             "TextRotation": "0",
@@ -174,7 +171,7 @@
             "Name": "settingsLabel",
             "X": 59,
             "Y": 146,
-            "Width": 109,
+            "Width": 121,
             "Height": 41,
             "TextId": "__SingleUse_LKC5",
             "TextRotation": "0",
@@ -242,8 +239,8 @@
             "Name": "Odometer_Text",
             "X": 4,
             "Y": 78,
-            "Width": 36,
-            "Height": 31,
+            "Width": 30,
+            "Height": 24,
             "TextId": "__SingleUse_X3RZ",
             "TextRotation": "0",
             "Color": {
@@ -258,7 +255,7 @@
             "Name": "textArea1_1",
             "X": 4,
             "Y": 86,
-            "Height": 31,
+            "Height": 30,
             "TextId": "__SingleUse_LB3X",
             "TextRotation": "0",
             "Color": {
@@ -273,8 +270,8 @@
             "Name": "debugModeText",
             "X": 4,
             "Y": 141,
-            "Width": 138,
-            "Height": 31,
+            "Width": 121,
+            "Height": 24,
             "TextId": "__SingleUse_JXJ0",
             "TextRotation": "0",
             "Color": {
@@ -289,8 +286,8 @@
             "Name": "activeInsulinText",
             "X": 4,
             "Y": 110,
-            "Width": 142,
-            "Height": 31,
+            "Width": 121,
+            "Height": 24,
             "TextId": "__SingleUse_RAGM",
             "TextRotation": "0",
             "Color": {
@@ -305,8 +302,8 @@
             "Name": "FirmwareVer_Text",
             "X": 4,
             "Y": 176,
-            "Width": 184,
-            "Height": 31,
+            "Width": 156,
+            "Height": 24,
             "TextId": "__SingleUse_4DV2",
             "TextRotation": "0",
             "Color": {
@@ -321,8 +318,8 @@
             "Name": "bgVal",
             "X": 129,
             "Y": 78,
-            "Width": 104,
-            "Height": 31,
+            "Width": 90,
+            "Height": 24,
             "TextId": "bgVal",
             "TextRotation": "0",
             "Color": {
@@ -342,7 +339,7 @@
             "Name": "bgText",
             "X": 209,
             "Y": 84,
-            "Height": 31,
+            "Height": 30,
             "TextId": "__SingleUse_CNYY",
             "TextRotation": "0",
             "Color": {
@@ -358,8 +355,8 @@
             "Name": "debugModeVal",
             "X": 146,
             "Y": 141,
-            "Width": 87,
-            "Height": 31,
+            "Width": 76,
+            "Height": 24,
             "TextId": "VIN_Val",
             "TextRotation": "0",
             "Color": {
@@ -377,8 +374,8 @@
             "Name": "FirmwareVer_Val",
             "X": 202,
             "Y": 176,
-            "Width": 31,
-            "Height": 31,
+            "Width": 26,
+            "Height": 24,
             "TextId": "FirmVer_Val",
             "TextRotation": "0",
             "Color": {
@@ -396,8 +393,8 @@
             "Name": "activeInsulinVal",
             "X": 185,
             "Y": 110,
-            "Width": 48,
-            "Height": 31,
+            "Width": 40,
+            "Height": 24,
             "TextId": "activeInsulinVal",
             "TextRotation": "0",
             "Color": {
@@ -416,11 +413,11 @@
             "Type": "Button",
             "Name": "Credits_Button",
             "X": 20,
-            "Y": 247,
+            "Y": 269,
             "Width": 200,
-            "Height": 80,
-            "Pressed": "protiviti-s.png",
-            "Released": "protiviti-s.png"
+            "Height": 25,
+            "Pressed": "solasecInlineWhite_25x200.png",
+            "Released": "solasecInlineWhite_25x200.png"
           },
           {
             "Type": "Line",
@@ -446,11 +443,6 @@
             "Name": "titleBackground",
             "Width": 240,
             "Height": 64,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
             "Points": [
               {},
               {
@@ -474,7 +466,7 @@
             "Name": "SPI_FLAG",
             "X": 4,
             "Y": 207,
-            "Height": 25,
+            "Height": 24,
             "TextId": "SPI_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -538,8 +530,8 @@
             "Name": "ManufacturerInterface",
             "X": 7,
             "Y": 68,
-            "Width": 189,
-            "Height": 25,
+            "Width": 202,
+            "Height": 24,
             "TextId": "__SingleUse_11TN",
             "TextRotation": "0",
             "Color": {
@@ -573,8 +565,8 @@
             "Name": "Line1_Text",
             "X": 7,
             "Y": 105,
-            "Width": 187,
-            "Height": 28,
+            "Width": 181,
+            "Height": 24,
             "TextId": "__SingleUse_R9AK",
             "TextRotation": "0",
             "Color": {
@@ -589,8 +581,8 @@
             "Name": "Line2_Text",
             "X": 7,
             "Y": 129,
-            "Width": 183,
-            "Height": 28,
+            "Width": 178,
+            "Height": 24,
             "TextId": "__SingleUse_HAW7",
             "TextRotation": "0",
             "Color": {
@@ -605,8 +597,8 @@
             "Name": "Line3_Text",
             "X": 7,
             "Y": 153,
-            "Width": 226,
-            "Height": 28,
+            "Width": 222,
+            "Height": 24,
             "TextId": "__SingleUse_ZGOK",
             "TextRotation": "0",
             "Color": {
@@ -621,8 +613,8 @@
             "Name": "Line1_Text_2",
             "X": 7,
             "Y": 181,
-            "Width": 209,
-            "Height": 28,
+            "Width": 200,
+            "Height": 24,
             "TextId": "__SingleUse_2BLY",
             "TextRotation": "0",
             "Color": {
@@ -637,7 +629,7 @@
             "Name": "UART_FLAG",
             "X": 3,
             "Y": 214,
-            "Height": 25,
+            "Height": 24,
             "TextId": "UART_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -654,11 +646,11 @@
             "Type": "Button",
             "Name": "Credits_Button",
             "X": 20,
-            "Y": 248,
+            "Y": 270,
             "Width": 200,
-            "Height": 80,
-            "Pressed": "protiviti-s.png",
-            "Released": "protiviti-s.png"
+            "Height": 25,
+            "Pressed": "solasecInlineWhite_25x200.png",
+            "Released": "solasecInlineWhite_25x200.png"
           },
           {
             "Type": "Line",
@@ -684,11 +676,6 @@
             "Name": "titleBackground",
             "Width": 240,
             "Height": 64,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
             "Points": [
               {},
               {
@@ -720,9 +707,10 @@
             "Type": "ScalableImage",
             "Name": "scalableImage1",
             "X": 176,
+            "Y": 7,
             "Width": 64,
-            "Height": 64,
-            "Filename": "dvmdIcon64x64.png",
+            "Height": 50,
+            "Filename": "Recon_50x64.png",
             "ScalingAlgorithm": "Nearest-neighbor"
           }
         ],
@@ -758,8 +746,8 @@
             "Name": "BroughtToYouBy_Text",
             "X": 11,
             "Y": 68,
-            "Width": 177,
-            "Height": 25,
+            "Width": 197,
+            "Height": 24,
             "TextId": "__SingleUse_I348",
             "TextRotation": "0",
             "Color": {
@@ -774,8 +762,8 @@
             "Name": "Name1_Text",
             "X": 11,
             "Y": 111,
-            "Width": 137,
-            "Height": 25,
+            "Width": 148,
+            "Height": 24,
             "TextId": "Name1_Text",
             "TextRotation": "0",
             "Color": {
@@ -790,25 +778,9 @@
             "Name": "Name2_Text",
             "X": 11,
             "Y": 143,
-            "Width": 119,
-            "Height": 25,
+            "Width": 176,
+            "Height": 24,
             "TextId": "Name2_Text",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Name3_Text",
-            "X": 11,
-            "Y": 174,
-            "Width": 123,
-            "Height": 25,
-            "TextId": "Name3_Text",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -840,7 +812,7 @@
             "Name": "JTAG_FLAG",
             "X": 3,
             "Y": 209,
-            "Height": 25,
+            "Height": 24,
             "TextId": "JTAG_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -857,11 +829,11 @@
             "Type": "Button",
             "Name": "Credits_Button",
             "X": 20,
-            "Y": 248,
+            "Y": 269,
             "Width": 200,
-            "Height": 80,
-            "Pressed": "protiviti-s.png",
-            "Released": "protiviti-s.png"
+            "Height": 25,
+            "Pressed": "solasecInlineWhite_25x200.png",
+            "Released": "solasecInlineWhite_25x200.png"
           },
           {
             "Type": "Line",
@@ -887,11 +859,6 @@
             "Name": "titleBackground",
             "Width": 240,
             "Height": 64,
-            "Color": {
-              "Red": 128,
-              "Green": 128,
-              "Blue": 128
-            },
             "Points": [
               {},
               {
@@ -941,8 +908,8 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 24,
-            "Width": 48,
-            "Height": 31,
+            "Width": 51,
+            "Height": 30,
             "TextId": "__SingleUse_NVER",
             "TextRotation": "0",
             "Color": {
@@ -1049,8 +1016,8 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 24,
-            "Width": 48,
-            "Height": 31,
+            "Width": 51,
+            "Height": 30,
             "TextId": "__SingleUse_GWKF",
             "TextRotation": "0",
             "Color": {
@@ -1156,9 +1123,10 @@
           {
             "Type": "ScalableImage",
             "Name": "scalableImage1",
+            "Y": 7,
             "Width": 64,
-            "Height": 64,
-            "Filename": "dvmdIcon64x64.png",
+            "Height": 50,
+            "Filename": "Recon_50x64.png",
             "ScalingAlgorithm": "Nearest-neighbor"
           },
           {
