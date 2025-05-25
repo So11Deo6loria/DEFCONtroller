@@ -20,7 +20,7 @@ StatusPageViewBase::StatusPageViewBase() :
     Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    Odometer_Text.setXY(4, 78);
+    Odometer_Text.setXY(5, 80);
     Odometer_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Odometer_Text.setLinespacing(0);
     Odometer_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_X3RZ));
@@ -30,22 +30,22 @@ StatusPageViewBase::StatusPageViewBase() :
     textArea1_1.setLinespacing(0);
     textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LB3X));
 
-    debugModeText.setXY(4, 141);
+    debugModeText.setXY(4, 140);
     debugModeText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     debugModeText.setLinespacing(0);
     debugModeText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JXJ0));
 
-    activeInsulinText.setXY(4, 110);
+    activeInsulinText.setXY(5, 110);
     activeInsulinText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     activeInsulinText.setLinespacing(0);
     activeInsulinText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RAGM));
 
-    FirmwareVer_Text.setXY(4, 176);
+    FirmwareVer_Text.setXY(4, 170);
     FirmwareVer_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     FirmwareVer_Text.setLinespacing(0);
     FirmwareVer_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4DV2));
 
-    bgVal.setXY(129, 78);
+    bgVal.setXY(185, 80);
     bgVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     bgVal.setLinespacing(0);
     Unicode::snprintf(bgValBuffer, BGVAL_SIZE, "%s", touchgfx::TypedText(T_BG_VAL_WC).getText());
@@ -58,21 +58,21 @@ StatusPageViewBase::StatusPageViewBase() :
     bgText.setLinespacing(0);
     bgText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CNYY));
 
-    debugModeVal.setXY(146, 141);
+    debugModeVal.setXY(152, 140);
     debugModeVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     debugModeVal.setLinespacing(0);
     debugModeVal.setWildcard(touchgfx::TypedText(T_VIN).getText());
     debugModeVal.resizeToCurrentText();
     debugModeVal.setTypedText(touchgfx::TypedText(T_VIN_VAL));
 
-    FirmwareVer_Val.setXY(202, 176);
+    FirmwareVer_Val.setXY(202, 170);
     FirmwareVer_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     FirmwareVer_Val.setLinespacing(0);
     FirmwareVer_Val.setWildcard(touchgfx::TypedText(T_FIRMWAREVER_VAL).getText());
     FirmwareVer_Val.resizeToCurrentText();
     FirmwareVer_Val.setTypedText(touchgfx::TypedText(T_FIRMVER_VAL));
 
-    activeInsulinVal.setXY(185, 110);
+    activeInsulinVal.setXY(174, 110);
     activeInsulinVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     activeInsulinVal.setLinespacing(0);
     Unicode::snprintf(activeInsulinValBuffer, ACTIVEINSULINVAL_SIZE, "%s", touchgfx::TypedText(T_ACTIVE_INSULIN_WC).getText());
@@ -80,7 +80,7 @@ StatusPageViewBase::StatusPageViewBase() :
     activeInsulinVal.resizeToCurrentText();
     activeInsulinVal.setTypedText(touchgfx::TypedText(T_ACTIVEINSULINVAL));
 
-    Credits_Button.setXY(20, 269);
+    Credits_Button.setXY(20, 270);
     Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID), touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID));
     Credits_Button.setAction(buttonCallback);
 

@@ -82,20 +82,30 @@ void NMI_Handler(void)
   /* USER CODE END NonMaskableInt_IRQn 1 */
 }
 
-/**
-  * @brief This function handles Hard fault interrupt.
-  */
-void HardFault_Handler(void)
-{
-  /* USER CODE BEGIN HardFault_IRQn 0 */
-
-  /* USER CODE END HardFault_IRQn 0 */
-  while (1)
-  {
-    /* USER CODE BEGIN W1_HardFault_IRQn 0 */
-    /* USER CODE END W1_HardFault_IRQn 0 */
-  }
+void HardFault_Handler(void) {
+    __asm volatile (
+        "TST lr, #4       \n"
+        "ITE EQ           \n"
+        "MRSEQ r0, MSP    \n"
+        "MRSNE r0, PSP    \n"
+        "B hard_fault_handler_c\n"
+    );
 }
+
+void hard_fault_handler_c(uint32_t *stack_address) {
+    uint32_t r0  = stack_address[0];
+    uint32_t r1  = stack_address[1];
+    uint32_t r2  = stack_address[2];
+    uint32_t r3  = stack_address[3];
+    uint32_t r12 = stack_address[4];
+    uint32_t lr  = stack_address[5];
+    uint32_t pc  = stack_address[6];
+    uint32_t psr = stack_address[7];
+
+    // Breakpoint or log here
+    __asm("BKPT #0");
+}
+
 
 /**
   * @brief This function handles Memory management fault.

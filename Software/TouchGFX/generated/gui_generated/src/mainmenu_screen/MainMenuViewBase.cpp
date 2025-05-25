@@ -28,7 +28,7 @@ MainMenuViewBase::MainMenuViewBase() :
     line1.setLineWidth(3);
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    Credits_Button.setXY(20, 271);
+    Credits_Button.setXY(20, 270);
     Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID), touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID));
     Credits_Button.setAction(buttonCallback);
 
@@ -64,7 +64,7 @@ MainMenuViewBase::MainMenuViewBase() :
     enableButton.setIconXY(20, 14);
     enableButton.setAction(buttonCallback);
 
-    therapyStatusLabel.setXY(59, 85);
+    therapyStatusLabel.setXY(59, 88);
     therapyStatusLabel.setColor(touchgfx::Color::getColorFromRGB(136, 202, 3));
     therapyStatusLabel.setLinespacing(0);
     Unicode::snprintf(therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "%s", touchgfx::TypedText(T_THERAPY_WC).getText());
@@ -77,7 +77,7 @@ MainMenuViewBase::MainMenuViewBase() :
     settingsButton.setIconXY(12, 14);
     settingsButton.setAction(buttonCallback);
 
-    settingsLabel.setXY(59, 146);
+    settingsLabel.setXY(59, 148);
     settingsLabel.setColor(touchgfx::Color::getColorFromRGB(222, 221, 221));
     settingsLabel.setLinespacing(0);
     settingsLabel.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LKC5));

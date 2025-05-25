@@ -38,17 +38,17 @@ CommandsPageViewBase::CommandsPageViewBase() :
     Line1_Text.setLinespacing(0);
     Line1_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_R9AK));
 
-    Line2_Text.setXY(7, 129);
+    Line2_Text.setXY(7, 130);
     Line2_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Line2_Text.setLinespacing(0);
     Line2_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_HAW7));
 
-    Line3_Text.setXY(7, 153);
+    Line3_Text.setXY(7, 155);
     Line3_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Line3_Text.setLinespacing(0);
     Line3_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZGOK));
 
-    Line1_Text_2.setXY(7, 181);
+    Line1_Text_2.setXY(7, 180);
     Line1_Text_2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Line1_Text_2.setLinespacing(0);
     Line1_Text_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2BLY));

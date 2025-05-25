@@ -57,7 +57,7 @@ void  MainMenuView::__UpdateDynamicData(void)
 	{
 		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (136, 203, 3));
 		therapyStatusLabel.setAlpha (255);
-		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Enabled");
+		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Armed");
 		therapyStatusLabel.setWildcard (therapyStatusLabelBuffer);
 		therapyStatusLabel.resizeToCurrentText ();
 	}
@@ -65,7 +65,7 @@ void  MainMenuView::__UpdateDynamicData(void)
 	{
 		therapyStatusLabel.setColor (touchgfx::Color::getColorFromRGB (255, 0, 0));
 		therapyStatusLabel.setAlpha (255);
-		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Disabled");
+		Unicode::snprintf (therapyStatusLabelBuffer, THERAPYSTATUSLABEL_SIZE, "Disarmed");
 		therapyStatusLabel.setWildcard (therapyStatusLabelBuffer);
 		therapyStatusLabel.resizeToCurrentText ();
 	}

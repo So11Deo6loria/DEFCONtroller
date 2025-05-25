@@ -14,8 +14,8 @@ uint8_t DoorLockState;
 uint8_t DoorLockUpdated;
 uint8_t SeatWarmerState;
 uint8_t SeatWarmerUpdated;
-uint8_t therapyState;
-uint8_t therapyUpdated;
+uint8_t payoadState;
+uint8_t payloadUpdated;
 
 UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart1;
@@ -31,18 +31,18 @@ static char __rxBuffer[256]; // Shout out to Drew W. for silly requirements on t
 /* Commands */
 // TODO: Create an interface to update these values in the GUI?
 // TODO: Maybe throw this in SPI?
-static uint8_t __titlePrompt[] = "DVMD Manufacturer's Interface\r\n";
+static uint8_t __titlePrompt[] = "COM Interface\r\n";
 
 static uint8_t __infoPrompt[] = "Device Info:\r\n"
-								"Blood Glucose (BG): 150mg/dL\r\n"
-								"Active Insulin: 0.3U\r\n"
+								"Pin: 2005\r\n"
+								"HUD State: REcon\r\n"
 								"Debug Mode: Disabled\r\n"
 								"Firmware Version: 0.3\r\n";
 
 static uint8_t __helpPrompt[] = "(help) - Help Menu\r\n"
 								"(info) - Device Info\r\n"
 								"(config) - Device Config\r\n"
-								"(therapy) - Activation\n";
+								"(arm) - Arm Payload\n";
 
 /* Config Prompts */
 static uint8_t __configSelfDestructOnCommand[] = "config selfdestruct enabled";
@@ -50,7 +50,8 @@ static uint8_t __configSelfDestructOffCommand[] = "config selfdestruct disabled"
 static uint8_t __configErrorPrompt[] = "ERROR - command not recognized. Try \"config --help\".\r\n";
 static uint8_t __configHelpPrompt[] = 	"USAGE: config [option]\r\n"
 										"OPTIONS:\r\n"
-										"\tdebug [on/off] - Turn debug mode on or off.\r\n";
+										"\tdebug [on/off] - Turn debug mode on or off.\r\n"
+										"\tselfdestruct [enabled/disabled]\r\n";
 static uint8_t __configDebugOnPrompt[] = 	"Debug Mode ON\r\n"
 											"WARNING: Debug mode may expose unintended functionality to other users.\r\n";
 static uint8_t __configDebugOffPrompt[] = "Debug Mode OFF\r\n";
@@ -66,17 +67,17 @@ static uint8_t __configSelfDestructOffPrompt[] = "Phew that was a close one. Tha
 											     "   '._____.'  /  \r\n"
 											     "     `-----'`    \r\n";
 
-/* Therapy Prompts/Commands */
-static uint8_t __therapyCommand[] = "therapy";
-static uint8_t __therapyEnabledCommand[] = "therapy enabled";
-static uint8_t __therapyDisabledCommand[] = "therapy disabled";
-static uint8_t __therapyHelpCommand[] = "therapy --help";
-static uint8_t __therapyEnabledPrompt[] 	= "Therapy ENABLED\r\n";
-static uint8_t __therapyDisabledPrompt[] 	= "Therapy DISABLED\r\n";
-static uint8_t __therapyErrorPrompt[] 		= "ERROR - command not recognized. Try \"therapy --help\".\r\n";
-static uint8_t __therapyHelpPrompt[] 		= "USAGE: therapy [option]\r\n"
+/* Payload Prompts/Commands */
+static uint8_t __payloadCommand[] = "payload";
+static uint8_t __payloadEnabledCommand[] = "payload arm";
+static uint8_t __payloadDisabledCommand[] = "payload disarm";
+static uint8_t __payloadHelpCommand[] = "payload --help";
+static uint8_t __payloadEnabledPrompt[] 	= "Payload Armed\r\n";
+static uint8_t __payloadDisabledPrompt[] 	= "Payload Disarmed\r\n";
+static uint8_t __payloadErrorPrompt[] 		= "ERROR - command not recognized. Try \"payload --help\".\r\n";
+static uint8_t __payloadHelpPrompt[] 		= "USAGE: payload [option]\r\n"
 												  "OPTIONS:\r\n"
-												  "\t[enabled/disabled] - Enable and disable therapy.\r\n";
+												  "\t[arm/disarm] - Arm and disarm payload.\r\n";
 
 static uint8_t __errorPrompt[] = "ERROR - command not recognized. Try typing \"help\".\r\n";
 
@@ -88,7 +89,7 @@ static uint8_t __errorPrompt[] = "ERROR - command not recognized. Try typing \"h
 static void MX_USART1_UART_Init(void)
 {
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
+  huart1.Init.BaudRate = 57600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -137,28 +138,28 @@ static void __handleConfigCommands(void)
 	}
 }
 
-static void __handleTherapyCommands(void)
+static void __handlePayloadCommands(void)
 {
 	// The strlen calc below is plus 1 to catch only commands
-	if( 0 == strncmp( (char*)__therapyHelpCommand, (char*)__rxBuffer, strlen((char*)__therapyHelpCommand) ) || 0 == strncmp( (char*)__therapyCommand, (char*)__rxBuffer, strlen((char*)__therapyCommand)+1 ) )
+	if( 0 == strncmp( (char*)__payloadHelpCommand, (char*)__rxBuffer, strlen((char*)__payloadHelpCommand) ) || 0 == strncmp( (char*)__payloadCommand, (char*)__rxBuffer, strlen((char*)__payloadCommand)+1 ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__therapyHelpPrompt, sizeof(__therapyHelpPrompt)-1, 100 );
+		HAL_UART_Transmit( &huart1, (uint8_t*)__payloadHelpPrompt, sizeof(__payloadHelpPrompt)-1, 100 );
 	}
-	else if( 0 == strncmp( (char*)__therapyEnabledCommand, (char*)__rxBuffer, strlen((char*)__therapyEnabledCommand) ) )
+	else if( 0 == strncmp( (char*)__payloadEnabledCommand, (char*)__rxBuffer, strlen((char*)__payloadEnabledCommand) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__therapyEnabledPrompt, sizeof(__therapyEnabledPrompt)-1, 100 );
-		therapyState = 1;
-		therapyUpdated = 1;
+		HAL_UART_Transmit( &huart1, (uint8_t*)__payloadEnabledPrompt, sizeof(__payloadEnabledPrompt)-1, 100 );
+		payoadState = 1;
+		payloadUpdated = 1;
 	}
-	else if( 0 == strncmp( (char*)__therapyDisabledCommand, (char*)__rxBuffer, strlen((char*)__therapyDisabledCommand) ) )
+	else if( 0 == strncmp( (char*)__payloadDisabledCommand, (char*)__rxBuffer, strlen((char*)__payloadDisabledCommand) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__therapyDisabledPrompt, sizeof(__therapyDisabledPrompt)-1, 100 );
-		therapyState = 0;
-		therapyUpdated = 1;
+		HAL_UART_Transmit( &huart1, (uint8_t*)__payloadDisabledPrompt, sizeof(__payloadDisabledPrompt)-1, 100 );
+		payoadState = 0;
+		payloadUpdated = 1;
 	}
 	else
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__therapyErrorPrompt, sizeof(__therapyErrorPrompt)-1, 100 );
+		HAL_UART_Transmit( &huart1, (uint8_t*)__payloadErrorPrompt, sizeof(__payloadErrorPrompt)-1, 100 );
 	}
 }
 
@@ -214,9 +215,9 @@ void UARTChallengeThread( void * argument )
 		{
 			__handleConfigCommands();
 		}
-		else if( 0 == strncmp( (char*)__therapyCommand, (char*)__rxBuffer, strlen((char*)__therapyCommand) ) )
+		else if( 0 == strncmp( (char*)__payloadCommand, (char*)__rxBuffer, strlen((char*)__payloadCommand) ) )
 		{
-			__handleTherapyCommands();
+			__handlePayloadCommands();
 		}
 		else
 		{
@@ -231,16 +232,16 @@ void UARTChallengeThread( void * argument )
 }
 
 // Called By TouchGFX when a button is pressed.
-void UARTChallengeTherapyButtonPressed (uint8_t ToggleState)
+void UARTChallengePayloadButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
 	{
-		therapyState = 1;
+		payoadState = 1;
 	}
 	else
 	{
-		therapyState = 0;
+		payoadState = 0;
 	}
 
-	therapyUpdated= 1;
+	payloadUpdated = 1;
 }

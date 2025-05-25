@@ -50,7 +50,7 @@ CreditsPageViewBase::CreditsPageViewBase()
     JTAG_FLAG.resizeToCurrentText();
     JTAG_FLAG.setTypedText(touchgfx::TypedText(T_JTAG_FLAG));
 
-    Credits_Button.setXY(20, 269);
+    Credits_Button.setXY(20, 270);
     Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID), touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID));
 
     line1.setPosition(4, 242, 265, 5);

@@ -95,7 +95,7 @@ osThreadId_t ledTaskHandle;
 
 const osThreadAttr_t defaultTask_attributes = {
   .name = "defaultTask",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 
@@ -179,6 +179,23 @@ uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communic
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
 /* USER CODE END 0 */
 
+void vApplicationStackOverflowHook(TaskHandle_t xTask, char *pcTaskName)
+{
+    // Optional: Inspect task name via debugger
+    (void)xTask;
+    (void)pcTaskName;
+
+    __asm("BKPT #2");  // Breakpoint on stack overflow
+    while (1);         // Trap in loop if debugger isn't attached
+}
+
+void vApplicationMallocFailedHook(void) {
+    __asm("BKPT #3");
+    while (1);
+}
+
+
+
 static void __constructFlags( void )
 {
 	memset( xUARTFlag, 0, 32 ); // Bit 1
@@ -186,48 +203,50 @@ static void __constructFlags( void )
 	memset( xCANFlag, 0, 32 ); 	// Bit 3
 	memset( xJTAGFlag, 0, 32 );	// Bit 4
 
-	xUARTFlag[0] = 'I';
-	xUARTFlag[1] = 'o';
-	xUARTFlag[2] = 'T';
-	xUARTFlag[3] = '_';
+	xUARTFlag[0] = 'R';
+	xUARTFlag[1] = 'E';
+	xUARTFlag[2] = 'c';
+	xUARTFlag[3] = 'o';
+	xUARTFlag[4] = 'n';
+	xUARTFlag[5] = '_';
 
 	memcpy( xSPIFlag, xUARTFlag, strlen(xUARTFlag) );
 	memcpy( xCANFlag, xUARTFlag, strlen(xUARTFlag) );
 	memcpy( xJTAGFlag, xUARTFlag, strlen(xUARTFlag) );
 
 	/* Challenge Specific Strings */
-	xUARTFlag[4] = 'U';
-	xUARTFlag[5] = '4';
-	xUARTFlag[6] = 'R';
-	xUARTFlag[7] = '7';
+	xUARTFlag[6] = 'U';
+	xUARTFlag[7] = '4';
+	xUARTFlag[8] = 'R';
+	xUARTFlag[9] = '7';
 
-	xSPIFlag[4] = '5';
-	xSPIFlag[5] = 'P';
-	xSPIFlag[6] = '1';
+	xSPIFlag[6] = '5';
+	xSPIFlag[7] = 'P';
+	xSPIFlag[8] = '1';
 
-	xCANFlag[4] = 'C';
-	xCANFlag[5] = '4';
-	xCANFlag[6] = 'N';
+	xCANFlag[6] = 'C';
+	xCANFlag[7] = '4';
+	xCANFlag[8] = 'N';
 
-	xJTAGFlag[4] = 'J';
-	xJTAGFlag[5] = '7';
-	xJTAGFlag[6] = '4';
-	xJTAGFlag[7] = '6';
+	xJTAGFlag[6] = 'J';
+	xJTAGFlag[7] = '7';
+	xJTAGFlag[8] = '4';
+	xJTAGFlag[9] = '6';
 
-	xUARTFlag[8] = '_';
-	xUARTFlag[9] = 'C';
-	xUARTFlag[10] = 'H';
-	xUARTFlag[11] = '4';
-	xUARTFlag[12] = 'l';
-	xUARTFlag[13] = 'l';
-	xUARTFlag[14] = '3';
-	xUARTFlag[15] = 'N';
-	xUARTFlag[16] = '6';
-	xUARTFlag[17] = '3';
+	xUARTFlag[10] = '_';
+	xUARTFlag[11] = 'C';
+	xUARTFlag[12] = 'H';
+	xUARTFlag[13] = '4';
+	xUARTFlag[14] = 'l';
+	xUARTFlag[15] = 'l';
+	xUARTFlag[16] = '3';
+	xUARTFlag[17] = 'N';
+	xUARTFlag[18] = '6';
+	xUARTFlag[19] = '3';
 
-	memcpy( &xSPIFlag[strlen(xSPIFlag)],   &xUARTFlag[8], strlen(&xUARTFlag[8]) );
-	memcpy( &xCANFlag[strlen(xCANFlag)],   &xUARTFlag[8], strlen(&xUARTFlag[8]) );
-	memcpy( &xJTAGFlag[strlen(xJTAGFlag)], &xUARTFlag[8], strlen(&xUARTFlag[8]) );
+	memcpy( &xSPIFlag[strlen(xSPIFlag)],   &xUARTFlag[10], strlen(&xUARTFlag[10]) );
+	memcpy( &xCANFlag[strlen(xCANFlag)],   &xUARTFlag[10], strlen(&xUARTFlag[10]) );
+	memcpy( &xJTAGFlag[strlen(xJTAGFlag)], &xUARTFlag[10], strlen(&xUARTFlag[10]) );
 }
 
 /**
@@ -299,6 +318,7 @@ int main(void)
   canThreadAttributes.name  = "canTask";
   uartThreadAttributes.name = "uartTask";
   spiThreadAttributes.name  = "spiTask";
+  spiThreadAttributes.stack_size  = 4096 * 4;
   jtagThreadAttributes.name = "jtagTask";
   ledThreadAttributes.name = "ledTask";
 
@@ -306,9 +326,9 @@ int main(void)
   canTaskHandle  = osThreadNew(CanChallangeThread,  NULL, &canThreadAttributes);
 //  i2cTaskHandle  = osThreadNew(I2CChallengeThread,  NULL, &i2cThreadAttributes);
   spiTaskHandle  = osThreadNew(SPIChallengeThread,  NULL, &spiThreadAttributes);
-  uartTaskHandle = osThreadNew(UARTChallengeThread, NULL, &uartThreadAttributes);
-  jtagTaskHandle = osThreadNew(JTAGChallengeThread, NULL, &jtagThreadAttributes);
-  ledTaskHandle = osThreadNew(LEDChallengeThread, NULL, &ledThreadAttributes);
+//  uartTaskHandle = osThreadNew(UARTChallengeThread, NULL, &uartThreadAttributes);
+//  jtagTaskHandle = osThreadNew(JTAGChallengeThread, NULL, &jtagThreadAttributes);
+//  ledTaskHandle = osThreadNew(LEDChallengeThread, NULL, &ledThreadAttributes);
 
   /* creation of GUI_Task */
   GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);

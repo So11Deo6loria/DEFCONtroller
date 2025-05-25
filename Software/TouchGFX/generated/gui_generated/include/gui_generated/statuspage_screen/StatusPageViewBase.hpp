@@ -60,7 +60,7 @@ protected:
      */
     static const uint16_t BGVAL_SIZE = 3;
     touchgfx::Unicode::UnicodeChar bgValBuffer[BGVAL_SIZE];
-    static const uint16_t ACTIVEINSULINVAL_SIZE = 3;
+    static const uint16_t ACTIVEINSULINVAL_SIZE = 5;
     touchgfx::Unicode::UnicodeChar activeInsulinValBuffer[ACTIVEINSULINVAL_SIZE];
     static const uint16_t SPI_FLAG_SIZE = 32;
     touchgfx::Unicode::UnicodeChar SPI_FLAGBuffer[SPI_FLAG_SIZE];
