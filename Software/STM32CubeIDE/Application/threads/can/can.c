@@ -35,7 +35,6 @@ static const uint16_t _CanMsgDeviceOFF = 0x0000;
 // Local Functions
 static void _CanInitialize( void );
 static void _CanSendMessage(uint32_t ID, uint8_t Length, uint8_t * MessageBuffer);
-void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 
 // Called By TouchGFX when a button is pressed.
 // 1 Enabled - 0 Disabled
@@ -89,27 +88,32 @@ static void _CanSendMessage(uint32_t ID, uint8_t Length, uint8_t * MessageBuffer
 	 vTaskDelay(1);
 }
 
-// Handle received CAN messages in this callback function
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
-	CAN_RxHeaderTypeDef CanRxHeader;
-	uint8_t RXBuffer[8];
+    CAN_RxHeaderTypeDef CanRxHeader;
+    uint8_t RXBuffer[8];
 
-	if (hcan->Instance == CAN2) {
-		HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxHeader, RXBuffer);
+    if (hcan->Instance == CAN2) {
+        if (HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &CanRxHeader, RXBuffer) == HAL_OK) {
+            // Example: Only process messages with ID 0x0AF and length 2
+            if (CanRxHeader.StdId == 0x0AF && CanRxHeader.DLC == 2) {
+                uint16_t value = (RXBuffer[0] << 8) | RXBuffer[1];
 
-		// Process the received message as needed
-		// Add your logic here to handle received messages
+                // Act on value
+                if (value == 0xFFFF) {
+                    HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_SET); // for example
+                } else {
+                    HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
+                }
 
-//		HAL_GPIO_TogglePin(GPIOG, LD4_Pin); // Toggle the LED (Example)
-
-		// For debugging purposes, you can check the received data
-		// Example: Print the received data to the console (if available)
-		// printf("Received: %02X %02X %02X %02X %02X %02X %02X %02X\n",
-		//        RXBuffer[0], RXBuffer[1], RXBuffer[2], RXBuffer[3],
-		//        RXBuffer[4], RXBuffer[5], RXBuffer[6], RXBuffer[7]);
-	}
+                // Optional: log or set flags
+                CanTask_BSValue = value;
+                CanTask_BSUpdated = 1;
+            }
+        }
+    }
 }
+
 
 // TODO: RX if need be.
 //	CAN_RxHeaderTypeDef CanRxHeader;
@@ -138,8 +142,17 @@ static void _CanInitialize(void) {
 	}
 
 	CAN_FilterTypeDef CanFilterConfig = {
-
-	.FilterMode = CAN_FILTER_DISABLE };
+	    .FilterBank = 0,
+	    .FilterMode = CAN_FILTERMODE_IDMASK,
+	    .FilterScale = CAN_FILTERSCALE_32BIT,
+	    .FilterIdHigh = 0x0000,
+	    .FilterIdLow = 0x0000,
+	    .FilterMaskIdHigh = 0x0000,
+	    .FilterMaskIdLow = 0x0000,
+	    .FilterFIFOAssignment = CAN_RX_FIFO0,
+	    .FilterActivation = ENABLE,
+	    .SlaveStartFilterBank = 14
+	};
 
 	if (HAL_OK != HAL_CAN_ConfigFilter(&hcan2, &CanFilterConfig)) {
 		Error_Handler();
@@ -148,6 +161,9 @@ static void _CanInitialize(void) {
 	HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_FULL | CAN_IT_RX_FIFO0_MSG_PENDING);
 
 	HAL_CAN_Start(&hcan2);
+
+	HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 5, 0);
+	HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);
 }
 
 //void CanRxMsgPendingCallback(CAN_HandleTypeDef *hcan) {

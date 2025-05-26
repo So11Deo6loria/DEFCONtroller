@@ -326,9 +326,9 @@ int main(void)
   canTaskHandle  = osThreadNew(CanChallangeThread,  NULL, &canThreadAttributes);
 //  i2cTaskHandle  = osThreadNew(I2CChallengeThread,  NULL, &i2cThreadAttributes);
   spiTaskHandle  = osThreadNew(SPIChallengeThread,  NULL, &spiThreadAttributes);
-//  uartTaskHandle = osThreadNew(UARTChallengeThread, NULL, &uartThreadAttributes);
-//  jtagTaskHandle = osThreadNew(JTAGChallengeThread, NULL, &jtagThreadAttributes);
-//  ledTaskHandle = osThreadNew(LEDChallengeThread, NULL, &ledThreadAttributes);
+  uartTaskHandle = osThreadNew(UARTChallengeThread, NULL, &uartThreadAttributes);
+  jtagTaskHandle = osThreadNew(JTAGChallengeThread, NULL, &jtagThreadAttributes);
+  ledTaskHandle = osThreadNew(LEDChallengeThread, NULL, &ledThreadAttributes);
 
   /* creation of GUI_Task */
   GUI_TaskHandle = osThreadNew(TouchGFX_Task, NULL, &GUI_Task_attributes);

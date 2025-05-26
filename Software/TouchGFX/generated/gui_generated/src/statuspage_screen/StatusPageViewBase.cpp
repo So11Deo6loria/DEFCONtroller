@@ -61,14 +61,16 @@ StatusPageViewBase::StatusPageViewBase() :
     debugModeVal.setXY(152, 140);
     debugModeVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     debugModeVal.setLinespacing(0);
-    debugModeVal.setWildcard(touchgfx::TypedText(T_VIN).getText());
+    Unicode::snprintf(debugModeValBuffer, DEBUGMODEVAL_SIZE, "%s", touchgfx::TypedText(T_VIN).getText());
+    debugModeVal.setWildcard(debugModeValBuffer);
     debugModeVal.resizeToCurrentText();
     debugModeVal.setTypedText(touchgfx::TypedText(T_VIN_VAL));
 
     FirmwareVer_Val.setXY(202, 170);
     FirmwareVer_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     FirmwareVer_Val.setLinespacing(0);
-    FirmwareVer_Val.setWildcard(touchgfx::TypedText(T_FIRMWAREVER_VAL).getText());
+    Unicode::snprintf(FirmwareVer_ValBuffer, FIRMWAREVER_VAL_SIZE, "%s", touchgfx::TypedText(T_FIRMWAREVER_VAL).getText());
+    FirmwareVer_Val.setWildcard(FirmwareVer_ValBuffer);
     FirmwareVer_Val.resizeToCurrentText();
     FirmwareVer_Val.setTypedText(touchgfx::TypedText(T_FIRMVER_VAL));
 

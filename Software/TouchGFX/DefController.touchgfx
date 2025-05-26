@@ -331,7 +331,7 @@
             "Wildcard1": {
               "TextId": "BG_VAL_WC",
               "UseBuffer": true,
-              "BufferSize": 3
+              "BufferSize": 5
             }
           },
           {
@@ -366,7 +366,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "VIN"
+              "TextId": "VIN",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -385,7 +387,9 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "FirmwareVer_Val"
+              "TextId": "FirmwareVer_Val",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
@@ -406,7 +410,7 @@
             "Wildcard1": {
               "TextId": "ACTIVE_INSULIN_WC",
               "UseBuffer": true,
-              "BufferSize": 5
+              "BufferSize": 10
             }
           },
           {

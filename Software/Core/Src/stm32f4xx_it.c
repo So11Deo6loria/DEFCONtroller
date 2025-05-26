@@ -205,7 +205,7 @@ void CAN2_TX_IRQHandler(void)
   */
 void CAN2_RX0_IRQHandler(void)
 {
-  /* USER CODE BEGIN CAN2_RX0_IRQn 0 */
+  /* USER CODE BEGIN CAN2`_RX0_IRQn 0 */
 
   /* USER CODE END CAN2_RX0_IRQn 0 */
   HAL_CAN_IRQHandler(&hcan2);

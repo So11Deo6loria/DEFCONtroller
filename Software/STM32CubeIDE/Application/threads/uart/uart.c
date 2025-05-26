@@ -33,29 +33,48 @@ static char __rxBuffer[256]; // Shout out to Drew W. for silly requirements on t
 // TODO: Maybe throw this in SPI?
 static uint8_t __titlePrompt[] = "COM Interface\r\n";
 
-static uint8_t __infoPrompt[] = "Device Info:\r\n"
-								"Pin: 2005\r\n"
-								"HUD State: REcon\r\n"
-								"Debug Mode: Disabled\r\n"
-								"Firmware Version: 0.3\r\n";
+//static uint8_t __infoPrompt[] = "Device Info:\r\n"
+//								"Pin: 2005\r\n"
+//								"HUD State: REcon\r\n"
+//								"Debug Mode: Disabled\r\n"
+//								"Firmware Version: 0.3\r\n";
+
+#include "device_status.h"
+
+static uint8_t __infoPrompt[128];
+
+static void __buildInfoPrompt(void)
+{
+    snprintf((char*)__infoPrompt, sizeof(__infoPrompt),
+             "Device Info:\r\n"
+             "Pin: %s\r\n"
+             "HUD State: %s\r\n"
+             "Debug Mode: %s\r\n"
+             "Firmware Version: %s\r\n",
+             gDeviceStatus.pin,
+             gDeviceStatus.hudState,
+             gDeviceStatus.debugEnabled ? "Enabled" : "Disabled",
+             gDeviceStatus.firmwareVersion);
+}
 
 static uint8_t __helpPrompt[] = "(help) - Help Menu\r\n"
 								"(info) - Device Info\r\n"
 								"(config) - Device Config\r\n"
-								"(arm) - Arm Payload\n";
+								"(payload) - Arm Payload\n";
 
 /* Config Prompts */
-static uint8_t __configSelfDestructOnCommand[] = "config selfdestruct enabled";
-static uint8_t __configSelfDestructOffCommand[] = "config selfdestruct disabled";
 static uint8_t __configErrorPrompt[] = "ERROR - command not recognized. Try \"config --help\".\r\n";
 static uint8_t __configHelpPrompt[] = 	"USAGE: config [option]\r\n"
 										"OPTIONS:\r\n"
-										"\tdebug [on/off] - Turn debug mode on or off.\r\n"
-										"\tselfdestruct [enabled/disabled]\r\n";
+										"\tpin <pin> - Modify GUI Pin.\r\n"
+										"\thud <state> - Modify GUI HUD State.\r\n"
+										"\tdebug [on/off] - Modify GUI Debug Mode.\r\n"
+										"\tfw <version> - Modify GUI FW Version.\r\n";
 static uint8_t __configDebugOnPrompt[] = 	"Debug Mode ON\r\n"
 											"WARNING: Debug mode may expose unintended functionality to other users.\r\n";
 static uint8_t __configDebugOffPrompt[] = "Debug Mode OFF\r\n";
-static uint8_t __configSelfDestructOnPrompt[] = "SELF DESTRUCT INITIATED!!! I can't believe you've done this...\r\n";
+static uint8_t __configDebugPasswordPrompt[] = "Password required. Usage: config debug on <password>\r\n";
+static uint8_t __configSelfDestructOnPrompt[] = "PAYLOAD ARMED!!! I can't believe you've done this...\r\n";
 static uint8_t __configSelfDestructOffPrompt[] = "Phew that was a close one. Thank you for being awesome and saving the day. Here is a cookie:\r\n"
 											     "      _______     \r\n"
 											     "   .-' ____  `.   \r\n"
@@ -72,8 +91,6 @@ static uint8_t __payloadCommand[] = "payload";
 static uint8_t __payloadEnabledCommand[] = "payload arm";
 static uint8_t __payloadDisabledCommand[] = "payload disarm";
 static uint8_t __payloadHelpCommand[] = "payload --help";
-static uint8_t __payloadEnabledPrompt[] 	= "Payload Armed\r\n";
-static uint8_t __payloadDisabledPrompt[] 	= "Payload Disarmed\r\n";
 static uint8_t __payloadErrorPrompt[] 		= "ERROR - command not recognized. Try \"payload --help\".\r\n";
 static uint8_t __payloadHelpPrompt[] 		= "USAGE: payload [option]\r\n"
 												  "OPTIONS:\r\n"
@@ -109,27 +126,47 @@ static void __handleConfigCommands(void)
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__configHelpPrompt, sizeof(__configHelpPrompt)-1, 100 );
 	}
-	else if( (0 == strncmp( "config debug on",  __rxBuffer, 16 ) ) )
+	else if( (0 == strncmp( "config debug on",  __rxBuffer, 15 ) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__configDebugOnPrompt, sizeof(__configDebugOnPrompt)-1, 100 );
-		debugFlagTouchGFX |= (1<<1);
-		debugFlagUpdated = 1;
+		if (0 == strncmp("config debug on 1337", __rxBuffer, 20))
+		{
+			gDeviceStatus.debugEnabled = 1;
+			HAL_UART_Transmit(&huart1, (uint8_t *)__configDebugOnPrompt, sizeof(__configDebugOnPrompt) - 1, 100);
+			debugFlagTouchGFX |= (1 << 1);
+			debugFlagUpdated = 1;
+		}
+		else
+		{
+			HAL_UART_Transmit(&huart1, (uint8_t *)__configDebugPasswordPrompt, sizeof(__configDebugPasswordPrompt) - 1, 100);
+		}
 	}
 	else if( (0 == strncmp( "config debug off",  __rxBuffer, 17 ) ) )
 	{
+		gDeviceStatus.debugEnabled = 0;
 		HAL_UART_Transmit( &huart1, (uint8_t*)__configDebugOffPrompt, sizeof(__configDebugOffPrompt)-1, 100 );
 		debugFlagTouchGFX &= ~(1<<1);
 		debugFlagUpdated = 1;
 	}
-	else if( 0 == strncmp( (char*)__configSelfDestructOnCommand, (char*)__rxBuffer, strlen((char*)__configSelfDestructOnCommand) ) )
+	else if( (0 == strncmp( "config pin",  __rxBuffer, 10 ) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__configSelfDestructOnPrompt, sizeof(__configSelfDestructOnPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
+		memcpy(gDeviceStatus.pin, &__rxBuffer[11], 4);
+		__buildInfoPrompt();
+		HAL_UART_Transmit( &huart1, (uint8_t*)__infoPrompt, sizeof(__infoPrompt)-1, 100 );
+		debugFlagUpdated = 1;
 	}
-	else if( 0 == strncmp( (char*)__configSelfDestructOffCommand, (char*)__rxBuffer, strlen((char*)__configSelfDestructOffCommand) ) )
+	else if( (0 == strncmp( "config hud",  __rxBuffer, 10 ) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__configSelfDestructOffPrompt, sizeof(__configSelfDestructOffPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
+		memcpy(gDeviceStatus.hudState, &__rxBuffer[11], 8);
+		__buildInfoPrompt();
+		HAL_UART_Transmit( &huart1, (uint8_t*)__infoPrompt, sizeof(__infoPrompt)-1, 100 );
+		debugFlagUpdated = 1;
+	}
+	else if( (0 == strncmp( "config fw",  __rxBuffer, 9 ) ) )
+	{
+		memcpy(gDeviceStatus.firmwareVersion, &__rxBuffer[10], 3);
+		__buildInfoPrompt();
+		HAL_UART_Transmit( &huart1, (uint8_t*)__infoPrompt, sizeof(__infoPrompt)-1, 100 );
+		debugFlagUpdated = 1;
 	}
 	else
 	{
@@ -147,13 +184,13 @@ static void __handlePayloadCommands(void)
 	}
 	else if( 0 == strncmp( (char*)__payloadEnabledCommand, (char*)__rxBuffer, strlen((char*)__payloadEnabledCommand) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__payloadEnabledPrompt, sizeof(__payloadEnabledPrompt)-1, 100 );
+		HAL_UART_Transmit( &huart1, (uint8_t*)__configSelfDestructOnPrompt, sizeof(__configSelfDestructOnPrompt)-1, 100 );
 		payoadState = 1;
 		payloadUpdated = 1;
 	}
 	else if( 0 == strncmp( (char*)__payloadDisabledCommand, (char*)__rxBuffer, strlen((char*)__payloadDisabledCommand) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__payloadDisabledPrompt, sizeof(__payloadDisabledPrompt)-1, 100 );
+		HAL_UART_Transmit( &huart1, (uint8_t*)__configSelfDestructOffPrompt, sizeof(__configSelfDestructOffPrompt)-1, 100 );
 		payoadState = 0;
 		payloadUpdated = 1;
 	}
@@ -205,6 +242,7 @@ void UARTChallengeThread( void * argument )
 		// TODO: Handle CRLF
 		if( 0 == strncmp( "info",  __rxBuffer, 5 ) )
 		{
+			__buildInfoPrompt();
 			HAL_UART_Transmit( &huart1, (uint8_t*)__infoPrompt, sizeof(__infoPrompt)-1, 100 );
 		}
 		else if( 0 == strncmp( "help",  __rxBuffer, 5 ) )

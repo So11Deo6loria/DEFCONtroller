@@ -9,6 +9,7 @@
 #include "string.h"
 #include "FreeRTOS.h"
 #include "queue.h"
+#include "device_status.h"
 
 
 // Global Variables for Use with TouchGFX.
@@ -19,7 +20,7 @@ char SPISoftwareVersion[16] = "0.0.0";
 uint8_t debugFlagTouchGFX = 0; /// 0 = use to communicate with touchgfx. Setting the initial valu here?
 uint8_t debugFlagUpdated = 0; /// 0 = false use to communicate with touchgfx
 uint8_t SPIExternalFlashUpdated = 0;
-
+char deviceID[9] = {0};  // 8-digit string + null terminator
 
 // Local Items.
 static uint8_t __debugModeDisabledString[256] = "PIN=2005;HUD_STATE=REcon;DEBUG_MODE=DISABLED;FIRMWARE_VERSION=0.3;";
@@ -73,6 +74,34 @@ static uint8_t __key[32];
 static uint8_t __value[32];
 
 HAL_SPI_StateTypeDef halSpiState;
+
+static void __computeSimpleDeviceID(void)
+{
+    // 1. Use last 2 digits of pin
+    int pinSuffix = 0;
+    size_t pinLen = strlen(gDeviceStatus.pin);
+    if (pinLen >= 2)
+        pinSuffix = (gDeviceStatus.pin[pinLen - 2] - '0') * 10 + (gDeviceStatus.pin[pinLen - 1] - '0');
+
+    // 2. Sum of ASCII values of HUD state, mod 100
+    uint16_t hudSum = 0;
+    for (size_t i = 0; i < strlen(gDeviceStatus.hudState); ++i)
+        hudSum += (uint8_t)gDeviceStatus.hudState[i];
+    hudSum %= 100;
+
+    // 3. Use debug flag directly
+    uint8_t debugFlag = gDeviceStatus.debugEnabled ? 1 : 0;
+
+    // 4. Parse firmware version: "X.Y" → X*100 + Y
+    uint16_t fwValue = 0;
+    int major = 0, minor = 0;
+    sscanf(gDeviceStatus.firmwareVersion, "%d.%d", &major, &minor);
+    fwValue = (major * 100) + minor;
+
+    // 5. Format into global string
+    snprintf(deviceID, sizeof(deviceID), "%02d%02d%d%03d",
+             pinSuffix, hudSum, debugFlag, fwValue);
+}
 
 /**
   * @brief SPI4 Initialization Function
@@ -261,7 +290,7 @@ static void __setDebugMode (eDebugMode_t debugMode)
 	if (__debugMode != debugMode)
 	{
 		__debugMode = debugMode;
-		if (debugMode && (0 == strncmp(&__value[0], "ENABLED", strlen("ENABLED")))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
+		if (debugMode && (0 == strncmp(&__value[0], deviceID, strlen(deviceID)))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
 		{
 			// D*** You SPI
 			debugFlagTouchGFX |= (1<<2);
@@ -281,6 +310,8 @@ static uint8_t __processPage(void)
 
 	uint32_t error = 0;
 	error = HAL_SPI_GetError( &hspi4 );
+
+	__computeSimpleDeviceID();
 
 	eConfigParseState_t parseState = KEY;
 //	__emptyPage[0] = 0xFF;
@@ -305,9 +336,9 @@ static uint8_t __processPage(void)
 			else if( __configString[i] == ';' )
 			{
 				parseState = KEY;
-				if( 0 == strncmp( &__key[0], "DEBUG_MODE", strlen("DEBUG_MODE") ) )
+				if( 0 == strncmp( &__key[0], "SECRET", strlen("SECRET") ) )
 				{
-					if( 0 == strncmp( &__value[0], "ENABLED", strlen("ENABLED") ) )
+					if( 0 == strncmp( &__value[0], deviceID, strlen(deviceID) ) )
 					{
 						__setDebugMode(DEBUG_ENABLED);
 					}
@@ -315,6 +346,31 @@ static uint8_t __processPage(void)
 					{
 						__setDebugMode(DEBUG_DISABLED);
 					}
+				}
+				// Stranger danger....
+				else if( 0 == strncmp( &__key[0], "PIN", strlen("PIN") ) )
+				{
+					memcpy(gDeviceStatus.pin, __value, sizeof(gDeviceStatus.pin) );
+				}
+				else if( 0 == strncmp( &__key[0], "HUD_STATE", strlen("HUD_STATE") ) )
+				{
+					memcpy(gDeviceStatus.hudState, __value, sizeof(gDeviceStatus.hudState) );
+				}
+				else if( 0 == strncmp( &__key[0], "DEBUG_MODE", strlen("DEBUG_MODE") ) )
+				{
+					//memcpy(gDeviceStatus.debugEnabled, __value, sizeof() );
+					if( 0 == strncmp( &__value[0], "ENABLED", strlen("ENABLED") ) )
+					{
+						gDeviceStatus.debugEnabled = 1;
+					}
+					else
+					{
+						gDeviceStatus.debugEnabled = 0;
+					}
+				}
+				else if( 0 == strncmp( &__key[0], "FIRMWARE_VERSION", strlen("FIRMWARE_VERSION") ) )
+				{
+					memcpy(gDeviceStatus.firmwareVersion, __value, sizeof(gDeviceStatus.firmwareVersion) );
 				}
 				memset( __key, 0, sizeof( __key ) );
 				memset( __value, 0, sizeof( __value ) );
@@ -524,6 +580,7 @@ void SPIChallengeThread( void * argument )
 	MX_SPI4_Init();
 	eSPIStatusMode_t spiStatus;
 
+	__computeSimpleDeviceID();
 	__spiQueue = xQueueCreate(5, sizeof(eSPIStatusMode_t));
 	memset( __emptyPage, 0xFF, sizeof(__emptyPage) ); // TODO: there has got to be a better way to do this
 
@@ -543,6 +600,7 @@ void SPIChallengeThread( void * argument )
 				{
 
 					// Write Empty Page
+					// Writing page wasn't working for some reason.
 					writeState = __writePage();
 
 				}

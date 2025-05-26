@@ -58,9 +58,13 @@ protected:
     /*
      * Wildcard Buffers
      */
-    static const uint16_t BGVAL_SIZE = 3;
+    static const uint16_t BGVAL_SIZE = 5;
     touchgfx::Unicode::UnicodeChar bgValBuffer[BGVAL_SIZE];
-    static const uint16_t ACTIVEINSULINVAL_SIZE = 5;
+    static const uint16_t DEBUGMODEVAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar debugModeValBuffer[DEBUGMODEVAL_SIZE];
+    static const uint16_t FIRMWAREVER_VAL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar FirmwareVer_ValBuffer[FIRMWAREVER_VAL_SIZE];
+    static const uint16_t ACTIVEINSULINVAL_SIZE = 10;
     touchgfx::Unicode::UnicodeChar activeInsulinValBuffer[ACTIVEINSULINVAL_SIZE];
     static const uint16_t SPI_FLAG_SIZE = 32;
     touchgfx::Unicode::UnicodeChar SPI_FLAGBuffer[SPI_FLAG_SIZE];
