@@ -22,6 +22,7 @@ uint16_t CanTask_BSValue = 175;
 uint8_t CanTask_isBSGood = 0;
 uint8_t CanTask_ToggleState = 0;
 extern uint8_t debugFlagTouchGFX;
+extern uint8_t debugFlagUpdated;
 
 // Local Variables
 extern CAN_HandleTypeDef hcan2;
@@ -101,9 +102,13 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 
                 // Act on value
                 if (value == 0xFFFF) {
-                    HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_SET); // for example
-                } else {
-                    HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
+            		debugFlagTouchGFX |= (1 << 3);
+            		debugFlagUpdated = 1;
+                }
+                else if( value == 0x0000 )
+                {
+            		debugFlagTouchGFX &= ~(1 << 3);
+            		debugFlagUpdated = 1;
                 }
 
                 // Optional: log or set flags
@@ -137,33 +142,29 @@ static void _CanInitialize(void) {
 	hcan2.Init.TransmitFifoPriority = DISABLE;
 //	hcan2.RxFifo0MsgPendingCallback = &CanRxMsgPendingCallback;
 
-	if (HAL_CAN_Init(&hcan2) != HAL_OK) {
-		Error_Handler();
-	}
+    if (HAL_CAN_Init(&hcan2) != HAL_OK) Error_Handler();
 
-	CAN_FilterTypeDef CanFilterConfig = {
-	    .FilterBank = 0,
-	    .FilterMode = CAN_FILTERMODE_IDMASK,
-	    .FilterScale = CAN_FILTERSCALE_32BIT,
-	    .FilterIdHigh = 0x0000,
-	    .FilterIdLow = 0x0000,
-	    .FilterMaskIdHigh = 0x0000,
-	    .FilterMaskIdLow = 0x0000,
-	    .FilterFIFOAssignment = CAN_RX_FIFO0,
-	    .FilterActivation = ENABLE,
-	    .SlaveStartFilterBank = 14
-	};
+    CAN_FilterTypeDef CanFilterConfig = {
+        .FilterBank = 14,  // Use later filter bank to avoid CAN1 conflicts
+        .FilterMode = CAN_FILTERMODE_IDMASK,
+        .FilterScale = CAN_FILTERSCALE_32BIT,
+        .FilterIdHigh = 0x0000,
+        .FilterIdLow = 0x0000,
+        .FilterMaskIdHigh = 0x0000,
+        .FilterMaskIdLow = 0x0000,
+        .FilterFIFOAssignment = CAN_RX_FIFO0,
+        .FilterActivation = ENABLE,
+        .SlaveStartFilterBank = 28
+    };
 
-	if (HAL_OK != HAL_CAN_ConfigFilter(&hcan2, &CanFilterConfig)) {
-		Error_Handler();
-	}
+    if (HAL_CAN_ConfigFilter(&hcan2, &CanFilterConfig) != HAL_OK) Error_Handler();
 
-	HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_FULL | CAN_IT_RX_FIFO0_MSG_PENDING);
+    if (HAL_CAN_Start(&hcan2) != HAL_OK) Error_Handler();
 
-	HAL_CAN_Start(&hcan2);
+    if (HAL_CAN_ActivateNotification(&hcan2, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK) Error_Handler();
 
-	HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 5, 0);
-	HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);
+    HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);
 }
 
 //void CanRxMsgPendingCallback(CAN_HandleTypeDef *hcan) {

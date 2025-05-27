@@ -16,7 +16,7 @@ public:
     virtual void tearDownScreen();
 
     // Button State Update Handlers
-    virtual void UpdateSPIDebugValue(uint16_t value);
+    virtual void UpdateSpiDebugValue(uint16_t value);
     void ToggleButtonClickVirtFunc( void );
 protected:
 };

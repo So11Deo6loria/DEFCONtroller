@@ -34,7 +34,7 @@ void MainMenuPresenter::UpdateBSValue(uint16_t)
 	//Do Nothing
 }
 
-void MainMenuPresenter::UpdateSpiDebugValue(uint16_t)
+void MainMenuPresenter::UpdateSpiDebugValue(uint16_t value)
 {
-    //Do Nothing
+	view.UpdateSpiDebugValue(value);
 }

@@ -46,7 +46,7 @@ void MainMenuView::ToggleButtonClickVirtFunc( void )
 
 }
 
-void MainMenuView::UpdateSPIDebugValue(uint16_t value)
+void MainMenuView::UpdateSpiDebugValue(uint16_t value)
 {
 	__UpdateDynamicData();
 }
@@ -88,4 +88,6 @@ void  MainMenuView::__UpdateDynamicData(void)
 		CAN_FLAG.resizeToCurrentText();
 		CAN_FLAG.invalidate();
 	}
+
+	Background.invalidate();
 }
