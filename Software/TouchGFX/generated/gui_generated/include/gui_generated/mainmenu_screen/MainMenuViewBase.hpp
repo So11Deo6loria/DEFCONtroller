@@ -9,11 +9,15 @@
 #include <gui/mainmenu_screen/MainMenuPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/Button.hpp>
-#include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/canvas/Shape.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <touchgfx/mixins/ClickListener.hpp>
 
 class MainMenuViewBase : public touchgfx::View<MainMenuPresenter>
 {
@@ -25,17 +29,7 @@ public:
     /*
      * Virtual Action Handlers
      */
-    virtual void DoorLockButtonPressed()
-    {
-        // Override and implement this function in MainMenu
-    }
-
-    virtual void AutoIgnitionButtonPressed()
-    {
-        // Override and implement this function in MainMenu
-    }
-
-    virtual void SearWarmerButtonPressed()
+    virtual void ToggleButtonClickVirtFunc()
     {
         // Override and implement this function in MainMenu
     }
@@ -50,21 +44,26 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image Background;
-    touchgfx::Button Status_Button;
-    touchgfx::ToggleButton SeatWarmer_Button;
-    touchgfx::ToggleButton AutoIgnition_Button;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
-    touchgfx::Button Commands_Button;
     touchgfx::Button Credits_Button;
-    touchgfx::ToggleButton DoorLock_Button;
     touchgfx::TextAreaWithOneWildcard CAN_FLAG;
+    touchgfx::ScalableImage scalableImage1;
+    touchgfx::TextArea textArea1;
+    touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
+    touchgfx::PainterRGB565 titleBackgroundPainter;
+    touchgfx::ButtonWithIcon enableButton;
+    touchgfx::TextAreaWithOneWildcard therapyStatusLabel;
+    touchgfx::ButtonWithIcon settingsButton;
+    touchgfx::TextArea settingsLabel;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t CAN_FLAG_SIZE = 32;
     touchgfx::Unicode::UnicodeChar CAN_FLAGBuffer[CAN_FLAG_SIZE];
+    static const uint16_t THERAPYSTATUSLABEL_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar therapyStatusLabelBuffer[THERAPYSTATUSLABEL_SIZE];
 
 private:
 

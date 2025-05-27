@@ -13,42 +13,12 @@
             "RelativeFilename": "Background_CLKGRD.png"
           },
           {
-            "Type": "Button",
-            "Name": "Status_Button",
-            "X": 135,
-            "Y": 59,
-            "Width": 80,
-            "Height": 80,
-            "Pressed": "Settings_Disengaged.png",
-            "Released": "Settings_Engaged.png"
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "SeatWarmer_Button",
-            "X": 135,
-            "Y": 153,
-            "Width": 80,
-            "Height": 80,
-            "Pressed": "SeatWarmer_Disengaged.png",
-            "Released": "SeatWarmer_Engaged.png"
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "AutoIgnition_Button",
-            "X": 25,
-            "Y": 153,
-            "Width": 80,
-            "Height": 80,
-            "Pressed": "AutoStartStop_Disengaged.png",
-            "Released": "AutoStartStop_Engaged.png"
-          },
-          {
             "Type": "Line",
             "Name": "line1",
             "X": 4,
             "Y": 242,
             "Width": 265,
-            "Height": 15,
+            "Height": 5,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -63,39 +33,20 @@
           },
           {
             "Type": "Button",
-            "Name": "Commands_Button",
-            "X": 90,
-            "Width": 150,
-            "Height": 50,
-            "Pressed": "DVHID.png",
-            "Released": "DVHID.png"
-          },
-          {
-            "Type": "Button",
             "Name": "Credits_Button",
             "X": 20,
-            "Y": 248,
+            "Y": 270,
             "Width": 200,
-            "Height": 80,
-            "Pressed": "protiviti-s.png",
-            "Released": "protiviti-s.png"
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "DoorLock_Button",
-            "X": 25,
-            "Y": 59,
-            "Width": 80,
-            "Height": 80,
-            "Pressed": "DoorLock_Disengaged.png",
-            "Released": "DoorLock_Engaged.png"
+            "Height": 25,
+            "Pressed": "solasecInlineWhite_25x200.png",
+            "Released": "solasecInlineWhite_25x200.png"
           },
           {
             "Type": "TextArea",
             "Name": "CAN_FLAG",
             "X": 3,
-            "Y": 280,
-            "Height": 31,
+            "Y": 213,
+            "Height": 24,
             "TextId": "CAN_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -107,6 +58,129 @@
               "UseBuffer": true,
               "BufferSize": 32
             }
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 163,
+            "Y": 7,
+            "Width": 64,
+            "Height": 50,
+            "Filename": "Recon_50x64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 37,
+            "Y": 12,
+            "Width": 108,
+            "Height": 41,
+            "TextId": "__SingleUse_3LG4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 137,
+              "Green": 75,
+              "Blue": 181
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Shape",
+            "Name": "titleBackground",
+            "X": -1,
+            "Width": 240,
+            "Height": 64,
+            "Points": [
+              {},
+              {
+                "X": 300.0
+              },
+              {
+                "X": 300.0,
+                "Y": 75.0
+              },
+              {
+                "Y": 75.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0,
+            "Alpha": 42,
+            "Clickable": true
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "enableButton",
+            "X": 5,
+            "Y": 78,
+            "Width": 230,
+            "Height": 60,
+            "Pressed": "__designer\\Dark_Buttons_Round_medium_pressed.png",
+            "Released": "__designer\\Dark_Buttons_Round_medium.png",
+            "IconPressed": "__designer\\Dark_Icons_Next_arrow_32.png",
+            "IconReleased": "__designer\\Dark_Icons_Next_arrow_32.png",
+            "IconX": 20,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 19,
+            "ButtonStyle": "Style7",
+            "IconStyle": "Icon39"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "therapyStatusLabel",
+            "X": 59,
+            "Y": 88,
+            "Width": 101,
+            "Height": 41,
+            "TextId": "enableFlag",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 136,
+              "Green": 202,
+              "Blue": 3
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "THERAPY_WC",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "settingsButton",
+            "X": 5,
+            "Y": 138,
+            "Width": 230,
+            "Height": 60,
+            "Pressed": "__designer\\Dark_Buttons_Round_medium_pressed.png",
+            "Released": "__designer\\Dark_Buttons_Round_medium.png",
+            "IconPressed": "__designer\\Dark_Icons_Settings_32.png",
+            "IconReleased": "__designer\\Dark_Icons_Settings_32.png",
+            "IconX": 12,
+            "IconY": 14,
+            "IconHeight": 32,
+            "IconWidth": 32,
+            "ButtonStyle": "Style7",
+            "IconStyle": "Icon57"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "settingsLabel",
+            "X": 59,
+            "Y": 148,
+            "Width": 99,
+            "Height": 41,
+            "TextId": "__SingleUse_LKC5",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 222,
+              "Green": 221,
+              "Blue": 221
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -114,7 +188,7 @@
             "InteractionName": "toStatus",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "Status_Button"
+              "TriggerComponent": "settingsButton"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -137,49 +211,14 @@
             }
           },
           {
-            "InteractionName": "toCommands",
+            "InteractionName": "Interaction1",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "Commands_Button"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "CommandsPage"
-            }
-          },
-          {
-            "InteractionName": "DoorLock_Toggle",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "DoorLock_Button"
+              "TriggerComponent": "enableButton"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "DoorLockButtonPressed"
-            }
-          },
-          {
-            "InteractionName": "AutoIgition_Toggle",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "AutoIgnition_Button"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "AutoIgnitionButtonPressed"
-            }
-          },
-          {
-            "InteractionName": "SeatWarmer_Toggle",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "SeatWarmer_Button"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "SearWarmerButtonPressed"
+              "FunctionName": "ToggleButtonClickVirtFunc"
             }
           }
         ]
@@ -191,25 +230,17 @@
           {
             "Type": "Image",
             "Name": "Background",
-            "X": -1,
             "Width": 240,
             "Height": 320,
             "RelativeFilename": "Background_CLKGRD.png"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "backButton_toMainScreen1",
-            "Width": 81,
-            "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toMainScreen"
-          },
-          {
             "Type": "TextArea",
             "Name": "Odometer_Text",
-            "X": 3,
-            "Y": 59,
-            "Width": 111,
-            "Height": 31,
+            "X": 5,
+            "Y": 80,
+            "Width": 37,
+            "Height": 24,
             "TextId": "__SingleUse_X3RZ",
             "TextRotation": "0",
             "Color": {
@@ -223,8 +254,8 @@
             "Type": "TextArea",
             "Name": "textArea1_1",
             "X": 4,
-            "Y": 83,
-            "Height": 31,
+            "Y": 86,
+            "Height": 30,
             "TextId": "__SingleUse_LB3X",
             "TextRotation": "0",
             "Color": {
@@ -236,47 +267,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "SelfDestruction_Text",
-            "X": 3,
-            "Y": 249,
-            "Width": 168,
-            "Height": 31,
-            "TextId": "__SingleUse_5ECD",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "SelfDestCount_Val",
-            "X": 3,
-            "Y": 280,
-            "Width": 128,
-            "Height": 31,
-            "TextId": "SelfDest_Val",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 26,
-              "Green": 255
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "SELFDESTRUCT_WC",
-              "UseBuffer": true,
-              "BufferSize": 32
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "VIN_Text",
-            "X": 3,
-            "Y": 156,
-            "Width": 49,
-            "Height": 31,
+            "Name": "debugModeText",
+            "X": 4,
+            "Y": 140,
+            "Width": 121,
+            "Height": 24,
             "TextId": "__SingleUse_JXJ0",
             "TextRotation": "0",
             "Color": {
@@ -288,27 +283,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "OilLife_Text",
-            "X": 3,
-            "Y": 123,
-            "Width": 99,
-            "Height": 31,
-            "TextId": "__SingleUse_1O1A",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "MilesToEmpty_Text",
-            "X": 3,
-            "Y": 91,
-            "Width": 159,
-            "Height": 31,
+            "Name": "activeInsulinText",
+            "X": 5,
+            "Y": 110,
+            "Width": 96,
+            "Height": 24,
             "TextId": "__SingleUse_RAGM",
             "TextRotation": "0",
             "Color": {
@@ -319,12 +298,138 @@
             "AutoSize": true
           },
           {
+            "Type": "TextArea",
+            "Name": "FirmwareVer_Text",
+            "X": 4,
+            "Y": 170,
+            "Width": 156,
+            "Height": 24,
+            "TextId": "__SingleUse_4DV2",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bgVal",
+            "X": 185,
+            "Y": 80,
+            "Width": 43,
+            "Height": 24,
+            "TextId": "bgVal",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "BG_VAL_WC",
+              "UseBuffer": true,
+              "BufferSize": 5
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "bgText",
+            "X": 209,
+            "Y": 84,
+            "Height": 30,
+            "TextId": "__SingleUse_CNYY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {}
+          },
+          {
+            "Type": "TextArea",
+            "Name": "debugModeVal",
+            "X": 152,
+            "Y": 140,
+            "Width": 76,
+            "Height": 24,
+            "TextId": "VIN_Val",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "VIN",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "FirmwareVer_Val",
+            "X": 202,
+            "Y": 170,
+            "Width": 26,
+            "Height": 24,
+            "TextId": "FirmVer_Val",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "FirmwareVer_Val",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "activeInsulinVal",
+            "X": 174,
+            "Y": 110,
+            "Width": 54,
+            "Height": 24,
+            "TextId": "activeInsulinVal",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "ACTIVE_INSULIN_WC",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "Credits_Button",
+            "X": 20,
+            "Y": 270,
+            "Width": 200,
+            "Height": 25,
+            "Pressed": "solasecInlineWhite_25x200.png",
+            "Released": "solasecInlineWhite_25x200.png"
+          },
+          {
             "Type": "Line",
             "Name": "line1",
-            "X": 3,
-            "Y": 232,
+            "X": 4,
+            "Y": 242,
             "Width": 265,
-            "Height": 15,
+            "Height": 5,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -338,160 +443,70 @@
             "LineEndingStyle": "Round"
           },
           {
-            "Type": "Button",
-            "Name": "Commands_Button",
-            "X": 90,
-            "Width": 150,
-            "Height": 50,
-            "Pressed": "DVHID.png",
-            "Released": "DVHID.png"
+            "Type": "Shape",
+            "Name": "titleBackground",
+            "Width": 240,
+            "Height": 64,
+            "Points": [
+              {},
+              {
+                "X": 300.0
+              },
+              {
+                "X": 300.0,
+                "Y": 75.0
+              },
+              {
+                "Y": 75.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0,
+            "Alpha": 42,
+            "Clickable": true
           },
           {
             "Type": "TextArea",
-            "Name": "FirmwareVer_Text",
-            "X": 3,
-            "Y": 191,
-            "Width": 184,
-            "Height": 31,
-            "TextId": "__SingleUse_4DV2",
+            "Name": "SPI_FLAG",
+            "X": 4,
+            "Y": 207,
+            "Height": 24,
+            "TextId": "SPI_FLAG",
             "TextRotation": "0",
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Odometer_Val",
-            "X": 172,
-            "Y": 59,
-            "Width": 63,
-            "Height": 31,
-            "TextId": "Odo_Val",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 255
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "Odometer_Val"
+              "TextId": "SPI_FLAG_WC",
+              "UseBuffer": true,
+              "BufferSize": 32
             }
           },
           {
-            "Type": "TextArea",
-            "Name": "Odometer_Text_1_2_1",
-            "X": 209,
-            "Y": 81,
-            "Height": 31,
-            "TextId": "__SingleUse_CNYY",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true,
-            "Wildcard1": {}
+            "Type": "CustomContainerInstance",
+            "Name": "backButton_toMainScreen1",
+            "X": 4,
+            "Y": 16,
+            "Width": 81,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton_toMainScreen"
           },
           {
-            "Type": "TextArea",
-            "Name": "OilLife_Val",
-            "X": 210,
-            "Y": 125,
-            "Width": 25,
-            "Height": 31,
-            "TextId": "OL_Val",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "OilLife_Val"
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "VIN_Val",
-            "X": 62,
-            "Y": 156,
-            "Width": 173,
-            "Height": 31,
-            "TextId": "VIN_Val",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "VIN"
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "FirmwareVer_Val",
-            "X": 203,
-            "Y": 191,
-            "Width": 31,
-            "Height": 31,
-            "TextId": "FirmVer_Val",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "FirmwareVer_Val"
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "MilesToEmpty_Val",
-            "X": 210,
-            "Y": 91,
-            "Width": 25,
-            "Height": 31,
-            "TextId": "MTE_Val",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "MilesToEmpty_Val"
-            }
+            "Type": "CustomContainerInstance",
+            "Name": "manufactureButtonScreen1",
+            "X": 176,
+            "Width": 64,
+            "Height": 64,
+            "CustomContainerDefinitionName": "ManufactureButtonScreen"
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "toCreditsFromStatus",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "Commands_Button"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "CommandsPage"
-            }
-          },
-          {
-            "InteractionName": "Interaction2",
-            "Trigger": {
-              "Type": "TriggerClicked"
+              "TriggerComponent": "Credits_Button"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -509,6 +524,7 @@
           {
             "Type": "Image",
             "Name": "Background",
+            "Y": 1,
             "Width": 240,
             "Height": 320,
             "RelativeFilename": "Background_CLKGRD.png"
@@ -517,9 +533,9 @@
             "Type": "TextArea",
             "Name": "ManufacturerInterface",
             "X": 7,
-            "Y": 54,
-            "Width": 237,
-            "Height": 31,
+            "Y": 68,
+            "Width": 128,
+            "Height": 24,
             "TextId": "__SingleUse_11TN",
             "TextRotation": "0",
             "Color": {
@@ -530,42 +546,10 @@
             "AutoSize": true
           },
           {
-            "Type": "Button",
-            "Name": "Commands_Button",
-            "X": 90,
-            "Width": 150,
-            "Height": 50,
-            "Pressed": "DVHID.png",
-            "Released": "DVHID.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "ManufacturerInterface_1",
-            "X": 7,
-            "Y": 95,
-            "Width": 172,
-            "Height": 31,
-            "TextId": "__SingleUse_IEKS",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "backButton_toMainScreen1",
-            "Width": 81,
-            "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toMainScreen"
-          },
-          {
             "Type": "Line",
             "Name": "line1",
             "X": 3,
-            "Y": 80,
+            "Y": 94,
             "Width": 265,
             "Height": 15,
             "Color": {
@@ -584,9 +568,9 @@
             "Type": "TextArea",
             "Name": "Line1_Text",
             "X": 7,
-            "Y": 119,
-            "Width": 187,
-            "Height": 28,
+            "Y": 105,
+            "Width": 181,
+            "Height": 24,
             "TextId": "__SingleUse_R9AK",
             "TextRotation": "0",
             "Color": {
@@ -600,9 +584,9 @@
             "Type": "TextArea",
             "Name": "Line2_Text",
             "X": 7,
-            "Y": 143,
-            "Width": 183,
-            "Height": 28,
+            "Y": 130,
+            "Width": 178,
+            "Height": 24,
             "TextId": "__SingleUse_HAW7",
             "TextRotation": "0",
             "Color": {
@@ -616,26 +600,10 @@
             "Type": "TextArea",
             "Name": "Line3_Text",
             "X": 7,
-            "Y": 167,
-            "Width": 226,
-            "Height": 28,
+            "Y": 155,
+            "Width": 222,
+            "Height": 24,
             "TextId": "__SingleUse_ZGOK",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "Line1_Text_1",
-            "X": 7,
-            "Y": 191,
-            "Width": 218,
-            "Height": 28,
-            "TextId": "__SingleUse_ANTM",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -648,9 +616,9 @@
             "Type": "TextArea",
             "Name": "Line1_Text_2",
             "X": 7,
-            "Y": 215,
-            "Width": 219,
-            "Height": 28,
+            "Y": 180,
+            "Width": 216,
+            "Height": 24,
             "TextId": "__SingleUse_2BLY",
             "TextRotation": "0",
             "Color": {
@@ -664,8 +632,8 @@
             "Type": "TextArea",
             "Name": "UART_FLAG",
             "X": 3,
-            "Y": 280,
-            "Height": 31,
+            "Y": 214,
+            "Height": 24,
             "TextId": "UART_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -677,9 +645,94 @@
               "UseBuffer": true,
               "BufferSize": 32
             }
+          },
+          {
+            "Type": "Button",
+            "Name": "Credits_Button",
+            "X": 20,
+            "Y": 270,
+            "Width": 200,
+            "Height": 25,
+            "Pressed": "solasecInlineWhite_25x200.png",
+            "Released": "solasecInlineWhite_25x200.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1_1",
+            "X": 4,
+            "Y": 242,
+            "Width": 265,
+            "Height": 5,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 225,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Shape",
+            "Name": "titleBackground",
+            "Width": 240,
+            "Height": 64,
+            "Points": [
+              {},
+              {
+                "X": 300.0
+              },
+              {
+                "X": 300.0,
+                "Y": 75.0
+              },
+              {
+                "Y": 75.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0,
+            "Alpha": 42,
+            "Clickable": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton_toMainScreen1",
+            "X": 4,
+            "Y": 16,
+            "Width": 81,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton_toMainScreen"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "X": 176,
+            "Y": 7,
+            "Width": 64,
+            "Height": 50,
+            "Filename": "Recon_50x64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "toCreditsFromCommands",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Credits_Button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "CreditsPage"
+            }
+          }
+        ]
       },
       {
         "Name": "CreditsPage",
@@ -695,10 +748,10 @@
           {
             "Type": "TextArea",
             "Name": "BroughtToYouBy_Text",
-            "X": 4,
-            "Y": 56,
-            "Width": 204,
-            "Height": 28,
+            "X": 11,
+            "Y": 68,
+            "Width": 197,
+            "Height": 24,
             "TextId": "__SingleUse_I348",
             "TextRotation": "0",
             "Color": {
@@ -712,9 +765,9 @@
             "Type": "TextArea",
             "Name": "Name1_Text",
             "X": 11,
-            "Y": 97,
-            "Width": 137,
-            "Height": 25,
+            "Y": 111,
+            "Width": 148,
+            "Height": 24,
             "TextId": "Name1_Text",
             "TextRotation": "0",
             "Color": {
@@ -728,9 +781,9 @@
             "Type": "TextArea",
             "Name": "Name2_Text",
             "X": 11,
-            "Y": 129,
-            "Width": 119,
-            "Height": 25,
+            "Y": 143,
+            "Width": 112,
+            "Height": 24,
             "TextId": "Name2_Text",
             "TextRotation": "0",
             "Color": {
@@ -741,41 +794,9 @@
             "AutoSize": true
           },
           {
-            "Type": "TextArea",
-            "Name": "Name3_Text",
-            "X": 11,
-            "Y": 160,
-            "Width": 123,
-            "Height": 25,
-            "TextId": "Name3_Text",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "Button",
-            "Name": "Commands_Button",
-            "X": 90,
-            "Width": 150,
-            "Height": 50,
-            "Pressed": "DVHID.png",
-            "Released": "DVHID.png"
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "backButton_toMainScreen1",
-            "Width": 81,
-            "Height": 32,
-            "CustomContainerDefinitionName": "BackButton_toMainScreen"
-          },
-          {
             "Type": "Line",
             "Name": "line1_1",
-            "Y": 88,
+            "Y": 93,
             "Width": 269,
             "Height": 18,
             "Color": {
@@ -792,26 +813,10 @@
           },
           {
             "Type": "TextArea",
-            "Name": "Name4_Text",
-            "X": 11,
-            "Y": 191,
-            "Width": 148,
-            "Height": 25,
-            "TextId": "__SingleUse_TI6C",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
             "Name": "JTAG_FLAG",
             "X": 3,
-            "Y": 280,
-            "Height": 25,
+            "Y": 209,
+            "Height": 24,
             "TextId": "JTAG_FLAG",
             "TextRotation": "0",
             "Color": {
@@ -823,23 +828,78 @@
               "UseBuffer": true,
               "BufferSize": 32
             }
+          },
+          {
+            "Type": "Button",
+            "Name": "Credits_Button",
+            "X": 20,
+            "Y": 270,
+            "Width": 200,
+            "Height": 25,
+            "Pressed": "solasecInlineWhite_25x200.png",
+            "Released": "solasecInlineWhite_25x200.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 4,
+            "Y": 242,
+            "Width": 265,
+            "Height": 5,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "StartX": 5,
+            "StartY": 5,
+            "EndX": 225,
+            "EndY": 5,
+            "LineWidth": 3,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Shape",
+            "Name": "titleBackground",
+            "Width": 240,
+            "Height": 64,
+            "Points": [
+              {},
+              {
+                "X": 300.0
+              },
+              {
+                "X": 300.0,
+                "Y": 75.0
+              },
+              {
+                "Y": 75.0
+              }
+            ],
+            "XScale": 1.0,
+            "YScale": 1.0,
+            "Alpha": 42,
+            "Clickable": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "backButton_toMainScreen1",
+            "X": 4,
+            "Y": 16,
+            "Width": 81,
+            "Height": 32,
+            "CustomContainerDefinitionName": "BackButton_toMainScreen"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "manufactureButtonScreen1",
+            "X": 176,
+            "Width": 64,
+            "Height": 64,
+            "CustomContainerDefinitionName": "ManufactureButtonScreen"
           }
         ],
-        "Interactions": [
-          {
-            "InteractionName": "toCommands",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "Commands_Button"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionSlide",
-              "ScreenTransitionDirection": "East",
-              "ActionComponent": "CommandsPage"
-            }
-          }
-        ]
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
@@ -852,8 +912,8 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 24,
-            "Width": 48,
-            "Height": 31,
+            "Width": 51,
+            "Height": 30,
             "TextId": "__SingleUse_NVER",
             "TextRotation": "0",
             "Color": {
@@ -960,8 +1020,8 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 24,
-            "Width": 48,
-            "Height": 31,
+            "Width": 51,
+            "Height": 30,
             "TextId": "__SingleUse_GWKF",
             "TextRotation": "0",
             "Color": {
@@ -1055,6 +1115,72 @@
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
               "ActionComponent": "StatusPage"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "ManufactureButtonScreen",
+        "Width": 64,
+        "Height": 64,
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "scalableImage1",
+            "Y": 7,
+            "Width": 64,
+            "Height": 50,
+            "Filename": "Recon_50x64.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "manufactureButton",
+            "Width": 64,
+            "Height": 64,
+            "Alpha": 0,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 240,
+                "Height": 64,
+                "BorderSize": 10,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "manufactureButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "North",
+              "ActionComponent": "CommandsPage"
             }
           }
         ]

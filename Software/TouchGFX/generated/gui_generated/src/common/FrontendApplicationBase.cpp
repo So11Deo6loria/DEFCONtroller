@@ -85,15 +85,15 @@ void FrontendApplicationBase::gotoStatusPageScreenSlideTransitionWestImpl()
 
 // CommandsPage
 
-void FrontendApplicationBase::gotoCommandsPageScreenSlideTransitionEast()
+void FrontendApplicationBase::gotoCommandsPageScreenSlideTransitionNorth()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCommandsPageScreenSlideTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCommandsPageScreenSlideTransitionNorthImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoCommandsPageScreenSlideTransitionEastImpl()
+void FrontendApplicationBase::gotoCommandsPageScreenSlideTransitionNorthImpl()
 {
-    touchgfx::makeTransition<CommandsPageView, CommandsPagePresenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<CommandsPageView, CommandsPagePresenter, touchgfx::SlideTransition<NORTH>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // CreditsPage

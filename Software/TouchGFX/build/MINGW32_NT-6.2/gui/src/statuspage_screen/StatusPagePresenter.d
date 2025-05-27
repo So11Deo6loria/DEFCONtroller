@@ -83,7 +83,10 @@ build/MINGW32_NT-6.2/gui/src/statuspage_screen/StatusPagePresenter.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Shape.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractShape.hpp
 
 gui/include/gui/statuspage_screen/StatusPageView.hpp:
 
@@ -252,3 +255,9 @@ generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreen
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Shape.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractShape.hpp:

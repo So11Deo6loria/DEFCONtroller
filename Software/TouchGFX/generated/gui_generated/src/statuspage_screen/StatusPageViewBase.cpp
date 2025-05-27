@@ -17,50 +17,76 @@ StatusPageViewBase::StatusPageViewBase() :
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    Background.setXY(-1, 0);
+    Background.setXY(0, 0);
     Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_CLKGRD_ID));
 
-    backButton_toMainScreen1.setXY(0, 0);
-
-    Odometer_Text.setXY(3, 59);
+    Odometer_Text.setXY(5, 80);
     Odometer_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Odometer_Text.setLinespacing(0);
     Odometer_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_X3RZ));
 
-    textArea1_1.setXY(4, 83);
+    textArea1_1.setXY(4, 86);
     textArea1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     textArea1_1.setLinespacing(0);
     textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LB3X));
 
-    SelfDestruction_Text.setXY(3, 249);
-    SelfDestruction_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    SelfDestruction_Text.setLinespacing(0);
-    SelfDestruction_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5ECD));
+    debugModeText.setXY(4, 140);
+    debugModeText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    debugModeText.setLinespacing(0);
+    debugModeText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JXJ0));
 
-    SelfDestCount_Val.setXY(3, 280);
-    SelfDestCount_Val.setColor(touchgfx::Color::getColorFromRGB(26, 255, 0));
-    SelfDestCount_Val.setLinespacing(0);
-    Unicode::snprintf(SelfDestCount_ValBuffer, SELFDESTCOUNT_VAL_SIZE, "%s", touchgfx::TypedText(T_SELFDESTRUCT_WC).getText());
-    SelfDestCount_Val.setWildcard(SelfDestCount_ValBuffer);
-    SelfDestCount_Val.resizeToCurrentText();
-    SelfDestCount_Val.setTypedText(touchgfx::TypedText(T_SELFDEST_VAL));
+    activeInsulinText.setXY(5, 110);
+    activeInsulinText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    activeInsulinText.setLinespacing(0);
+    activeInsulinText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RAGM));
 
-    VIN_Text.setXY(3, 156);
-    VIN_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    VIN_Text.setLinespacing(0);
-    VIN_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_JXJ0));
+    FirmwareVer_Text.setXY(4, 170);
+    FirmwareVer_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    FirmwareVer_Text.setLinespacing(0);
+    FirmwareVer_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4DV2));
 
-    OilLife_Text.setXY(3, 123);
-    OilLife_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    OilLife_Text.setLinespacing(0);
-    OilLife_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1O1A));
+    bgVal.setXY(185, 80);
+    bgVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    bgVal.setLinespacing(0);
+    Unicode::snprintf(bgValBuffer, BGVAL_SIZE, "%s", touchgfx::TypedText(T_BG_VAL_WC).getText());
+    bgVal.setWildcard(bgValBuffer);
+    bgVal.resizeToCurrentText();
+    bgVal.setTypedText(touchgfx::TypedText(T_BGVAL));
 
-    MilesToEmpty_Text.setXY(3, 91);
-    MilesToEmpty_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    MilesToEmpty_Text.setLinespacing(0);
-    MilesToEmpty_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RAGM));
+    bgText.setXY(209, 84);
+    bgText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    bgText.setLinespacing(0);
+    bgText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CNYY));
 
-    line1.setPosition(3, 232, 265, 15);
+    debugModeVal.setXY(152, 140);
+    debugModeVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    debugModeVal.setLinespacing(0);
+    Unicode::snprintf(debugModeValBuffer, DEBUGMODEVAL_SIZE, "%s", touchgfx::TypedText(T_VIN).getText());
+    debugModeVal.setWildcard(debugModeValBuffer);
+    debugModeVal.resizeToCurrentText();
+    debugModeVal.setTypedText(touchgfx::TypedText(T_VIN_VAL));
+
+    FirmwareVer_Val.setXY(202, 170);
+    FirmwareVer_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    FirmwareVer_Val.setLinespacing(0);
+    Unicode::snprintf(FirmwareVer_ValBuffer, FIRMWAREVER_VAL_SIZE, "%s", touchgfx::TypedText(T_FIRMWAREVER_VAL).getText());
+    FirmwareVer_Val.setWildcard(FirmwareVer_ValBuffer);
+    FirmwareVer_Val.resizeToCurrentText();
+    FirmwareVer_Val.setTypedText(touchgfx::TypedText(T_FIRMVER_VAL));
+
+    activeInsulinVal.setXY(174, 110);
+    activeInsulinVal.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    activeInsulinVal.setLinespacing(0);
+    Unicode::snprintf(activeInsulinValBuffer, ACTIVEINSULINVAL_SIZE, "%s", touchgfx::TypedText(T_ACTIVE_INSULIN_WC).getText());
+    activeInsulinVal.setWildcard(activeInsulinValBuffer);
+    activeInsulinVal.resizeToCurrentText();
+    activeInsulinVal.setTypedText(touchgfx::TypedText(T_ACTIVEINSULINVAL));
+
+    Credits_Button.setXY(20, 270);
+    Credits_Button.setBitmaps(touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID), touchgfx::Bitmap(BITMAP_SOLASECINLINEWHITE_25X200_ID));
+    Credits_Button.setAction(buttonCallback);
+
+    line1.setPosition(4, 242, 265, 5);
     line1Painter.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     line1.setPainter(line1Painter);
     line1.setStart(5, 5);
@@ -68,88 +94,61 @@ StatusPageViewBase::StatusPageViewBase() :
     line1.setLineWidth(3);
     line1.setLineEndingStyle(touchgfx::Line::ROUND_CAP_ENDING);
 
-    Commands_Button.setXY(90, 0);
-    Commands_Button.setBitmaps(touchgfx::Bitmap(BITMAP_DVHID_ID), touchgfx::Bitmap(BITMAP_DVHID_ID));
-    Commands_Button.setAction(buttonCallback);
+    titleBackground.setPosition(0, 0, 240, 64);
+    titleBackground.setAlpha(42);
+    titleBackground.setOrigin(0.000f, 0.000f);
+    titleBackground.setScale(1.000f, 1.000f);
+    titleBackground.setAngle(0.000f);
+    titleBackgroundPainter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    titleBackground.setPainter(titleBackgroundPainter);
+    const touchgfx::AbstractShape::ShapePoint<float> titleBackgroundPoints[4] = { { 0.000f, 0.000f }, { 300.000f, 0.000f }, { 300.000f, 75.000f }, { 0.000f, 75.000f } };
+    titleBackground.setShape(titleBackgroundPoints);
 
-    FirmwareVer_Text.setXY(3, 191);
-    FirmwareVer_Text.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    FirmwareVer_Text.setLinespacing(0);
-    FirmwareVer_Text.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4DV2));
+    SPI_FLAG.setXY(4, 207);
+    SPI_FLAG.setColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    SPI_FLAG.setLinespacing(0);
+    Unicode::snprintf(SPI_FLAGBuffer, SPI_FLAG_SIZE, "%s", touchgfx::TypedText(T_SPI_FLAG_WC).getText());
+    SPI_FLAG.setWildcard(SPI_FLAGBuffer);
+    SPI_FLAG.resizeToCurrentText();
+    SPI_FLAG.setTypedText(touchgfx::TypedText(T_SPI_FLAG));
 
-    Odometer_Val.setXY(172, 59);
-    Odometer_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Odometer_Val.setLinespacing(0);
-    Odometer_Val.setWildcard(touchgfx::TypedText(T_ODOMETER_VAL).getText());
-    Odometer_Val.resizeToCurrentText();
-    Odometer_Val.setTypedText(touchgfx::TypedText(T_ODO_VAL));
+    backButton_toMainScreen1.setXY(4, 16);
 
-    Odometer_Text_1_2_1.setXY(209, 81);
-    Odometer_Text_1_2_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    Odometer_Text_1_2_1.setLinespacing(0);
-    Odometer_Text_1_2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CNYY));
-
-    OilLife_Val.setXY(210, 125);
-    OilLife_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    OilLife_Val.setLinespacing(0);
-    OilLife_Val.setWildcard(touchgfx::TypedText(T_OILLIFE_VAL).getText());
-    OilLife_Val.resizeToCurrentText();
-    OilLife_Val.setTypedText(touchgfx::TypedText(T_OL_VAL));
-
-    VIN_Val.setXY(62, 156);
-    VIN_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    VIN_Val.setLinespacing(0);
-    VIN_Val.setWildcard(touchgfx::TypedText(T_VIN).getText());
-    VIN_Val.resizeToCurrentText();
-    VIN_Val.setTypedText(touchgfx::TypedText(T_VIN_VAL));
-
-    FirmwareVer_Val.setXY(203, 191);
-    FirmwareVer_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    FirmwareVer_Val.setLinespacing(0);
-    FirmwareVer_Val.setWildcard(touchgfx::TypedText(T_FIRMWAREVER_VAL).getText());
-    FirmwareVer_Val.resizeToCurrentText();
-    FirmwareVer_Val.setTypedText(touchgfx::TypedText(T_FIRMVER_VAL));
-
-    MilesToEmpty_Val.setXY(210, 91);
-    MilesToEmpty_Val.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    MilesToEmpty_Val.setLinespacing(0);
-    MilesToEmpty_Val.setWildcard(touchgfx::TypedText(T_MILESTOEMPTY_VAL).getText());
-    MilesToEmpty_Val.resizeToCurrentText();
-    MilesToEmpty_Val.setTypedText(touchgfx::TypedText(T_MTE_VAL));
+    manufactureButtonScreen1.setXY(176, 0);
 
     add(__background);
     add(Background);
-    add(backButton_toMainScreen1);
     add(Odometer_Text);
     add(textArea1_1);
-    add(SelfDestruction_Text);
-    add(SelfDestCount_Val);
-    add(VIN_Text);
-    add(OilLife_Text);
-    add(MilesToEmpty_Text);
-    add(line1);
-    add(Commands_Button);
+    add(debugModeText);
+    add(activeInsulinText);
     add(FirmwareVer_Text);
-    add(Odometer_Val);
-    add(Odometer_Text_1_2_1);
-    add(OilLife_Val);
-    add(VIN_Val);
+    add(bgVal);
+    add(bgText);
+    add(debugModeVal);
     add(FirmwareVer_Val);
-    add(MilesToEmpty_Val);
+    add(activeInsulinVal);
+    add(Credits_Button);
+    add(line1);
+    add(titleBackground);
+    add(SPI_FLAG);
+    add(backButton_toMainScreen1);
+    add(manufactureButtonScreen1);
 }
 
 void StatusPageViewBase::setupScreen()
 {
     backButton_toMainScreen1.initialize();
+    manufactureButtonScreen1.initialize();
 }
 
 void StatusPageViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &Commands_Button)
+    if (&src == &Credits_Button)
     {
-        //Interaction1
-        //When Commands_Button clicked change screen to CommandsPage
-        //Go to CommandsPage with screen transition towards East
-        application().gotoCommandsPageScreenSlideTransitionEast();
+        //toCreditsFromStatus
+        //When Credits_Button clicked change screen to CreditsPage
+        //Go to CreditsPage with screen transition towards East
+        application().gotoCreditsPageScreenSlideTransitionEast();
     }
 }

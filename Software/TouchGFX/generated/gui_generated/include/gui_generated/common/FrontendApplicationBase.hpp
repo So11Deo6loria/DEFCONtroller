@@ -31,7 +31,7 @@ public:
     void gotoStatusPageScreenSlideTransitionWest();
 
     // CommandsPage
-    void gotoCommandsPageScreenSlideTransitionEast();
+    void gotoCommandsPageScreenSlideTransitionNorth();
 
     // CreditsPage
     void gotoCreditsPageScreenSlideTransitionEast();
@@ -52,7 +52,7 @@ protected:
     void gotoStatusPageScreenSlideTransitionWestImpl();
 
     // CommandsPage
-    void gotoCommandsPageScreenSlideTransitionEastImpl();
+    void gotoCommandsPageScreenSlideTransitionNorthImpl();
 
     // CreditsPage
     void gotoCreditsPageScreenSlideTransitionEastImpl();

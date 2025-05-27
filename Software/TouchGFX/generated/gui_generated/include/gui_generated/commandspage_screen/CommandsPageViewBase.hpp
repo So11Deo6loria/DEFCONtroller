@@ -10,11 +10,14 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/Button.hpp>
-#include <gui/containers/BackButton_toMainScreen.hpp>
 #include <touchgfx/widgets/canvas/Line.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/Button.hpp>
+#include <touchgfx/widgets/canvas/Shape.hpp>
+#include <gui/containers/BackButton_toMainScreen.hpp>
+#include <touchgfx/widgets/ScalableImage.hpp>
+#include <touchgfx/mixins/ClickListener.hpp>
 
 class CommandsPageViewBase : public touchgfx::View<CommandsPagePresenter>
 {
@@ -34,17 +37,20 @@ protected:
     touchgfx::Box __background;
     touchgfx::Image Background;
     touchgfx::TextArea ManufacturerInterface;
-    touchgfx::Button Commands_Button;
-    touchgfx::TextArea ManufacturerInterface_1;
-    BackButton_toMainScreen backButton_toMainScreen1;
     touchgfx::Line line1;
     touchgfx::PainterRGB565 line1Painter;
     touchgfx::TextArea Line1_Text;
     touchgfx::TextArea Line2_Text;
     touchgfx::TextArea Line3_Text;
-    touchgfx::TextArea Line1_Text_1;
     touchgfx::TextArea Line1_Text_2;
     touchgfx::TextAreaWithOneWildcard UART_FLAG;
+    touchgfx::Button Credits_Button;
+    touchgfx::Line line1_1;
+    touchgfx::PainterRGB565 line1_1Painter;
+    touchgfx::ClickListener< touchgfx::Shape<4> > titleBackground;
+    touchgfx::PainterRGB565 titleBackgroundPainter;
+    BackButton_toMainScreen backButton_toMainScreen1;
+    touchgfx::ScalableImage scalableImage1;
 
     /*
      * Wildcard Buffers
@@ -53,6 +59,16 @@ protected:
     touchgfx::Unicode::UnicodeChar UART_FLAGBuffer[UART_FLAG_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<CommandsPageViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
     /*
      * Canvas Buffer Size

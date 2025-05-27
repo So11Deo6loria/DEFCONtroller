@@ -9,6 +9,7 @@
 #include "string.h"
 #include "FreeRTOS.h"
 #include "queue.h"
+#include "device_status.h"
 
 
 // Global Variables for Use with TouchGFX.
@@ -19,13 +20,11 @@ char SPISoftwareVersion[16] = "0.0.0";
 uint8_t debugFlagTouchGFX = 0; /// 0 = use to communicate with touchgfx. Setting the initial valu here?
 uint8_t debugFlagUpdated = 0; /// 0 = false use to communicate with touchgfx
 uint8_t SPIExternalFlashUpdated = 0;
-
+char deviceID[9] = {0};  // 8-digit string + null terminator
 
 // Local Items.
-static uint8_t __selfDestructDisabledString[256] = "ODOMETER=89109;MILES_TO_EMPTY=31;OIL_LIFE=42;VIN=G02D3FC0N2023;FIRMWARE_VERSION=0.3;SELF_DESTRUCT=DISABLED;";
-static uint8_t __selfDestructEnabledString[256] = "ODOMETER=89109;MILES_TO_EMPTY=31;OIL_LIFE=42;VIN=G02D3FC0N2023;FIRMWARE_VERSION=0.3;SELF_DESTRUCT=ENABLED;";
-static uint8_t __debugDisabledString[256] = "MODEL=G312432B;SERIAL=23BD-29AF;VERSION=0.1.2;LOGS=ENCRYPTED;DEBUG=0;BLUETOOTH=MDM1234;PIN=5678";
-static uint8_t __debugEnabledString[256]  = "MODEL=G312432B;SERIAL=23BD-29AF;VERSION=0.1.2;LOGS=ENCRYPTED;DEBUG=1;BLUETOOTH=MDM1234;PIN=5678";
+static uint8_t __debugModeDisabledString[256] = "PIN=2005;HUD_STATE=REcon;DEBUG_MODE=DISABLED;FIRMWARE_VERSION=0.3;";
+static uint8_t __debugModeEnabledString[256] = "PIN=2005;HUD_STATE=REcon;DEBUG_MODE=ENABLED;FIRMWARE_VERSION=0.3;";
 static uint8_t __emptyPage[256];
 
 #define STM25P80_ID 0x202014
@@ -75,6 +74,34 @@ static uint8_t __key[32];
 static uint8_t __value[32];
 
 HAL_SPI_StateTypeDef halSpiState;
+
+static void __computeSimpleDeviceID(void)
+{
+    // 1. Use last 2 digits of pin
+    int pinSuffix = 0;
+    size_t pinLen = strlen(gDeviceStatus.pin);
+    if (pinLen >= 2)
+        pinSuffix = (gDeviceStatus.pin[pinLen - 2] - '0') * 10 + (gDeviceStatus.pin[pinLen - 1] - '0');
+
+    // 2. Sum of ASCII values of HUD state, mod 100
+    uint16_t hudSum = 0;
+    for (size_t i = 0; i < strlen(gDeviceStatus.hudState); ++i)
+        hudSum += (uint8_t)gDeviceStatus.hudState[i];
+    hudSum %= 100;
+
+    // 3. Use debug flag directly
+    uint8_t debugFlag = gDeviceStatus.debugEnabled ? 1 : 0;
+
+    // 4. Parse firmware version: "X.Y" → X*100 + Y
+    uint16_t fwValue = 0;
+    int major = 0, minor = 0;
+    sscanf(gDeviceStatus.firmwareVersion, "%d.%d", &major, &minor);
+    fwValue = (major * 100) + minor;
+
+    // 5. Format into global string
+    snprintf(deviceID, sizeof(deviceID), "%02d%02d%d%03d",
+             pinSuffix, hudSum, debugFlag, fwValue);
+}
 
 /**
   * @brief SPI4 Initialization Function
@@ -220,6 +247,7 @@ static uint8_t __readID(void)
 	__resetBuffers();
 	__txData[0] = 0x9F;
 	__spiTransactionIT(4);
+	return 1;
 }
 
 static void __readData(void)
@@ -262,9 +290,9 @@ static void __setDebugMode (eDebugMode_t debugMode)
 	if (__debugMode != debugMode)
 	{
 		__debugMode = debugMode;
-		if (debugMode && (0 == strncmp(&__value[0], "ENABLED", strlen("ENABLED")))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
+		if (debugMode && (0 == strncmp(&__value[0], deviceID, strlen(deviceID)))) // If the Debug Value is not set in our buffer, but we have mysteriously got here...
 		{
-			// Damn You SPI
+			// D*** You SPI
 			debugFlagTouchGFX |= (1<<2);
 			// Notify TouchGFX
 			debugFlagUpdated = 1; //flag set to true
@@ -283,15 +311,22 @@ static uint8_t __processPage(void)
 	uint32_t error = 0;
 	error = HAL_SPI_GetError( &hspi4 );
 
+	__computeSimpleDeviceID();
+
 	eConfigParseState_t parseState = KEY;
-	if( 0 == memcmp( &__rxData[__txDataIndex], &__emptyPage, sizeof( __emptyPage ) ) )
+//	__emptyPage[0] = 0xFF;
+//	__emptyPage[1] = 0xBF;
+	if( 0 == memcmp( &__rxData[__txDataIndex], &__emptyPage, 128 ) )
 	{
 		// Should only be when empty or that weird 0xFE thing.
 		return 0;
 	}
 	else
 	{
-		memcpy( &__configString, &__rxData[__txDataIndex], strlen( &__rxData[__txDataIndex] ) );
+		size_t maxLen = strnlen((char *)&__rxData[__txDataIndex], sizeof(__rxData) - __txDataIndex);
+		memcpy(__configString, &__rxData[__txDataIndex], maxLen);
+		__configString[maxLen] = '\0';  // Ensure null-termination
+
 		for( i = 0; i < strlen(__configString); i++ )
 		{
 			if( __configString[i] == '=' )
@@ -301,9 +336,9 @@ static uint8_t __processPage(void)
 			else if( __configString[i] == ';' )
 			{
 				parseState = KEY;
-				if( 0 == strncmp( &__key[0], "SELF_DESTRUCT", strlen("SELF_DESTRUCT") ) )
+				if( 0 == strncmp( &__key[0], "SECRET", strlen("SECRET") ) )
 				{
-					if( 0 == strncmp( &__value[0], "ENABLED", strlen("ENABLED") ) )
+					if( 0 == strncmp( &__value[0], deviceID, strlen(deviceID) ) )
 					{
 						__setDebugMode(DEBUG_ENABLED);
 					}
@@ -311,6 +346,31 @@ static uint8_t __processPage(void)
 					{
 						__setDebugMode(DEBUG_DISABLED);
 					}
+				}
+				// Stranger danger....
+				else if( 0 == strncmp( &__key[0], "PIN", strlen("PIN") ) )
+				{
+					memcpy(gDeviceStatus.pin, __value, sizeof(gDeviceStatus.pin) );
+				}
+				else if( 0 == strncmp( &__key[0], "HUD_STATE", strlen("HUD_STATE") ) )
+				{
+					memcpy(gDeviceStatus.hudState, __value, sizeof(gDeviceStatus.hudState) );
+				}
+				else if( 0 == strncmp( &__key[0], "DEBUG_MODE", strlen("DEBUG_MODE") ) )
+				{
+					//memcpy(gDeviceStatus.debugEnabled, __value, sizeof() );
+					if( 0 == strncmp( &__value[0], "ENABLED", strlen("ENABLED") ) )
+					{
+						gDeviceStatus.debugEnabled = 1;
+					}
+					else
+					{
+						gDeviceStatus.debugEnabled = 0;
+					}
+				}
+				else if( 0 == strncmp( &__key[0], "FIRMWARE_VERSION", strlen("FIRMWARE_VERSION") ) )
+				{
+					memcpy(gDeviceStatus.firmwareVersion, __value, sizeof(gDeviceStatus.firmwareVersion) );
 				}
 				memset( __key, 0, sizeof( __key ) );
 				memset( __value, 0, sizeof( __value ) );
@@ -382,10 +442,13 @@ static void __writeData(uint8_t * data, uint8_t firstPacket)
 	}
 }
 
-static void sendStatusToQueueFromISR(eSPIReadState_t readState)
+static void sendStatusToQueueFromISR(eSPIStatusMode_t spiStatus)
 {
-    xQueueGenericSendFromISR(__spiQueue, &readState, pdFALSE, pdFALSE);
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    xQueueSendFromISR(__spiQueue, &spiStatus, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
+
 
 static eSPIWriteState_t __writePage(void)
 {
@@ -408,14 +471,14 @@ static eSPIWriteState_t __writePage(void)
         	// First Write
         	if( __writePageIndex == 0 )
         	{
-        		__writeData(&__selfDestructDisabledString[__writePageIndex], 1);
+        		__writeData(&__debugModeDisabledString[__writePageIndex], 1);
         		__writePageIndex += 2;
         	}
         	else
         	{
-        		__writeData(&__selfDestructDisabledString[__writePageIndex], 0);
+        		__writeData(&__debugModeDisabledString[__writePageIndex], 0);
         		__writePageIndex += 2;
-        		if( __writePageIndex == strlen(__selfDestructDisabledString) )
+        		if( __writePageIndex == strlen(__debugModeDisabledString) )
         		{
             		__spiWriteState = SPI_WRITEPAGE_WRITE_DISABLE;
         		}
@@ -448,6 +511,7 @@ static eSPIReadState_t __readPage(void)
 			__readID();
 			break;
 		case SPI_READPAGE_READID:
+//			deviceID = (__rxData[3] << 16) | (__rxData[2] << 8) | __rxData[1];
 			deviceID = (__rxData[1] << 16) | (__rxData[2] << 8) | __rxData[3];
 			if( deviceID == SST_DEVICE_ID )
 			{
@@ -456,18 +520,17 @@ static eSPIReadState_t __readPage(void)
 			}
 			else
 			{
-				__spiStatus = SPI_READPAGE_ERROR;
+				__spiStatus = SPI_ERROR;
 				sendStatusToQueueFromISR(__spiStatus);
 			}
 			break;
 		case SPI_READPAGE_READPAGE:
-		{
 			__spiStatus = SPI_SUCCESS;
 			sendStatusToQueueFromISR(__spiStatus);
-		}
+			break;
 		case SPI_READPAGE_ERROR:
 		default:
-			__spiStatus = SPI_READPAGE_ERROR;
+			__spiStatus = SPI_ERROR;
 			sendStatusToQueueFromISR(__spiStatus);
 	}
 }
@@ -512,9 +575,12 @@ void SPIChallengeThread( void * argument )
 {
 	uint8_t test = 0;
 //	__setDebugMode(1);
+	eSPIWriteState_t writeState = SPI_WRITEPAGE_IDLE;
+	eSPIReadState_t readState = SPI_READPAGE_IDLE;
 	MX_SPI4_Init();
 	eSPIStatusMode_t spiStatus;
 
+	__computeSimpleDeviceID();
 	__spiQueue = xQueueCreate(5, sizeof(eSPIStatusMode_t));
 	memset( __emptyPage, 0xFF, sizeof(__emptyPage) ); // TODO: there has got to be a better way to do this
 
@@ -523,20 +589,23 @@ void SPIChallengeThread( void * argument )
 	for( ;; )
 	{
 		__spiReadState = SPI_READPAGE_IDLE;
-		__readPage();
-		if( pdTRUE == xQueueReceive(__spiQueue, &spiStatus, 2023))
+		readState = __readPage();
+		configASSERT(__spiQueue != NULL);
+		if( pdTRUE == xQueueReceive(__spiQueue, &spiStatus, 2025))
 		{
+			taskYIELD();
 			if( spiStatus == SPI_SUCCESS )
 			{
 				if( 0 == __processPage() )
 				{
 
 					// Write Empty Page
-					__writePage();
+					// Writing page wasn't working for some reason.
+					writeState = __writePage();
 
 				}
 			}
-			vTaskDelay(2023);
+			vTaskDelay(2025);
 		}
 	}
 }

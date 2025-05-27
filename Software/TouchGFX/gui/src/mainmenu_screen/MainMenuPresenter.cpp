@@ -28,27 +28,13 @@ void MainMenuPresenter::UpdateTempValue(void)
     //Do Nothing
 }
 
-void MainMenuPresenter::UpdateDoorLock_Status(void)
-{
-	view.UpdateDoorLockStatus();
-}
-
-void MainMenuPresenter::UpdateSeatWarmer_Status(void)
-{
-	view.UpdateSeatWarmerStatus();
-}
-
-void MainMenuPresenter::UpdateAutoIgnition_Status(void)
-{
-	view.UpdateAutoIgnitionStatus();
-}
 
 void MainMenuPresenter::UpdateBSValue(uint16_t)
 {
 	//Do Nothing
 }
 
-void MainMenuPresenter::UpdateSpiDebugValue(uint16_t)
+void MainMenuPresenter::UpdateSpiDebugValue(uint16_t value)
 {
-    //Do Nothing
+	view.UpdateSpiDebugValue(value);
 }

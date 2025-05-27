@@ -47,10 +47,6 @@ build/MINGW32_NT-6.2/gui/src/creditspage_screen/CreditsPagePresenter.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- gui/include/gui/containers/BackButton_toMainScreen.hpp \
- generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreenBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp \
@@ -65,6 +61,11 @@ build/MINGW32_NT-6.2/gui/src/creditspage_screen/CreditsPagePresenter.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ gui/include/gui/containers/BackButton_toMainScreen.hpp \
+ generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreenBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AnimatedImageButtonStyle.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/AbstractButtonContainer.hpp \
@@ -81,9 +82,11 @@ build/MINGW32_NT-6.2/gui/src/creditspage_screen/CreditsPagePresenter.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/ToggleButtonTrigger.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TouchButtonTrigger.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Shape.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractShape.hpp
 
 gui/include/gui/creditspage_screen/CreditsPageView.hpp:
 
@@ -179,14 +182,6 @@ gui/include/gui/model/ModelListener.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
-
-gui/include/gui/containers/BackButton_toMainScreen.hpp:
-
-generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreenBase.hpp:
-
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:
@@ -214,6 +209,16 @@ generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreen
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+
+gui/include/gui/containers/BackButton_toMainScreen.hpp:
+
+generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreenBase.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/Buttons.hpp:
 
@@ -247,8 +252,12 @@ generated/gui_generated/include/gui_generated/containers/BackButton_toMainScreen
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
-
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Shape.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractShape.hpp:

@@ -6,6 +6,27 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="SPI_FLAG_WC" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB" />
+      </Text>
+      <Text Id="SPI_FLAG" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="THERAPY_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Armed</Translation>
+      </Text>
+      <Text Id="enableFlag2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Enabled</Translation>
+      </Text>
+      <Text Id="__SingleUse_LKC5" Alignment="Left" TypographyId="ExtraLarge">
+        <Translation Language="GB">Config</Translation>
+      </Text>
+      <Text Id="enableFlag" Alignment="Left" TypographyId="ExtraLarge">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3LG4" Alignment="Center" TypographyId="ExtraLarge">
+        <Translation Language="GB">SHIELD</Translation>
+      </Text>
       <Text Id="UART_FLAG_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
       </Text>
@@ -18,14 +39,8 @@
       <Text Id="CAN_FLAG" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_TI6C" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">@patelpratham11</Translation>
-      </Text>
-      <Text Id="__SingleUse_2BLY" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">(autoignition) -&gt; Button</Translation>
-      </Text>
-      <Text Id="__SingleUse_ANTM" Alignment="Left" TypographyId="Large">
-        <Translation Language="GB">(seatwarmer) -&gt; Button</Translation>
+      <Text Id="__SingleUse_2BLY" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">(payload) -&gt; Arm Paylod</Translation>
       </Text>
       <Text Id="JTAG_FLAG_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
@@ -33,10 +48,10 @@
       <Text Id="JTAG_FLAG" Alignment="Center" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_ZGOK" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(config) -&gt; Device Config</Translation>
       </Text>
-      <Text Id="__SingleUse_HAW7" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_HAW7" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(info) -&gt; Device Info</Translation>
       </Text>
       <Text Id="SelfDest_Val" Alignment="Left" TypographyId="Small">
@@ -45,49 +60,46 @@
       <Text Id="__SingleUse_AYUI" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Back</Translation>
       </Text>
-      <Text Id="MilesToEmpty_Val" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">31</Translation>
+      <Text Id="ACTIVE_INSULIN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">REcon</Translation>
       </Text>
-      <Text Id="MTE_Val" Alignment="Right" TypographyId="Default">
+      <Text Id="activeInsulinVal" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_4DV2" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_4DV2" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Firmware Version:</Translation>
       </Text>
-      <Text Id="__SingleUse_1O1A" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Oil Life %:</Translation>
+      <Text Id="__SingleUse_X3RZ" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Pin: </Translation>
       </Text>
-      <Text Id="__SingleUse_X3RZ" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Odometer:</Translation>
-      </Text>
-      <Text Id="__SingleUse_RAGM" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Miles to Empty:</Translation>
+      <Text Id="__SingleUse_RAGM" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">HUD State:</Translation>
       </Text>
       <Text Id="FirmwareVer_Val" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">0.3</Translation>
       </Text>
-      <Text Id="FirmVer_Val" Alignment="Left" TypographyId="Default">
+      <Text Id="FirmVer_Val" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="VIN" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">G02D3FC0N2023</Translation>
+        <Translation Language="GB">Disabled</Translation>
       </Text>
-      <Text Id="VIN_Val" Alignment="Right" TypographyId="Default">
+      <Text Id="VIN_Val" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="Odo_Text" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Odometer:</Translation>
       </Text>
       <Text Id="OilLife_Val" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">42</Translation>
+        <Translation Language="GB">TBD</Translation>
       </Text>
       <Text Id="OL_Val" Alignment="Right" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
-      <Text Id="Odometer_Val" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">89109</Translation>
+      <Text Id="BG_VAL_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">2005</Translation>
       </Text>
-      <Text Id="Odo_Val" Alignment="Right" TypographyId="Default">
+      <Text Id="bgVal" Alignment="Right" TypographyId="Small">
         <Translation Language="GB">&lt;&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_CNYY" Alignment="Right" TypographyId="Default">
@@ -108,11 +120,8 @@
       <Text Id="OdometerVal" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">89109</Translation>
       </Text>
-      <Text Id="__SingleUse_R9AK" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_R9AK" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">(help) -&gt; Help Menu</Translation>
-      </Text>
-      <Text Id="__SingleUse_IEKS" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Uart Commands:</Translation>
       </Text>
       <Text Id="MTE_Text" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Miles to Empty:</Translation>
@@ -120,8 +129,8 @@
       <Text Id="OilLife_Text" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Oil Life (%):</Translation>
       </Text>
-      <Text Id="__SingleUse_JXJ0" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">VIN: </Translation>
+      <Text Id="__SingleUse_JXJ0" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">Debug Mode:</Translation>
       </Text>
       <Text Id="RadioStation_WildCard" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Off</Translation>
@@ -133,25 +142,22 @@
         <Translation Language="GB">@ocrouse2020</Translation>
       </Text>
       <Text Id="Name2_Text" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">@Nate_Sm1th</Translation>
+        <Translation Language="GB">@mdomanic</Translation>
       </Text>
       <Text Id="Name1_Text" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">@So11Deo6loria</Translation>
       </Text>
-      <Text Id="__SingleUse_I348" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_I348" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">BROUGHT TO YOU BY:</Translation>
       </Text>
       <Text Id="__SingleUse_11TN" Alignment="Left" TypographyId="Small">
-        <Translation Language="GB">Manufacturer Interface</Translation>
+        <Translation Language="GB">COM Interface</Translation>
       </Text>
       <Text Id="SELFDESTRUCT_WC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Not Initiated</Translation>
       </Text>
       <Text Id="SelfDestructCountd_Text" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_5ECD" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Self Destruction:</Translation>
       </Text>
       <Text Id="__SingleUse_LB3X" Alignment="Left" TypographyId="Default">
         <Translation Language="GB" />
@@ -242,8 +248,8 @@
   <Typographies>
     <Typography Id="Default" Font="calibri.ttf" Size="25" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="calibri.ttf" Size="23" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
-    <Typography Id="Small" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="ExtraLarge" Font="calibri.ttf" Size="34" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890" />
+    <Typography Id="Small" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,._" />
+    <Typography Id="ExtraLarge" Font="calibri.ttf" Size="34" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="A-z" />
     <Typography Id="Title" Font="calibril.ttf" Size="48" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="MainPageTitle" Font="calibri.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,." />
     <Typography Id="SPIWildcards" Font="calibri.ttf" Size="24" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="1234567890abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ,._" />

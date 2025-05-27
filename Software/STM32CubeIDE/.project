@@ -350,6 +350,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/mainmenu_screen/MainMenuViewBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/ManufactureButtonScreenBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/ManufactureButtonScreenBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/StatusPageViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/statuspage_screen/StatusPageViewBase.cpp</locationURI>
@@ -405,69 +410,29 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_AutoStartStop_Disengaged.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_AutoStartStop_Disengaged.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_AutoStartStop_Engaged.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_AutoStartStop_Engaged.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_BHVL_tiny.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_BHVL_tiny.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_Background_CLKGRD.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Background_CLKGRD.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_DVHID.cpp</name>
+			<name>Application/User/generated/image_Dark_Buttons_Round_medium.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_DVHID.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Buttons_Round_medium.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_DoorLock_Disengaged.cpp</name>
+			<name>Application/User/generated/image_Dark_Buttons_Round_medium_pressed.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_DoorLock_Disengaged.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Buttons_Round_medium_pressed.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_DoorLock_Engaged.cpp</name>
+			<name>Application/User/generated/image_Dark_Icons_Next_arrow_32.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_DoorLock_Engaged.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Icons_Next_arrow_32.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_Headlight.cpp</name>
+			<name>Application/User/generated/image_Dark_Icons_Settings_32.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Headlight.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_IOT_Village.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_IOT_Village.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_SeatWarmer_Disengaged.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_SeatWarmer_Disengaged.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_SeatWarmer_Engaged.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_SeatWarmer_Engaged.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_Settings_Disengaged.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Settings_Disengaged.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_Settings_Engaged.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Settings_Engaged.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__designer/image_Dark_Icons_Settings_32.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_icons8-error-48.cpp</name>
@@ -483,17 +448,27 @@
 			<name>Application/User/generated/image_info-24.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_info-24.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_protiviti-s.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_protiviti-s.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_protiviti-wss.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_protiviti-wss.cpp</locationURI>
-		</link>
+        </link>
+        <link>
+            <name>Application/User/generated/image_recon_50x64.cpp</name>
+            <type>1</type>
+            <locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_recon_50x64.cpp</locationURI>
+        </link>
+        <link>
+            <name>Application/User/generated/image_solasecinlinewhite_25x200.cpp</name>
+            <type>1</type>
+            <locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_solasecinlinewhite_25x200.cpp</locationURI>
+        </link>
+        <link>
+            <name>Application/User/generated/image_solasecwhiteinline.cpp</name>
+            <type>1</type>
+            <locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_solasecwhiteinline.cpp</locationURI>
+        </link>
+        <link>
+            <name>Application/User/generated/image_solasecwhiteinline_200x80.cpp</name>
+            <type>1</type>
+            <locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_solasecwhiteinline_200x80.cpp</locationURI>
+        </link>
 		<link>
 			<name>Application/User/gui/BackButton_toMainScreen.cpp</name>
 			<type>1</type>
@@ -538,6 +513,11 @@
 			<name>Application/User/gui/MainMenuView.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/mainmenu_screen/MainMenuView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ManufactureButtonScreen.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/ManufactureButtonScreen.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/Model.cpp</name>

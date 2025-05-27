@@ -14,8 +14,8 @@ uint8_t DoorLockState;
 uint8_t DoorLockUpdated;
 uint8_t SeatWarmerState;
 uint8_t SeatWarmerUpdated;
-uint8_t AutoIgnitionState;
-uint8_t AutoIgnitionUpdated;
+uint8_t payoadState;
+uint8_t payloadUpdated;
 
 UART_HandleTypeDef huart5;
 UART_HandleTypeDef huart1;
@@ -31,32 +31,50 @@ static char __rxBuffer[256]; // Shout out to Drew W. for silly requirements on t
 /* Commands */
 // TODO: Create an interface to update these values in the GUI?
 // TODO: Maybe throw this in SPI?
-static uint8_t __titlePrompt[] = "DVHID Manufacturer's Interface\r\n";
+static uint8_t __titlePrompt[] = "COM Interface\r\n";
 
-static uint8_t __infoPrompt[] = "Device Info:\r\n"
-								"Odometer: 89109\r\n"
-								"Miles to Empty: 31\r\n"
-								"Oil Life %: 42\r\n"
-								"VIN: G02D3FC0N2023\r\n"
-								"Firmware Version: 0.3\r\n";
+//static uint8_t __infoPrompt[] = "Device Info:\r\n"
+//								"Pin: 2005\r\n"
+//								"HUD State: REcon\r\n"
+//								"Debug Mode: Disabled\r\n"
+//								"Firmware Version: 0.3\r\n";
+
+#include "device_status.h"
+
+static uint8_t __infoPrompt[128];
+
+static void __buildInfoPrompt(void)
+{
+    snprintf((char*)__infoPrompt, sizeof(__infoPrompt),
+             "Device Info:\r\n"
+             "Pin: %s\r\n"
+             "HUD State: %s\r\n"
+             "Debug Mode: %s\r\n"
+             "Firmware Version: %s\r\n",
+             gDeviceStatus.pin,
+             gDeviceStatus.hudState,
+             gDeviceStatus.debugEnabled ? "Enabled" : "Disabled",
+             gDeviceStatus.firmwareVersion);
+}
 
 static uint8_t __helpPrompt[] = "(help) - Help Menu\r\n"
 								"(info) - Device Info\r\n"
 								"(config) - Device Config\r\n"
-								"(seatwarmer) - Button\r\n"
-								"(autoignition) - Button\n";
+								"(payload) - Arm Payload\n";
 
 /* Config Prompts */
-static uint8_t __configSelfDestructOnCommand[] = "config selfdestruct enabled";
-static uint8_t __configSelfDestructOffCommand[] = "config selfdestruct disabled";
 static uint8_t __configErrorPrompt[] = "ERROR - command not recognized. Try \"config --help\".\r\n";
 static uint8_t __configHelpPrompt[] = 	"USAGE: config [option]\r\n"
 										"OPTIONS:\r\n"
-										"\tdebug [on/off] - Turn debug mode on or off.\r\n";
+										"\tpin <pin> - Modify GUI Pin.\r\n"
+										"\thud <state> - Modify GUI HUD State.\r\n"
+										"\tdebug [on/off] - Modify GUI Debug Mode.\r\n"
+										"\tfw <version> - Modify GUI FW Version.\r\n";
 static uint8_t __configDebugOnPrompt[] = 	"Debug Mode ON\r\n"
 											"WARNING: Debug mode may expose unintended functionality to other users.\r\n";
 static uint8_t __configDebugOffPrompt[] = "Debug Mode OFF\r\n";
-static uint8_t __configSelfDestructOnPrompt[] = "SELF DESTRUCT INITIATED!!! I can't believe you've done this...\r\n";
+static uint8_t __configDebugPasswordPrompt[] = "Password required. Usage: config debug on <password>\r\n";
+static uint8_t __configSelfDestructOnPrompt[] = "PAYLOAD ARMED!!! I can't believe you've done this...\r\n";
 static uint8_t __configSelfDestructOffPrompt[] = "Phew that was a close one. Thank you for being awesome and saving the day. Here is a cookie:\r\n"
 											     "      _______     \r\n"
 											     "   .-' ____  `.   \r\n"
@@ -68,29 +86,15 @@ static uint8_t __configSelfDestructOffPrompt[] = "Phew that was a close one. Tha
 											     "   '._____.'  /  \r\n"
 											     "     `-----'`    \r\n";
 
-/* Seat Warmer Prompts/Commands */
-static uint8_t __seatWarmerCommand[] = "seatwarmer";
-static uint8_t __seatWarmerOnCommand[] = "seatwarmer on";
-static uint8_t __seatWarmerOffCommand[] = "seatwarmer off";
-static uint8_t __seatWarmerHelpCommand[] = "seatwarmer --help";
-static uint8_t __seatWarmerOnPrompt[] = "Seat Warmer ON\r\n";
-static uint8_t __seatWarmerOffPrompt[] = "Seat Warmer OFF\r\n";
-static uint8_t __seatWarmerErrorPrompt[] = "ERROR - command not recognized. Try \"seatwarmer --help\".\r\n";
-static uint8_t __seatWarmerHelpPrompt[] = 	"USAGE: seatwarmer [option]\r\n"
-										"OPTIONS:\r\n"
-										"\t[on/off] - Enable and disable the seat warmers.\r\n";
-
-/* Auto Start Prompts/Commands */
-static uint8_t __autoIgnitionCommand[] = "autoignition";
-static uint8_t __autoIgnitionOnCommand[] = "autoignition on";
-static uint8_t __autoIgnitionOffCommand[] = "autoignition off";
-static uint8_t __autoIgnitionHelpCommand[] = "autoignition --help";
-static uint8_t __autoIgnitionEnabledPrompt[] 	= "Auto Start ON\r\n";
-static uint8_t __autoIgnitionDisabledPrompt[] 	= "Auto Start OFF\r\n";
-static uint8_t __autoIgnitionErrorPrompt[] 		= "ERROR - command not recognized. Try \"autoignition --help\".\r\n";
-static uint8_t __autoIgnitionHelpPrompt[] 		= "USAGE: autoignition [option]\r\n"
+/* Payload Prompts/Commands */
+static uint8_t __payloadCommand[] = "payload";
+static uint8_t __payloadEnabledCommand[] = "payload arm";
+static uint8_t __payloadDisabledCommand[] = "payload disarm";
+static uint8_t __payloadHelpCommand[] = "payload --help";
+static uint8_t __payloadErrorPrompt[] 		= "ERROR - command not recognized. Try \"payload --help\".\r\n";
+static uint8_t __payloadHelpPrompt[] 		= "USAGE: payload [option]\r\n"
 												  "OPTIONS:\r\n"
-												  "\t[on/off] - Enable and disable auto start.\r\n";
+												  "\t[arm/disarm] - Arm and disarm payload.\r\n";
 
 static uint8_t __errorPrompt[] = "ERROR - command not recognized. Try typing \"help\".\r\n";
 
@@ -102,7 +106,7 @@ static uint8_t __errorPrompt[] = "ERROR - command not recognized. Try typing \"h
 static void MX_USART1_UART_Init(void)
 {
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
+  huart1.Init.BaudRate = 57600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -122,27 +126,47 @@ static void __handleConfigCommands(void)
 	{
 		HAL_UART_Transmit( &huart1, (uint8_t*)__configHelpPrompt, sizeof(__configHelpPrompt)-1, 100 );
 	}
-	else if( (0 == strncmp( "config debug on",  __rxBuffer, 16 ) ) )
+	else if( (0 == strncmp( "config debug on",  __rxBuffer, 15 ) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__configDebugOnPrompt, sizeof(__configDebugOnPrompt)-1, 100 );
-		debugFlagTouchGFX |= (1<<1);
-		debugFlagUpdated = 1;
+		if (0 == strncmp("config debug on 1337", __rxBuffer, 20))
+		{
+			gDeviceStatus.debugEnabled = 1;
+			HAL_UART_Transmit(&huart1, (uint8_t *)__configDebugOnPrompt, sizeof(__configDebugOnPrompt) - 1, 100);
+			debugFlagTouchGFX |= (1 << 1);
+			debugFlagUpdated = 1;
+		}
+		else
+		{
+			HAL_UART_Transmit(&huart1, (uint8_t *)__configDebugPasswordPrompt, sizeof(__configDebugPasswordPrompt) - 1, 100);
+		}
 	}
 	else if( (0 == strncmp( "config debug off",  __rxBuffer, 17 ) ) )
 	{
+		gDeviceStatus.debugEnabled = 0;
 		HAL_UART_Transmit( &huart1, (uint8_t*)__configDebugOffPrompt, sizeof(__configDebugOffPrompt)-1, 100 );
 		debugFlagTouchGFX &= ~(1<<1);
 		debugFlagUpdated = 1;
 	}
-	else if( 0 == strncmp( (char*)__configSelfDestructOnCommand, (char*)__rxBuffer, strlen((char*)__configSelfDestructOnCommand) ) )
+	else if( (0 == strncmp( "config pin",  __rxBuffer, 10 ) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__configSelfDestructOnPrompt, sizeof(__configSelfDestructOnPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
+		memcpy(gDeviceStatus.pin, &__rxBuffer[11], 4);
+		__buildInfoPrompt();
+		HAL_UART_Transmit( &huart1, (uint8_t*)__infoPrompt, sizeof(__infoPrompt)-1, 100 );
+		debugFlagUpdated = 1;
 	}
-	else if( 0 == strncmp( (char*)__configSelfDestructOffCommand, (char*)__rxBuffer, strlen((char*)__configSelfDestructOffCommand) ) )
+	else if( (0 == strncmp( "config hud",  __rxBuffer, 10 ) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__configSelfDestructOffPrompt, sizeof(__configSelfDestructOffPrompt)-1, 100 );
-		// TODO: TouchGFX Stuff
+		memcpy(gDeviceStatus.hudState, &__rxBuffer[11], 8);
+		__buildInfoPrompt();
+		HAL_UART_Transmit( &huart1, (uint8_t*)__infoPrompt, sizeof(__infoPrompt)-1, 100 );
+		debugFlagUpdated = 1;
+	}
+	else if( (0 == strncmp( "config fw",  __rxBuffer, 9 ) ) )
+	{
+		memcpy(gDeviceStatus.firmwareVersion, &__rxBuffer[10], 3);
+		__buildInfoPrompt();
+		HAL_UART_Transmit( &huart1, (uint8_t*)__infoPrompt, sizeof(__infoPrompt)-1, 100 );
+		debugFlagUpdated = 1;
 	}
 	else
 	{
@@ -151,53 +175,28 @@ static void __handleConfigCommands(void)
 	}
 }
 
-static void __handleSeatWarmerCommands(void)
+static void __handlePayloadCommands(void)
 {
 	// The strlen calc below is plus 1 to catch only commands
-	if( 0 == strncmp( (char*)__seatWarmerHelpCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerHelpCommand) ) ||  0 == strncmp( (char*)__seatWarmerCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerCommand)+1 ) )
+	if( 0 == strncmp( (char*)__payloadHelpCommand, (char*)__rxBuffer, strlen((char*)__payloadHelpCommand) ) || 0 == strncmp( (char*)__payloadCommand, (char*)__rxBuffer, strlen((char*)__payloadCommand)+1 ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerHelpPrompt, sizeof(__seatWarmerHelpPrompt)-1, 100 );
+		HAL_UART_Transmit( &huart1, (uint8_t*)__payloadHelpPrompt, sizeof(__payloadHelpPrompt)-1, 100 );
 	}
-	else if( 0 == strncmp( (char*)__seatWarmerOnCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerOnCommand) ) )
+	else if( 0 == strncmp( (char*)__payloadEnabledCommand, (char*)__rxBuffer, strlen((char*)__payloadEnabledCommand) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerOnPrompt, sizeof(__seatWarmerOnPrompt)-1, 100 );
-		SeatWarmerState = 1;
-		SeatWarmerUpdated = 1;
+		HAL_UART_Transmit( &huart1, (uint8_t*)__configSelfDestructOnPrompt, sizeof(__configSelfDestructOnPrompt)-1, 100 );
+		payoadState = 1;
+		payloadUpdated = 1;
 	}
-	else if( 0 == strncmp( (char*)__seatWarmerOffCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerOffCommand) ) )
+	else if( 0 == strncmp( (char*)__payloadDisabledCommand, (char*)__rxBuffer, strlen((char*)__payloadDisabledCommand) ) )
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerOffPrompt, sizeof(__seatWarmerOffPrompt)-1, 100 );
-		SeatWarmerState = 0;
-		SeatWarmerUpdated = 1;
+		HAL_UART_Transmit( &huart1, (uint8_t*)__configSelfDestructOffPrompt, sizeof(__configSelfDestructOffPrompt)-1, 100 );
+		payoadState = 0;
+		payloadUpdated = 1;
 	}
 	else
 	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__seatWarmerErrorPrompt, sizeof(__seatWarmerErrorPrompt)-1, 100 );
-	}
-}
-
-static void __handleAutoIgnitionCommands(void)
-{
-	// The strlen calc below is plus 1 to catch only commands
-	if( 0 == strncmp( (char*)__autoIgnitionHelpCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionHelpCommand) ) || 0 == strncmp( (char*)__autoIgnitionCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionCommand)+1 ) )
-	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionHelpPrompt, sizeof(__autoIgnitionHelpPrompt)-1, 100 );
-	}
-	else if( 0 == strncmp( (char*)__autoIgnitionOnCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionOnCommand) ) )
-	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionEnabledPrompt, sizeof(__autoIgnitionEnabledPrompt)-1, 100 );
-		AutoIgnitionState = 1;
-		AutoIgnitionUpdated = 1;
-	}
-	else if( 0 == strncmp( (char*)__autoIgnitionOffCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionOffCommand) ) )
-	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionDisabledPrompt, sizeof(__autoIgnitionDisabledPrompt)-1, 100 );
-		AutoIgnitionState = 0;
-		AutoIgnitionUpdated = 1;
-	}
-	else
-	{
-		HAL_UART_Transmit( &huart1, (uint8_t*)__autoIgnitionErrorPrompt, sizeof(__autoIgnitionErrorPrompt)-1, 100 );
+		HAL_UART_Transmit( &huart1, (uint8_t*)__payloadErrorPrompt, sizeof(__payloadErrorPrompt)-1, 100 );
 	}
 }
 
@@ -243,6 +242,7 @@ void UARTChallengeThread( void * argument )
 		// TODO: Handle CRLF
 		if( 0 == strncmp( "info",  __rxBuffer, 5 ) )
 		{
+			__buildInfoPrompt();
 			HAL_UART_Transmit( &huart1, (uint8_t*)__infoPrompt, sizeof(__infoPrompt)-1, 100 );
 		}
 		else if( 0 == strncmp( "help",  __rxBuffer, 5 ) )
@@ -253,13 +253,9 @@ void UARTChallengeThread( void * argument )
 		{
 			__handleConfigCommands();
 		}
-		else if( 0 == strncmp( (char*)__autoIgnitionCommand, (char*)__rxBuffer, strlen((char*)__autoIgnitionCommand) ) )
+		else if( 0 == strncmp( (char*)__payloadCommand, (char*)__rxBuffer, strlen((char*)__payloadCommand) ) )
 		{
-			__handleAutoIgnitionCommands();
-		}
-		else if( 0 == strncmp( (char*)__seatWarmerCommand, (char*)__rxBuffer, strlen((char*)__seatWarmerCommand) ) )
-		{
-			__handleSeatWarmerCommands();
+			__handlePayloadCommands();
 		}
 		else
 		{
@@ -274,46 +270,16 @@ void UARTChallengeThread( void * argument )
 }
 
 // Called By TouchGFX when a button is pressed.
-void UARTChallengeSeatWarmerButtonPressed (uint8_t ToggleState)
+void UARTChallengePayloadButtonPressed (uint8_t ToggleState)
 {
 	if (ToggleState)
 	{
-		SeatWarmerState = 1;
+		payoadState = 1;
 	}
 	else
 	{
-		SeatWarmerState = 0;
+		payoadState = 0;
 	}
 
-	SeatWarmerUpdated= 1;
-}
-
-// Called By TouchGFX when a button is pressed.
-void UARTChallengeDoorLockButtonPressed (uint8_t ToggleState)
-{
-	if (ToggleState)
-	{
-		DoorLockState = 1;
-	}
-	else
-	{
-		DoorLockState = 0;
-	}
-
-	DoorLockUpdated= 1;
-}
-
-// Called By TouchGFX when a button is pressed.
-void UARTChallengeIgnitionButtonPressed (uint8_t ToggleState)
-{
-	if (ToggleState)
-	{
-		AutoIgnitionState = 1;
-	}
-	else
-	{
-		AutoIgnitionState = 0;
-	}
-
-	AutoIgnitionUpdated= 1;
+	payloadUpdated = 1;
 }

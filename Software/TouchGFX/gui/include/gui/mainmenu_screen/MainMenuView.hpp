@@ -14,16 +14,10 @@ public:
     virtual ~MainMenuView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    //Button Events
-    virtual void SearWarmerButtonPressed();
-    virtual void DoorLockButtonPressed();
-    virtual void AutoIgnitionButtonPressed();
 
     // Button State Update Handlers
-    virtual void UpdateDoorLockStatus(void);
-    virtual void UpdateAutoIgnitionStatus(void);
-    virtual void UpdateSeatWarmerStatus(void);
-    virtual void UpdateSPIDebugValue(uint16_t value);
+    virtual void UpdateSpiDebugValue(uint16_t value);
+    void ToggleButtonClickVirtFunc( void );
 protected:
 };
 
