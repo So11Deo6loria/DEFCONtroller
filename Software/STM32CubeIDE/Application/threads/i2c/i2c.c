@@ -5,244 +5,107 @@
  *      Author: calebdavis
  */
 
-#define SHT3X_I2C_DEVICE_ADDRESS_ADDR_PIN_LOW 0x44
-#define SHT3X_I2C_TIMEOUT 100
-
+#include <stdio.h>
+#include <string.h>
 #include "i2c.h"
 #include "main.h"
 
-#define TEMP_MIN_F 40.0
-#define TEMP_MAX_F 110.0
-
-
-//global Variables
-float i2c_temperature = 75.0;
-float i2c_humidity = 00;
-uint8_t i2c_isPumpAllowed = 1;
-uint8_t i2c_lowerTempThreshold; //TODO: Maybe configure from UART?
-uint8_t i2c_upperTempThreshold;
-uint8_t i2c_isValueUpdated = 1;
-
+#define NTAG_I2C_ADDRESS       0x55
+#define EEPROM_OFFSET          0x04
+#define EEPROM_END_OFFSET      0x0A
+#define EEPROM_BLOCK_SIZE      4
+#define LOCK_BLOCK             0x00
+#define DYNAMIC_LOCK_BLOCK     0x38
 
 extern I2C_HandleTypeDef hi2c3;
 
-/**
-  * @brief I2C3 Initialization Function
-  * @param None
-  * @retval None
-  */
+static const uint8_t ndef_uri_payload[] = {
+    0x03, 0x17, 0xD1, 0x01,
+    0x01, 0x13, 'U', 0x01,
+    'm','i','k','r','o','e','.','c','o','m','/',
+    'f','l','a','g','=','d','e','a','d',
+    0xFE
+};
+
 static void MX_I2C3_Init(void)
 {
+    hi2c3.Instance = I2C3;
+    hi2c3.Init.ClockSpeed = 100000;
+    hi2c3.Init.DutyCycle = I2C_DUTYCYCLE_2;
+    hi2c3.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+    hi2c3.Init.NoStretchMode = I2C_NOSTRETCH_ENABLE;
 
-  /* USER CODE BEGIN I2C3_Init 0 */
+    if (HAL_I2C_Init(&hi2c3) != HAL_OK) {
+        Error_Handler();
+    }
 
-  /* USER CODE END I2C3_Init 0 */
+    if (HAL_I2CEx_ConfigAnalogFilter(&hi2c3, I2C_ANALOGFILTER_ENABLE) != HAL_OK) {
+        Error_Handler();
+    }
 
-  /* USER CODE BEGIN I2C3_Init 1 */
-
-  /* USER CODE END I2C3_Init 1 */
-  hi2c3.Instance = I2C3;
-  hi2c3.Init.ClockSpeed = 100000;
-  hi2c3.Init.DutyCycle = I2C_DUTYCYCLE_2;
-  hi2c3.Devaddress = SHT3X_I2C_DEVICE_ADDRESS_ADDR_PIN_LOW;
-//  hi2c3.Init.OwnAddress1 = 0;
-  hi2c3.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
-//  hi2c3.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
-//  hi2c3.Init.OwnAddress2 = 0;
-//  hi2c3.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
-//  hi2c3.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
-  hi2c3.Init.NoStretchMode = I2C_NOSTRETCH_ENABLE;
-  if (HAL_I2C_Init(&hi2c3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure Analogue filter
-  */
-  if (HAL_I2CEx_ConfigAnalogFilter(&hi2c3, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure Digital filter
-  */
-  if (HAL_I2CEx_ConfigDigitalFilter(&hi2c3, 0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN I2C3_Init 2 */
-
-  /* USER CODE END I2C3_Init 2 */
+    if (HAL_I2CEx_ConfigDigitalFilter(&hi2c3, 0) != HAL_OK) {
+        Error_Handler();
+    }
 }
 
-/**
- * Registers addresses.
- */
-typedef enum
+static HAL_StatusTypeDef ntag_read_memory(uint16_t mem_offset, uint8_t *buffer, uint16_t count)
 {
-	SHT3X_COMMAND_MEASURE_HIGHREP_STRETCH = 0x2c06,
-	SHT3X_COMMAND_CLEAR_STATUS = 0x3041,
-	SHT3X_COMMAND_SOFT_RESET = 0x30A2,
-	SHT3X_COMMAND_HEATER_ENABLE = 0x306d,
-	SHT3X_COMMAND_HEATER_DISABLE = 0x3066,
-	SHT3X_COMMAND_READ_STATUS = 0xf32d,
-	SHT3X_COMMAND_FETCH_DATA = 0xe000,
-	SHT3X_COMMAND_MEASURE_HIGHREP_10HZ = 0x2737,
-	SHT3X_COMMAND_MEASURE_LOWREP_10HZ = 0x272a
-} sht3x_command_t;
-
-static uint8_t calculate_crc(const uint8_t *data, size_t length)
-{
-	uint8_t crc = 0xff;
-	for (size_t i = 0; i < length; i++) {
-		crc ^= data[i];
-		for (size_t j = 0; j < 8; j++) {
-			if ((crc & 0x80u) != 0) {
-				crc = (uint8_t)((uint8_t)(crc << 1u) ^ 0x31u);
-			} else {
-				crc <<= 1u;
-			}
-		}
-	}
-	return crc;
+    return HAL_I2C_Mem_Read(&hi2c3, NTAG_I2C_ADDRESS << 1, mem_offset, I2C_MEMADD_SIZE_8BIT, buffer, count, HAL_MAX_DELAY);
 }
 
-static uint8_t sht3x_send_command(I2C_HandleTypeDef *handle, sht3x_command_t command)
+static HAL_StatusTypeDef ntag_write_memory(uint16_t mem_offset, const uint8_t *buffer, uint16_t count)
 {
-	uint8_t command_buffer[2] = {(command & 0xff00u) >> 8u, command & 0xffu};
-
-	if (HAL_I2C_Master_Transmit(handle, handle->Devaddress << 1u, command_buffer, sizeof(command_buffer),
-	                            SHT3X_I2C_TIMEOUT) != HAL_OK) {
-		return 0;
-	}
-
-	return 1;
+    return HAL_I2C_Mem_Write(&hi2c3, NTAG_I2C_ADDRESS << 1, mem_offset, I2C_MEMADD_SIZE_8BIT, (uint8_t *)buffer, count, HAL_MAX_DELAY);
 }
 
-static uint16_t uint8_to_uint16(uint8_t msb, uint8_t lsb)
+static void clear_lock_bytes(void)
 {
-	return (uint16_t)((uint16_t)msb << 8u) | lsb;
+    uint8_t clear_block[16] = {0};
+    ntag_write_memory(LOCK_BLOCK * 4, clear_block, sizeof(clear_block));
+    ntag_write_memory(DYNAMIC_LOCK_BLOCK * 4, clear_block, sizeof(clear_block));
 }
 
-static uint8_t sht3x_init(I2C_HandleTypeDef *handle)
+static void write_ndef(void)
 {
-	//	assert(handle->Init.NoStretchMode == I2C_NOSTRETCH_DISABLE);
-	// TODO: Assert i2c frequency is not too high
-
-	uint8_t status_reg_and_checksum[3];
-	while(osOK != AquireI2CPerpheral() );
-
-	if (HAL_I2C_Mem_Read(handle, handle->Devaddress << 1u, SHT3X_COMMAND_READ_STATUS, 2, (uint8_t*)&status_reg_and_checksum,
-					  sizeof(status_reg_and_checksum), SHT3X_I2C_TIMEOUT) != HAL_OK) {
-		ReleaseI2CPeripheral();
-		return 0;
-	}
-
-	ReleaseI2CPeripheral();
-
-	uint8_t calculated_crc = calculate_crc(status_reg_and_checksum, 2);
-
-	if (calculated_crc != status_reg_and_checksum[2]) {
-		return 0;
-	}
-
-	return 1;
+    uint8_t clear_buf[888] = {0};
+    ntag_write_memory(0, clear_buf, 888);
+    ntag_write_memory(0, (uint8_t*)ndef_uri_payload, sizeof(ndef_uri_payload));
 }
 
-static uint8_t sht3x_read_temperature_and_humidity(I2C_HandleTypeDef *handle, float *temperature, float *humidity)
+static void read_ndef(void)
 {
-	while(osOK != AquireI2CPerpheral() );
-	sht3x_send_command(handle, SHT3X_COMMAND_MEASURE_LOWREP_10HZ);
-
-	HAL_Delay(1);
-
-	uint8_t buffer[6];
-
-	if (HAL_I2C_Master_Receive(handle, handle->Devaddress << 1u, buffer, sizeof(buffer), SHT3X_I2C_TIMEOUT) != HAL_OK) {
-		ReleaseI2CPeripheral();
-		return 0;
-	}
-
-	ReleaseI2CPeripheral();
-
-	uint8_t temperature_crc = calculate_crc(buffer, 2);
-	uint8_t humidity_crc = calculate_crc(buffer + 3, 2);
-	if (temperature_crc != buffer[2] || humidity_crc != buffer[5]) {
-		return 0;
-	}
-
-	int16_t temperature_raw = (int16_t)uint8_to_uint16(buffer[0], buffer[1]);
-	uint16_t humidity_raw = uint8_to_uint16(buffer[3], buffer[4]);
-
-	*temperature = -45.0f + 175.0f * (float)temperature_raw / 65535.0f;
-	*humidity = 100.0f * (float)humidity_raw / 65535.0f;
-
-	return 1;
+    uint8_t buf[4];
+    for (uint8_t i = EEPROM_OFFSET; i <= EEPROM_END_OFFSET; ++i) {
+        if (ntag_read_memory(i * EEPROM_BLOCK_SIZE, buf, sizeof(buf)) == HAL_OK) {
+            printf("Page 0x%02X: %02X %02X %02X %02X\n", i, buf[0], buf[1], buf[2], buf[3]);
+        } else {
+            printf("Read failed at page 0x%02X\n", i);
+        }
+    }
 }
 
-static uint8_t sht3x_set_header_enable(I2C_HandleTypeDef *handle, uint8_t enable)
+void I2CChallengeThread(void *argument)
 {
-	if (enable) {
-		return sht3x_send_command(handle, SHT3X_COMMAND_HEATER_ENABLE);
-	} else {
-		return sht3x_send_command(handle, SHT3X_COMMAND_HEATER_DISABLE);
-	}
-}
+    MX_I2C3_Init();
 
-static float __celsiusToFahrenheit( float celsiusTemp )
-{
-	float fahrenheitTemp;
+    HAL_Delay(100);
 
-	fahrenheitTemp = ( celsiusTemp * 9 / 5 ) + 32;
+    printf("Clearing lock bytes...\n");
+    clear_lock_bytes();
+    HAL_Delay(100);
 
-	return fahrenheitTemp;
-}
+    printf("Reading before write...\n");
+    read_ndef();
+    HAL_Delay(100);
 
-static uint8_t __isPumpAllowed( float temp )
-{
-	if( temp < TEMP_MIN_F )
-	{
-		return 0;
-	}
-	else
-	{
-		return 1;
-	}
+    printf("Writing NDEF URI...\n");
+    write_ndef();
+    HAL_Delay(100);
 
-	if( temp > TEMP_MAX_F )
-	{
-		return 0;
-	}
-	else
-	{
-		return 1;
-	}
-}
+    printf("Verifying write...\n");
+    read_ndef();
 
-
-void I2CChallengeThread( void * argument )
-{
-	uint8_t initStatus = 0;
-	float celsTemp = 0.0;
-	MX_I2C3_Init();
-	initStatus = sht3x_init(&hi2c3);
-
-	while( 0 == sht3x_init(&hi2c3))
-	{
-		// Issue with Sensor Init. Try every 2s.
-		osDelay(2000);
-	}
-
-	for(;;)
-	{
-		if( !(i2c_isValueUpdated) )
-		{
-			sht3x_read_temperature_and_humidity(&hi2c3, &celsTemp, &i2c_humidity);
-			i2c_temperature = __celsiusToFahrenheit(celsTemp);
-			i2c_isPumpAllowed = __isPumpAllowed(i2c_temperature);
-			i2c_isValueUpdated = 1;
-		}
-		osDelay(500);
-	}
-	  /* USER CODE END 5 */
+    while (1) {
+        osDelay(2000);
+    }
 }
