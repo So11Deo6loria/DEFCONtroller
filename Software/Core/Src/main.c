@@ -105,6 +105,7 @@ osThreadAttr_t uartThreadAttributes = defaultTask_attributes;
 osThreadAttr_t spiThreadAttributes  = defaultTask_attributes;
 osThreadAttr_t jtagThreadAttributes = defaultTask_attributes;
 osThreadAttr_t ledThreadAttributes  = defaultTask_attributes;
+osThreadAttr_t i2cThreadAttributes  = defaultTask_attributes;
 
 /* Definitions for GUI_Task */
 osThreadId_t GUI_TaskHandle;
@@ -321,10 +322,12 @@ int main(void)
   spiThreadAttributes.stack_size  = 4096 * 4;
   jtagThreadAttributes.name = "jtagTask";
   ledThreadAttributes.name = "ledTask";
+  i2cThreadAttributes.name = "i2cTask";
+  i2cThreadAttributes.stack_size  = 512 * 4;
 
   /* creation of defaultTask */
   canTaskHandle  = osThreadNew(CanChallangeThread,  NULL, &canThreadAttributes);
-//  i2cTaskHandle  = osThreadNew(I2CChallengeThread,  NULL, &i2cThreadAttributes);
+  i2cTaskHandle  = osThreadNew(I2CChallengeThread,  NULL, &i2cThreadAttributes);
   spiTaskHandle  = osThreadNew(SPIChallengeThread,  NULL, &spiThreadAttributes);
   uartTaskHandle = osThreadNew(UARTChallengeThread, NULL, &uartThreadAttributes);
   jtagTaskHandle = osThreadNew(JTAGChallengeThread, NULL, &jtagThreadAttributes);
