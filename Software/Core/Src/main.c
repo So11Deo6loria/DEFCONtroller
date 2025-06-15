@@ -125,7 +125,7 @@ char xUARTFlag[32];
 char xSPIFlag[32];
 char xJTAGFlag[32];
 char xCANFlag[32];
-char xI2CFlag[32];
+char xNFCFlag[32];
 
 /* USER CODE END PV */
 
@@ -203,6 +203,7 @@ static void __constructFlags( void )
 	memset( xSPIFlag, 0, 32 );	// Bit 2
 	memset( xCANFlag, 0, 32 ); 	// Bit 3
 	memset( xJTAGFlag, 0, 32 );	// Bit 4
+	memset( xNFCFlag, 0, 32 );	// Bit 4
 
 	xUARTFlag[0] = 'R';
 	xUARTFlag[1] = 'E';
@@ -214,6 +215,7 @@ static void __constructFlags( void )
 	memcpy( xSPIFlag, xUARTFlag, strlen(xUARTFlag) );
 	memcpy( xCANFlag, xUARTFlag, strlen(xUARTFlag) );
 	memcpy( xJTAGFlag, xUARTFlag, strlen(xUARTFlag) );
+	memcpy( xNFCFlag, xUARTFlag, strlen(xUARTFlag) );
 
 	/* Challenge Specific Strings */
 	xUARTFlag[6] = 'U';
@@ -234,6 +236,10 @@ static void __constructFlags( void )
 	xJTAGFlag[8] = '4';
 	xJTAGFlag[9] = '6';
 
+	xNFCFlag[6] = 'N';
+	xNFCFlag[7] = 'F';
+	xNFCFlag[8] = 'C';
+
 	xUARTFlag[10] = '_';
 	xUARTFlag[11] = 'C';
 	xUARTFlag[12] = 'H';
@@ -248,6 +254,7 @@ static void __constructFlags( void )
 	memcpy( &xSPIFlag[strlen(xSPIFlag)],   &xUARTFlag[10], strlen(&xUARTFlag[10]) );
 	memcpy( &xCANFlag[strlen(xCANFlag)],   &xUARTFlag[10], strlen(&xUARTFlag[10]) );
 	memcpy( &xJTAGFlag[strlen(xJTAGFlag)], &xUARTFlag[10], strlen(&xUARTFlag[10]) );
+	memcpy( &xNFCFlag[strlen(xNFCFlag)],   &xUARTFlag[10], strlen(&xUARTFlag[10]) );
 }
 
 /**
